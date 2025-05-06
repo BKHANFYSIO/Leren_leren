@@ -1,12 +1,12 @@
 /* Algemene stijlen */
 :root {
-  --primary-purple: #662483;
-  --secondary-purple: #8A4A9E;
-  --accent-purple: #F2E6F7;
+  --primary-color: #E60044;
+  --secondary-color: #FF1A1A;
+  --accent-color: #FFE5E5;
   --white: #ffffff;
-  --light-gray: #f8f9fa;
-  --medium-gray: #e9ecef;
-  --dark-gray: #343a40;
+  --light-gray: #F5F5F5;
+  --medium-gray: #E0E0E0;
+  --dark-gray: #333333;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -157,6 +157,7 @@ header {
 /* Floating hamburger menu voor mobiel */
 .floating-hamburger {
     display: none;
+    background: var(--primary-color);
 }
 
 @media (max-width: 900px) {
@@ -167,7 +168,6 @@ header {
         left: 20px;
         width: 60px;
         height: 60px;
-        background: var(--primary-purple);
         border-radius: 50%;
         justify-content: center;
         align-items: center;
@@ -192,7 +192,7 @@ header {
 .header-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-purple, #6C3EB6);
+  color: var(--primary-color);
   margin: 0;
   line-height: 1.2;
   text-align: center;
@@ -251,19 +251,19 @@ header {
 }
 
 .chapter-point.active {
-  background-color: var(--primary-purple);
-  border-color: var(--primary-purple);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: var(--white);
 }
 
 .chapter-point:hover {
-  background-color: var(--accent-purple);
-  border-color: var(--primary-purple);
+  background-color: var(--accent-color);
+  border-color: var(--primary-color);
 }
 
 .chapter-point.completed {
-  background-color: var(--primary-purple);
-  border-color: var(--primary-purple);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: var(--white);
 }
 
@@ -297,7 +297,7 @@ header {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: var(--primary-purple);
+  background-color: var(--primary-color);
   transition: width 0.3s ease;
 }
 
@@ -306,7 +306,7 @@ header {
   right: 0;
   top: -25px;
   font-size: 0.9rem;
-  color: var(--primary-purple);
+  color: var(--primary-color);
   font-weight: 500;
 }
 
@@ -362,13 +362,14 @@ header {
 }
 
 .nav-menu a:hover {
-  background-color: var(--accent-purple);
-  color: var(--primary-purple);
+  background-color: var(--accent-color);
+  color: var(--primary-color);
 }
 
 .nav-menu a.active {
-  background-color: var(--primary-purple);
+  background-color: var(--primary-color);
   color: var(--white);
+  border-left: 4px solid var(--primary-color);
 }
 
 /* Main content adjustment */
@@ -386,11 +387,11 @@ main.container {
 }
 
 .section-title {
-  color: var(--primary-purple);
+  color: var(--primary-color);
   font-size: 2rem;
   margin-bottom: 30px;
   padding-bottom: 15px;
-  border-bottom: 2px solid var(--accent-purple);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .section-content {
@@ -406,13 +407,13 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-purple);
+  color: var(--primary-color);
 }
 
 h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-purple);
+  color: var(--primary-color);
   margin-bottom: 30px;
 }
 
@@ -434,7 +435,7 @@ p {
   font-weight: 500;
   font-size: 1rem;
   color: var(--white);
-  background-color: var(--primary-purple);
+  background-color: var(--primary-color);
   border: none;
   border-radius: 25px;
   padding: 12px 30px;
@@ -446,7 +447,7 @@ p {
 }
 
 .btn:hover {
-  background-color: var(--secondary-purple);
+  background-color: var(--secondary-color);
   transform: translateY(-2px);
 }
 
@@ -469,14 +470,14 @@ p {
 
 /* Cards en content styling */
 .info-card {
-  background-color: var(--accent-purple);
+  background-color: var(--accent-color);
   border-radius: 8px;
   padding: 25px;
   margin-bottom: 20px;
 }
 
 .info-card-title {
-  color: var(--primary-purple);
+  color: var(--primary-color);
   font-size: 1.3rem;
   margin-bottom: 15px;
   font-weight: 600;
@@ -488,15 +489,15 @@ p {
 
 /* Wist je dat? styling */
 .wist-je-dat {
-  background-color: var(--accent-purple);
-  border-left: 4px solid var(--primary-purple);
+  background-color: var(--accent-color);
+  border-left: 4px solid var(--primary-color);
   padding: 20px;
   margin: 30px 0;
   border-radius: 0 8px 8px 0;
 }
 
 .wist-je-dat-title {
-  color: var(--primary-purple);
+  color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -538,7 +539,7 @@ img {
 .stat-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin: 0;
     order: 1;
 }
@@ -550,7 +551,7 @@ img {
     order: 2;
     padding: 15px;
     background: var(--white);
-    border: 2px solid var(--primary-purple);
+    border: 2px solid var(--primary-color);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(102, 36, 131, 0.1);
     transition: all 0.3s ease;
@@ -562,7 +563,7 @@ img {
 .stat-image:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(102, 36, 131, 0.2);
-    border-color: var(--secondary-purple);
+    border-color: var(--secondary-color);
 }
 
 .stat-image img {
@@ -574,7 +575,7 @@ img {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin: 10px 0;
     order: 3;
 }
@@ -608,7 +609,7 @@ img {
 
 /* Introductie titel styling */
 .introductie-titel {
-  color: var(--primary-purple);
+  color: var(--primary-color);
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 30px;
@@ -625,7 +626,7 @@ img {
 }
 
 .reflection-question {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 20px;
@@ -648,9 +649,9 @@ img {
 
 .reflection-input:focus {
     outline: none;
-    border-color: var(--primary-purple);
+    border-color: var(--primary-color);
     background-color: var(--white);
-    box-shadow: 0 0 0 3px var(--accent-purple);
+    box-shadow: 0 0 0 3px var(--accent-color);
 }
 
 .reflection-input::placeholder {
@@ -673,10 +674,10 @@ img {
 /* Note styling */
 .note {
     font-style: italic;
-    color: var(--secondary-purple);
+    color: var(--secondary-color);
     margin-top: 15px;
     padding-left: 15px;
-    border-left: 3px solid var(--accent-purple);
+    border-left: 3px solid var(--accent-color);
 }
 
 /* iXperium section styling */
@@ -685,7 +686,7 @@ img {
 }
 
 .ixperium-section h3 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
@@ -728,7 +729,7 @@ img {
 }
 
 .leerdoelen-sectie h4, .vervolgtraject h4 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 15px;
@@ -864,6 +865,7 @@ img {
 .tech-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
 }
 
 .tech-logo {
@@ -871,7 +873,7 @@ img {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: var(--primary-purple);
+    background-color: var(--primary-color);
     border-radius: 8px;
     margin-bottom: 20px;
 }
@@ -900,7 +902,7 @@ img {
 }
 
 .tech-link {
-    color: #00a19a;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
     margin-top: auto;
@@ -908,7 +910,7 @@ img {
 }
 
 .tech-link:hover {
-    text-decoration: underline;
+    color: var(--secondary-color);
 }
 
 .tech-media {
@@ -987,20 +989,20 @@ img {
 }
 
 .concept-card {
-    background-color: var(--accent-purple);
+    background-color: var(--accent-color);
     padding: 1.5rem;
     border-radius: 8px;
     height: 100%;
 }
 
 .concept-card h4 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
 
 .concept-dutch {
-    color: var(--secondary-purple);
+    color: var(--secondary-color);
     font-style: italic;
     margin-bottom: 0.5rem;
 }
@@ -1040,7 +1042,7 @@ img {
 }
 
 .benefit-card h3 {
-    background-color: var(--primary-purple);
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 1rem;
     margin: 0;
@@ -1052,14 +1054,14 @@ img {
 }
 
 .example-box {
-    background-color: var(--accent-purple);
+    background-color: var(--accent-color);
     border-radius: 6px;
     padding: 1rem;
     margin-top: 1rem;
 }
 
 .example-box h4 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1rem;
 }
@@ -1079,7 +1081,7 @@ img {
 }
 
 .interactive-exercise h3 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -1091,7 +1093,7 @@ img {
 }
 
 .draggable {
-    background-color: var(--accent-purple);
+    background-color: var(--accent-color);
     padding: 1rem;
     border-radius: 6px;
     cursor: move;
@@ -1123,12 +1125,12 @@ img {
 }
 
 .drop-target h4 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
 .tech-example {
-    color: var(--secondary-purple);
+    color: var(--secondary-color);
     font-size: 0.9rem;
     font-style: italic;
     margin: 0;
@@ -1170,6 +1172,7 @@ img {
 
 .critical-theme-card:hover {
     transform: translateY(-5px);
+    border-color: var(--primary-color);
 }
 
 .critical-theme-card h3 {
@@ -1185,7 +1188,7 @@ img {
     justify-content: center;
     padding: 15px;
     background: var(--white);
-    border: 2px solid var(--primary-purple);
+    border: 2px solid var(--primary-color);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(102, 36, 131, 0.1);
     transition: all 0.3s ease;
@@ -1194,7 +1197,7 @@ img {
 .theme-icon:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(102, 36, 131, 0.2);
-    border-color: var(--secondary-purple);
+    border-color: var(--secondary-color);
 }
 
 .theme-icon img {
@@ -1257,7 +1260,7 @@ img {
 }
 
 .form-control:focus {
-    border-color: #3498db;
+    border-color: var(--primary-color);
     outline: none;
 }
 
@@ -1313,7 +1316,7 @@ img {
 
 .competency-card {
     background: var(--white);
-    border: 2px solid var(--primary-purple);
+    border: 2px solid var(--primary-color);
     border-radius: 12px;
     padding: 1.5rem;
     transition: all 0.3s ease;
@@ -1322,10 +1325,11 @@ img {
 .competency-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(102, 36, 131, 0.2);
+    border-color: var(--primary-color);
 }
 
 .competency-card h4 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -1338,7 +1342,7 @@ img {
 }
 
 .competency-card .example-box {
-    background: var(--accent-purple);
+    background: var(--accent-color);
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
@@ -1351,15 +1355,15 @@ img {
 
 /* Note Box Styling */
 .note-box {
-    background: var(--accent-purple);
-    border-left: 4px solid var(--primary-purple);
+    background: var(--accent-color);
+    border-left: 4px solid var(--primary-color);
     padding: 1.5rem;
     margin: 2rem 0;
     border-radius: 0 8px 8px 0;
 }
 
 .note-box h4 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
     font-weight: 600;
@@ -1385,13 +1389,13 @@ img {
     justify-content: space-around;
     margin-bottom: 1.5rem;
     padding: 1rem;
-    background: var(--accent-purple);
+    background: var(--accent-color);
     border-radius: 8px;
 }
 
 .assessment-scale span {
     font-weight: 500;
-    color: var(--primary-purple);
+    color: var(--primary-color);
 }
 
 .assessment-grid {
@@ -1420,9 +1424,9 @@ img {
 }
 
 .assessment-select:focus {
-    border-color: var(--primary-purple);
+    border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 0 3px var(--accent-purple);
+    box-shadow: 0 0 0 3px var(--accent-color);
 }
 
 /* Responsive Adjustments */
@@ -1452,7 +1456,7 @@ img {
 
 .ethical-card {
     background: var(--white);
-    border: 2px solid var(--primary-purple);
+    border: 2px solid var(--primary-color);
     border-radius: 12px;
     padding: 1.5rem;
     transition: all 0.3s ease;
@@ -1461,15 +1465,16 @@ img {
 .ethical-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(102, 36, 131, 0.2);
+    border-color: var(--primary-color);
 }
 
 .ethical-card h4 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--accent-purple);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .ethical-card p {
@@ -1487,14 +1492,14 @@ img {
 
 /* Featured iXperium Section */
 .featured-ixperium {
-    background-color: var(--accent-purple);
+    background-color: var(--accent-color);
     padding: 2rem;
     border-radius: 12px;
     margin: 2rem 0;
 }
 
 .featured-ixperium h3 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 1.5rem;
 }
@@ -1535,7 +1540,7 @@ img {
 }
 
 .tech-resources h3 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 1.5rem;
 }
@@ -1561,6 +1566,7 @@ img {
 
 .resource-card:hover {
     transform: translateY(-5px);
+    border-color: var(--primary-color);
 }
 
 .resource-logo {
@@ -1571,7 +1577,7 @@ img {
 }
 
 .resource-card h4 {
-    color: var(--primary-purple);
+    color: var(--primary-color);
     margin: 0.5rem 0;
 }
 
@@ -1623,6 +1629,7 @@ img {
 
 .category-card:hover {
     transform: translateY(-5px);
+    border-color: var(--primary-color);
 }
 
 .category-card h4 {
@@ -1858,8 +1865,8 @@ img {
 }
 
 .btn-yellow {
-    background-color: #ffc107;
-    color: #2c3e50;
+    background-color: var(--primary-color);
+    color: var(--white);
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -1869,7 +1876,7 @@ img {
 }
 
 .btn-yellow:hover {
-    background-color: #ffca28;
+    background-color: var(--secondary-color);
 }
 
 .small-text {
@@ -1962,7 +1969,7 @@ img {
 .sidebar-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--primary-purple);
+  color: var(--primary-color);
 }
 
 /* Desktop doesn't show hamburger inside sidebar */
@@ -1997,8 +2004,8 @@ img {
 
 .sidebar-chapter.active,
 .sidebar-chapter:hover {
-  background: var(--accent-purple);
-  border-left: 4px solid var(--primary-purple);
+  background: var(--accent-color);
+  border-left: 4px solid var(--primary-color);
 }
 
 .chapter-circle {
@@ -2008,7 +2015,7 @@ img {
   border-radius: 50%;
   background: var(--white);
   border: 2px solid var(--medium-gray);
-  color: var(--primary-purple);
+  color: var(--primary-color);
   font-weight: 700;
   font-size: 1.1rem;
   display: flex;
@@ -2020,15 +2027,15 @@ img {
 }
 
 .chapter-circle.completed {
-  background: var(--primary-purple);
+  background-color: var(--primary-color);
   color: var(--white);
-  border-color: var(--primary-purple);
+  border-color: var(--primary-color);
 }
 
 .chapter-circle.half {
   position: relative;
   overflow: hidden;
-  color: var(--primary-purple);
+  color: var(--primary-color);
   border-color: #FFD600;
 }
 
@@ -2040,7 +2047,7 @@ img {
   left: 0;
   width: 50%;
   height: 100%;
-  background-color: #FFD600;
+  background-color: var(--primary-color);
   z-index: -1;
 }
 
@@ -2066,7 +2073,7 @@ img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: conic-gradient(var(--primary-purple) 0% 0%, var(--medium-gray) 0% 100%);
+  background: conic-gradient(var(--primary-color) 0% var(--progress), var(--medium-gray) var(--progress) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2075,7 +2082,7 @@ img {
 
 .progress-text {
   font-size: 1.1rem;
-  color: var(--primary-purple);
+  color: var(--primary-color);
   font-weight: 600;
 }
 

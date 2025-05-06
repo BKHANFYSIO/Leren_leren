@@ -485,7 +485,7 @@ function updateSidebarProgress() {
   // Update visuele voortgang
   const visual = document.getElementById('sidebarProgressVisual');
   if (visual) {
-    visual.style.background = `conic-gradient(var(--primary-purple) 0% ${percent}%, var(--medium-gray) ${percent}% 100%)`;
+    visual.style.background = `conic-gradient(var(--primary-color) 0% ${percent}%, var(--medium-gray) ${percent}% 100%)`;
   }
   const text = document.getElementById('sidebarProgressText');
   if (text) text.textContent = percent + '%';
