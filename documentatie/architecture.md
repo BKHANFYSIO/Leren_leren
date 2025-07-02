@@ -44,7 +44,7 @@ Het hart van de e-learning. De `hoofdstukken`-array bepaalt de volgorde en titel
 
 ```json
 {
-  "titel": "AI basiskennis en vaardigheden",
+  "titel": "Leren leren",
   "leerdoelen": [...],
   "hoofdstukken": [
     { "file": "hoofdstuk1.json", "titel": "Introductie" },
