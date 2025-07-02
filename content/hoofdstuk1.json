@@ -1,228 +1,102 @@
 {
+  "_WAARSCHUWING_VOOR_DEVELOPERS": "KRITIEKE COMPONENTEN IN DIT BESTAND: De 'leerdoelen-dynamic' component en 'Klaar voor de start?' sectie zijn VERPLICHT voor hoofdstuk 1 en mogen NOOIT worden verwijderd. Deze zijn essentieel voor de leerervaring.",
+  "hoofdstuk_titel": "Hoofdstuk 1: Inleiding",
   "content": [
     {
       "type": "info-card",
       "classes": "welcome-card",
-      "titel": "Hé toekomstige fysiotherapeut!",
-      "tekst": "Welkom bij de e-learning \"AI basiskennis en vaardigheden\"! De eerste van drie elearnings over AI in de context van jouw studie. Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: fysiotherapie."
+      "titel": "Welkom bij jouw reis naar effectiever leren!",
+      "tekst": "Als toekomstig fysiotherapeut sta je voor een uitdagende en dynamische studie. Je zult veel nieuwe kennis moeten opdoen, complexe vaardigheden moeten ontwikkelen en kritisch leren nadenken. Maar hoe zorg je ervoor dat je al die informatie niet alleen onthoudt, maar ook écht begrijpt en kunt toepassen in de praktijk? Deze e-learning is jouw gids om het maximale uit je studie te halen. We gaan je helpen om slimmer te leren, niet harder. Ben je er klaar voor om de controle over je leerproces te nemen en je academische prestaties naar een hoger niveau te tillen?"
     },
     {
-      "type": "accordion",
-      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
-      "content": [
-        {
-          "type": "content-text",
-          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
-        },
-        {
-          "type": "audio-grid",
-          "kolommen": 1,
-          "items": [
-            {
-              "id": "h1_audio_1",
-              "titel": "Podcast: Introductie op AI in de Fysiotherapie",
-              "beschrijving": "Een audio-versie van de introductie op deze e-learning. Ontdek waarom AI nu al onmisbaar is voor de fysiotherapeut van de toekomst.",
-              "bron": "audio/H1-introductie-podcast.wav",
-              "meta": ""
-            }
-          ]
-        }
-      ]
+      "type": "leerdoelen-dynamic"
     },
     {
       "type": "section-title",
-      "titel": "Stel je eens voor…"
-    },
-    {
-      "type": "scenario-container-horizontal",
-      "scenarios": [
-        {
-          "titel": "Jij als fysiotherapeut in 2027 (of misschien zelfs eerder!):",
-          "beschrijving": "Een patiënt met chronische rugpijn stapt je praktijk binnen. In plaats van alleen op je eigen (super waardevolle!) kennis en ervaring te vertrouwen, heb je AI-systemen die je helpen om:",
-          "punten": [
-            "Bewegingspatronen vlijmscherp te analyseren via draagbare sensoren of videobeelden.",
-            "Een slimme chatbot die al een deel van de anamnese (het vraaggesprek met je patiënt) heeft afgenomen nog voordat de patiënt bij jou op de stoep staat.",
-            "Samen met AI te redeneren en data te interpreteren om tot een nog completere fysiotherapeutische diagnose te komen.",
-            "Gepersonaliseerde oefenprogramma's op maat te genereren.",
-            "De voortgang van je patiënt automatisch en nauwkeurig bij te houden.",
-            "Die berg administratieve taken? Die handel je af in een fractie van de tijd!"
-          ],
-          "conclusie": "Klinkt als toekomstmuziek? Nope, technisch gezien kan dit nu al!"
-        },
-        {
-          "titel": "Jij als student, maar dan met een persoonlijke 24/7 studiecoach:",
-          "beschrijving": "Stel je voor dat je studeert aan een opleiding waar elke student continu kan rekenen op een persoonlijke AI-coach. Een coach die je op elk moment van de dag helpt met:",
-          "punten": [
-            "Het slimmer en effectiever aanpakken van je studiestof.",
-            "Directe, persoonlijke feedback op je werk.",
-            "Het genereren van oefenvragen op maat.",
-            "Brainstormen over lastige casussen."
-          ],
-          "conclusie": "Het resultaat? Je leert meer in minder tijd, je tilt je kennis en vaardigheden naar een hoger niveau én je houdt meer tijd over voor je bijbaan, vrienden, sport en alles wat het studentenleven zo leuk maakt.\nOok dit is geen science fiction – de technologie is er!"
-        }
-      ]
-    },
-    {
-      "type": "section-title",
-      "titel": "Waarom AI NU zo relevant is voor jou"
+      "titel": "De Huidige Leerpraktijk: Een Wake-up Call"
     },
     {
       "type": "content-text",
-      "tekst": "Je ziet het, AI is geen ver-van-je-bed-show, maar een ontwikkeling die de fysiotherapie en jouw manier van studeren razendsnel verandert. Het is niet de vraag <strong>of</strong> je AI gebruikt, maar <strong>hoe</strong> je dat effectief en slim gaat doen."
+      "tekst": "Veel studenten vallen in de valkuil van ineffectieve studiemethoden. Ze lezen passief, markeren overmatig, of 'stampen' vlak voor een examen. Dit geeft vaak een vals gevoel van begrip, de zogenaamde 'illusie van kennis'. Je denkt dat je de stof beheerst, maar bij een toets blijkt het tegen te vallen. Laten we eens kijken naar wat de cijfers zeggen:"
     },
     {
-      "type": "accent-blok",
-      "variant": "statistiek",
-          "titel": "Eyeopener-statistiek:",
-      "tekst": "Experts voorspellen dat tot <strong>80%</strong> van de administratieve taken in de zorg tegen 2027-2029 door AI geautomatiseerd kan worden. Denk eens aan al die tijd die vrijkomt voor wat écht telt: persoonlijke aandacht en zorg voor jouw patiënten!",
-      "bron": {
-        "naam": "Notable Health (2025)",
-        "url": "https://www.linkedin.com/posts/notablehealth_by-2029-we-believe-80-of-healthcare-administrative-activity-7320818126151946242-A4xw/?utm_source=chatgpt.com"
-      }
-        },
-        {
-      "type": "accent-blok",
-      "variant": "statistiek",
-      "titel": "Explosieve Groei: AI in het Onderwijs",
-      "tekst": "Uit een onderzoek van februari 2025 blijkt dat maar liefst 92% van de studenten AI gebruikt voor hun studie. Dit toont een enorme adaptatiesnelheid; binnen twee jaar na de lancering van ChatGPT is AI-gebruik de norm geworden in het onderwijs.",
-      "bron": {
-        "naam": "The Guardian (Feb 2025)",
-        "url": "https://www.theguardian.com/education/2025/feb/26/uk-universities-warned-to-stress-test-assessments-as-92-of-students-use-ai?utm_source=chatgpt.com"
-        }
-    },
-    {
-      "type": "accent-blok",
-      "variant": "statistiek",
-      "titel": "AI als studiehulpmiddel - de cijfers:",
-      "tekst": "Studenten scoorden <strong>48% hoger</strong> op een examen met het gebruik van een basismodel van AI in de voorbereiding. Echter, als ze vervolgens zonder AI moeten voorbereiden scoren ze <strong>17% lager</strong> dan de controlegroep. Een derde groep met een AI-Tutor GPT scoorde echter <strong>127% hoger</strong> en had ook betere kennisretentie.",
-      "bron": {
-        "naam": "Bastani et al., 2024",
-        "url": "https://hamsabastani.github.io/education_llm.pdf"
-        }
-    },
-    {
-      "type": "accent-blok",
-      "variant": "weetje",
-      "titel": "Nederlandse studenten missen kansen:",
-      "tekst": "Uit onderzoek blijkt dat Nederlandse studenten GenAI vooral gebruiken als een geavanceerde zoekmachine of herschrijftool, vergelijkbaar met Google. Hierdoor halen ze maar weinig van het echte voordeel uit AI. De potentie voor diepgaand leren, kritisch denken en creativiteit blijft grotendeels onbenut.",
-      "bron": {
-        "naam": "Education AI Review (juni 2025)",
-        "url": "https://educationai-review.org/revista/article/view/40/42"
-        }
-    },
-    {
-        "type": "section-title",
-        "titel": "Leren werken met AI: Net als spiertraining! 🏋️‍♀️🧠"
-    },
-    {
-      "type": "ethical-reflection-grid",
+      "type": "stats-card-grid",
       "kaarten": [
         {
-          "titel": "Weerstand = Groei",
-          "beschrijving": "Net zoals je spieren weerstand nodig hebben om sterker te worden (denk aan <strong>progressive overload</strong>), heeft je brein uitdagingen nodig om te groeien. Dit noemen we 'desirable difficulties': een beetje moeite doen is juist supergoed voor je leerproces!"
+          "titel": "Passief Lezen",
+          "afbeelding": "images/icons/book-open.svg",
+          "getal": "70%+",
+          "label": "Van studenten gebruikt passief lezen als primaire studiemethode, wat minder effectief is voor langetermijnretentie.",
+          "bron": {
+            "naam": "Diverse studies over leerstrategieën"
+          }
         },
         {
-          "titel": "Pas op voor de 'E-bike Illusie'",
-          "beschrijving": "AI-tools kunnen voelen als een e-bike. Ze brengen je supersnel van A naar B, bijvoorbeeld door een tekst voor je samen te vatten. Klinkt handig, en dat is het vaak ook! Maar… als je <strong>alleen</strong> maar op die e-bike zit en nooit zelf trapt, bouw je geen conditie op. Dit noemen we de 'illusion of fluency': het lijkt alsof je de stof beheerst, maar je mist de diepgang en de echte 'spierkracht' in je brein."
+          "titel": "Uitstelgedrag",
+          "afbeelding": "images/icons/clock-fast-forward.svg",
+          "getal": "80%+",
+          "label": "Van studenten geeft aan regelmatig uitstelgedrag te vertonen, wat leidt tot 'crammen' en oppervlakkig leren.",
+          "bron": {
+            "naam": "Onderzoek naar studiegedrag"
+          }
         },
         {
-          "titel": "Jij blijft aan het stuur",
-          "beschrijving": "AI kan een fantastische assistent zijn, maar het vervangt jouw denkwerk en expertise niet. In deze module leer je hoe je AI inzet als een hefboom voor je leren, niet als een vervanging ervan."
-        }
-      ]
-    },
-    {
-        "type": "section-title",
-        "titel": "Mag ik AI gebruiken? Ja, graag! 🎯"
-    },
-    {
-      "type": "info-card",
-      "classes": "ai-gebruik-card",
-      "titel": "AI gebruiken? Absoluut!",
-      "tekst": "We moedigen je aan om AI-tools te gebruiken als ondersteuning bij je leerproces. Maar: combineer dit slim met effectieve leerstrategieën zoals actief ophalen van kennis, gespreid leren en samenwerken. Zo wordt AI jouw <strong>hefboom</strong> voor beter leren, niet je vervanging.<br><br><strong>💡 Tip:</strong> We nemen je hierin mee! In module 2 'AI als Jouw Slimme Studiebuddy' leer je precies hoe je dit effectief doet."
-    },
-    {
-      "type": "practical-tips-grid",
-      "titel": "Waarom AI nu al belangrijk is voor jou:",
-      "kaarten": [
-        {
-          "icon": "🎯",
-          "titel": "Voor je studie",
-          "beschrijving": "AI helpt je efficiënter leren: ideeën genereren, teksten structureren, feedback krijgen"
-        },
-        {
-          "icon": "💼",
-          "titel": "Voor je toekomst",
-          "beschrijving": "AI speelt een steeds grotere rol in de fysiotherapiepraktijk - ervaring nu = betere kansen later"
-        },
-        {
-          "icon": "📋",
-          "titel": "Voor je portfolio",
-          "beschrijving": "Laat zien dat je AI-geletterd bent en het doordacht kunt inzetten in beroepssituaties"
-        }
-      ]
-    },
-    {
-      "type": "accent-blok",
-      "variant": "belangrijk",
-      "titel": "Transparantie is key! 🔑",
-      "tekst": "Geef <strong>altijd</strong> aan wanneer en hoe je AI hebt gebruikt bij opdrachten. Dit bevordert eerlijkheid en helpt ons je leerproces goed te begeleiden. Concrete richtlijnen vind je in hoofdstuk 6."
-    },
-    {
-      "type": "content-text",
-      "tekst": "AI ontwikkelt razendsnel en beïnvloedt zowel onderwijs als het fysiotherapieberoep. We blijven hierover met jou in gesprek om samen te leren en ons beleid waar nodig bij te stellen. 🤝"
-    },
-    {
-      "type": "section-title",
-      "titel": "Jouw Leerpad: Een Serie van Drie Modules"
-    },
-    {
-      "type": "info-card",
-      "content": [
-        {
-          "type": "content-text",
-          "tekst": "Deze e-learning is de eerste stap in een serie van drie, speciaal ontworpen om jou stap voor stap wegwijs te maken in de wereld van AI:"
-        },
-        {
-          "type": "benefit-card",
-          "titel": "Module 1 (Deze module dus!): AI Basiskennis en Vaardigheden",
-          "beschrijving": "Hier leg je de fundering. Wat is AI nu eigenlijk, hoe werkt het en hoe 'praat' je ermee via prompts? We kijken naar kansen en risico's, en je gaat zelf aan de slag met kleine, praktische opdrachten."
-        },
-        {
-          "type": "benefit-card",
-          "titel": "Module 2: AI als Jouw Slimme Studiebuddy",
-          "beschrijving": "In deze module ontdek je hoe je AI écht effectief kunt inzetten om slimmer te leren, zonder in de valkuilen van de 'e-bike illusie' te trappen. Denk aan AI als jouw persoonlijke coach die je helpt studiemateriaal te doorgronden, feedback te krijgen en je voor te bereiden op toetsen."
-        },
-        {
-          "type": "benefit-card",
-          "titel": "Module 3: AI in de Fysiotherapeutische Praktijk – Nu en in de Toekomst",
-          "beschrijving": "Hier duiken we dieper in de specifieke toepassingen van AI binnen de fysiotherapie. Van diagnostiek en behandeling tot revalidatie en preventie. Wat gebeurt er al en wat staat ons te wachten?"
-        },
-        {
-          "type": "content-text",
-          "tekst": "Onthoud: zowel leren werken met AI als leren effectief te leren kost tijd — vooral dat laatste. Begin klein, blijf herhalen en bouw stap voor stap aan je kennis en vaardigheden. Deze modules begeleiden je daarbij."
+          "titel": "Multitasking",
+          "afbeelding": "images/icons/device-mobile-star.svg",
+          "getal": "20%",
+          "label": "Van de studietijd wordt besteed aan afleiding door multitasking (bijv. sociale media), wat de leerprestaties negatief beïnvloedt.",
+          "bron": {
+            "naam": "ResearchGate survey, 2025"
+          }
         }
       ]
     },
     {
       "type": "section-title",
-      "titel": "Klaar voor de start? 🚀"
-    },
-    {
-      "type": "info-card",
-      "classes": "white-bg portfolio-booster-card",
-      "titel": "Wat levert dit jou op? Jouw Portfolio Booster!",
-      "tekst": "Deze module is meer dan alleen informatie opdoen. Wat je hier leert en de opdrachten die je maakt (jouw 'artefacten') tellen direct mee voor <strong>EVL 4</strong> (Erkend Verworven Leerresultaat) in je portfolio. Een mooie kans dus om te laten zien wat je in huis hebt! Zorg ervoor dat je certificaten en de resultaten van je opdrachten goed bewaart."
+      "titel": "Waarom effectief leren cruciaal is"
     },
     {
       "type": "content-text",
-      "tekst": "Je hebt nu een eerste indruk van wat AI voor jou kan betekenen, zowel tijdens je studie als in je toekomstige werk als fysiotherapeut. Laten we in de volgende hoofdstukken dieper duiken in de fascinerende wereld van Kunstmatige Intelligentie!"
+      "tekst": "Gelukkig hoef je niet alles zelf uit te vinden. Wetenschappelijk onderzoek toont aan dat het toepassen van bewezen leerstrategieën een enorm verschil maakt. Zelfsturend leren en effectieve methoden leiden tot betere resultaten, dieper begrip en meer zelfvertrouwen. Dit zijn de voordelen:"
     },
     {
-      "type": "accent-blok",
-      "variant": "tip",
-      "titel": "Handig om te weten 💡",
-      "tekst": "Elk hoofdstuk eindigt met een aantal interacties zoals flashcards, meerkeuzevragen en reflectievragen. Deze helpen je de stof beter te onthouden en actief te verwerken."
+      "type": "benefits-grid",
+      "items": [
+        {
+          "titel": "Hogere Academische Prestaties",
+          "icoon": "trophy-fill",
+          "tekst": "Studenten die effectieve strategieën toepassen, behalen significant betere studieresultaten."
+        },
+        {
+          "titel": "Dieper Begrip & Retentie",
+          "icoon": "brain-fill",
+          "tekst": "Informatie wordt beter verankerd in je langetermijngeheugen, waardoor je het langer onthoudt en kunt toepassen."
+        },
+        {
+          "titel": "Verhoogde Motivatie & Zelfvertrouwen",
+          "icoon": "sparkles-fill",
+          "tekst": "Door zelf de regie te nemen en successen te ervaren, groeit je motivatie en geloof in eigen kunnen."
+        },
+        {
+          "titel": "Voorbereiding op de Praktijk",
+          "icoon": "stethoscope-fill",
+          "tekst": "De vaardigheden die je leert, zijn direct toepasbaar in je toekomstige rol als zelfstandige en kritische fysiotherapeut."
+        }
+      ]
+    },
+    {
+      "type": "section-title",
+      "titel": "Klaar voor de start?"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Je hebt nu een goed beeld van waarom effectief leren zo belangrijk is en wat je kunt verwachten van deze e-learning. De reis naar een effectiever leerproces begint hier! In de volgende hoofdstukken duiken we dieper in de wereld van zelfsturend leren, de werking van je brein en concrete strategieën die je direct kunt toepassen."
+    },
+    {
+      "type": "info-card",
+      "classes": "purple-kader",
+      "titel": "Jouw Leeravontuur Begint Nu!",
+      "tekst": "We moedigen je aan om actief deel te nemen, te experimenteren met de aangeboden technieken en kritisch te reflecteren op je eigen leerproces. Dit is geen passieve cursus; het is een interactieve ervaring die je zal transformeren in een zelfsturende en succesvolle leerling. Veel succes en plezier met leren!"
     }
   ],
   "interacties": [
@@ -244,8 +118,8 @@
       "id": "h1_reflection_1",
       "type": "reflection",
       "titel": "Mini-opdracht 1.1: Jouw AI Startpunt",
-      "vraag": "Om straks goed te kunnen zien wat je allemaal hebt opgestoken, beginnen we met een korte reflectie.\n\nOpdracht: Schrijf in ongeveer 100-150 woorden antwoord op de volgende vragen:\n1. Wat weet je al een beetje over AI en hoe het misschien in de zorg gebruikt wordt?\n2. Heb je zelf al eens AI-tools gebruikt (zoals ChatGPT, een vertaalapp, of iets anders)? Zo ja, welke en waarvoor?\n3. Wat hoop of verwacht je vooral te leren in deze eerste module over AI?",
-      "placeholder": "Bewaar je antwoorden goed! Aan het einde van deze module komen we hierop terug om te zien hoe jouw kennis en kijk op AI zijn gegroeid."
+      "vraag": "Om straks goed te kunnen zien wat je allemaal hebt opgestoken, beginnen we met een korte reflectie.\n\nOpdracht: Schrijf in ongeveer 100-150 woorden antwoord op de volgende vragen:\n1. Wat weet je al een beetje over AI en hoe het misschien in de zorg gebruikt wordt?\n2. Heb je zelf al eens AI-tools gebruikt (zoals ChatGPT, een vertaalapp, of iets anders)? Zo ja, welke en waarvoor?\n3. Wat hoop of verwacht je vooral te leren in deze eerste elearning over AI?",
+      "placeholder": "Bewaar je antwoorden goed! Aan het einde van deze elearning komen we hierop terug om te zien hoe jouw kennis en kijk op AI zijn gegroeid."
     }
   ]
 } 

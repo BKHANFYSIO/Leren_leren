@@ -1,12 +1,12 @@
 {
-  "titel": "Leren leren 2",
+  "titel": "Leren leren",
   "leerdoelen": [
-    "Verklaar in eigen woorden wat AI is en hoe het leert uit data.",
-    "Benoem en pas kernbegrippen toe: LLM, context window, token, prompt, AGI, agent, custom instruction, GPT/project/Gem, inferentie, hallucineren, bias.",
-    "Schrijf en verfijn eenvoudige prompts voor tekst- en beeld-AI.",
-    "Herken kansen én risico's van AI in (fysio)zorg en maatschappij.",
-    "Reflecteer op de invloed van AI op jouw studie, beroep en de samenleving.",
-    "Pas basisprincipes van vibe-coding toe om een kleine AI-tool te maken."
+    "In je eigen woorden verklaren wat AI is en hoe het leert uit data.",
+    "Kernbegrippen van AI benoemen en toepassen: LLM, context window, token, prompt, AGI, agent, custom instruction, GPT/project/Gem, inferentie, hallucineren, bias.",
+    "Eenvoudige prompts schrijven en verfijnen voor tekst- en beeld-AI.",
+    "Kansen én risico's van AI in (fysio)zorg en maatschappij herkennen.",
+    "Reflecteren op de invloed van AI op jouw studie, beroep en de samenleving.",
+    "Basisprincipes van vibe-coding toepassen om een kleine AI-tool te maken."
   ],
   "hoofdstukken": [
     { "file": "hoofdstuk1.json", "titel": "Introductie" },

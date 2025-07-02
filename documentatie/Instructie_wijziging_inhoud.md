@@ -8,13 +8,35 @@ Dankzij de dynamische architectuur is het opzetten van een nieuwe cursus of het 
 
 1.  **Kopieer de projectmap** voor je nieuwe cursus.
 2.  **Pas `content/config.json` aan.** Dit is het hart van de e-learning.
-    *   Pas de `titel`, `leerdoelen`, `organisatie`, etc. aan.
+    *   **Pas de `titel` aan** - Dit wordt automatisch gebruikt voor de browser tab, header en alle andere titels in de e-learning
+    *   Pas de `leerdoelen`, `organisatie`, etc. aan.
     *   Pas de `hoofdstukken` array aan om hoofdstukken toe te voegen, te verwijderen of de volgorde te wijzigen.
         *   **Toevoegen:** Voeg een object toe, bijv. `{ "file": "hoofdstukNieuw.json", "titel": "Nieuw Hoofdstuk" }`.
         *   **Verwijderen:** Haal een object uit de array.
         *   **Hernoemen:** Verander de `titel`.
 3.  **Bewerk de hoofdstukbestanden.** Pas de inhoud van de JSON-bestanden in de `/content` map aan (bv. `hoofdstuk1.json`, etc.).
 4.  **Test je wijzigingen.** Start een lokale webserver om het resultaat te bekijken. De navigatie, voortgang en content passen zich automatisch aan.
+
+---
+
+## ⚠️ Belangrijke Regel: Titelbeheer is Volledig Dynamisch
+
+**De titel van de e-learning wordt ALLEEN gewijzigd via `content/config.json`**
+
+- **Browser tab titel**: Wordt automatisch ingesteld door JavaScript uit config.json
+- **Header titel**: Wordt automatisch ingesteld door JavaScript uit config.json  
+- **Alle andere titels**: Komen automatisch uit config.json
+
+**Wat je MOET doen:**
+- ✅ Titel wijzigen in `content/config.json` onder `"titel": "Nieuwe Titel"`
+- ✅ De wijziging wordt automatisch doorgevoerd in de hele e-learning
+
+**Wat je NIET moet doen:**
+- ❌ Titel handmatig aanpassen in `index.html`
+- ❌ Titel aanpassen in JavaScript bestanden
+- ❌ CSS aanpassen voor titels
+
+Het systeem is ontworpen om de titel volledig centraal te beheren. Dit zorgt voor consistentie en maakt het klonen van de e-learning veel eenvoudiger.
 
 ---
 

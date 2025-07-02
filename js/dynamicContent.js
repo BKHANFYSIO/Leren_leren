@@ -1137,6 +1137,41 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                     </div>
                 `;
                 break;
+            case 'leerdoelen-dynamic':
+                // Haal leerdoelen op uit de globale config
+                const leerdoelen = window.elearningConfig && Array.isArray(window.elearningConfig.leerdoelen) 
+                    ? window.elearningConfig.leerdoelen 
+                    : [];
+                
+                // Portfolio tip is optioneel en configureerbaar
+                const portfolioTip = block.portfolio_tip || '';
+                const footerHtml = portfolioTip ? `
+                    <div class="leerdoelen-footer">
+                        <p class="leerdoelen-note">
+                            💡 <strong>Portfolio tip:</strong> ${portfolioTip}
+                        </p>
+                    </div>
+                ` : '';
+                
+                html += `
+                    <div class="leerdoelen-container">
+                        <div class="leerdoelen-header">
+                            <h3 class="leerdoelen-title">Na deze module kun je:</h3>
+                        </div>
+                        <div class="leerdoelen-grid">
+                            ${leerdoelen.map((leerdoel, index) => `
+                                <div class="leerdoel-item">
+                                    <div class="leerdoel-checkmark">✓</div>
+                                    <div class="leerdoel-content">
+                                        <p>${leerdoel}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ${footerHtml}
+                    </div>
+                `;
+                break;
             case 'ethical-reflection-grid':
                 html += `<div class="ethical-reflection-grid">`;
                 block.kaarten.forEach(kaart => {

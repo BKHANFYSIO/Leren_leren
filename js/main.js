@@ -20,6 +20,9 @@ async function initializeElearning() {
         }
         const config = await response.json();
 
+        // Maak config globaal beschikbaar voor dynamische content
+        window.elearningConfig = config;
+
         // Initialiseer globale variabelen voor andere scripts
         if (typeof initializeGlobals === 'function') {
             initializeGlobals(config);
@@ -144,6 +147,9 @@ function populateUI(config) {
 async function initializeDevMode() {
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         const devButton = document.getElementById('dev-mode-button');
+        const styleguideButton = document.getElementById('styleguide-button');
+        const promptsButton = document.getElementById('prompts-button');
+        
         if (devButton) {
             devButton.style.display = 'inline-block';
             devButton.addEventListener('click', async () => {
@@ -189,6 +195,20 @@ async function initializeDevMode() {
                 } catch (error) {
                     console.error('Fout bij laden van interactievoorbeelden:', error);
                 }
+            });
+        }
+        
+        if (styleguideButton) {
+            styleguideButton.style.display = 'inline-block';
+            styleguideButton.addEventListener('click', () => {
+                window.open('stijlgids.html', '_blank');
+            });
+        }
+        
+        if (promptsButton) {
+            promptsButton.style.display = 'inline-block';
+            promptsButton.addEventListener('click', () => {
+                window.open('prompts.html', '_blank');
             });
         }
     }

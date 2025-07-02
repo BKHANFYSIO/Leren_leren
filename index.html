@@ -5,16 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-learning Module</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+    ⚠️  CSS LOADING STRATEGIE
+    
+    Alle CSS component bestanden worden hier geladen voor optimale performance.
+    VOEG GEEN @import statements toe aan styles.css - gebruik alleen deze <link> tags!
+    
+    styles.css bevat alleen CSS variabelen en algemene styling.
+    -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components/header.css">
+    
+    <!-- Component CSS bestanden (alfabetisch geordend voor overzicht) -->
+    <link rel="stylesheet" href="css/components/afsluiting.css">
+    <link rel="stylesheet" href="css/components/audio.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/content-blocks.css">
     <link rel="stylesheet" href="css/components/footer.css">
-    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/header.css">
     <link rel="stylesheet" href="css/components/images.css">
+    <link rel="stylesheet" href="css/components/interactive.css">
     <link rel="stylesheet" href="css/components/layout.css">
-    <link rel="stylesheet" href="css/components/video.css">
+    <link rel="stylesheet" href="css/components/leerdoelen.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
     <link rel="stylesheet" href="css/components/process-flow.css">
-    <link rel="stylesheet" href="css/components/search.css">
     <link rel="stylesheet" href="css/components/quiz.css">
+    <link rel="stylesheet" href="css/components/search.css">
+    <link rel="stylesheet" href="css/components/sidebar.css">
+    <link rel="stylesheet" href="css/components/stijlgids.css">
+    <link rel="stylesheet" href="css/components/video.css">
     <link rel="icon" href="images/Blijvende_afb/favicon-HAN.ico" type="image/x-icon">
 </head>
 <body>
@@ -70,6 +91,8 @@
                             <div id="searchResults" class="search-results"></div>
                         </div>
                         <button id="dev-mode-button" class="button button-secondary" style="display:none;">Interacties Testen</button>
+                        <button id="styleguide-button" class="button button-secondary" style="display:none; margin-left: 10px;">Stijlgids</button>
+                        <button id="prompts-button" class="button button-secondary" style="display:none; margin-left: 10px;">Prompts</button>
                     </div>
                 </header>
                 <main class="container">
@@ -112,11 +135,11 @@
                 <h2>Wat je moet weten over deze e-learning</h2>
             </div>
             <div class="modal-body">
-                <p>Fijn dat je gebruikmaakt van deze e-learning module! Hieronder vind je een paar belangrijke punten over de werking van deze site.</p>
+                <p>Fijn dat je gebruikmaakt van deze e-learning! Hieronder vind je een paar belangrijke punten over de werking van deze site.</p>
                 
                 <h3>Voortgangsmeting</h3>
                 <ul>
-                    <li><strong>Jouw voortgang wordt lokaal opgeslagen:</strong> De module houdt bij welke hoofdstukken je hebt voltooid. Dit gebeurt volledig op jouw eigen computer, in de opslag van je browser.</li>
+                    <li><strong>Jouw voortgang wordt lokaal opgeslagen:</strong> De elearning houdt bij welke hoofdstukken je hebt voltooid. Dit gebeurt volledig op jouw eigen computer, in de opslag van je browser.</li>
                     <li><strong>Privacy gewaarborgd:</strong> De HAN of andere partijen hebben géén inzicht in jouw persoonlijke voortgang.</li>
                     <li><strong>Niet overdraagbaar:</strong> Omdat de voortgang lokaal wordt opgeslagen, is deze niet zichtbaar als je overstapt naar een ander apparaat (bijv. van laptop naar tablet).</li>
                     <li><strong>Voortgang wissen:</strong> Met de knop "Wis Alle Voortgang" in de zijbalk kun je alle opgeslagen voortgangsdata permanent verwijderen.</li>

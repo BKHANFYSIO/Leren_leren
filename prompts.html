@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompts E-learning</title>
+    <link rel="icon" href="images/icons/lightbulb-on.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components/stijlgids.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/sidebar.css">
+    <link rel="stylesheet" href="css/components/layout.css">
+    <style>
+        body { 
+            background-color: #f9fafb;
+        }
+        .prompt-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+            padding-bottom: 10px;
+        }
+        .prompt-title {
+            color: var(--primary-purple);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        .copy-btn {
+            background: var(--primary-purple);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        .copy-btn:hover {
+            background: var(--secondary-purple);
+        }
+        .copy-btn.copied {
+            background: var(--success-green);
+        }
+        .prompt-content {
+            background: #f8f9fa;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .prompt-description {
+            color: var(--text-medium);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .documentation-section {
+            background: #e8f4fd;
+            border: 1px solid #b3d9ff;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        .documentation-header {
+            background: #d1ecf1;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #b3d9ff;
+        }
+        .documentation-header:hover {
+            background: #c3e6ec;
+        }
+        .documentation-title {
+            font-weight: 600;
+            color: #0c5460;
+            margin: 0;
+        }
+        .documentation-toggle {
+            color: #0c5460;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        .documentation-toggle.expanded {
+            transform: rotate(90deg);
+        }
+        .documentation-content {
+            display: none;
+            padding: 15px;
+        }
+        .documentation-content.expanded {
+            display: block;
+        }
+        .doc-file {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .doc-file-header {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .doc-file-name {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #495057;
+            font-weight: 500;
+        }
+        .doc-copy-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background-color 0.3s;
+        }
+        .doc-copy-btn:hover {
+            background: #0056b3;
+        }
+        .doc-copy-btn.copied {
+            background: var(--success-green);
+        }
+        .doc-content {
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            white-space: pre-wrap;
+            background: #f8f9fa;
+            color: #495057;
+        }
+        .doc-loading {
+            padding: 10px;
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+        .doc-error {
+            padding: 10px;
+            color: #dc3545;
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 3px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-layout">
+        <div class="sticky-wrapper">
+            <div class="sidebar-nav" id="sidebarNav">
+              <div class="sidebar-header">
+                <img src="images/Blijvende_afb/han_logo_streep.svg" alt="HAN logo" class="sidebar-logo">
+                <span class="sidebar-title">AI Prompts</span>
+                <button class="sidebar-hamburger" id="sidebarHamburger" aria-label="Toon navigatie">
+                  <span></span><span></span><span></span>
+                </button>
+              </div>
+              <ul class="sidebar-chapters" id="sidebarChaptersPrompts">
+                <li class="sidebar-chapter active">
+                    <a href="#workflow-tips" class="chapter-title">Workflow Tips</a>
+                </li>
+                <li class="sidebar-chapter">
+                    <a href="#workflow-a" class="chapter-title">Workflow A: Contentcreatie</a>
+                </li>
+                <li class="sidebar-chapter">
+                    <a href="#workflow-b" class="chapter-title">Workflow B: Snel Beheer</a>
+                </li>
+                <li class="sidebar-chapter">
+                    <a href="#content-review" class="chapter-title">Content Review</a>
+                </li>
+                <li class="sidebar-chapter">
+                    <a href="#technische-review" class="chapter-title">Technische Review</a>
+                </li>
+                <li class="sidebar-chapter">
+                    <a href="#kwaliteitscontrole" class="chapter-title">Kwaliteitscontrole</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="content-wrapper">
+                <header>
+                    <div class="header-content" style="text-align: center;">
+                        <h1>AI Prompts E-learning</h1>
+                        <button onclick="window.location.href='index.html'" class="button button-primary" style="margin-top: 15px;">
+                            Terug naar E-learning
+                        </button>
+                    </div>
+                </header>
+                <main class="container">
+                    <section id="workflow-tips" class="section">
+                        <h2 class="chapter-main-title">Workflow Tips & Best Practices</h2>
+                        <p class="stijlgids-intro">Praktische werkwijzen en tips voor het effectief gebruiken van AI tools bij e-learning ontwikkeling.</p>
+                        
+                        <div id="workflow-tips-content">
+                                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                                
+                                <!-- Media & Materiaal Beheer -->
+                                <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <div style="background: #f3e5f5; padding: 8px; border-radius: 50%; margin-right: 12px;">
+                                            <span style="font-size: 20px;">📁</span>
+                                        </div>
+                                        <h4 style="margin: 0; color: var(--primary-purple); font-size: 1.1em;">Media & Materiaal Beheer</h4>
+                                    </div>
+                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+                                        <li>Organiseer per hoofdstuk of onderwerp</li>
+                                        <li>Noteer bronnen en copyright info</li>
+                                        <li>Bewaar video links (YouTube, Vimeo)</li>
+                                        <li>Maak screenshots voor later gebruik</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Research & Input -->
+                                <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <div style="background: #e3f2fd; padding: 8px; border-radius: 50%; margin-right: 12px;">
+                                            <span style="font-size: 20px;">🔍</span>
+                                        </div>
+                                        <h4 style="margin: 0; color: var(--primary-purple); font-size: 1.1em;">Research & Input</h4>
+                                    </div>
+                                    <div style="margin-bottom: 12px;">
+                                        <strong style="color: #1976d2;">DeepResearch</strong>
+                                        <p style="margin: 4px 0 0 0; font-size: 0.9em; color: #666;">Brede verkenning, actuele ontwikkelingen, statistieken</p>
+                                    </div>
+                                    <div>
+                                        <strong style="color: #1976d2;">NotebookLM</strong>
+                                        <p style="margin: 4px 0 0 0; font-size: 0.9em; color: #666;">Concrete content uit specifieke bronnen</p>
+                                    </div>
+                                </div>
+
+                                <!-- Podcast Generatie -->
+                                <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <div style="background: #fff3e0; padding: 8px; border-radius: 50%; margin-right: 12px;">
+                                            <span style="font-size: 20px;">🎙️</span>
+                                        </div>
+                                        <h4 style="margin: 0; color: var(--primary-purple); font-size: 1.1em;">Podcast Generatie</h4>
+                                    </div>
+                                    <div style="margin-bottom: 12px;">
+                                        <strong style="color: #f57c00;">1. JSON → MD</strong>
+                                        <p style="margin: 4px 0 0 0; font-size: 0.9em; color: #666;">Converteer hoofdstukken naar Markdown</p>
+                                    </div>
+                                    <div>
+                                        <strong style="color: #f57c00;">2. NotebookLM</strong>
+                                        <p style="margin: 4px 0 0 0; font-size: 0.9em; color: #666;">Upload MD voor podcast generatie</p>
+                                    </div>
+                                </div>
+
+                                <!-- AI Tool Organisatie -->
+                                <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <div style="background: #f1f8e9; padding: 8px; border-radius: 50%; margin-right: 12px;">
+                                            <span style="font-size: 20px;">📌</span>
+                                        </div>
+                                        <h4 style="margin: 0; color: var(--primary-purple); font-size: 1.1em;">AI Tool Organisatie</h4>
+                                    </div>
+                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+                                        <li><strong>Pin Stap 1:</strong> Voor overzicht tussen projecten</li>
+                                        <li><strong>Pin Stap 2:</strong> Per hoofdstuk voor context</li>
+                                        <li><strong>Naamgeving:</strong> "E-learning [ONDERWERP] - H3"</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Iteratieve Workflow -->
+                                <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <div style="background: #fce4ec; padding: 8px; border-radius: 50%; margin-right: 12px;">
+                                            <span style="font-size: 20px;">🔄</span>
+                                        </div>
+                                        <h4 style="margin: 0; color: var(--primary-purple); font-size: 1.1em;">Iteratieve Workflow</h4>
+                                    </div>
+                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+                                        <li>Begin met cursusstructuur (breed)</li>
+                                        <li>Werk hoofdstukken flexibel uit</li>
+                                        <li>Gebruik afgeronde H als referentie</li>
+                                        <li>Review regelmatig samenhang</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            
+                            <!-- Pro Tip apart -->
+                            <div style="background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%); border: 1px solid #4caf50; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center;">
+                                    <span style="font-size: 24px; margin-right: 12px;">💡</span>
+                                    <div>
+                                        <strong style="color: #2e7d32; font-size: 1.1em;">Pro Tip</strong>
+                                        <p style="margin: 4px 0 0 0; color: #2e7d32;">Start elke AI conversatie met relevante context bestanden (stijlgids, bestaande hoofdstukken, cursusstructuur) voor optimale consistentie.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="prompt-container">
+                                 <div class="prompt-header">
+                                     <h3 class="prompt-title">JSON naar Markdown Conversie</h3>
+                                     <button class="copy-btn" onclick="copyPrompt(this, 'prompt-json-to-md')">Kopieer</button>
+                                 </div>
+                                 <p class="prompt-description">Converteer een JSON hoofdstuk naar een Markdown bestand voor gebruik in NotebookLM.</p>
+                                 
+                                 <div class="documentation-section">
+                                     <div class="documentation-header" onclick="toggleDocumentation(this)">
+                                         <h4 class="documentation-title">📋 Benodigde Documentatie</h4>
+                                         <span class="documentation-toggle">▶</span>
+                                     </div>
+                                     <div class="documentation-content">
+                                         <div style="padding: 12px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 4px;">
+                                             <strong>📎 JSON Bestand als Bijlage:</strong><br>
+                                             Het complete JSON bestand van het hoofdstuk moet als bijlage worden toegevoegd aan je AI conversatie. 
+                                             Kopieer de inhoud van <code>content/hoofdstuk[NUMMER].json</code> en plak deze in de placeholder hieronder.
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="prompt-content" id="prompt-json-to-md">Converteer het volgende JSON hoofdstuk naar een overzichtelijk Markdown (.md) bestand dat geschikt is voor NotebookLM podcast generatie.
+
+**Structuur voor de Markdown output:**
+- Begin met de hoofdstuktitel als H1 (#)  
+- Converteer section-title naar H2 (##)
+- Converteer content-subtitle naar H3 (###)
+- Converteer content-text naar gewone paragrafen
+- Zet lijstjes om naar Markdown bullets (-)
+- Converteer andere content types naar leesbare tekst
+- Voeg afbeelding beschrijvingen toe waar relevant
+- Negeer dividers en andere layout elementen
+
+**JSON hoofdstuk om te converteren:**
+---
+[HIER PLAK JE HET COMPLETE JSON BESTAND VAN EEN HOOFDSTUK]
+---
+
+Geef alleen de Markdown output terug, geen uitleg.</div>
+                             </div>
+
+                             <div style="margin-top: 20px;">
+                                 <h3 style="color: var(--primary-purple); margin-bottom: 15px; font-size: 1.3em;">🎙️ NotebookLM Podcast Prompts</h3>
+                                 
+                                 <div class="prompt-container">
+                                     <div class="prompt-header">
+                                         <h3 class="prompt-title">Podcast Prompt - Eerste Hoofdstuk</h3>
+                                         <button class="copy-btn" onclick="copyPrompt(this, 'prompt-podcast-hoofdstuk1')">Kopieer</button>
+                                     </div>
+                                     <p class="prompt-description">Voor het genereren van de openingspodcast (Hoofdstuk 1) in NotebookLM.</p>
+                                     <div class="prompt-content" id="prompt-podcast-hoofdstuk1">Genereer een podcast voor dit eerste hoofdstuk met de volgende specificaties:
+
+**Opening:**
+- Begin met een warme welkom: "Welkom studenten fysiotherapie van de Hogeschool van Arnhem en Nijmegen"
+- Introduceer de e-learning over [ONDERWERP OF TITEL] en het belang van dit onderwerp voor fysiotherapie studenten
+- Maak duidelijk wat studenten kunnen verwachten van deze podcast serie
+
+**Inhoud:**
+- Bespreek alle onderwerpen uit dit hoofdstuk zeer gedetailleerd
+- Leg complexe concepten uit op een manier die aanspreekt bij 18-jarige HBO studenten
+- Gebruik praktijkvoorbeelden die relevant zijn voor fysiotherapie
+- Zorg voor een enthousiasmerende en toegankelijke toon
+
+**Afsluiting:**
+- Verwijs naar het volgende hoofdstuk
+- Moedig studenten aan om actief deel te nemen aan de interacties in de e-learning
+
+**Algemene instructies:**
+- Doelgroep: 18-jarige eerstejaars HBO fysiotherapie studenten
+- Toon: Professioneel maar toegankelijk, motiverend en praktijkgericht
+- Duur: Voldoende tijd voor alle details, niet gehaast
+- Spreek studenten direct aan met "jullie" en "je"</div>
+                                 </div>
+
+                                 <div class="prompt-container">
+                                     <div class="prompt-header">
+                                         <h3 class="prompt-title">Podcast Prompt - Vervolghoofdstukken</h3>
+                                         <button class="copy-btn" onclick="copyPrompt(this, 'prompt-podcast-vervolg')">Kopieer</button>
+                                     </div>
+                                     <p class="prompt-description">Voor het genereren van podcasts voor hoofdstuk 2 en verder in NotebookLM.</p>
+                                     <div class="prompt-content" id="prompt-podcast-vervolg">Genereer een podcast voor hoofdstuk [NUMMER] met de volgende specificaties:
+
+**Opening:**
+- Begin met: "Welkom terug bij hoofdstuk [NUMMER] van onze e-learning over [ONDERWERP]"
+- Geef een korte recap van het vorige hoofdstuk
+- Introduceer het onderwerp van dit hoofdstuk en waarom het belangrijk is
+
+**Inhoud:**
+- Bespreek alle onderwerpen uit dit hoofdstuk zeer gedetailleerd
+- Maak verbindingen met eerder behandelde concepten waar relevant
+- Gebruik praktijkvoorbeelden specifiek voor fysiotherapie studenten
+- Houd de toon enthousiasmeren en betrokken
+
+**Afsluiting:**
+- Maak een brug naar het volgende hoofdstuk (indien van toepassing)
+- Verwijs naar de praktische oefeningen en interacties in de e-learning
+
+**Algemene instructies:**
+- Doelgroep: 18-jarige eerstejaars HBO fysiotherapie studenten
+- Toon: Professioneel maar toegankelijk, motiverend en praktijkgericht
+- Duur: Voldoende tijd voor alle details, niet gehaast
+- Spreek studenten direct aan met "jullie" en "je"</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </section>
+
+                    <section id="workflow-a" class="section">
+                        <h2 class="chapter-main-title">Workflow A: Contentcreatie met Externe Chatbots</h2>
+                        <p class="stijlgids-intro">Deze workflow is opgesplitst in drie stappen: van concept tot definitieve code. Het is de meest robuuste methode voor het genereren van hoogwaardige content met een externe AI zoals ChatGPT of Claude.</p>
+                        
+                        <div id="workflow-a-content">
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Stap 1: Cursusontwerp (Conceptfase)</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-cursusontwerp')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: Een compleet concept voor een nieuwe e-learning cursus genereren, inclusief titel, hoofdstukken en een korte inhoudsopgave.</p>
+                                <div class="prompt-content" id="prompt-cursusontwerp">**Rol:** Gedraag je als een ervaren Instructional Designer die mij helpt mijn ideeën voor een e-learning cursus vorm te geven.
+
+**Werkwijze:** Werk iteratief door steeds 1-2 gerichte vragen te stellen om mijn visie helder te krijgen. Geef kleine suggesties en vraag om feedback voordat je verder gaat.
+
+**Start met:** "Ik wil een e-learning ontwikkelen over [ONDERWERP] voor [DOELGROEP]."
+
+**Verken samen:**
+- Praktische randvoorwaarden (tijd, niveau, omvang)
+- Inhoudelijke doelen en must-haves
+- Doelgroep specifieke behoeften
+- Gewenste leerroute
+
+**Einddoel:** Een complete structuur met:
+- Hoofdtitel voor de e-learning
+- Leerdoelen op cursusniveau
+- Hoofdstukken in logische volgorde
+- Per hoofdstuk: onderwerpen in bullets + belangrijke aanwijzingen
+- Geen inhoudelijke uitwerking, alleen structuur</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Stap 2: Iteratieve Content Creatie (Schrijf- en Verfijnfase)</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-content-creatie')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: Samen met de AI visueel aantrekkelijke en educatief sterke content schrijven voor één hoofdstuk. De focus ligt op het creëren van een boeiende leerervaring met de juiste mix van tekst, visuele elementen en interactieve componenten.</p>
+                                
+                                <div class="documentation-section">
+                                    <div class="documentation-header" onclick="toggleDocumentation(this)">
+                                        <h4 class="documentation-title">📋 Benodigde Documentatie</h4>
+                                        <span class="documentation-toggle">▶</span>
+                                    </div>
+                                    <div class="documentation-content">
+                                        <div class="doc-file" data-file="documentatie/stijlgids_voor_ai.md">
+                                            <div class="doc-file-header">
+                                                <span class="doc-file-name">stijlgids_voor_ai.md</span>
+                                                <button class="doc-copy-btn" onclick="copyDocumentation(this, this.closest('.doc-file'))">Kopieer</button>
+                                            </div>
+                                            <div class="doc-content">Klik op uitklappen om de documentatie te laden...</div>
+                                        </div>
+                                        <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 4px;">
+                                            <strong>📋 Extra benodigde context:</strong><br>
+                                            • <strong>Resultaat van Stap 1:</strong> Cursusontwerp (globale structuur en hoofdstukbeschrijvingen)<br>
+                                            • <strong>Bestaande hoofdstukken:</strong> JSON bestanden van reeds ontwikkelde hoofdstukken<br>
+                                            • <strong>Optioneel:</strong> Screenshots van bestaande hoofdstukken voor visuele balans<br>
+                                            <em style="color: #856404;">💡 Deze kunnen niet automatisch gekopieerd worden - voeg handmatig toe aan je AI conversatie</em>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prompt-content" id="prompt-content-creatie">**Rol:** Gedraag je als een ervaren E-learning Content Specialist en Visual Designer.
+
+**Taak:** Laten we samen, stap voor stap, visueel aantrekkelijke en educatief sterke content ontwikkelen voor het volgende hoofdstuk. We gaan dit systematisch opbouwen tot een perfect afgewerkt hoofdstuk.
+
+* **Hoofdstuk:** "Hoofdstuk [NUMMER]: [TITEL VAN HET HOOFDSTUK]"
+* **Inhoudelijke briefing:** "[KOPIEER HIER DE KORTE BESCHRIJVING VAN DIT HOOFDSTUK UIT STAP 1]"
+
+**Belangrijke regels voor het ontwerpproces:**
+
+1. **Schrijfstijl:** Toegankelijk en professioneel, direct en persoonlijk (spreek de lezer aan met 'je'), praktijkgericht en concreet, gestructureerd en duidelijk, activerend en motiverend.
+
+2. **Visuele Aantrekkelijkheid:** 
+   - Maak actief gebruik van diverse visuele componenten uit de stijlgids
+   - Zorg voor een goede balans tussen tekst en visuele elementen
+   - Gebruik componenten zoals grids, kaarten, afbeeldingen, video's, statistieken en infoblokken
+   - Denk aan variatie: vermijd lange lappen tekst, wissel af met visuele componenten
+
+3. **Multimedia Integratie:**
+   - Stel voor waar afbeeldingen of video's de content kunnen versterken
+   - Geef specifieke suggesties voor het type visueel materiaal
+   - Zoek actief naar passende afbeeldingen en video's online en deel concrete links
+   - Voor video's: bij voorkeur Nederlands, maar Engels is ook acceptabel als de inhoud waardevol is
+   - Als je geen specifieke links vindt, beschrijf precies wat voor visueel materiaal nodig is zodat ik het zelf kan zoeken
+
+4. **Hoofdstukstructuur (Verplicht te volgen):**
+   - Start altijd met een `info-card` als hoofdstuk opening
+   - Elke sectie: `section-title` → `content-text` (context) → content componenten
+   - Voor subsecties: gebruik `content-subtitle` tussen `section-title` en componenten
+   - Gebruik `content-text` voor introductie en uitleg vóór complexe componenten
+   - Plaats `divider` tussen meerdere componenten binnen een sectie (niet bij enkele component, niet aan sectie-einde)
+   - **Passende omvang:** 2-6 hoofdsecties per hoofdstuk, afgestemd op inhoud (zie stijlgids voor details)
+
+5. **Stap-voor-stap Aanpak:**
+   - Vraag mij eerst alle informatie die je nodig hebt voordat je begint
+   - Maak eerst een globale structuur: welke secties moeten er komen met beknopte beschrijving van de inhoud per sectie
+   - Vraag om goedkeuring van deze structuur voordat je verder gaat
+   - Bouw daarna het hoofdstuk sectie voor sectie uit
+   - Vraag na elke sectie om feedback voordat je verder gaat
+   - Stel actief voor welke visuele componenten het beste passen
+
+**BELANGRIJK: Begin door mij de volgende vragen te stellen:**
+
+**Context & Samenhang:**
+- Heb je de globale structuur en beschrijving van de hele e-learning uit Stap 1? Kun je deze delen?
+- Welke hoofdstukken zijn er al (concept) af, en wat is hun focus? 
+- Waar past dit hoofdstuk in het totaalplaatje? Wat wordt er vóór dit hoofdstuk behandeld?
+- Wat komt er ná dit hoofdstuk? Waarop moet dit hoofdstuk voorbereiden?
+- Zijn er specifieke concepten die al in andere hoofdstukken zijn geïntroduceerd en hier kunnen worden voortgebouwd?
+
+**Content & Materialen:**
+- Heb je al specifieke afbeeldingen, video's of andere visuele materialen die zeker gebruikt moeten worden?
+- Zijn er specifieke voorbeelden, casussen of praktijksituaties die je wilt uitlichten?
+- Welke visuele stijl past bij dit onderwerp (professioneel/speels, modern/klassiek, etc.)?
+- Zijn er specifieke leerdoelen of praktische vaardigheden die extra nadruk moeten krijgen?
+- Heb je een voorkeur voor bepaalde typen visuele componenten uit de stijlgids?
+
+**⚠️ SPECIALE INSTRUCTIE VOOR HOOFDSTUK 1:**
+Als dit het introductie/eerste hoofdstuk betreft, zorg er dan voor dat deze VERPLICHTE componenten behouden blijven:
+- **`leerdoelen-dynamic`** component (toont automatisch alle leerdoelen uit config.json)
+- **"Klaar voor de start?" sectie** als afsluiting van het hoofdstuk
+Deze zijn essentieel voor de leerervaring en mogen NOOIT worden weggelaten.
+
+**Zodra ik deze vragen heb beantwoord, ga ik eerst de samenhang met andere hoofdstukken analyseren en vervolgens een globale structuur maken van dit hoofdstuk. Na jouw goedkeuring van deze structuur beginnen we met het sectie-voor-sectie uitwerken, startend met een visueel aantrekkelijke inleiding die goed aansluit bij de voorgaande hoofdstukken.**</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Stap 3: JSON Generatie (Conversiefase)</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-json-generatie')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: De definitieve tekst uit Stap 2 omzetten naar een foutloos, compleet JSON-codeblok.</p>
+                                
+                                <div class="documentation-section">
+                                    <div class="documentation-header" onclick="toggleDocumentation(this)">
+                                        <h4 class="documentation-title">📋 Benodigde Documentatie</h4>
+                                        <span class="documentation-toggle">▶</span>
+                                    </div>
+                                    <div class="documentation-content">
+                                        <div class="doc-file" data-file="documentatie/stijlgids_voor_ai.md">
+                                            <div class="doc-file-header">
+                                                <span class="doc-file-name">stijlgids_voor_ai.md</span>
+                                                <button class="doc-copy-btn" onclick="copyDocumentation(this, this.closest('.doc-file'))">Kopieer</button>
+                                            </div>
+                                            <div class="doc-content">Klik op uitklappen om de documentatie te laden...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prompt-content" id="prompt-json-generatie">**Rol:** Gedraag je als een foutloze JSON Expert.
+
+**Taak:** Converteer de volgende, definitieve tekst naar een **volledig en valide JSON-object**.
+
+**Context en Strikte Regels:**
+1. Gebruik de exacte "type"-namen en JSON-structuren uit de bijgevoegde technische specificatie `documentatie/stijlgids_voor_ai.md`.
+2. Volg de hoofdstukstructuur: zorg dat er een logische opbouw is met info-card, section-titles, content-text en juiste divider plaatsing.
+3. Verander niets aan de inhoud van de tekst.
+4. Alleen de content array, geen interacties - die worden apart toegevoegd.
+5. Geen hoofdstuk titel bovenaan - code begint direct met `"content": [` (hoofdstuktitels worden automatisch gegenereerd vanuit config.json).
+6. Zorg ervoor dat de output alléén het JSON-codeblok is, zonder extra uitleg.
+
+---
+[HIER PLAATS JE DE DEFINITIEVE, GEFINALISEERDE TEKST UIT STAP 2]
+---</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="workflow-b" class="section">
+                        <h2 class="chapter-main-title">Workflow B: Snel Beheer met Cursor</h2>
+                        <p class="stijlgids-intro">Deze prompts zijn korter en bedoeld voor snelle, specifieke aanpassingen binnen de Cursor-omgeving.</p>
+                        
+                        <div id="workflow-b-content">
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">JSON Implementatie vanuit Workflow A</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-json-implementatie')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: Het JSON-resultaat uit Workflow A Stap 3 daadwerkelijk implementeren in het juiste hoofdstukbestand.</p>
+                                <div class="prompt-content" id="prompt-json-implementatie">Implementeer het volgende JSON-object in `content/hoofdstuk[NUMMER].json`. Vervang de volledige `content` array met onderstaande code:
+
+---
+[HIER PLAK JE HET COMPLETE JSON-OBJECT UIT WORKFLOW A STAP 3]
+---
+
+Zorg ervoor dat:
+- De bestaande interacties array behouden blijft
+- Alleen de content wordt vervangen
+- De JSON syntax correct blijft</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Direct JSON Creatie vanuit Stap 2 (Alternatief)</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-direct-json')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: Direct een JSON-bestand maken in Cursor vanuit het tekstresultaat van Workflow A Stap 2, zonder tussenliggende stap.</p>
+                                
+                                <div class="documentation-section">
+                                    <div class="documentation-header" onclick="toggleDocumentation(this)">
+                                        <h4 class="documentation-title">📋 Benodigde Documentatie</h4>
+                                        <span class="documentation-toggle">▶</span>
+                                    </div>
+                                    <div class="documentation-content">
+                                        <div class="doc-file" data-file="documentatie/stijlgids_voor_ai.md">
+                                            <div class="doc-file-header">
+                                                <span class="doc-file-name">stijlgids_voor_ai.md</span>
+                                                <button class="doc-copy-btn" onclick="copyDocumentation(this, this.closest('.doc-file'))">Kopieer</button>
+                                            </div>
+                                            <div class="doc-content">Klik op uitklappen om de documentatie te laden...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prompt-content" id="prompt-direct-json">**Rol:** Gedraag je als een foutloze JSON Expert die werkt binnen Cursor.
+
+**Taak:** Converteer de volgende tekst direct naar een valide JSON content array en implementeer deze in `content/hoofdstuk[NUMMER].json`.
+
+**Strikte Regels:**
+- Bekijk ALTIJD eerst `documentatie/stijlgids_voor_ai.md` en houd je hier precies aan
+- ⚠️ **HOOFDSTUK 1 SPECIALE REGEL:** Als dit hoofdstuk 1 betreft, behoud ALTIJD de `leerdoelen-dynamic` component en "Klaar voor de start?" sectie
+- Volg de hoofdstukstructuur: info-card opening → section-title → content-text → (content-subtitle voor subsecties) → componenten → dividers waar nodig
+- Passende omvang: 2-6 hoofdsecties (section-titles) per hoofdstuk, afgestemd op inhoud voor optimale leesbaarheid
+- Gebruik de juiste syntax ZONDER FOUTEN (bijvoorbeeld `content-text` niet `text`, `tekst` niet `content`)
+- Als je twijfelt over welk content type te gebruiken, vraag het mij eerst met 1-2 concrete suggesties (bijv. "Moet dit een `concept-cards` of `icon-card-grid` worden? Een icon zou de uitleg kunnen versterken.")
+- Alleen de content array, geen interacties
+- Geen hoofdstuk titel bovenaan - code begint direct met `"content": [` (hoofdstuktitels worden automatisch gegenereerd vanuit config.json)
+- Behoud de bestaande interacties array
+
+**Te converteren tekst:**
+---
+[HIER PLAK JE DE GEFINALISEERDE TEKST UIT WORKFLOW A STAP 2]
+---</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Interacties Toevoegen aan een Hoofdstuk</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-interacties')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: Snel een of meerdere interactieve elementen toevoegen aan een bestaand hoofdstuk.</p>
+                                <div class="prompt-content" id="prompt-interacties">Voeg de volgende interactie(s) toe aan de `interacties` array in `content/hoofdstuk[NUMMER].json`. Zorg voor correcte en unieke ID's volgens de naamgevingsconventie `h{hoofdstuknummer}_{type}_{volgnummer}`.
+
+---
+**Type:** [mc / reflection / dragdrop / etc.]
+**Vraag:** "[DE VRAAG DIE JE WILT STELLEN]"
+**Details:**
+[VOEG HIER DE SPECIFIEKE DETAILS TOE, BIJV. OPTIES VOOR EEN MC-VRAAG]
+- Optie 1
+- Optie 2
+- Correct antwoord: 2
+- Feedback: "Goed zo!"
+---
+(Herhaal bovenstaand blok voor elke interactie die je wilt toevoegen)</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">De Eindquiz Vullen</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-eindquiz')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: Snel de vragen en antwoorden van de afsluitende quiz definiëren of bijwerken.</p>
+                                <div class="prompt-content" id="prompt-eindquiz">Vervang de volledige inhoud van `content/afsluitquiz.json` met de onderstaande vragen. Zorg voor correcte en unieke ID's (`quiz_mc_{volgnummer}`).
+
+---
+**Vraag 1:** "[TEKST VAN DE EERSTE VRAAG]"
+**Opties:**
+1. [Optie 1]
+2. [Optie 2]
+3. [Optie 3]
+4. [Optie 4]
+**Correct antwoord:** [Nummer van het correcte antwoord]
+**Feedback:** "[Feedback die na het antwoord wordt getoond]"
+---
+(Herhaal het vraag-blok voor alle vragen die je wilt toevoegen)</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="content-review" class="section">
+                        <h2 class="chapter-main-title">Content Review</h2>
+                        <p class="stijlgids-intro">Prompts voor het reviewen van content consistentie, stijl en doelgroep-aansluiting.</p>
+                        
+                        <div id="content-review-content">
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Consistentie Check tussen Hoofdstukken</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-consistentie')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Controleert of alle hoofdstukken consistent geschreven zijn in stijl, tone of voice en structuur.</p>
+                                <div class="prompt-content" id="prompt-consistentie">**Rol:** Gedraag je als een ervaren E-learning Content Reviewer en Instructional Designer.
+
+**Taak:** Analyseer de consistentie tussen de volgende hoofdstukken van deze e-learning en geef concrete feedback voor verbetering.
+
+**Doelgroep:** 18-jarige HBO studenten Fysiotherapie
+
+**Te reviewen aspecten:**
+1. **Tone of Voice Consistentie:**
+   - Is de aanspreekvorm consistent (consequent 'je' gebruiken)?
+   - Is de toon doorheen alle hoofdstukken gelijk (toegankelijk, motiverend, professioneel)?
+   - Worden studenten op dezelfde manier aangesproken en geactiveerd?
+
+2. **Structurele Consistentie:**
+   - Volgen alle hoofdstukken dezelfde opbouw (info-card opening, section-titles, etc.)?
+   - Is de lengte en diepgang van hoofdstukken evenwichtig verdeeld?
+   - Zijn er inconsistenties in het gebruik van visuele componenten?
+
+3. **Inhoudelijke Consistentie:**
+   - Sluiten hoofdstukken logisch op elkaar aan?
+   - Worden concepten consistent geïntroduceerd en herhaald?
+   - Zijn er tegenstrijdigheden in uitleg of voorbeelden?
+
+4. **Terminologie en Referenties:**
+   - Worden vakbegrippen consistent gebruikt en uitgelegd?
+   - Kloppen verwijzingen naar andere hoofdstukken?
+   - Is het taalniveau consistent toegankelijk voor 18-jarigen?
+
+**Lever op:**
+- Per hoofdstuk concrete verbeterpunten
+- Algemene aanbevelingen voor meer consistentie
+- Prioritering van de belangrijkste aanpassingen
+
+**Te reviewen hoofdstukken:** [HOOFDSTUKKEN OM TE REVIEWEN]
+
+Analyseer de consistentie tussen de bovenstaande hoofdstukken. Gebruik de JSON bestanden van deze hoofdstukken die je al hebt ontvangen.</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Doelgroep Aansluiting Check</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-doelgroep')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Controleert of de content goed aansluit bij 18-jarige fysiotherapie studenten.</p>
+                                <div class="prompt-content" id="prompt-doelgroep">**Rol:** Gedraag je als een expert in HBO-onderwijs en doelgroepanalyse, specifiek voor fysiotherapie studenten.
+
+**Taak:** Beoordeel of deze e-learning content optimaal aansluit bij de doelgroep: 18-jarige eerstejaars HBO studenten Fysiotherapie.
+
+**Specifieke aandachtspunten:**
+
+1. **Taal en Complexiteit:**
+   - Is het taalniveau toegankelijk voor 18-jarigen zonder deze stof infantiel te maken?
+   - Zijn complexe concepten voldoende uitgelegd zonder te simplistisch te worden?
+   - Worden vakspecifieke termen juist geïntroduceerd voor beginnende studenten?
+
+2. **Motivatie en Engagement:**
+   - Spreekt de content aan bij de levensfase en interesses van 18-jarigen?
+   - Zijn de voorbeelden relevant voor aankomende fysiotherapeuten?
+   - Voelt de content activerend en uitdagend (niet schoolmeesterachtig)?
+
+3. **Praktijkrelevantie:**
+   - Sluit de content aan bij wat studenten kunnen verwachten in hun toekomstige beroep?
+   - Zijn voorbeelden herkenbaar voor mensen die fysio gaan studeren?
+   - Wordt de link tussen theorie en praktijk duidelijk gemaakt?
+
+4. **Leervoorkeur Jongeren:**
+   - Is er voldoende visuele variatie en interactiviteit?
+   - Zijn tekstblokken niet te lang voor de aandachtsspanne?
+   - Worden verschillende leermodalities aangesproken?
+
+5. **Studiefase Aansluiting:**
+   - Past het bij het kennisniveau van eerstejaars studenten?
+   - Wordt er rekening gehouden met hun (nog) beperkte vakkennis?
+   - Sluit het aan bij hun studiemotivatie en loopbaanoriëntatie?
+
+**Lever op:**
+- Concrete verbeterpunten per hoofdstuk
+- Suggesties voor betere doelgroep aansluiting
+- Aanbevelingen voor engagerende elementen
+
+**Te beoordelen hoofdstukken:** [HOOFDSTUKKEN VOOR DOELGROEP ANALYSE]
+
+Beoordeel de doelgroep aansluiting van de bovenstaande hoofdstukken. Gebruik de JSON bestanden van deze hoofdstukken die je al hebt ontvangen.</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Verwijzingen en Samenhang Check</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-verwijzingen')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Controleert of verwijzingen tussen hoofdstukken kloppen en de samenhang logisch is.</p>
+                                <div class="prompt-content" id="prompt-verwijzingen">**Rol:** Gedraag je als een systematische Content Auditor voor e-learning materiaal.
+
+**Taak:** Controleer alle interne verwijzingen, samenhang en logische opbouw van deze e-learning.
+
+**Te controleren elementen:**
+
+1. **Interne Verwijzingen:**
+   - Kloppen alle verwijzingen naar andere hoofdstukken? (bijv. "In hoofdstuk 3 leer je...")
+   - Bestaan alle genoemde hoofdstukken daadwerkelijk?
+   - Zijn verwijzingen naar eerder behandelde concepten accuraat?
+
+2. **Conceptuele Opbouw:**
+   - Worden concepten geïntroduceerd voordat er naar verwezen wordt?
+   - Is er een logische volgorde in moeilijkheidsgraad?
+   - Worden bouwstenen uit eerdere hoofdstukken effectief hergebruikt?
+
+3. **Leerdoelen Samenhang:**
+   - Sluiten de hoofdstukken aan bij de algemene leerdoelen?
+   - Bouwen hoofdstukken logisch voort op elkaar?
+   - Wordt er verwezen naar hoe kennis uit verschillende hoofdstukken samenkomt?
+
+4. **Terminologie Consistentie:**
+   - Worden dezelfde termen gebruikt voor dezelfde concepten?
+   - Zijn definities consistent doorheen alle hoofdstukken?
+   - Worden afkortingen consistent geïntroduceerd en gebruikt?
+
+5. **Navigatie en Oriëntatie:**
+   - Weten studenten waar ze staan in het leerproces?
+   - Zijn er voldoende 'bruggetjes' tussen hoofdstukken?
+   - Wordt duidelijk hoe elk hoofdstuk bijdraagt aan het geheel?
+
+**Lever op:**
+- Lijst van incorrecte verwijzingen die aangepast moeten worden
+- Aanbevelingen voor betere samenhang
+- Suggesties voor verbeterde navigatie tussen hoofdstukken
+
+**Analysebereik:** [SCOPE VAN VERWIJZINGEN ANALYSE]
+
+                                Controleer verwijzingen en samenhang voor het opgegeven bereik. Gebruik de JSON bestanden (inclusief config.json) die je al hebt ontvangen.</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Tekstkwaliteit & Leesbaarheid Review</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-tekstkwaliteit')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Beoordeelt of teksten helder, toegankelijk en goed leesbaar zijn voor de doelgroep.</p>
+                                <div class="prompt-content" id="prompt-tekstkwaliteit">**Rol:** Gedraag je als een ervaren Tekstredacteur en Communicatie Expert, gespecialiseerd in onderwijsteksten voor HBO-studenten.
+
+**Taak:** Beoordeel de tekstkwaliteit en leesbaarheid van de volgende e-learning content voor optimale begrijpelijkheid bij 18-jarige HBO fysiotherapie studenten.
+
+**Analyseer systematisch:**
+
+1. **Zinsniveau:**
+   - Zijn zinnen te lang of complex (ideaal: 15-20 woorden)?
+   - Wordt actieve schrijfstijl gebruikt i.p.v. passieve constructies?
+   - Zijn er onnodig ingewikkelde zinsconstructies?
+   - Worden samengestelde zinnen helder opgebouwd?
+
+2. **Alinea-opbouw:**
+   - Zijn alinea's logisch opgebouwd (hoofdgedachte + ondersteuning)?
+   - Zijn alinea's niet te lang (ideaal: 3-5 zinnen)?
+   - Is er een duidelijke rode draad tussen alinea's?
+   - Worden transitiewoorden effectief gebruikt?
+
+3. **Woordkeuze & Jargon:**
+   - Worden vakbegrippen adequaat uitgelegd voor eerstejaars studenten?
+   - Is de woordkeuze concreet en specifiek i.p.v. abstract?
+   - Worden Nederlandse termen gebruikt waar mogelijk?
+   - Is het taalniveau passend bij CEFR B2-niveau?
+
+4. **Scanability & Visuele Hiërarchie:**
+   - Zijn teksten goed scanbaar met koppen en bullets?
+   - Is er voldoende witruimte tussen tekstblokken?
+   - Worden belangrijke punten visueel benadrukt?
+   - Is de informatie logisch gestructureerd?
+
+5. **Doelgroep Aansluiting:**
+   - Sluit de schrijfstijl aan bij 18-jarigen (niet kinderachtig, niet te formeel)?
+   - Worden relevante voorbeelden uit hun leefwereld gebruikt?
+   - Is de toon motiverend en activerend?
+   - Voelt de tekst persoonlijk en betrokken aan?
+
+6. **Cognitieve Belasting:**
+   - Wordt nieuwe informatie in hapklare brokken gepresenteerd?
+   - Zijn er niet teveel concepten per alinea?
+   - Worden complexe onderwerpen stap-voor-stap uitgelegd?
+   - Is er balans tussen informatie en verwerking?
+
+**Lever concrete feedback op:**
+- **Readability Score:** Schatting van leesniveau (A2/B1/B2/C1)
+- **Tekstoptimalisaties:** Specifieke suggesties per hoofdstuk
+- **Herformuleringen:** Voorbeelden van verbeterde zinnen
+- **Structuurverbeteringen:** Aanbevelingen voor betere tekstorganisatie
+- **Prioritering:** Welke aanpassingen hebben de grootste impact?
+
+**Te beoordelen hoofdstukken:** [HOOFDSTUKKEN VOOR TEKSTKWALITEIT ANALYSE]
+
+Beoordeel de tekstkwaliteit van de bovenstaande hoofdstukken. Gebruik de JSON bestanden van deze hoofdstukken die je al hebt ontvangen.</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="technische-review" class="section">
+                        <h2 class="chapter-main-title">Technische Review</h2>
+                        <p class="stijlgids-intro">Prompts voor het controleren van JSON structuur, componenten en technische implementatie.</p>
+                        
+                        <div id="technische-review-content">
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">JSON Structuur Validatie</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-json-validatie')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Controleert of JSON bestanden correct gestructureerd zijn volgens de stijlgids.</p>
+                                
+                                <div class="documentation-section">
+                                    <div class="documentation-header" onclick="toggleDocumentation(this)">
+                                        <h4 class="documentation-title">📋 Benodigde Documentatie</h4>
+                                        <span class="documentation-toggle">▶</span>
+                                    </div>
+                                    <div class="documentation-content">
+                                        <div class="doc-file" data-file="documentatie/stijlgids_voor_ai.md">
+                                            <div class="doc-file-header">
+                                                <span class="doc-file-name">stijlgids_voor_ai.md</span>
+                                                <button class="doc-copy-btn" onclick="copyDocumentation(this, this.closest('.doc-file'))">Kopieer</button>
+                                            </div>
+                                            <div class="doc-content">Klik op uitklappen om de documentatie te laden...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prompt-content" id="prompt-json-validatie">**Rol:** Gedraag je als een JSON Expert en Technical Reviewer voor e-learning systemen.
+
+**Taak:** Valideer de JSON structuur van de volgende hoofdstukbestanden tegen de technische specificaties in `documentatie/stijlgids_voor_ai.md`.
+
+**Controleer op:**
+
+1. **Syntactic Correctheid:**
+   - Is de JSON syntax volledig correct (haakjes, komma's, quotes)?
+   - Zijn er geen syntaxfouten die parsing zouden verhinderen?
+   - Zijn alle strings correct ge-escaped?
+
+2. **Structurele Conformiteit:**
+   - Volgen alle content items de juiste type-definities uit de stijlgids?
+   - Zijn verplichte velden aanwezig in elk content item?
+   - Worden alleen ondersteunde content types gebruikt?
+
+3. **ID Naamgeving:**
+   - Volgen alle interactie IDs het format: `h{nummer}_{type}_{volgnummer}`?
+   - Zijn alle IDs uniek binnen het bestand?
+   - Zijn er geen ID conflicten tussen bestanden?
+
+4. **Content Hiërarchie:**
+   - Is de hoofdstukstructuur logisch opgebouwd (info-card → section-title → content)?
+   - Worden dividers correct geplaatst (niet aan einde van secties)?
+   - Zijn er teveel of te weinig section-titles per hoofdstuk?
+
+5. **Data Integriteit:**
+   - Zijn alle benodigde arrays aanwezig (content, interacties)?
+   - Kloppen referenties naar afbeeldingen, audio bestanden?
+   - Zijn alle tekstvelden correct gevuld (geen lege strings waar content verwacht wordt)?
+
+**Specifieke Controles:**
+- Hoofdstuk openers: Elk hoofdstuk moet beginnen met een info-card
+- Interacties: Alle interacties moeten volledig gedefinieerd zijn
+- Media referenties: Alle bestandspaden moeten kloppen
+
+**Lever op:**
+- Lijst van gevonden JSON fouten per bestand
+- Suggesties voor structurele verbeteringen
+- Prioritering van kritieke vs. cosmetische issues
+
+**Te valideren bestanden:** [JSON BESTANDEN OM TE VALIDEREN]
+
+Valideer de JSON structuur van de bovenstaande bestanden. Gebruik de JSON bestanden die je al hebt ontvangen.</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Component Gebruik Optimalisatie</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-componenten')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Beoordeelt of de juiste componenten gebruikt worden voor optimale gebruikerservaring.</p>
+                                <div class="prompt-content" id="prompt-componenten">**Rol:** Gedraag je als een UX/UI Expert en E-learning Component Specialist.
+
+**Taak:** Analyseer het gebruik van content componenten en geef aanbevelingen voor betere gebruikerservaring en visuele impact.
+
+**Analyseer:**
+
+1. **Component Diversiteit:**
+   - Is er voldoende variatie in gebruikte componenten?
+   - Worden teveel of te weinig van hetzelfde type component gebruikt?
+   - Ontbreken kansen voor visueel aantrekkelijkere componenten?
+
+2. **Contextappropriëtce:**
+   - Worden componenten gebruikt in de juiste context?
+   - Zou een ander component type de boodschap beter overbrengen?
+   - Zijn complexe informatie appropriaat gevisualiseerd?
+
+3. **Leerbaarheid:**
+   - Ondersteunen de gekozen componenten het leerproces?
+   - Is er balans tussen tekst en visuele elementen?
+   - Worden verschillende leermodaliteiten adequaat aangesproken?
+
+4. **Responsive Design:**
+   - Werken alle componenten goed op mobiele apparaten?
+   - Zijn er componenten die problemen geven op kleinere schermen?
+   - Is de content toegankelijk op verschillende apparaten?
+
+5. **Interactiviteit:**
+   - Is er voldoende interactieve content per hoofdstuk?
+   - Zijn interacties zinvol geplaatst (niet te vroeg/laat)?
+   - Ontbreken kansen voor meer engagement?
+
+6. **CTML Compliance (Mayer's Multimedia Learning Theory):**
+   - **Coherence Principle:** Wordt irrelevant of afleidend materiaal vermeden?
+   - **Signaling Principle:** Worden essentiële elementen visueel benadrukt (highlighting, arrows, etc.)?
+   - **Redundancy Principle:** Wordt vermeden dat identieke informatie simultaan als tekst én audio wordt aangeboden?
+   - **Spatial Contiguity:** Staan gerelateerde tekst en visuals direct bij elkaar?
+   - **Temporal Contiguity:** Worden gerelateerde visuele en auditieve elementen tegelijkertijd gepresenteerd?
+   - **Segmenting Principle:** Kunnen learners complexe content in eigen tempo doorlopen?
+   - **Pre-training Principle:** Worden key concepten/vocabulaire geïntroduceerd voor complexe content?
+   - **Modality Effect:** Wordt bij complexe visuals de uitleg als audio gegeven i.p.v. on-screen tekst?
+   - **Personalization Principle:** Wordt conversational style gebruikt i.p.v. formal academic language?
+   - **Voice Principle:** Wordt bij audio content human voice gebruikt i.p.v. machine voice?
+
+**CTML-Specifieke Aanbevelingen:**
+- Compliance gaps per Mayer principe
+- Concrete implementatiesuggesties voor multimedia optimalisatie
+- Cognitive load reduction strategieën
+- Modaliteit optimalisatie per content type
+
+**Specifieke Aanbevelingen:**
+- Alternatieve componenten die beter zouden werken
+- Plaatsing van interactieve elementen
+- Verbetering van visuele hiërarchie
+- Optimalisatie voor verschillende apparaten
+
+**Lever op:**
+- Component-by-component analyse met verbeterpunten
+- Concrete suggesties voor component substitutie
+- Aanbevelingen voor betere visuele balans
+
+**Te analyseren hoofdstukken:** [HOOFDSTUKKEN VOOR COMPONENT ANALYSE]
+
+Analyseer het component gebruik van de bovenstaande hoofdstukken. Gebruik de JSON bestanden van deze hoofdstukken die je al hebt ontvangen.</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Performance en Laadtijd Check</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-performance')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Identificeert potentiële performance problemen en optimalisatie mogelijkheden.</p>
+                                <div class="prompt-content" id="prompt-performance">**Rol:** Gedraag je als een Web Performance Expert en Technical Auditor.
+
+**Taak:** Analyseer de technische aspecten van deze e-learning voor potentiële performance problemen en optimalisaties.
+
+**Controleer:**
+
+1. **Content Omvang:**
+   - Zijn hoofdstukken niet te lang (meer dan 6 section-titles)?
+   - Is er een goede balans in hoofdstuk lengtes?
+   - Ontbreekt content chunking waar nodig?
+
+2. **Media Optimalisatie:**
+   - Zijn afbeeldingsbestanden niet te groot?
+   - Worden de juiste bestandsformaten gebruikt?
+   - Zijn er veel media elementen in één hoofdstuk?
+
+3. **Interactie Complexiteit:**
+   - Zijn er teveel complexe interacties per hoofdstuk?
+   - Kunnen interacties geoptimaliseerd worden?
+   - Is er risico op memory leaks bij complexe componenten?
+
+4. **JSON Bestandsgrootte:**
+   - Zijn JSON bestanden niet onnodig groot?
+   - Kan content geoptimaliseerd worden zonder functionaliteit te verliezen?
+   - Zijn er overbodige data in de JSON structuur?
+
+5. **Rendering Performance:**
+   - Zijn er componenten die veel rendering tijd kosten?
+   - Kunnen componenten lazy loaded worden?
+   - Is er potentieel voor component caching?
+
+**Specifieke Metrics:**
+- Geschatte laadtijd per hoofdstuk
+- Geheugengebruik van complexe componenten
+- Aantal DOM elementen per sectie
+- Bestandsgrootte van media elementen
+
+**Lever op:**
+- Performance risico assessment per hoofdstuk
+- Concrete optimalisatie suggesties
+- Prioritering van performance verbeteringen
+- Aanbevelingen voor betere gebruikerservaring
+
+**Analysebereik:** [SCOPE VOOR PERFORMANCE ANALYSE]
+
+Analyseer de performance aspecten van het opgegeven bereik. Gebruik de JSON bestanden die je al hebt ontvangen.</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="kwaliteitscontrole" class="section">
+                        <h2 class="chapter-main-title">Kwaliteitscontrole</h2>
+                        <p class="stijlgids-intro">Prompts voor het beoordelen van leerdidactische kwaliteit en toegankelijkheid.</p>
+                        
+                        <div id="kwaliteitscontrole-content">
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Leerdidactische Kwaliteit Review</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-leerdidactiek')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Beoordeelt de pedagogische kwaliteit en leereffectiviteit van de e-learning.</p>
+                                <div class="prompt-content" id="prompt-leerdidactiek">**Rol:** Gedraag je als een ervaren Onderwijskundige en E-learning Pedagoog.
+
+**Taak:** Beoordeel de leerdidactische kwaliteit van deze e-learning en geef concrete aanbevelingen voor verbetering.
+
+**Evalueer op:**
+
+1. **Leerdoelen Alignment:**
+   - Sluiten alle hoofdstukken aan bij de gestelde leerdoelen?
+   - Zijn leerdoelen SMART geformuleerd (Specifiek, Meetbaar, Acceptabel, Realistisch, Tijdgebonden)?
+   - Wordt duidelijk hoe elke activiteit bijdraagt aan het behalen van leerdoelen?
+
+2. **Bloom's Taxonomie:**
+   - Wordt er voldoende gevarieerd tussen cognitieve niveaus (kennen → begrijpen → toepassen → analyseren)?
+   - Zijn er kansen voor hoger-orde denkvaardigheden?
+   - Ondersteunen interacties verschillende taxonomie niveaus?
+
+3. **Activerende Didactiek:**
+   - Wordt de student voldoende geactiveerd tijdens het leren?
+   - Is er balans tussen informatieoverdracht en verwerking?
+   - Ondersteunen de gekozen didactische methoden diepgaand leren?
+
+4. **Scaffolding en Progressie:**
+   - Bouwen hoofdstukken logisch op van eenvoudig naar complex?
+   - Krijgen studenten voldoende ondersteuning waar nodig?
+   - Is er geleidelijke afbouw van begeleiding naar zelfstandigheid?
+
+5. **Feedback en Reflectie:**
+   - Krijgen studenten voldoende en kwalitatieve feedback?
+   - Zijn er momenten voor (zelf)reflectie ingebouwd?
+   - Ondersteunen interacties betekenisvol leren?
+
+6. **Transfer en Toepassingsmogelijkheden:**
+   - Wordt de link gelegd tussen theorie en praktijk?
+   - Kunnen studenten de kennis toepassen in hun toekomstige beroep?
+   - Zijn er voldoende authentieke contexten en voorbeelden?
+
+**Lever op:**
+- Beoordeling van pedagogische sterktepunten
+- Identificatie van leerdidactische verbeterpunten
+- Concrete suggesties voor activerende elementen
+- Aanbevelingen voor betere leer-effectiviteit
+
+**Analysebereik:** [SCOPE VOOR DIDACTISCHE ANALYSE]
+
+Beoordeel de leerdidactische kwaliteit van het opgegeven bereik. Gebruik de JSON bestanden (inclusief config.json voor leerdoelen) die je al hebt ontvangen.</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Toegankelijkheid en Inclusiviteit Check</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-toegankelijkheid')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Controleert of de e-learning toegankelijk is voor alle studenten, inclusief mensen met beperkingen.</p>
+                                <div class="prompt-content" id="prompt-toegankelijkheid">**Rol:** Gedraag je als een Toegankelijkheids Expert en Inclusief Ontwerp Specialist.
+
+**Taak:** Evalueer deze e-learning op toegankelijkheid en inclusiviteit voor alle studenten.
+
+**Controleer:**
+
+1. **Visuele Toegankelijkheid:**
+   - Zijn contrastverhoudingen voldoende voor mensen met visuele beperkingen?
+   - Is tekst groot genoeg en goed leesbaar?
+   - Zijn kleuren niet de enige manier om informatie over te dragen?
+   - Zijn afbeeldingen voorzien van betekenisvolle alt-teksten?
+
+2. **Cognitieve Toegankelijkheid:**
+   - Is de taal begrijpelijk voor studenten met verschillende taalniveaus?
+   - Zijn instructies duidelijk en eenduidig?
+   - Is er niet teveel cognitieve belasting per sectie?
+   - Zijn complexe concepten voldoende opgebroken?
+
+3. **Motorische Toegankelijkheid:**
+   - Zijn alle interactieve elementen goed bereikbaar?
+   - Kunnen studenten de e-learning bedienen zonder muis?
+   - Zijn klikbare elementen groot genoeg?
+   - Is er voldoende tijd voor het uitvoeren van taken?
+
+4. **Auditieve Toegankelijkheid:**
+   - Zijn audio-elementen voorzien van transcripties?
+   - Is belangrijke informatie niet alleen via geluid beschikbaar?
+   - Zijn er visuele alternatieven voor audio-content?
+
+5. **Diverse Leervoorkeuren:**
+   - Worden verschillende leermodaliteiten ondersteund (visueel, auditief, kinesthetisch)?
+   - Is er flexibiliteit in tempo en volgorde van leren?
+   - Kunnen studenten content herhalen en terugkijken?
+
+6. **Culturele Inclusiviteit:**
+   - Zijn voorbeelden cultureel divers en inclusief?
+   - Wordt er geen onbedoelde bias getoond in content of afbeeldingen?
+   - Voelen alle studenten zich welkom en gerepresenteerd?
+
+**Specifieke Aandachtspunten:**
+- WCAG 2.1 richtlijnen compliance
+- Ondersteuning voor hulptechnologieën
+- Flexibiliteit in presentatie en interactie
+- Culturele sensitiviteit
+
+**Lever op:**
+- Toegankelijkheids-audit met concrete verbeterpunten
+- Prioritering van toegankelijkheidsissues
+- Aanbevelingen voor inclusief ontwerp
+- Suggesties voor alternative content presentatie
+
+**Evaluatiebereik:** [SCOPE VOOR TOEGANKELIJKHEID ANALYSE]
+
+Evalueer de toegankelijkheid van het opgegeven bereik. Gebruik de JSON bestanden die je al hebt ontvangen.</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Eindkwaliteit Assessment</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-eindkwaliteit')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Geeft een overall kwaliteitsbeoordeling van de complete e-learning met prioritering van verbeterpunten.</p>
+                                <div class="prompt-content" id="prompt-eindkwaliteit">**Rol:** Gedraag je als een Senior E-learning Quality Assurance Expert met jarenlange ervaring in onderwijskwaliteit.
+
+**Taak:** Geef een uitgebreide, holistische kwaliteitsbeoordeling van deze complete e-learning cursus.
+
+**Beoordeel op 4 hoofdcriteria:**
+
+1. **Inhoudelijke Kwaliteit (25%):**
+   - Accuraatheid en actualiteit van informatie
+   - Relevantie voor de doelgroep (HBO Fysiotherapie studenten)
+   - Compleetheid en diepgang van behandelde onderwerpen
+   - Wetenschappelijke onderbouwing waar relevant
+
+2. **Pedagogische Kwaliteit (35%):**
+   - Effectiviteit van gekozen didactische methoden
+   - Alignment tussen leerdoelen, content en evaluatie
+   - Activerende en engagerende elementen
+   - Scaffolding en progressieve opbouw
+   - Feedback en reflectiemogelijkheden
+
+3. **Technische Kwaliteit (25%):**
+   - Gebruiksvriendelijkheid en navigatie
+   - Technische stabiliteit en performance
+   - Responsive design en toegankelijkheid
+   - Consistentie in vormgeving en functionaliteit
+
+4. **Gebruikerservaring (15%):**
+   - Aantrekkelijkheid en motiverende elementen
+   - Duidelijkheid van instructies en verwachtingen
+   - Flexibiliteit en personalisatie mogelijkheden
+   - Overall satisfaction potential
+
+**Rapportage Structuur:**
+
+**A. Executive Summary:**
+- Overall kwaliteitsscore (1-10) per criterium
+- Belangrijkste sterktepunten (top 3)
+- Kritieke verbeterpunten (top 3)
+- Algemene aanbeveling (Ready to Launch / Needs Minor Improvements / Needs Major Revision)
+
+**B. Gedetailleerde Bevindingen:**
+- Per criterium: sterktepunten en verbeterpunten
+- Concrete voorbeelden uit de content
+- Impact assessment van gevonden issues
+
+**C. Actieplan:**
+- Prioritering van verbeteringen (Must Fix / Should Fix / Nice to Have)
+- Geschatte implementatie-impact per verbetering
+- Aanbevolen implementatie volgorde
+
+**D. Benchmarking:**
+- Vergelijking met best practices in e-learning
+- Positie ten opzichte van typische HBO cursussen
+- Innovatieve aspecten die uitblinken
+
+**Beoordelingsbereik:** [SCOPE VOOR EINDKWALITEIT ASSESSMENT]
+
+                                Geef een holistische kwaliteitsbeoordeling van het opgegeven bereik. Gebruik alle relevante JSON bestanden (config.json, hoofdstukken, afsluitquiz.json) die je al hebt ontvangen.</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Didactische Hulpmiddelen Review</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-didactische-hulpmiddelen')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Beoordeelt de kwaliteit en effectiviteit van didactische hulpmiddelen zoals voorbeelden, modelling, organizers en metaforen.</p>
+                                <div class="prompt-content" id="prompt-didactische-hulpmiddelen">**Rol:** Gedraag je als een specialist in Instructional Design en Cognitive Load Theory, met expertise in didactische hulpmiddelen voor HBO-onderwijs.
+
+**Taak:** Analyseer de kwaliteit en effectiviteit van didactische hulpmiddelen in deze e-learning content, specifiek voor 18-jarige HBO fysiotherapie studenten.
+
+**Evalueer systematisch:**
+
+1. **Concrete Examples & Casussen:**
+   - Zijn er voldoende concrete voorbeelden per abstract concept?
+   - Sluiten voorbeelden aan bij de fysiotherapie praktijk?
+   - Zijn voorbeelden relevant voor de levensfase van 18-jarigen?
+   - Variëren voorbeelden in complexiteit (scaffolding)?
+   - Worden multiculturele/diverse voorbeelden gebruikt?
+
+2. **Modelling & Worked Examples:**
+   - Worden complexe vaardigheden stap-voor-stap gedemonstreerd?
+   - Zijn er worked examples die denkprocessen zichtbaar maken?
+   - Wordt het 'waarom' achter elke stap uitgelegd?
+   - Is er een logische opbouw van begeleide naar zelfstandige toepassing?
+   - Worden typische fouten en misconcepties geadresseerd?
+
+3. **Advanced Organizers:**
+   - Worden nieuwe hoofdstukken/secties voorafgegaan door organizers?
+   - Zijn er conceptkaarten, schema's of overzichtsdiagrammen?
+   - Helpen organizers studenten de structuur te begrijpen?
+   - Worden relaties tussen concepten visueel gemaakt?
+   - Is er een 'rode draad' die door de hele elearning loopt?
+
+4. **Metaforen & Analogieën:**
+   - Worden abstracte AI-concepten gekoppeld aan bekende fysio-concepten?
+   - Zijn metaforen accuraat en niet misleidend?
+   - Sluiten analogieën aan bij de voorkennis van fysiotherapie studenten?
+   - Worden metaforen consequent doorgetrokken?
+   - Helpen analogieën bij het onthouden van complexe informatie?
+
+5. **Betekenisvolle Kapstokken:**
+   - Krijgen studenten een 'groot plaatje' voordat ze details ingaan?
+   - Worden nieuwe concepten gekoppeld aan bestaande kennis?
+   - Is er een duidelijk conceptueel framework dat terugkeert?
+   - Worden abstracte concepten 'geankerd' in concrete ervaringen?
+   - Is er consistentie in de gebruikte referentiekaders?
+
+6. **Visuele Organisatie & Cognitive Load:**
+   - Ondersteunen visuele elementen de cognitive load management?
+   - Zijn complexe informatie visueel opgebroken?
+   - Worden belangrijke concepten visueel benadrukt?
+   - Is er balans tussen tekst en visuele ondersteuning?
+   - Helpen visuals bij het onthouden en begrijpen?
+
+7. **Doelgroep-Specifieke Hulpmiddelen:**
+   - Sluiten hulpmiddelen aan bij de leervoorkeuren van 18-jarigen?
+   - Zijn er interactieve en hands-on elementen?
+   - Worden hedendaagse referenties en contextualiseringen gebruikt?
+   - Is er variatie in didactische hulpmiddelen voor verschillende leertypen?
+
+**Lever concrete aanbevelingen op:**
+- **Ontbrekende hulpmiddelen:** Welke didactische hulpmiddelen zouden toegevoegd moeten worden?
+- **Verbetervoorstellen:** Concrete suggesties per hoofdstuk
+- **Metafoor & analogie bank:** Voorstellen voor effectieve metaforen specifiek voor AI in fysiotherapie
+- **Organizer templates:** Suggesties voor conceptkaarten of schema's
+- **Impact assessment:** Welke toevoegingen hebben de grootste leereffectiviteit?
+
+**Analysebereik:** [SCOPE VOOR DIDACTISCHE HULPMIDDELEN ANALYSE]
+
+Beoordeel de didactische hulpmiddelen van het opgegeven bereik. Gebruik de JSON bestanden die je al hebt ontvangen.</div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Globale variabelen voor placeholder replacement
+        let configData = null;
+        
+        // Load config.json voor auto-replacement
+        async function loadConfig() {
+            try {
+                const response = await fetch('content/config.json');
+                if (response.ok) {
+                    configData = await response.json();
+                }
+            } catch (error) {
+                console.warn('Kon config.json niet laden voor auto-replacement:', error);
+            }
+        }
+
+        // Navigatie functionaliteit
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load config data
+            loadConfig();
+            const navLinks = document.querySelectorAll('#sidebarChaptersPrompts a');
+            const navItems = document.querySelectorAll('#sidebarChaptersPrompts .sidebar-chapter');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active state
+                    navItems.forEach(item => item.classList.remove('active'));
+                    this.parentElement.classList.add('active');
+                    
+                    // Scroll to section
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+
+        // Auto-replacement functie
+        function applyAutoReplacements(text) {
+            if (!configData) return text;
+            
+            let replacedText = text;
+            
+            // Hybride Auto-replacements - dingen die altijd hetzelfde zijn
+            replacedText = replacedText.replace(/\[TITEL ELEARNING\]/g, configData.titel || 'AI basiskennis en vaardigheden');
+            replacedText = replacedText.replace(/\[TITEL VAN DE ELEARNING\]/g, configData.titel || 'AI basiskennis en vaardigheden');
+            replacedText = replacedText.replace(/\[AANTAL HOOFDSTUKKEN\]/g, configData.hoofdstukken ? configData.hoofdstukken.length.toString() : '7');
+            replacedText = replacedText.replace(/\[AANTAL\]/g, configData.hoofdstukken ? configData.hoofdstukken.length.toString() : '7');
+            replacedText = replacedText.replace(/\[ORGANISATIE\]/g, configData.organisatie || 'iXperium Health');
+            
+            return replacedText;
+        }
+        
+        // Check welke placeholders automatisch vervangen worden
+        function isAutoReplacedPlaceholder(placeholderText) {
+            const autoReplacedPlaceholders = [
+                'TITEL ELEARNING',
+                'TITEL VAN DE ELEARNING', 
+                'AANTAL HOOFDSTUKKEN',
+                'AANTAL',
+                'ORGANISATIE'
+            ];
+            
+            return autoReplacedPlaceholders.includes(placeholderText);
+        }
+        
+        // Get default waarde voor bekende placeholders
+        function getDefaultValue(placeholderText) {
+            const defaults = {
+                'DOELGROEP': '18-jarige HBO studenten Fysiotherapie',
+                'BESCHRIJVING DOELGROEP': '18-jarige HBO studenten Fysiotherapie'
+            };
+            
+            return defaults[placeholderText] || '';
+        }
+
+        // Check welke placeholders variabel zijn en invulvelden nodig hebben
+        function getVariablePlaceholders(text) {
+            const variablePlaceholders = [];
+            
+            // Zoek dynamisch naar alle [PLACEHOLDER] patronen
+            const placeholderRegex = /\[([^\]]+)\]/g;
+            let match;
+            const foundPlaceholders = new Set();
+            
+            while ((match = placeholderRegex.exec(text)) !== null) {
+                const fullMatch = match[0]; // [PLACEHOLDER]
+                const placeholderText = match[1]; // PLACEHOLDER
+                
+                // Skip instructie placeholders (die meestal lang zijn en instructies bevatten)
+                if (placeholderText.includes('HIER PLAK JE') || 
+                    placeholderText.includes('KOPIEER HIER') || 
+                    placeholderText.includes('PLAK HIER') ||
+                    placeholderText.length > 50) {
+                    continue;
+                }
+                
+                // Skip auto-replaced placeholders
+                if (isAutoReplacedPlaceholder(placeholderText)) {
+                    continue;
+                }
+                
+                // Voorkom duplicaten
+                if (!foundPlaceholders.has(placeholderText)) {
+                    foundPlaceholders.add(placeholderText);
+                    
+                    // Genereer een vriendelijke label
+                    const label = generateFriendlyLabel(placeholderText);
+                    
+                    variablePlaceholders.push({
+                        regex: new RegExp('\\[' + placeholderText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\]', 'g'),
+                        label: label,
+                        key: placeholderText
+                    });
+                }
+            }
+            
+            return variablePlaceholders;
+        }
+        
+        // Genereer vriendelijke labels voor placeholders
+        function generateFriendlyLabel(placeholderText) {
+            // Specifieke mappings voor bekende placeholders
+            const labelMappings = {
+                'ONDERWERP': 'Onderwerp',
+                'ONDERWERP VAN DE CURSUS': 'Onderwerp van de cursus',
+                'DOELGROEP': 'Doelgroep',
+                'NUMMER': 'Hoofdstuk nummer',
+                'HOOFDSTUK NUMMER': 'Hoofdstuk nummer',
+                'TITEL VAN HET HOOFDSTUK': 'Titel van het hoofdstuk',
+                'AANTAL': 'Aantal'
+            };
+            
+            // Check of we een specifieke mapping hebben
+            if (labelMappings[placeholderText]) {
+                return labelMappings[placeholderText];
+            }
+            
+            // Genereer automatisch een label
+            return placeholderText
+                .toLowerCase()
+                .replace(/_/g, ' ')
+                .replace(/\b\w/g, l => l.toUpperCase()); // Capitalize first letter of each word
+        }
+
+        // Toon placeholder modal
+        function showPlaceholderModal(promptId, button) {
+            const promptElement = document.getElementById(promptId);
+            if (!promptElement) return;
+            
+            let text = promptElement.textContent;
+            
+            // Pas auto-replacements toe
+            text = applyAutoReplacements(text);
+            
+            // Check of er nog variabele placeholders zijn
+            const variablePlaceholders = getVariablePlaceholders(text);
+            
+            if (variablePlaceholders.length === 0) {
+                // Geen variabele placeholders, direct kopiëren
+                copyToClipboard(text, button);
+                return;
+            }
+            
+            // Maak modal voor variabele placeholders
+            createPlaceholderModal(text, variablePlaceholders, button);
+        }
+
+        // Maak placeholder modal
+        function createPlaceholderModal(text, placeholders, button) {
+            // Verwijder bestaande modal
+            const existingModal = document.getElementById('placeholder-modal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Maak modal HTML
+            const modal = document.createElement('div');
+            modal.id = 'placeholder-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+                max-width: 500px;
+                width: 90%;
+                max-height: 80vh;
+                overflow-y: auto;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            `;
+            
+            let modalHTML = `
+                <h3 style="color: var(--primary-purple); margin-top: 0;">🔧 Prompt Personaliseren</h3>
+                <p style="color: #666; margin-bottom: 20px;">Vul de onderstaande velden in om de prompt aan te passen:</p>
+                <form id="placeholder-form">
+            `;
+            
+            placeholders.forEach((placeholder, index) => {
+                const defaultValue = getDefaultValue(placeholder.key);
+                const valueAttr = defaultValue ? `value="${defaultValue}"` : '';
+                
+                modalHTML += `
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; font-weight: 500; margin-bottom: 5px; color: #333;">
+                            ${placeholder.label}:
+                        </label>
+                        <input type="text" id="placeholder-${index}" data-key="${placeholder.key}" 
+                               style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;"
+                               placeholder="Voer ${placeholder.label.toLowerCase()} in..." ${valueAttr}>
+                    </div>
+                `;
+            });
+            
+            modalHTML += `
+                    <div style="margin-top: 25px; text-align: right;">
+                        <button type="button" onclick="closePlaceholderModal()" 
+                                style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; margin-right: 10px; cursor: pointer;">
+                            Annuleren
+                        </button>
+                        <button type="submit" 
+                                style="background: var(--primary-purple); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+                            Kopiëren met aanpassingen
+                        </button>
+                    </div>
+                </form>
+            `;
+            
+            modalContent.innerHTML = modalHTML;
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Focus op eerste input
+            setTimeout(() => {
+                const firstInput = modal.querySelector('input');
+                if (firstInput) firstInput.focus();
+            }, 100);
+            
+            // Handle form submit
+            document.getElementById('placeholder-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let finalText = text;
+                
+                // Vervang alle variabele placeholders
+                placeholders.forEach((placeholder, index) => {
+                    const input = document.getElementById(`placeholder-${index}`);
+                    const value = input.value.trim();
+                    if (value) {
+                        const regex = new RegExp(`\\[${placeholder.key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\]`, 'g');
+                        finalText = finalText.replace(regex, value);
+                    }
+                });
+                
+                copyToClipboard(finalText, button);
+                closePlaceholderModal();
+            });
+            
+            // Click outside to close
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closePlaceholderModal();
+                }
+            });
+        }
+
+        // Sluit placeholder modal
+        function closePlaceholderModal() {
+            const modal = document.getElementById('placeholder-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        // Copy naar clipboard
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text.trim()).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Gekopieerd!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Kon niet kopiëren: ', err);
+                button.textContent = 'Fout bij kopiëren';
+                setTimeout(() => {
+                    button.textContent = 'Kopieer';
+                }, 2000);
+            });
+        }
+
+        // Copy functionaliteit (aangepast)
+        function copyPrompt(button, promptId) {
+            showPlaceholderModal(promptId, button);
+        }
+
+        // Documentatie toggle functionaliteit
+        function toggleDocumentation(header) {
+            const toggle = header.querySelector('.documentation-toggle');
+            const content = header.nextElementSibling;
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                toggle.classList.remove('expanded');
+                toggle.textContent = '▶';
+            } else {
+                content.classList.add('expanded');
+                toggle.classList.add('expanded');
+                toggle.textContent = '▼';
+                
+                // Load documentation files if not already loaded
+                loadDocumentationFiles(content);
+            }
+        }
+
+        // Load documentatie bestanden
+        async function loadDocumentationFiles(contentContainer) {
+            const files = contentContainer.querySelectorAll('.doc-file[data-file]');
+            
+            for (const fileElement of files) {
+                const filePath = fileElement.dataset.file;
+                const contentDiv = fileElement.querySelector('.doc-content');
+                
+                // Skip if already loaded
+                if (contentDiv.dataset.loaded === 'true') continue;
+                
+                contentDiv.innerHTML = '<div class="doc-loading">Bestand laden...</div>';
+                
+                try {
+                    const response = await fetch(filePath);
+                    if (!response.ok) {
+                        throw new Error(`Kon ${filePath} niet laden: ${response.statusText}`);
+                    }
+                    
+                    const content = await response.text();
+                    contentDiv.textContent = content;
+                    contentDiv.dataset.loaded = 'true';
+                    
+                } catch (error) {
+                    contentDiv.innerHTML = `<div class="doc-error">Fout bij laden van ${filePath}: ${error.message}</div>`;
+                }
+            }
+        }
+
+        // Copy documentatie bestand
+        function copyDocumentation(button, fileElement) {
+            const contentDiv = fileElement.querySelector('.doc-content');
+            const content = contentDiv.textContent;
+            
+            navigator.clipboard.writeText(content.trim()).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Gekopieerd!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Kon niet kopiëren: ', err);
+                button.textContent = 'Fout';
+                setTimeout(() => {
+                    button.textContent = 'Kopieer';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html> 

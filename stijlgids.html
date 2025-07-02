@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components/stijlgids.css">
     <!-- Extra component-stijlen die nodig zijn voor de volledige weergave -->
+    <link rel="stylesheet" href="css/components/buttons.css">
     <link rel="stylesheet" href="css/components/cards.css">
     <link rel="stylesheet" href="css/components/images.css">
-    <link rel="stylesheet" href="css/components/video.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
     <link rel="stylesheet" href="css/components/process-flow.css">
+    <link rel="stylesheet" href="css/components/sidebar.css">
+    <link rel="stylesheet" href="css/components/video.css">
     <link rel="stylesheet" href="css/components/layout.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
@@ -27,7 +30,11 @@
         <div class="sticky-wrapper">
             <div class="sidebar-nav" id="sidebarNav">
               <div class="sidebar-header">
+                <img src="images/Blijvende_afb/han_logo_streep.svg" alt="HAN logo" class="sidebar-logo">
                 <span class="sidebar-title">Componenten</span>
+                <button class="sidebar-hamburger" id="sidebarHamburger" aria-label="Toon navigatie">
+                  <span></span><span></span><span></span>
+                </button>
               </div>
               <ul class="sidebar-chapters" id="sidebarChaptersStyleguide">
                 <!-- Links worden hier dynamisch geladen -->
@@ -39,6 +46,9 @@
                 <header>
                     <div class="header-content" style="text-align: center;">
                         <h1>Stijlgids E-learning</h1>
+                        <button onclick="window.location.href='index.html'" class="button button-primary" style="margin-top: 15px;">
+                            Terug naar E-learning
+                        </button>
                     </div>
                 </header>
                 <main class="container">

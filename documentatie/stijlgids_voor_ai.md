@@ -11,6 +11,13 @@ Elk hoofdstuk volgt een vaste, gestructureerde opbouw:
 ### 1. Hoofdstuk Opening
 - **Verplicht:** Start altijd met een `info-card` (vaak met `classes: "welcome-card"`) als algemene inleiding
 
+### SPECIAAL VOOR HOOFDSTUK 1 (Introductie hoofdstuk):
+⚠️ **KRITIEKE COMPONENTEN - NIET VERWIJDEREN:**
+- **`leerdoelen-dynamic`**: Verplichte component die automatisch alle leerdoelen uit config.json toont
+- **"Klaar voor de start?" sectie**: Verplichte afsluiting van hoofdstuk 1 die studenten voorbereid op de rest van de e-learning
+
+Deze componenten zijn essentieel voor de leerervaring en mogen nooit worden weggelaten of vervangen bij het aanpassen van hoofdstuk 1.
+
 ### 2. Sectie Structuur
 Elke sectie binnen een hoofdstuk volgt dit patroon:
 - **`section-title`** - Naam van de nieuwe sectie
