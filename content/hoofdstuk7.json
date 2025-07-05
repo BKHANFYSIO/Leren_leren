@@ -1,346 +1,310 @@
 {
+  "hoofdstuk_titel": "Hoofdstuk 7: De Motivator: Motivatie & Welzijn",
   "content": [
     {
       "type": "info-card",
-      "classes": "welcome-card",
-      "titel": "De Toekomst van AI: Jouw Rol in een Veranderende Wereld",
-      "tekst": "Nu je de basis van AI begrijpt, is het tijd voor de grote vraag: wat betekent dit voor jouw toekomst? AI ontwikkelt zich snel en verandert hoe we werken. Banen veranderen, nieuwe ontstaan, en je carrière als fysiotherapeut zal anders zijn dan die van je voorgangers. In dit hoofdstuk bereid je je voor op die toekomst."
-    },
-    {
-      "type": "accordion",
-      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
-      "content": [
-        {
-          "type": "content-text",
-          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
-        },
-        {
-          "type": "audio-grid",
-          "kolommen": 1,
-          "items": [
-            {
-              "id": "h7_audio_1",
-              "titel": "Podcast: AI in de toekomst",
-              "beschrijving": "Een audio-versie van de inhoud van dit hoofdstuk. Ontdek hoe AI de toekomst van de fysiotherapie en de maatschappij zal vormgeven.",
-              "bron": "audio/H7-AI-in-de-toekomst-podcast.wav",
-              "meta": ""
-            }
-          ]
-        }
-      ]
+      "classes": "purple-kader",
+      "titel": "De Motivator: Motivatie & Welzijn",
+      "tekst": "Welkom bij Hoofdstuk 7, het laatste hoofdstuk van jouw reis naar effectiever leren! Je hebt de tools van 'De Verwerker' (cognitieve strategieën) en de managementvaardigheden van 'De Manager' (metacognitieve strategieën) leren kennen. Nu is het tijd om 'De Motivator' in jezelf te ontdekken. Dit hoofdstuk helpt je te begrijpen hoe motivatie en welzijn jouw leerproces beïnvloeden, en biedt concrete strategieën om gemotiveerd en veerkrachtig te blijven, om te gaan met tegenslag en een gezonde balans te vinden in je studie. Onthoud: **Zelfregulering van Leren (ZRL)** omvat niet alleen cognitieve en metacognitieve strategieën, maar ook cruciale **motivationele en affectieve strategieën** – de focus van dit hoofdstuk!"
     },
     {
       "type": "section-title",
-      "titel": "De Exponentiële Groei van AI"
+      "titel": "Vormen van Motivatie: Van 'Moeten' naar 'Willen'"
     },
     {
       "type": "content-text",
-      "tekst": "AI ontwikkelt zich razendsnel. Wat vroeger sciencefiction was, is nu werkelijkheid. Deze snelle evolutie is belangrijk om te begrijpen, want AI verandert niet alleen technologie, maar ook onze samenleving, economie en dagelijks leven."
+      "tekst": "Motivatie is complexer dan alleen intrinsiek of extrinsiek. Volgens de Zelfdeterminatietheorie (ZDT) van Deci & Ryan ligt motivatie op een continuüm, variërend van gecontroleerde tot autonome motivatie. Het begrijpen van dit spectrum helpt je te herkennen wat je drijft. Motivatie kan ook geheel ontbreken (amotivatie) of ontstaan door negatieve ervaringen (demotivatie)."
     },
     {
-      "type": "stats-card-grid",
-      "kaarten": [
-        {
-          "titel": "Economische Groei",
-          "afbeelding": "images/Economische-groei.png",
-          "getal": "$15.7",
-          "label": "Biljoen potentiële bijdrage van AI aan de wereldeconomie tegen 2030.",
-          "bron": {
-            "naam": "PwC, 2017",
-            "url": "https://www.pwc.com/gx/en/issues/analytics/assets/pwc-ai-analysis-sizing-the-prize-report.pdf"
-          }
-        },
-        {
-          "titel": "Arbeidsmarkt Transformatie",
-          "afbeelding": "images/Arbeidsmarkt-transformatie.png",
-          "getal": "40%",
-          "label": "Van alle banen wereldwijd beïnvloed door AI.",
-          "bron": {
-            "naam": "IMF, 2024",
-            "url": "https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity"
-          }
-        },
-        {
-          "titel": "Wereldwijde Adoptie",
-          "afbeelding": "images/Werelwijde-adoptie-AI.png",
-          "getal": "78%",
-          "label": "Van bedrijven wereldwijd gebruikt al AI.",
-          "bron": {
-            "naam": "McKinsey, 2024",
-            "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-in-2024-gen-ai-s-breakout-year"
-          }
-        }
-      ]
+      "type": "image-block",
+      "src": "https://placehold.co/800x450/e9d5ff/9333ea?text=Continuum+Motivatie",
+      "alt": "Afbeelding van het continuüm van motivatie (Gecontroleerde motivatie <-> Autonome motivatie) met de 5 vormen (Externe druk, Interne druk, Nut, Waarde, Interesse/Plezier)",
+      "onderschrift": "Het continuüm van motivatie: van gecontroleerd (moeten) naar autonoom (willen)."
     },
     {
-      "type": "section-title",
-      "titel": "Technologische Sprongen: Van Smal naar Superintelligent"
+      "type": "dual-content-block",
+      "content_left": {
+        "type": "content-text",
+        "tekst": "<strong>Gecontroleerde Motivatie: Externe en Interne Druk</strong><br>Bij gecontroleerde motivatie word je gedreven door externe of interne druk. Dit kan zijn om een straf te vermijden, een beloning te krijgen, of om te voldoen aan interne verwachtingen zoals schuldgevoel of schaamte. Dit voelt vaak als 'moeten' en is minder duurzaam voor je leerproces."
+      },
+      "content_right": {
+        "type": "content-text",
+        "tekst": "<strong>Autonome Motivatie: Nut, Waarde en Interesse/Plezier</strong><br>Autonome motivatie ontstaat vanuit een gevoel van eigen keuze en vrijwilligheid. Je onderneemt iets omdat je het zinvol vindt (nut), omdat het past bij je persoonlijke waarden (waarde), of omdat je het leuk en interessant vindt (intrinsieke motivatie). Dit voelt als 'willen' en leidt tot dieper leren en meer welzijn."
+      }
     },
     {
-      "type": "content-text",
-      "tekst": "De snelle ontwikkeling van AI brengt ons steeds dichter bij concepten die tot voor kort sciencefiction leken. Het is belangrijk om de verschillende niveaus van AI te begrijpen om een beeld te krijgen van de mogelijke toekomst."
-    },
-    {
-      "type": "concept-cards",
-      "items": [
-        {
-          "titel": "Narrow AI (Smal)",
-          "nederlands": "Huidige AI: gespecialiseerd in één taak",
-          "uitleg": "Dit is de AI die we vandaag de dag veel zien: systemen die uitblinken in specifieke taken, zoals gezichtsherkenning, schaken, of het genereren van tekst en afbeeldingen. Ze kunnen echter niet buiten hun specifieke domein denken of handelen.",
-          "voorbeeld": "ChatGPT, AlphaGo, of een AI die bewegingsanalyses uitvoert in de fysiotherapie."
-        },
-        {
-          "titel": "AI Agents",
-          "nederlands": "Autonome AI-assistenten",
-          "uitleg": "Een AI Agent is een Narrow AI die zelfstandig doelen kan formuleren en acties kan ondernemen om deze te bereiken, vaak over een langere periode. Ze kunnen meerdere tools gebruiken en beslissingen nemen zonder continue menselijke input.",
-          "voorbeeld": "Een AI die zelfstandig onderzoek doet naar de nieuwste fysiotherapie technieken en een rapportage opstelt, of een die afspraken voor de praktijk plant en patiënten informeert.",
-          "denkvraag": "Zou een AI-agent de administratie van mijn praktijk volledig kunnen overnemen, inclusief de communicatie met verzekeraars, en hoe controleer ik dat?"
-        },
-        {
-          "titel": "Artificial General Intelligence (AGI)",
-          "nederlands": "Menselijke intelligentie en meer",
-          "uitleg": "AGI is een hypothetische AI die net zo breed kan denken als een mens over alle mogelijke taken. Het kan leren, redeneren en zich aanpassen aan nieuwe situaties.",
-          "voorbeeld": "Een AGI die een complex fysiotherapeutisch probleem holistisch benadert, diagnoses stelt en behandelplannen opstelt met menselijke precisie en creativiteit.",
-          "denkvraag": "Als AGI even goed diagnoses kan stellen als ik, wat maakt mij dan nog uniek als fysiotherapeut?"
-        },
-        {
-          "titel": "Artificial Super Intelligence (ASI)",
-          "nederlands": "Intelligentie die de mens ver overstijgt",
-          "uitleg": "ASI is een hypothetische AI die mensen in alle denkbare gebieden ver overtreft. Dit zou een enorme technologische sprong zijn met potentieel voor grote vooruitgang, maar ook voor nieuwe risico's.",
-          "voorbeeld": "Een ASI die in seconden een genezing voor chronische pijn vindt, of die alle complexe gezondheidsvraagstukken wereldwijd kan optimaliseren.",
-          "denkvraag": "Hoe zou de fysiotherapie veranderen als ASI complexe medische problemen kan oplossen?"
-        }
-      ]
+      "type": "info-card",
+      "classes": "warning-card",
+      "titel": "Amotivatie en Demotivatie",
+      "tekst": "<strong>Amotivatie</strong> betekent dat motivatie geheel ontbreekt; je ziet geen relatie tussen je acties en mogelijke resultaten. Dit leidt tot weinig energie in je studie. <strong>Demotivatie</strong> ontstaat door slechte ervaringen, wat kan leiden tot weerstand en ontmoediging."
     },
     {
       "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "AI in de Fysiotherapie: Toekomstige Praktijk"
+      "titel": "De Drie Psychologische Basisbehoeften: Voedingsbodem voor Autonomie"
     },
     {
       "type": "content-text",
-      "tekst": "Hoe zal AI de fysiotherapiepraktijk transformeren? Van de eerste patiëntcontacten tot gepersonaliseerde behandelplannen, AI biedt tools die jouw werk efficiënter, nauwkeuriger en effectiever kunnen maken. Bereid je voor op een werkomgeving waarin mens en machine steeds nauwer samenwerken."
+      "tekst": "Autonome motivatie ontstaat wanneer voldaan wordt aan drie aangeboren psychologische basisbehoeften: Autonomie, Competentie en Verbondenheid. Deze behoeften zijn essentieel voor je welzijn en persoonlijke groei."
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
+        {
+          "titel": "Autonomie",
+          "icoon": "hand-waving-fill",
+          "tekst": "Ik voel me vrij! De behoefte om eigen keuzes te maken en invloed uit te oefenen, zonder druk van buitenaf."
+        },
+        {
+          "titel": "Competentie",
+          "icoon": "trophy-fill",
+          "tekst": "Ik kan het! De behoefte om je bekwaam te voelen, ergens beter in te worden en resultaat te zien van je inspanningen."
+        },
+        {
+          "titel": "Verbondenheid",
+          "icoon": "users-three-fill",
+          "tekst": "Ik hoor erbij! De behoefte om gezien en gehoord te worden, waardering te ervaren en positieve relaties te hebben met anderen."
+        }
+      ]
     },
     {
       "type": "content-subtitle",
-      "titel": "De Digitale Receptionist: Triage-bots"
+      "titel": "Autonomie: Eigen Keuzes Maken"
     },
     {
-      "type": "content-text",
-      "tekst": "Stel je voor: patiënten met eenvoudige vragen of routinematige klachten worden als eerste opgevangen door een slimme AI-triagebot. Deze bot stelt gerichte vragen, verzamelt cruciale informatie en geeft, indien nodig, direct basisadvies of plant een afspraak in bij de juiste specialist. Dit bespaart kostbare tijd en zorgt ervoor dat patiënten met complexe problemen sneller bij jou terechtkomen. Een goed voorbeeld hiervan is Flok Health in Engeland, die AI al inzet voor de triage van rugklachten, waardoor de therapeutische focus kan verschuiven."
+      "type": "info-card",
+      "titel": "Jouw Autonomie Vergroten",
+      "items": [
+        { "titel": "Eigen keuzes en invloed:", "tekst": "Ervaar dat je keuzes kunt maken op basis van je eigen belangen en waarden, zonder externe druk. Autonomie is niet hetzelfde als onafhankelijkheid; het gaat om de beleving van keuzevrijheid." },
+        { "titel": "Relevantie onderzoeken:", "tekst": "Het is soms moeilijk om te bepalen of een les of workshop je motiveert als je er nog weinig over weet. Probeer in dat geval vooraf kort te onderzoeken wat de relevantie kan zijn voor jouw leerdoelen of interesses, of ga er met een open blik naartoe om nieuwe mogelijkheden te ontdekken." }
+      ]
     },
     {
-      "type": "scenario-container-horizontal",
-      "scenarios": [
-        {
-          "titel": "Efficiënte Patiënt Triage",
-          "beschrijving": "Een patiënt heeft 's avonds laat acute nekpijn en twijfelt over een huisartsbezoek.",
-          "punten": [
-            "Traditioneel: Patiënt zoekt online, belt misschien de huisartsenpost, of wacht tot de volgende dag.",
-            "Met Triage-bot: Patiënt opent de praktijkapp, beschrijft klachten aan de AI-bot. De bot stelt gerichte vragen, adviseert op basis van antwoorden een afspraak bij de fysiotherapeut de volgende ochtend, of in acute gevallen direct contact met de huisartsenpost. Dit vermindert onnodige spoedbezoeken en versnelt toegang tot de juiste zorg."
-          ]
-        }
+      "type": "content-subtitle",
+      "titel": "Competentie: Bekwaam Voelen en Groeien"
+    },
+    {
+      "type": "info-card",
+      "titel": "Jouw Competentie Versterken",
+      "items": [
+        { "titel": "Bekwaam voelen:", "tekst": "De behoefte om je bekwaam te voelen om een taak uit te voeren. Zelfs als je het nu nog niet kunt, is het vertrouwen dat je het kunt leren cruciaal." },
+        { "titel": "Voortgang zien:", "tekst": "Merk dat je ergens beter in wordt en dat je inspanningen vruchten afwerpen. Dit gevoel van vooruitgang geeft voldoening en stimuleert je om door te gaan." }
+      ]
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Verbondenheid: Erbij Horen en Gewaardeerd Worden"
+    },
+    {
+      "type": "info-card",
+      "titel": "Jouw Verbondenheid Creëren",
+      "items": [
+        { "titel": "Gezien en gehoord worden:", "tekst": "De behoefte om erbij te horen, gezien en gehoord te worden, en waardering en respect te ervaren van docenten en medestudenten." },
+        { "titel": "Positieve relaties:", "tekst": "Veiligheid, acceptatie en positieve relaties met peers en docenten zijn essentieel om je thuis en gemotiveerd te voelen in de leeromgeving." }
       ]
     },
     {
       "type": "divider"
     },
-    
     {
       "type": "section-title",
-      "titel": "Duurzaamheid en Energieverbruik van AI"
+      "titel": "Mindset en Veerkracht: Groeien door Uitdagingen"
     },
     {
       "type": "content-text",
-      "tekst": "AI, met zijn enorme rekenkracht, heeft een aanzienlijke energievraag. Vooral het trainen van complexe AI-modellen vergt veel elektriciteit en heeft daarmee een ecologische voetafdruk. Echter, de snelle ontwikkelingen zorgen er ook voor dat het gebruik van reeds getrainde modellen vaak veel efficiënter is. Bovendien kan AI zelf een cruciale rol spelen in het versnellen van de energietransitie."
+      "tekst": "Jouw mindset – de manier waarop je denkt over intelligentie en bekwaamheid – heeft een enorme impact op je leergedrag en hoe je omgaat met uitdagingen en falen."
     },
     {
-      "type": "content-text",
-      "tekst": "Dit is een complexe discussie. AI zorgt voor meer energieverbruik in datacenters, maar kan ook helpen energienetwerken te optimaliseren en duurzame technologieën te ontwikkelen. AI kan zowel deel van het probleem als van de oplossing zijn. De uitdaging is het vinden van de juiste balans voor een positieve impact."
+      "type": "info-card",
+      "titel": "Fixed Mindset vs. Growth Mindset",
+      "items": [
+        { "titel": "Fixed Mindset:", "tekst": "De overtuiging dat intelligentie en bekwaamheid vaststaan en onveranderbaar zijn. Dit kan leiden tot minder inzet en sneller opgeven bij moeilijkheden." },
+        { "titel": "Growth Mindset:", "tekst": "De overtuiging dat intelligentie en bekwaamheid kunnen groeien door hard werken, oefenen en strategieën aanpassen. Dit stimuleert doorzettingsvermogen, zelfs bij tegenslag." }
+      ]
     },
     {
       "type": "accent-blok",
-      "variant": "statistiek",
-      "titel": "De Energiehonger van AI",
-      "tekst": "1.2 - 1.5 Terawattuur per jaar aan energie, het equivalent van kleine landen, wordt mogelijk verbruikt door AI datacenters tegen 2027.",
-      "bron": {
-        "naam": "IEA, 2024",
-        "url": "https://www.iea.org/news/ai-and-data-centres-are-driving-a-surge-in-electricity-demand"
-      }
+      "variant": "citaat",
+      "tekst": "Realiseer je dat je hersenen veranderlijk zijn en dat je altijd kunt groeien en beter kunt worden door inzet. Dit inzicht draagt bij aan het ontwikkelen van een growth mindset."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Attributies: Verklaringen voor succes en falen"
+    },
+    {
+      "type": "info-card",
+      "classes": "purple-kader",
+      "titel": "Jouw Verklaringen Beïnvloeden Je Motivatie",
+      "tekst": "Mensen zoeken naar verklaringen waarom ze goed of slecht hebben gepresteerd. Deze toeschrijvingen (attributies) zijn bepalend voor je toekomstige gedrag. Als je faalt en de oorzaak toeschrijft aan iets onveranderlijks ('ik ben niet slim genoeg'), zal je motivatie laag zijn. Falen door gebrek aan inzet kan echter leiden tot schuldgevoel en de motivatie om het beter te doen. Probeer negatieve emoties om te buigen en jezelf ervan te overtuigen dat extra inspanning wel degelijk loont."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Falen is een Leermoment: De Kracht van Fouten"
+    },
+    {
+      "type": "info-card",
+      "classes": "warning-card",
+      "titel": "Omarm Fouten als Kansen",
+      "items": [
+        {
+          "titel": "Wat is het?",
+          "tekst": "Fouten maken is geen teken van domheid, maar een noodzakelijk onderdeel van het leerproces. Je leert pas echt wanneer je brein in een 'coder mode' komt, uitgelokt door falen, om nieuwe verbindingen te maken."
+        },
+        {
+          "titel": "Waarom werkt het?",
+          "tekst": "Als je niet faalt, leer je niet. Fouten geven je inzicht in wat je nog niet kunt en aanwijzingen voor hoe je competent kunt worden."
+        },
+        {
+          "titel": "Hoe doe je het?",
+          "tekst": "Wees niet bang om fouten te maken; zie ze als waardevolle leermomenten. Richt je op het proces van leren en doorzettingsvermogen, niet alleen op het eindresultaat. Overtuig jezelf ervan dat extra inzet loont en dat je je prestaties kunt beïnvloeden."
+        }
+      ]
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Inzet kweekt motivatie"
     },
     {
       "type": "accent-blok",
       "variant": "weetje",
-      "titel": "AI als Groene Kracht",
-      "tekst": "AI kan energienetwerken optimaliseren, de ontwikkeling van duurzame materialen versnellen, en efficiënter energieverbruik in gebouwen mogelijk maken, wat de transitie naar schone energie versnelt."
+      "tekst": "Het is een veelvoorkomende misvatting dat motivatie leidt tot leren. In werkelijkheid is het omgekeerd: iets leren (succesvol zijn) leidt tot motivatie. Begin gewoon met de taak, zelfs als je geen zin hebt. De successen die je vervolgens boekt, hoe klein ook, zullen je motivatie aanwakkeren."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Zelfeffectiviteit: Geloof in Eigen Kunnen"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Zelfeffectiviteit is jouw overtuiging in het eigen vermogen om een bepaalde taak met succes uit te voeren. Het gaat dus niet om je daadwerkelijke bekwaamheid, maar om wat jij denkt te kunnen. Hoe sterker dit geloof, hoe eerder je aan een taak begint en hoe meer moeite je zult doen."
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
+        {
+          "titel": "Eerder beginnen",
+          "icoon": "play-fill",
+          "tekst": "Een sterk geloof in eigen kunnen verlaagt de drempel om aan een taak te beginnen."
+        },
+        {
+          "titel": "Meer inzet en volharding",
+          "icoon": "fire-fill",
+          "tekst": "Je toont meer moeite en houdt langer vol bij moeilijkheden en tegenslag."
+        },
+        {
+          "titel": "Betere weerstand tegen falen",
+          "icoon": "shield-check-fill",
+          "tekst": "Je laat je minder snel ontmoedigen door tegenslag en leert van fouten."
+        },
+        {
+          "titel": "Keuze voor moeilijke opgaven",
+          "icoon": "puzzle-fill",
+          "tekst": "Je durft uitdagingen aan te gaan en kiest vaker voor complexere taken die tot meer groei leiden."
+        },
+        {
+          "titel": "Loslaten van onjuiste strategieën",
+          "icoon": "x-circle-fill",
+          "tekst": "Je bent beter in staat om ineffectieve aanpakken te herkennen en los te laten."
+        }
+      ]
+    },
+    {
+      "type": "info-card",
+      "titel": "Praktische tips om je zelfeffectiviteit te bevorderen",
+      "items": [
+        { "titel": "Creëer succeservaringen:", "tekst": "Werk aan opdrachten die binnen je bereik liggen en die je met goed resultaat kunt afronden. Begin klein en bouw op." },
+        { "titel": "Focus op 'leren' in plaats van 'weten':", "tekst": "Besef dat je kunt groeien en dat kennis en kunde ontwikkelbare vaardigheden zijn. Dit is een growth mindset in actie." },
+        { "titel": "Benadruk persoonlijke vooruitgang:", "tekst": "Vergelijk jezelf niet te veel met anderen, maar richt je op je eigen groei en complimenteer jezelf voor je vooruitgang." }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Omgaan met Uitstelgedrag en Afleiding: Focus als Superkracht"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Uitstelgedrag en afleiding zijn veelvoorkomende uitdagingen die je motivatie en leerprestaties kunnen ondermijnen. Het creëren van een productieve studieomgeving en het toepassen van slimme technieken helpen je om gefocust te blijven."
+    },
+    {
+      "type": "info-card",
+      "titel": "Technieken tegen Uitstelgedrag",
+      "items": [
+        { "titel": "Pomodoro-techniek:", "tekst": "Werk 25 minuten geconcentreerd, neem 5 minuten pauze. Herhaal dit. Na 4 'pomodoro's' neem je een langere pauze." },
+        { "titel": "'Eat the frog':", "tekst": "Begin je dag met de meest vervelende of moeilijkste taak. Als die eenmaal gedaan is, voelt de rest van de dag lichter." },
+        { "titel": "Kleine stapjes:", "tekst": "Breek grote taken op in kleine, behapbare stapjes. Begin met de eerste kleine stap om de drempel te verlagen." }
+      ]
+    },
+    {
+      "type": "info-card",
+      "titel": "Technieken tegen Afleiding",
+      "items": [
+        { "titel": "Digitale detox:", "tekst": "Zet meldingen uit, leg je telefoon weg, of gebruik apps die afleidende websites blokkeren tijdens je studietijd." },
+        { "titel": "Studeeromgeving optimaliseren:", "tekst": "Zorg voor een opgeruimde, rustige plek waar je je goed kunt concentreren. Minimaliseer externe prikkels." },
+        { "titel": "Plan je pauzes:", "tekst": "Neem bewust korte pauzes om je brein rust te geven en overbelasting te voorkomen." }
+      ]
     },
     {
       "type": "accent-blok",
-      "variant": "default",
-      "titel": "Denkvraag:",
-      "tekst": "Hoe verhoudt de potentiële gezondheidswinst door AI zich tot de ecologische impact van de benodigde energie? Is dit een acceptabele trade-off en welke rol kun jij hierin spelen als fysiotherapeut?"
+      "variant": "weetje",
+      "tekst": "Mensen zijn geen goede multitaskers. Als je meerdere taken tegelijk probeert te doen, neemt de moeilijkste taak veel werkgeheugen in beslag, waardoor andere taken slechter gaan. Concentreer je op één taak tegelijk."
     },
     {
       "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "De Impact op Werk en Maatschappij"
+      "titel": "Welzijn: De Basis voor Duurzaam Leren"
     },
     {
       "type": "content-text",
-      "tekst": "De opkomst van AI heeft een diepgaande impact op de maatschappij als geheel. Van mondiale machtsverhoudingen tot de invulling van ons dagelijks leven: AI brengt complexe vraagstukken met zich mee. Hoe zorgen we dat deze technologie de mensheid dient en niet leidt tot ongewenste verschuivingen?"
+      "tekst": "Effectief leren is een marathon, geen sprint. Je welzijn is de basis voor duurzaam leervermogen. Een gezonde balans tussen studie en ontspanning is essentieel om overbelasting te voorkomen en optimaal te kunnen presteren."
     },
     {
-      "type": "ethical-reflection-grid",
-      "kaarten": [
+      "type": "benefits-grid",
+      "items": [
         {
-          "titel": "Machtsverschuivingen",
-          "beschrijving": "AI-ontwikkeling is sterk geconcentreerd bij grote techbedrijven en landen. Dit kan leiden tot nieuwe geopolitieke machtsverhoudingen en een ongelijke verdeling van de voordelen. Hoe borgen we een eerlijke toegang tot en controle over AI?"
+          "titel": "Slaap",
+          "icoon": "bed-fill",
+          "tekst": "Voldoende en kwalitatieve slaap is cruciaal voor het consolideren van informatie in je langetermijngeheugen."
         },
         {
-          "titel": "De Uitdaging van Nepnieuws en Deepfakes",
-          "beschrijving": "AI maakt het steeds makkelijker om overtuigende, maar valse, teksten, audio en video te genereren (deepfakes). Hoe beschermen we de waarheid en het vertrouwen in informatie in een wereld waar feit en fictie steeds meer vervagen?"
+          "titel": "Voeding",
+          "icoon": "carrot-fill",
+          "tekst": "Een gebalanceerd dieet voorziet je brein van de energie en voedingsstoffen die het nodig heeft om optimaal te functioneren."
+        },
+        {
+          "titel": "Fysieke Activiteit",
+          "icoon": "running-fill",
+          "tekst": "Regelmatige beweging verbetert de bloedtoevoer naar je hersenen, vermindert stress en verhoogt je concentratievermogen."
+        },
+        {
+          "titel": "Mindfulness & Ontspanning",
+          "icoon": "leaf-fill",
+          "tekst": "Technieken zoals mindfulness en bewuste ontspanning helpen stress te verminderen en je mentale veerkracht te vergroten."
         }
       ]
     },
     {
-      "type": "divider"
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "De Toekomst van Werk: Meer dan alleen Productiviteit"
-    },
-    {
-      "type": "content-text",
-      "tekst": "De meest fundamentele vraag is misschien wel: wat betekent AI voor de toekomst van werk en onze zingeving? Er zijn verschillende denkbeelden over hoe dit zich kan ontwikkelen."
-    },
-    {
-      "type": "scenario-container-horizontal",
-      "scenarios": [
-        {
-          "titel": "Scenario 1: Werk verandert, productiviteit stijgt",
-          "beschrijving": "AI neemt routinetaken over, waardoor we veel productiever worden. Werk verandert van aard: focus verschuift naar creativiteit, sociale intelligentie, complexe probleemoplossing en menselijk contact. We gaan niet noodzakelijk minder werken, maar anders, met hogere output.",
-          "punten": [
-            "AI automatiseert repetitief werk.",
-            "Nieuwe, meer mensgerichte taken ontstaan.",
-            "Vereist continue ontwikkeling van nieuwe kennis en vaardigheden."
-          ]
-        },
-        {
-          "titel": "Scenario 2: Minder werken, basisinkomen en nieuwe zingeving",
-          "beschrijving": "De productiviteitswinst door AI is zo groot dat betaald werk voor velen minder noodzakelijk wordt. Een universeel basisinkomen wordt ingevoerd. Mensen richten zich meer op persoonlijke ontwikkeling, kunst, zorg, gemeenschap en andere vormen van zingeving buiten traditioneel werk.",
-          "punten": [
-            "Mogelijkheid tot kortere werkweken of vrijwillig werken.",
-            "Zingeving buiten economische productie.",
-            "Vraagt om een herdefiniëring van succes en maatschappelijke waarde."
-          ]
-        }
+      "type": "info-card",
+      "titel": "Praktische tips voor stressmanagement en welzijn",
+      "items": [
+        { "titel": "Neem korte, regelmatige pauzes:", "tekst": "Sta op, rek je uit, of doe iets anders dan studeren om je hoofd leeg te maken." },
+        { "titel": "Beweeg voldoende:", "tekst": "Plan fysieke activiteit in je week. Dit helpt stress te verminderen en je energie op peil te houden." },
+        { "titel": "Zorg voor voldoende slaap:", "tekst": "Streef naar 7-9 uur slaap per nacht. Dit is essentieel voor geheugenconsolidatie en energieherstel." },
+        { "titel": "Eet gezond en drink voldoende water:", "tekst": "Brandstof voor je brein. Vermijd suikerpieken en zorg voor stabiele energie." },
+        { "titel": "Oefen mindfulness of meditatie:", "tekst": "Korte oefeningen kunnen je helpen om te gaan met stress en je concentratie te verbeteren." }
       ]
     },
     {
-      "type": "accent-blok",
-      "variant": "default",
-      "titel": "Denkvraag:",
-      "tekst": "Als AI een groot deel van het routinewerk overneemt, hoe vind je dan jouw 'zingeving' in je beroep en daarbuiten? Moet je als fysiotherapeut meer investeren in unieke menselijke vaardigheden dan in technische kennis?"
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section-title",
-      "titel": "Jouw Rol als Fysiotherapeut in een AI-Toekomst"
-    },
-    {
       "type": "content-text",
-      "tekst": "De snelle opkomst van AI vraagt niet alleen om aanpassingen op maatschappelijk en professioneel niveau, maar ook van jou als individu. Het is essentieel om te begrijpen hoe AI jouw dagelijks leven, leerproces en carrière kan beïnvloeden. Door proactief te zijn en de juiste vaardigheden te ontwikkelen, kun je de kansen die AI biedt optimaal benutten en je voorbereiden op een toekomst waarin mens en machine steeds nauwer samenwerken."
-    },
-    {
-      "type": "competency-grid",
-      "titel": "Essentiële Competenties voor de Fysiotherapeut van de Toekomst",
-      "intro": "Om optimaal te kunnen functioneren in een wereld waarin AI een integraal onderdeel wordt van de gezondheidszorg, zijn de volgende competenties van cruciaal belang:",
-      "termen": [
-        {
-          "term": "AI-geletterdheid",
-          "uitleg": "Begrijpen hoe AI-systemen werken, wat hun mogelijkheden en beperkingen zijn, en hoe ze veilig kunnen worden toegepast in de fysiotherapie.",
-          "praktisch": "Je kunt de resultaten van een AI-gestuurde bewegingsanalyse interpreteren en de betrouwbaarheid ervan inschatten."
-        },
-        {
-          "term": "AI-output Interpretatie",
-          "uitleg": "AI-analyses van data (wearables, sensoren) kritisch beoordelen en vertalen naar de specifieke context en behoeften van je patiënt.",
-          "praktisch": "Je beoordeelt de betrouwbaarheid van een AI-analyse van bewegingspatronen en past de aanbevelingen aan op basis van je klinische kennis van de patiënt."
-        },
-        {
-          "term": "Ethisch Redeneren",
-          "uitleg": "Kritisch reflecteren op ethische implicaties van AI-gebruik, zoals privacy, bias en de balans tussen technologie en menselijke zorg.",
-          "praktisch": "Je weegt de voordelen van een AI-diagnose af tegen mogelijke privacyrisico's en bespreekt dit transparant met de patiënt."
-        },
-        {
-          "term": "Mens-AI Samenwerking",
-          "uitleg": "Effectief samenwerken met AI-tools door menselijke kwaliteiten (empathie, klinisch redeneren) te combineren met AI-efficiëntie.",
-          "praktisch": "Je gebruikt een AI-assistent voor het opstellen van een behandelplan, maar past dit aan op basis van de persoonlijke behoeften en emoties van de patiënt."
-        },
-        {
-          "term": "Aanpassingsvermogen & Levenslang Leren",
-          "uitleg": "Bereidheid om continu nieuwe AI-technologieën te leren en te integreren in de beroepspraktijk, gezien de snelle ontwikkelingen.",
-          "praktisch": "Je volgt proactief webinars over nieuwe AI-gedreven revalidatietechnieken en experimenteert met nieuwe tools in je praktijk."
-        }
-      ]
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section-title",
-      "titel": "Aanraders voor Verdieping"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Nieuwsgierig naar meer perspectieven? De onderstaande video's geven waardevolle inzichten over AI's impact op de maatschappij en de arbeidsmarkt - perfect om je begrip te verdiepen."
-    },
-          {
-        "type": "video-split-screen",
-        "video": {
-          "link": "https://www.youtube.com/embed/ZSaXi13rRo4",
-          "titel": "Of het ons gaat helpen of schaden, hangt af van de keuzes die we nu maken"
-        },
-        "tekst_content": {
-          "titel": "De keuzes die we nu maken bepalen onze AI-toekomst",
-          "paragrafen": [
-            "In dit gesprek bij Eva Jinek wordt de cruciale vraag gesteld: zal AI ons helpen of schaden? Het antwoord hangt af van de keuzes die we vandaag maken. De video belicht hoe de ontwikkeling en implementatie van kunstmatige intelligentie onze maatschappij fundamenteel kan veranderen.",
-            "Voor jou als aanstaande fysiotherapeut is dit extra relevant. De keuzes die nu gemaakt worden over AI-regulatie, privacy en ethiek bepalen hoe AI-tools in de gezondheidszorg zullen worden ingezet. Begrijp je rol in deze discussie en denk mee over hoe we AI verantwoord kunnen inzetten in jouw toekomstige beroep."
-          ]
-        }
-      },
-    {
-      "type": "divider"
-    },
-          {
-        "type": "video-split-screen",
-        "video": {
-          "link": "https://www.youtube.com/embed/12apsMr4K3Y",
-          "titel": "Hoe AI de arbeidsmarkt zal veranderen | VPRO Tegenlicht"
-        },
-        "tekst_content": {
-          "titel": "Jouw toekomst als fysiotherapeut",
-          "paragrafen": [
-            "Deze diepgaande VPRO Tegenlicht documentaire van 45 minuten analyseert de impact van kunstmatige intelligentie op de arbeidsmarkt en de veranderingen die dit teweegbrengt in verschillende sectoren, waaronder de gezondheidszorg.",
-            "Voor jou als aanstaande fysiotherapeut is het belangrijk om te begrijpen hoe AI jouw werkveld zal transformeren. Welke taken zul je kunnen delegeren aan AI? Welke uniek menselijke vaardigheden worden juist belangrijker? Deze video helpt je voorbereiden op de veranderingen die eraan komen."
-          ]
-        }
-      },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section-title",
-      "titel": "Jij bent klaar voor de AI-toekomst!"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Gefeliciteerd! Je hebt een hele reis gemaakt: van de vraag 'Wat is AI eigenlijk?' tot het begrijpen van kansen, risico's en je toekomst als fysiotherapeut. Je weet nu hoe je AI slim kunt inzetten voor je studie en later je beroep, en - nog belangrijker - hoe je dit veilig en bewust doet.\n\nJe generatie groeit op met AI als natuurlijk onderdeel van het leven. Dat maakt jullie uniek: je kunt de voordelen benutten zonder de valkuilen te negeren. Als toekomstige fysiotherapeut sta je aan de start van een spannende carrière waarin technologie en menselijkheid hand in hand gaan.\n\nKlaar voor de eindspurt? Ga naar het afsluitende hoofdstuk om je kennis te toetsen en je certificaat te behalen!"
+      "tekst": "Zelfzorg is geen luxe, maar een noodzaak voor duurzaam studiesucces. Investeer in je welzijn, en je 'Motivator' zal je belonen met energie en doorzettingsvermogen!"
     }
   ],
   "interacties": [

@@ -1,3 +1,7 @@
+// search.js - Search functionality
+
+console.log('search.js loaded - search functionality would be implemented here');
+
 function initSearchModule() {
     const searchInput = document.getElementById('searchInput');
     const searchResultsContainer = document.getElementById('searchResults');

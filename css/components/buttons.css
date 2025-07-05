@@ -33,6 +33,21 @@
     box-shadow: none;
 }
 
+/* Opgeslagen state voor knoppen */
+.btn-opgeslagen {
+    background-color: var(--success-green, #28a745) !important;
+    color: var(--white) !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn-opgeslagen:hover {
+    background-color: var(--success-green, #28a745) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 .btn-prev {
   background-color: var(--primary-purple);
   color: var(--white);

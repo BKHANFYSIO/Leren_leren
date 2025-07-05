@@ -12,6 +12,10 @@ function initializeGlobals(config) {
         title: hoofdstuk.titel,
         file: hoofdstuk.file
     }));
+    
+    // Make chapters globally available for fetchChapterData
+    window.chapters = chapters;
+    
     devLog('Global variables initialized:', { totalSections, chapters });
 }
 
@@ -86,16 +90,34 @@ function prevSection() {
 }
 
 async function saveSelfAssessment(sectionNumber, selfAssessmentId) {
-    const ids = ['veranderen', 'vinden', 'vertrouwen', 'vaardiggebruiken', 'vertellen'];
+    // Vind alle assessment-select elementen voor dit specifieke selfassessment
+    const containerId = sectionNumber === 'dev' 
+        ? `dev-${selfAssessmentId}` 
+        : `hoofdstuk${sectionNumber}-${selfAssessmentId}`;
+    const container = document.getElementById(containerId);
+    
+    if (!container) {
+        console.error(`Self assessment container ${containerId} not found`);
+        return;
+    }
+
+    const selectElements = container.querySelectorAll('.assessment-select');
     let allAnswered = true;
     const assessmentData = {};
 
-    ids.forEach(idName => {
-        const selectElement = document.getElementById(`${idName}-${sectionNumber}-${selfAssessmentId}`);
-        if (selectElement && selectElement.value) {
-            assessmentData[idName] = selectElement.value;
-        } else {
-            allAnswered = false;
+    selectElements.forEach(selectElement => {
+        const selectId = selectElement.id;
+        // Extract the criterion id from the select element id
+        // Format: {criteriumId}-{sectionNumber}-{selfAssessmentId}
+        const idParts = selectId.split('-');
+        if (idParts.length >= 3) {
+            const criteriumId = idParts[0]; // Take the first part as criterium id
+            
+            if (selectElement.value) {
+                assessmentData[criteriumId] = selectElement.value;
+            } else {
+                allAnswered = false;
+            }
         }
     });
 
@@ -111,20 +133,15 @@ async function saveSelfAssessment(sectionNumber, selfAssessmentId) {
     localStorage.setItem(`selfassessment_${sectionNumber}_${selfAssessmentId}_done`, JSON.stringify(assessmentData));
     
     // Re-render de component om de 'opgeslagen' staat te tonen
-    const containerId = sectionNumber === 'dev' 
-        ? `dev-${selfAssessmentId}` 
-        : `hoofdstuk${sectionNumber}-${selfAssessmentId}`;
-    const container = document.getElementById(containerId);
-
-    if (container && typeof renderInteraction === 'function') {
+    if (container && typeof window.renderInteraction === 'function') {
         setTimeout(async () => {
             const chapterData = sectionNumber === 'dev' 
                 ? window.devChapterData 
-                : await fetchChapterData(sectionNumber);
+                : await window.fetchChapterData(sectionNumber);
             if (chapterData && chapterData.interacties) {
                 const freshInteractionData = chapterData.interacties.find(i => i.id === selfAssessmentId);
                 if (freshInteractionData) {
-                    renderInteraction(freshInteractionData, sectionNumber, container);
+                    window.renderInteraction(freshInteractionData, sectionNumber, container);
                 }
             }
         }, 100);
@@ -169,15 +186,15 @@ async function saveReflection(sectionNumber, reflectionId) {
         : `hoofdstuk${sectionNumber}-${reflectionId}`;
     const container = document.getElementById(containerId);
 
-    if (container && typeof renderInteraction === 'function') {
+    if (container && typeof window.renderInteraction === 'function') {
         setTimeout(async () => {
             const chapterData = sectionNumber === 'dev' 
                 ? window.devChapterData 
-                : await fetchChapterData(sectionNumber);
+                : await window.fetchChapterData(sectionNumber);
             if (chapterData && chapterData.interacties) {
                 const freshInteractionData = chapterData.interacties.find(i => i.id === reflectionId);
                 if (freshInteractionData) {
-                    renderInteraction(freshInteractionData, sectionNumber, container);
+                    window.renderInteraction(freshInteractionData, sectionNumber, container);
                 }
             }
         }, 100);
@@ -233,6 +250,8 @@ async function updateAllChapterProgress() {
                     if (localStorage.getItem(`critical_analysis_${h}_${interactie.id}_answered`)) ingevuld++;
                 } else if (interactie.type === 'flashcard') {
                     if (localStorage.getItem(`flashcard_${h}_${interactie.id}_done`)) ingevuld++;
+                } else if (interactie.type === 'braindump') {
+                    if (localStorage.getItem(`braindump_${h}_${interactie.id}_completed`)) ingevuld++;
                 }
             }
             if (totaal > 0) {
@@ -291,7 +310,6 @@ async function updateAllChapterProgress() {
 }
 
 function setupSidebarNavigation() {
-    console.log('Setting up sidebar navigation...');
     const sidebarChapters = document.querySelectorAll('.sidebar-chapter');
     sidebarChapters.forEach(chapter => {
         chapter.addEventListener('click', function () {
@@ -312,7 +330,6 @@ function setupSidebarNavigation() {
 }
 
 function setupSidebarHamburger() {
-    console.log('Setting up sidebar hamburger...');
     const sidebarHamburger = document.getElementById('sidebarHamburger');
     const floatingHamburger = document.getElementById('floatingHamburger');
     const sidebar = document.getElementById('sidebarNav');
@@ -441,10 +458,14 @@ async function clearAllProgress() {
                 key.startsWith('dragdrop_') || 
                 key.startsWith('selfassessment_') || 
                 key.startsWith('flashcard_') || 
+                key.startsWith('braindump_') || 
                 key === 'chapterProgress' ||
                 key.endsWith('_answered') || 
                 key.endsWith('_correct') || 
-                key.endsWith('_done')) {
+                key.endsWith('_done') ||
+                key.endsWith('_completed') ||
+                key.endsWith('_attempts') ||
+                key.endsWith('_evaluations')) {
                 keysToClear.push(key);
             }
         }
@@ -500,6 +521,18 @@ async function clearAllProgress() {
         });
 
         document.querySelectorAll('.assessment-select').forEach(sel => sel.value = '');
+        
+        // Reset braindump interactions
+        document.querySelectorAll('.braindump-container').forEach(container => {
+            const textarea = container.querySelector('.braindump-textarea');
+            if (textarea) textarea.value = '';
+            
+            const radioButtons = container.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => radio.checked = false);
+            
+            const feedback = container.querySelector('.feedback-message');
+            if (feedback) feedback.remove();
+        });
         
         const quizContainer = document.getElementById('quiz-container');
         if (quizContainer) {
@@ -798,7 +831,6 @@ async function migrateOldIdsToNewFormat() {
         localStorage.setItem(newKey, value);
         
         // Verwijder oude key niet direct, voor veiligheid
-        console.log(`Migrated ${oldKey} to ${newKey}`);
     });
 }
 
@@ -848,10 +880,10 @@ async function saveCriticalAnalysis(sectionNumber, interactionId) {
         for (const vraag of interactionDataForCritical.vragen) {
             const inputElement = document.getElementById(`${vraag.id}-input`);
             const answer = inputElement ? inputElement.value.trim() : '';
-            devLog(`Checking field ${vraag.id}-input:`, answer); // Debug log
-            if (answer.length < 10) { // Assuming minLength 10 for all questions
-                allQuestionsAnswered = false;
-                devLog(`Field ${vraag.id} too short:`, answer.length); // Debug log
+                    devLog(`Checking field ${vraag.id}-input:`, answer);
+        if (answer.length < 10) { // Assuming minLength 10 for all questions
+            allQuestionsAnswered = false;
+            devLog(`Field ${vraag.id} too short:`, answer.length);
                 break;
             }
             data[vraag.id] = answer;
@@ -866,7 +898,6 @@ async function saveCriticalAnalysis(sectionNumber, interactionId) {
         return;
     }
 
-    // Debug logging
     devLog('Saving critical analysis data:', data);
     devLog('Storage key:', `critical_analysis_${sectionNumber}_${interactionId}_answered`);
 
@@ -882,17 +913,17 @@ async function saveCriticalAnalysis(sectionNumber, interactionId) {
         : `hoofdstuk${sectionNumber}-${interactionId}`;
     const container = document.getElementById(containerId);
 
-    if (container && typeof renderInteraction === 'function') {
+    if (container && typeof window.renderInteraction === 'function') {
         setTimeout(async () => {
              // Haal de juiste data op (uit window.devChapterData of via fetch)
             const chapterData = sectionNumber === 'dev' 
                 ? window.devChapterData 
-                : await fetchChapterData(sectionNumber);
+                : await window.fetchChapterData(sectionNumber);
 
             if (chapterData && chapterData.interacties) {
                 const freshInteractionData = chapterData.interacties.find(i => i.id === interactionId);
                 if (freshInteractionData) {
-                    renderInteraction(freshInteractionData, sectionNumber, container);
+                    window.renderInteraction(freshInteractionData, sectionNumber, container);
                 }
             }
         }, 600);
@@ -926,8 +957,8 @@ function clearDevProgress() {
 
     // Her-render de testpagina om de wijzigingen te tonen.
     const mainContainer = document.querySelector('main.container');
-    if (window.devChapterData && mainContainer && typeof renderStandaloneChapter === 'function') {
-        renderStandaloneChapter(window.devChapterData, mainContainer);
+    if (window.devChapterData && mainContainer && typeof window.renderStandaloneChapter === 'function') {
+        window.renderStandaloneChapter(window.devChapterData, mainContainer);
         alert("De voortgang van de testpagina is gewist.");
     } else {
         // Fallback als er iets misgaat
@@ -1072,6 +1103,551 @@ function initializeReflectionInteraction(containerId, interactionData) {
     textarea.addEventListener('input', updateCounter);
     // Roep de functie direct aan om de initiële staat te tonen (voor opgeslagen antwoorden)
     updateCounter();
+}
+
+// Braindump Interaction Functions
+async function saveBraindump(chapterNumber, braindumpId) {
+    const textareaId = `${braindumpId}-textarea`;
+    const textarea = document.getElementById(textareaId);
+    
+    if (!textarea) {
+        console.error(`Braindump textarea with ID ${textareaId} not found.`);
+        return;
+    }
+    
+    const braindumpText = textarea.value.trim();
+    
+    // Minimale validatie
+    if (braindumpText.length < 20) {
+        alert('Je braindump moet minimaal 20 tekens bevatten.');
+        return;
+    }
+    
+    // Controleer of er een evaluatie is geselecteerd
+    const evaluationRadios = document.querySelectorAll(`input[name="${braindumpId}-evaluation"]:checked`);
+    if (evaluationRadios.length === 0) {
+        alert('Selecteer eerst hoe goed je de inhoud kon reproduceren.');
+        return;
+    }
+    
+    const selectedEvaluation = evaluationRadios[0].value;
+    
+    // Haal bestaande data op
+    const storageKeyAttempts = `braindump_${chapterNumber}_${braindumpId}_attempts`;
+    const storageKeyEvaluations = `braindump_${chapterNumber}_${braindumpId}_evaluations`;
+    const storageKeyCompleted = `braindump_${chapterNumber}_${braindumpId}_completed`;
+    
+    const attempts = JSON.parse(localStorage.getItem(storageKeyAttempts) || '[]');
+    const evaluations = JSON.parse(localStorage.getItem(storageKeyEvaluations) || '[]');
+    
+    // Voeg nieuwe poging toe
+    attempts.push(braindumpText);
+    evaluations.push({
+        attempt: attempts.length,
+        evaluation: selectedEvaluation,
+        timestamp: new Date().toISOString()
+    });
+    
+    // Sla data op
+    localStorage.setItem(storageKeyAttempts, JSON.stringify(attempts));
+    localStorage.setItem(storageKeyEvaluations, JSON.stringify(evaluations));
+    localStorage.setItem(storageKeyCompleted, 'true');
+    
+    // Update UI direct zonder re-render
+    const saveBtn = document.getElementById(`${braindumpId}-save-btn`);
+    const textareaElement = document.getElementById(textareaId);
+    const evaluationOptions = document.querySelectorAll(`input[name="${braindumpId}-evaluation"]`);
+    
+    if (saveBtn) {
+        saveBtn.textContent = 'Opgeslagen';
+        saveBtn.classList.add('btn-opgeslagen');
+        saveBtn.disabled = true;
+    }
+    
+    if (textareaElement) {
+        textareaElement.readOnly = true;
+    }
+    
+    // Disable evaluation radio buttons
+    evaluationOptions.forEach(radio => {
+        radio.disabled = true;
+    });
+    
+    // Add feedback message
+    const containerId = chapterNumber === 'dev' 
+        ? `dev-${braindumpId}` 
+        : `hoofdstuk${chapterNumber}-${braindumpId}`;
+    const container = document.getElementById(containerId);
+    
+    if (container) {
+        // Remove existing feedback if any
+        const existingFeedback = container.querySelector('.feedback-message');
+        if (existingFeedback) {
+            existingFeedback.remove();
+        }
+        
+        // Add new feedback
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback-message';
+        feedbackDiv.style.cssText = 'display: block; margin-top: 1rem; padding: 1rem; background-color: var(--info-background); border-radius: 4px;';
+        
+        const evaluationLabels = {
+            'good': 'Goed - Ik wist het meeste nog',
+            'fair': 'Matig - Ik wist de helft nog',
+            'poor': 'Slecht - Ik wist weinig nog'
+        };
+        
+        const evalText = evaluationLabels[selectedEvaluation] || selectedEvaluation;
+        feedbackDiv.innerHTML = `<strong>Je evaluatie:</strong> ${evalText}<br><em>Poging ${attempts.length} opgeslagen.</em>`;
+        
+        // Insert feedback after evaluation section
+        const evaluationSection = container.querySelector('.braindump-evaluation');
+        if (evaluationSection) {
+            evaluationSection.parentNode.insertBefore(feedbackDiv, evaluationSection.nextSibling);
+        }
+    }
+    
+    if (chapterNumber !== 'dev') {
+        await updateAllChapterProgress();
+    }
+}
+
+function retryBraindump(chapterNumber, braindumpId) {
+    // Reset de opgeslagen 'completed' status maar behoud de pogingen geschiedenis
+    const storageKeyCompleted = `braindump_${chapterNumber}_${braindumpId}_completed`;
+    localStorage.removeItem(storageKeyCompleted);
+    
+    // Update UI direct zonder re-render
+    const saveBtn = document.getElementById(`${braindumpId}-save-btn`);
+    const textareaElement = document.getElementById(`${braindumpId}-textarea`);
+    const evaluationOptions = document.querySelectorAll(`input[name="${braindumpId}-evaluation"]`);
+    
+    if (saveBtn) {
+        saveBtn.textContent = 'Evaluatie Opslaan';
+        saveBtn.classList.remove('btn-opgeslagen');
+        saveBtn.disabled = false;
+    }
+    
+    if (textareaElement) {
+        textareaElement.value = '';
+        textareaElement.readOnly = false;
+    }
+    
+    // Enable evaluation radio buttons and uncheck them
+    evaluationOptions.forEach(radio => {
+        radio.disabled = false;
+        radio.checked = false;
+    });
+    
+    // Remove feedback message
+    const containerId = chapterNumber === 'dev' 
+        ? `dev-${braindumpId}` 
+        : `hoofdstuk${chapterNumber}-${braindumpId}`;
+    const container = document.getElementById(containerId);
+    
+    if (container) {
+        const existingFeedback = container.querySelector('.feedback-message');
+        if (existingFeedback) {
+            existingFeedback.remove();
+        }
+    }
+    
+    // Update attempts info
+    const attemptsInfo = container?.querySelector('.braindump-attempts-info');
+    if (attemptsInfo) {
+        const storageKeyAttempts = `braindump_${chapterNumber}_${braindumpId}_attempts`;
+        const attempts = JSON.parse(localStorage.getItem(storageKeyAttempts) || '[]');
+        attemptsInfo.textContent = `Poging ${attempts.length + 1} van onbeperkt`;
+    }
+}
+
+async function initializeBraindumpInteraction(containerId, interactionData, chapterNumber) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Braindump container #${containerId} not found for initialization.`);
+        return;
+    }
+    
+    const braindumpId = interactionData.id;
+    const textarea = container.querySelector(`#${braindumpId}-textarea`);
+    
+    // Check if already completed
+    const storageKeyCompleted = `braindump_${chapterNumber}_${braindumpId}_completed`;
+    const isCompleted = localStorage.getItem(storageKeyCompleted) === 'true';
+    
+    // Haal hoofdstuk content op voor ChatGPT prompt
+    let chapterContent = '';
+    let chapterData = null;
+    try {
+        if (chapterNumber !== 'dev') {
+            chapterData = await window.fetchChapterData(chapterNumber);
+            if (chapterData && chapterData.content) {
+                // Extract text content from JSON structure
+                chapterContent = extractTextFromContent(chapterData.content);
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching chapter content for ChatGPT prompt:', error);
+    }
+    
+    if (textarea) {
+        // Update ChatGPT link dynamisch wanneer de inhoud verandert
+        const updateChatGPTLink = () => {
+            const chatGptLink = container.querySelector('.braindump-chatgpt-link');
+            if (chatGptLink) {
+                const currentText = textarea.value.trim();
+                // Gebruik altijd de volledige promptstructuur
+                let selectedContent = chapterContent;
+                const sectionCheckboxes = container.querySelectorAll('.braindump-section-checkbox:checked');
+                if (sectionCheckboxes.length > 0 && chapterData) {
+                    const selectedIndexes = Array.from(sectionCheckboxes).map(cb => cb.value);
+                    selectedContent = getSelectedSectionContent(chapterData, selectedIndexes);
+                }
+                const fullPrompt = buildBraindumpPrompt(interactionData, selectedContent, currentText);
+                const encodedPrompt = encodeURIComponent(fullPrompt);
+                chatGptLink.href = `https://chatgpt.com/?q=${encodedPrompt}`;
+            }
+        };
+        
+        textarea.addEventListener('input', updateChatGPTLink);
+        
+        // Update link initieel
+        updateChatGPTLink();
+        
+        // Update link ook wanneer sectie-selectie verandert
+        container.addEventListener('change', (e) => {
+            if (e.target.classList.contains('braindump-section-checkbox')) {
+                updateChatGPTLink();
+                
+                // Handle "Hele hoofdstuk" checkbox logic
+                if (e.target.value === 'all') {
+                    const sectionCheckboxes = container.querySelectorAll('.braindump-section-checkbox:not([value="all"])');
+                    sectionCheckboxes.forEach(cb => {
+                        cb.checked = e.target.checked;
+                        cb.disabled = e.target.checked;
+                    });
+                } else {
+                    // Individual section checkbox changed
+                    const allCheckbox = container.querySelector('.braindump-section-checkbox[value="all"]');
+                    if (allCheckbox && allCheckbox.checked) {
+                        allCheckbox.checked = false;
+                        const sectionCheckboxes = container.querySelectorAll('.braindump-section-checkbox:not([value="all"])');
+                        sectionCheckboxes.forEach(cb => {
+                            cb.disabled = false;
+                        });
+                    }
+                }
+            }
+        });
+    }
+    
+    // Load en render secties als nog niet completed
+    if (!isCompleted && chapterData) {
+        const sectionList = container.querySelector(`#${braindumpId}-section-list`);
+        if (sectionList) {
+            const sections = prepareBraindumpSections(chapterData);
+            
+            sections.forEach((section, index) => {
+                const sectionHTML = `
+                    <label class="braindump-section-option">
+                        <input type="checkbox" class="braindump-section-checkbox" value="${index}">
+                        <span class="braindump-section-label">📝 ${section.title}</span>
+                    </label>
+                `;
+                sectionList.innerHTML += sectionHTML;
+            });
+            // Synchroniseer direct de checkboxes met de "Hele hoofdstuk" selectie
+            const allCheckbox = container.querySelector('.braindump-section-checkbox[value="all"]');
+            if (allCheckbox && allCheckbox.checked) {
+                const sectionCheckboxes = container.querySelectorAll('.braindump-section-checkbox:not([value="all"])');
+                sectionCheckboxes.forEach(cb => {
+                    cb.checked = true;
+                    cb.disabled = true;
+                });
+            }
+        }
+    }
+    
+    // Initialize save button state
+    const saveBtn = container.querySelector(`#${braindumpId}-save-btn`);
+    if (saveBtn) {
+        if (isCompleted) {
+            saveBtn.textContent = 'Opgeslagen';
+            saveBtn.classList.add('btn-opgeslagen');
+            saveBtn.disabled = true;
+        } else {
+            saveBtn.textContent = 'Evaluatie Opslaan';
+            saveBtn.classList.remove('btn-opgeslagen');
+            saveBtn.disabled = true; // Start disabled until text and evaluation are provided
+        }
+    }
+    
+    // Combined event listener for both textarea and evaluation radio buttons
+    const updateSaveButtonState = () => {
+        const saveBtn = container.querySelector(`#${braindumpId}-save-btn`);
+        const textareaElement = container.querySelector(`#${braindumpId}-textarea`);
+        const evaluationSelected = container.querySelector(`input[name="${braindumpId}-evaluation"]:checked`);
+        
+        if (saveBtn && textareaElement && evaluationSelected) {
+            const hasEnoughText = textareaElement.value.trim().length >= 20;
+            if (hasEnoughText) {
+                saveBtn.disabled = false;
+                saveBtn.textContent = 'Evaluatie Opslaan';
+                saveBtn.classList.remove('btn-opgeslagen');
+            } else {
+                saveBtn.disabled = true;
+            }
+        } else if (saveBtn) {
+            saveBtn.disabled = true;
+        }
+    };
+    
+    // Add event listeners
+    if (textarea && !isCompleted) {
+        textarea.addEventListener('input', updateSaveButtonState);
+    }
+    
+    const evaluationRadios = container.querySelectorAll(`input[name="${braindumpId}-evaluation"]`);
+    evaluationRadios.forEach(radio => {
+        radio.addEventListener('change', updateSaveButtonState);
+    });
+
+    // Eventlistener voor kopieerknop prompt
+    const copyBtn = container.querySelector(`#${braindumpId}-copy-prompt-btn`);
+    const feedbackSpan = container.querySelector(`#${braindumpId}-copy-feedback`);
+    if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+            // Gebruik altijd de actuele prompt
+            let selectedContent = chapterContent;
+            const sectionCheckboxes = container.querySelectorAll('.braindump-section-checkbox:checked');
+            if (sectionCheckboxes.length > 0 && chapterData) {
+                const selectedIndexes = Array.from(sectionCheckboxes).map(cb => cb.value);
+                selectedContent = getSelectedSectionContent(chapterData, selectedIndexes);
+            }
+            const fullPrompt = buildBraindumpPrompt(interactionData, selectedContent, textarea.value.trim());
+            navigator.clipboard.writeText(fullPrompt).then(() => {
+                if (feedbackSpan) {
+                    feedbackSpan.style.display = 'inline';
+                    setTimeout(() => { feedbackSpan.style.display = 'none'; }, 1800);
+                }
+            });
+        });
+    }
+}
+
+// Helper functies voor braindump sectie-selectie
+function extractSectionsFromContent(content) {
+    const sections = [];
+    let currentSection = { title: "Begin van hoofdstuk", content: [] };
+    
+    if (!Array.isArray(content)) return sections;
+    
+    content.forEach(item => {
+        if (item.type === 'section-title') {
+            // Nieuwe sectie gevonden
+            if (currentSection.content.length > 0) {
+                sections.push(currentSection);
+            }
+            currentSection = { 
+                title: item.titel, 
+                content: [item] 
+            };
+        } else {
+            // Voeg content toe aan huidige sectie
+            currentSection.content.push(item);
+        }
+    });
+    
+    // Laatste sectie toevoegen
+    if (currentSection.content.length > 0) {
+        sections.push(currentSection);
+    }
+    
+    return sections;
+}
+
+function filterContentForBraindump(content) {
+    if (!Array.isArray(content)) return [];
+    
+    return content.filter(item => {
+        // Altijd uitgesloten types
+        if (BRAINDUMP_CONFIG.auto_exclude_content_types.includes(item.type)) {
+            return false;
+        }
+        
+        // Configureerbare uitsluitingen
+        const excludes = BRAINDUMP_CONFIG.configurable_excludes;
+        if (excludes.videos && item.type === 'video-grid') return false;
+        if (excludes.audio && item.type === 'audio-block') return false;
+        if (excludes.images && item.type === 'image-gallery') return false;
+        if (excludes.interactions && item.type.includes('interaction')) return false;
+        
+        return true;
+    });
+}
+
+function prepareBraindumpSections(chapterData) {
+    let sections = extractSectionsFromContent(chapterData.content);
+    
+    // 1. Automatische filtering op basis van configuratie
+    sections = sections.filter(section => {
+        // Sluit "Begin van hoofdstuk" uit (introductie content)
+        if (section.title === "Begin van hoofdstuk") {
+            return false;
+        }
+        
+        // Controleer section titel patronen
+        const shouldExclude = BRAINDUMP_CONFIG.exclude_section_patterns.some(pattern => 
+            pattern.test(section.title)
+        );
+        return !shouldExclude;
+    });
+    
+    // 2. Content type filtering per sectie
+    sections = sections.map(section => ({
+        ...section,
+        content: filterContentForBraindump(section.content)
+    }));
+    
+    // 3. Verwijder lege secties
+    sections = sections.filter(section => section.content.length > 0);
+    
+    return sections;
+}
+
+function getSelectedSectionContent(chapterData, selectedSectionIndexes) {
+    if (!selectedSectionIndexes || selectedSectionIndexes.length === 0) {
+        return extractTextFromContent(chapterData.content);
+    }
+    
+    const sections = prepareBraindumpSections(chapterData);
+    
+    if (selectedSectionIndexes.includes('all')) {
+        return extractTextFromContent(chapterData.content);
+    }
+    
+    const selectedContent = [];
+    selectedSectionIndexes.forEach(index => {
+        const sectionIndex = parseInt(index);
+        if (sections[sectionIndex]) {
+            selectedContent.push(...sections[sectionIndex].content);
+        }
+    });
+    
+    return extractTextFromContent(selectedContent);
+}
+
+// Helper functie om tekst uit content structuur te extraheren
+function extractTextFromContent(content) {
+    let text = '';
+    
+    if (!Array.isArray(content)) return text;
+    
+    content.forEach(item => {
+        switch (item.type) {
+            case 'content-text':
+            case 'section-title':
+            case 'content-subtitle':
+                if (item.tekst) text += item.tekst + '\n\n';
+                if (item.titel) text += item.titel + '\n\n';
+                break;
+            case 'info-card':
+                if (item.titel) text += item.titel + '\n';
+                if (item.tekst) text += item.tekst + '\n';
+                if (item.items) {
+                    item.items.forEach(subItem => {
+                        if (subItem.titel) text += subItem.titel + ': ';
+                        if (subItem.tekst) text += subItem.tekst + '\n';
+                    });
+                }
+                text += '\n';
+                break;
+            case 'benefits-grid':
+                if (item.items) {
+                    item.items.forEach(benefit => {
+                        if (benefit.titel) text += benefit.titel + ': ';
+                        if (benefit.tekst) text += benefit.tekst + '\n';
+                    });
+                }
+                text += '\n';
+                break;
+            case 'accordion':
+                if (item.titel) text += item.titel + '\n';
+                if (item.content) {
+                    item.content.forEach(accordionItem => {
+                        if (accordionItem.titel) text += accordionItem.titel + ': ';
+                        if (accordionItem.beschrijving) text += accordionItem.beschrijving + '\n';
+                    });
+                }
+                text += '\n';
+                break;
+        }
+    });
+    
+    return text.trim();
+}
+
+devLog('script.js loaded');
+
+// Centrale configuratie voor braindump sectie filtering
+const BRAINDUMP_CONFIG = {
+    // Automatisch uitgesloten (altijd)
+    auto_exclude_content_types: [
+        'divider'  // Scheidingslijnen zijn niet inhoudelijk
+    ],
+    
+    // Configureerbare uitsluitingen (makkelijk aan/uit te zetten)
+    configurable_excludes: {
+        videos: true,           // Zet op false om video's toe te staan
+        audio: false,           // Zet op true om audio uit te sluiten
+        images: false,          // Zet op true om afbeeldingen uit te sluiten
+        interactions: true      // Altijd true - interacties horen niet in braindump
+    },
+    
+    // Sectie titel patronen om uit te sluiten
+    exclude_section_patterns: [
+        /interacties?$/i,       // Secties die eindigen op "interactie(s)"
+        /oefeningen?$/i         // Secties die eindigen op "oefening(en)"
+    ]
+};
+
+function buildBraindumpPrompt(interactionData, chapterContent, studentText) {
+    // Korte inleiding uit de bestaande prompt (indien aanwezig)
+    const basePrompt = interactionData.chatgpt_prompt || '';
+    
+    // Uitgebreide instructie
+    const instructie = `
+
+**Context:**  
+De onderstaande tekst is afkomstig uit een e-learning over effectief leren. De student heeft een braindump gemaakt op basis van de geselecteerde secties.
+
+**Doel van de braindump:**  
+De student probeert de inhoud van het hoofdstuk zo goed mogelijk uit het eigen geheugen op te halen, zonder terug te kijken in de tekst. Dit is een bewezen effectieve leerstrategie om kennis beter te onthouden en te verdiepen.
+
+**Jouw rol als AI:**  
+Jij bent een leercoach. Geef constructieve, motiverende en concrete feedback op de braindump van de student.
+- Benoem wat de student al goed heeft opgehaald uit het geheugen.
+- Wijs op eventuele hiaten of onduidelijkheden in het antwoord.
+- Geef praktische tips om het leren en onthouden verder te verbeteren.
+
+**Focus op inhoud:**  
+De feedback moet uitsluitend gericht zijn op de inhoud van de informatie uit het hoofdstuk. Aspecten als vormgeving, structuur, spelling of grammatica zijn van secundair belang en dienen niet of slechts zeer beknopt behandeld te worden. Houd er rekening mee dat de input ook gesproken kan zijn.
+
+**Gewenste outputstructuur:**  
+Geef een gestructureerde analyse met:
+1. Sterke punten
+2. Verbeterpunten
+3. Suggesties voor verdieping
+4. Eindbeoordeling (expert/gevorderd/beginner)
+
+**Hoofdstuk inhoud om mee te vergelijken:**
+${chapterContent}
+
+**Mijn braindump:**
+${studentText}
+`;
+    
+    return `${basePrompt}\n${instructie}`;
 }
 
 

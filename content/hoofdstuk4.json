@@ -1,185 +1,368 @@
 {
-   "content": [
+  "hoofdstuk_titel": "Hoofdstuk 4: De Verwerker: Effectieve Strategieën",
+  "content": [
     {
       "type": "info-card",
-      "titel": "Prompten dus...",
-      "tekst": "Nu we weten wat AI is en welke chatbots en tools er beschikbaar zijn, komen we aan bij misschien wel het meest essentiële onderdeel van AI: goed kunnen prompten. Het gaat hierbij niet alleen om de structuur van de prompt, maar ook om je eigen helderheid over wat je wilt bereiken. Als je zelf (nog) niet precies weet wat je wilt bereiken, wordt het lastig om een goede prompt te maken. Maar ook daar kan AI je bij helpen. Het helpt enorm als je zelf al enige kennis hebt over het onderwerp om tot een goede prompt te komen die leidt tot een waardevolle output."
+      "classes": "purple-kader",
+      "titel": "De Verwerker: Jouw Gereedschapskist voor Diepgaand Leren",
+      "tekst": "Welkom bij het vierde hoofdstuk! Na het begrijpen van de werking van je brein, is het nu tijd om de gereedschapskist van 'De Verwerker' te openen. Deze gereedschapskist heeft <strong>twee lagen</strong>: eerst de <strong>fundamentele voorwaarden</strong> die alle leren effectiever maken, en daarna de <strong>specifieke strategieën</strong> die je kunt inzetten. Zonder de juiste voorwaarden werken zelfs de beste strategieën minder goed. Bereid je voor om slimmer te leren, niet harder!"
     },
     {
-      "type": "accordion",
-      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
-      "content": [
+      "type": "section-title",
+      "titel": "Voorkennis Activeren: Bouw op wat je al weet"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Dit is de <strong>eerste fundamentele voorwaarde</strong> voor effectieve verwerking. Voordat je nieuwe informatie opneemt, is het cruciaal om je bestaande kennis te activeren. Nieuwe kennis wordt veel beter opgenomen en verankerd als het kan worden 'opgehangen' aan bestaande kennisschema's of 'mentale kapstokken'. Door bewust stil te staan bij wat je al weet over een onderwerp, creëer je een stevige basis waarop nieuwe informatie kan worden gebouwd. <strong>Belangrijk</strong>: Alle strategieën die je verderop in dit hoofdstuk leert (zoals actief ophalen, gespreid leren, en elaboratie) werken veel beter als je eerst je voorkennis activeert. Het is de motor die alle andere strategieën krachtiger maakt."
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
         {
-          "type": "content-text",
-          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+          "titel": "Beter Begrip",
+          "icoon": "lightbulb-on",
+          "tekst": "Nieuwe informatie krijgt meer betekenis door koppeling aan bestaande kennis."
         },
         {
-          "type": "audio-grid",
-          "kolommen": 1,
-          "items": [
-            {
-              "id": "h4_audio_1",
-              "titel": "Podcast: Prompten kun je leren",
-              "beschrijving": "Leer de basisprincipes van effectief prompten om betere resultaten uit AI-tools te halen.",
-              "bron": "audio/H4-prompten-kan-je-leren-podcast.wav",
-              "meta": ""
-            }
-          ]
+          "titel": "Snellere Opname",
+          "icoon": "brain",
+          "tekst": "Je brein kan nieuwe informatie sneller verwerken als er al een kennisstructuur aanwezig is."
+        },
+        {
+          "titel": "Diepere Verankering",
+          "icoon": "check-circle",
+          "tekst": "Informatie die gekoppeld wordt aan bestaande kennis wordt beter onthouden."
+        },
+        {
+          "titel": "Kritisch Denken",
+          "icoon": "eye",
+          "tekst": "Door voorkennis te activeren kun je nieuwe informatie beter evalueren en beoordelen."
         }
       ]
     },
     {
-      "type": "section-title",
-      "titel": "Kernprincipes van Effectief Prompten"
+      "type": "info-card",
+      "titel": "Praktische Tips voor Voorkennis Activeren",
+      "items": [
+        { "titel": "Brainstorm vooraf:", "tekst": "Schrijf 5 minuten alles op wat je al weet over het onderwerp voordat je begint met lezen of studeren." },
+        { "titel": "Formuleer vragen:", "tekst": "Stel jezelf vragen als: 'Wat weet ik hier al van?', 'Waar ben ik eerder tegengekomen?', 'Hoe verhoudt dit zich tot mijn ervaring?'" },
+        { "titel": "Maak een concept map:", "tekst": "Teken een mindmap van je bestaande kennis over het onderwerp en vul deze aan tijdens het leren." },
+        { "titel": "Koppel aan de praktijk:", "tekst": "Denk na over hoe het nieuwe onderwerp zich verhoudt tot situaties die je al kent uit de fysiotherapiepraktijk." },
+        { "titel": "Bespreek met anderen:", "tekst": "Praat met medestudenten over wat jullie al weten voordat jullie nieuwe stof gaan bestuderen." }
+      ]
     },
     {
-      "type": "icon-card-grid",
-      "themes": [
-        { 
-          "titel": "Garbage in, Garbage out", 
-          "icoon": "images/garbage-in_garbage-out.png", 
-          "positief_voorbeeld": "Een goed gestructureerde prompt met duidelijke doelen en context leidt tot relevante en bruikbare resultaten.", 
-          "uitdaging": "Vage of onduidelijke prompts resulteren in irrelevante of onbruikbare output.", 
-          "reflectie_vraag": "Herken je jezelf in het positieve voorbeeld of in de uitdaging? Hoe zorg jij ervoor dat je prompts duidelijk en gestructureerd zijn?",
-          "dynamische_velden": [
-            {"veldnaam": "positief_voorbeeld", "label": "Positief voorbeeld"},
-            {"veldnaam": "uitdaging", "label": "Uitdaging"},
-            {"veldnaam": "reflectie_vraag", "label": "Reflectievraag"}
-          ]
+      "type": "image-block",
+      "src": "https://placehold.co/800x450/e9d5ff/9333ea?text=Mentale+Kapstokken+voor+Nieuwe+Kennis",
+      "alt": "Metaforische afbeelding van mentale kapstokken waaraan nieuwe kennis wordt opgehangen",
+      "onderschrift": "Voorkennis werkt als mentale kapstokken: nieuwe informatie wordt veel beter onthouden als het ergens aan kan worden opgehangen."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Modelleren: Leer van de Expert"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Dit is de <strong>tweede fundamentele voorwaarde</strong> voor effectieve verwerking. Modelleren is een krachtige didactische aanpak waarbij een expert (docent, mentor, of ervaren professional) denkprocessen en strategieën expliciet voordoet. Net als in de traditionele meester-gezelrelatie leer je niet alleen WAT je moet doen, maar vooral HOE je moet denken. <strong>Cruciaal voor dit hoofdstuk</strong>: Modelleren is de beste manier om de komende leerstrategieën (actief ophalen, gespreid leren, elaboratie) te leren toepassen. Door experts te zien demonstreren hoe zij deze strategieën gebruiken, ontwikkel je zelf sneller de vaardigheden om ze effectief in te zetten."
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
+        {
+          "titel": "Zichtbare Denkstappen",
+          "icoon": "eye",
+          "tekst": "Experts maken hun denkproces expliciet, zodat je leert hoe je moet redeneren."
         },
-        { 
-          "titel": "Human in the Loop", 
-          "icoon": "images/Human_in_the_loop.png", 
-          "positief_voorbeeld": "Door actief betrokken te blijven en de output te evalueren, kun je de prompt verfijnen en betere resultaten krijgen.", 
-          "uitdaging": "Blind vertrouwen op AI-output zonder eigen inbreng en evaluatie.", 
-          "reflectie_vraag": "In hoeverre laat jij de AI het werk doen versus dat je zelf actief meedenkt en de output evalueert? Wat is jouw ervaring hiermee?",
-          "dynamische_velden": [
-            {"veldnaam": "positief_voorbeeld", "label": "Positief voorbeeld"},
-            {"veldnaam": "uitdaging", "label": "Uitdaging"},
-            {"veldnaam": "reflectie_vraag", "label": "Reflectievraag"}
-          ]
+        {
+          "titel": "Verminderde Cognitieve Belasting",
+          "icoon": "brain",
+          "tekst": "Door voorbeelden te zien hoef je niet alles zelf uit te puzzelen, wat mentale ruimte vrijmaakt."
+        },
+        {
+          "titel": "Praktijkgericht Leren",
+          "icoon": "check-circle",
+          "tekst": "Je ziet hoe theoretische kennis wordt toegepast in echte situaties."
+        },
+        {
+          "titel": "Efficiënt voor Beginners",
+          "icoon": "lightbulb-on",
+          "tekst": "Vooral nuttig als je nog weinig ervaring hebt met complexe vaardigheden."
         }
       ]
     },
     {
+      "type": "info-card",
+      "titel": "Optimaal Profiteren van Modelleren",
+      "items": [
+        { "titel": "Let goed op redeneringen:", "tekst": "Focus niet alleen op wat de expert doet, maar vooral op waarom en hoe beslissingen worden genomen." },
+        { "titel": "Volg stappen bewust:", "tekst": "Probeer de gehele denksequentie te volgen: van probleemanalyse tot oplossing." },
+        { "titel": "Stel verdiepende vragen:", "tekst": "Vraag door op onduidelijkheden: 'Waarom kies je voor deze aanpak?', 'Wat als dit niet werkt?'" },
+        { "titel": "Oefen onder begeleiding:", "tekst": "Pas de gemodelleerde strategie toe terwijl de expert feedback kan geven." },
+        { "titel": "Reflecteer achteraf:", "tekst": "Denk na over wat je hebt geleerd en hoe je dit in de toekomst kunt toepassen." }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "info-card",
+      "classes": "purple-kader",
+      "titel": "Van Fundamentele Voorwaarden naar Specifieke Strategieën",
+      "tekst": "Nu je weet hoe je de <strong>fundamentele voorwaarden</strong> creëert (voorkennis activeren en modelleren), kunnen we de <strong>specifieke strategieën</strong> van 'De Verwerker' gaan verkennen. Deze strategieën zijn bewezen effectief, maar onthoud: ze werken nog beter als je ze combineert met de voorwaarden die je zojuist hebt geleerd. Elke strategie die volgt is krachtiger als je eerst je voorkennis activeert en de technieken observeert bij experts."
+    },
+    {
       "type": "section-title",
-      "titel": "De basisprincipes van een krachtige prompt"
+      "titel": "Actief Ophalen (Retrieval Practice): Haal het uit je Hoofd!"
     },
     {
         "type": "content-text",
-        "tekst": "Om ervoor te zorgen dat je geen \"garbage\" in de AI stopt, en er dus ook geen \"garbage\" uitkomt, zijn er een aantal basisprincipes. Een goede prompt is als een duidelijke opdracht aan een slimme assistent: hoe beter de instructie, hoe beter het resultaat."
+      "tekst": "Actief ophalen, ook wel 'retrieval practice' genoemd, is een van de krachtigste leerstrategieën. Het betekent simpelweg dat je actief probeert informatie op te roepen uit je geheugen, in plaats van het alleen passief te herlezen. Dit voelt vaak moeilijker dan passief lezen, maar zoals je in Hoofdstuk 3 leerde, zijn deze 'wenselijke moeilijkheden' juist essentieel voor diepgaand leren en het doorbreken van de 'illusie van vloeiendheid'. Dit is waar 'De Verwerker' aan het werk gaat!"
     },
     {
-        "type": "card-grid",
-  "items": [
-    { "titel": "Wees Duidelijk en Specifiek", "beschrijving": "Vermijd vage vragen. Formuleer precies wat je wilt weten.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "NIET: 'Vertel iets over een enkelletsel.'\nWEL: 'Wat zijn de meest voorkomende symptomen van een inversietrauma van de enkel bij een volwassen sporter?'" } },
-    { "titel": "Geef Context en een Rol", "beschrijving": "Vertel de AI wie jij bent en welke rol de AI moet aannemen. Dit helpt de AI om de toon, stijl en diepgang van het antwoord aan te passen.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "Context: 'Ik ben een tweedejaars student fysiotherapie.'\nRol: 'Gedraag je als een ervaren sportfysiotherapeut en leg het uit.'" } },
-    { "titel": "Definieer het Outputformat", "beschrijving": "Vertel de AI hoe je het antwoord wilt ontvangen. Dit helpt om de informatie gestructureerd en direct bruikbaar te maken.", "voorbeeld": { "titel": "Voorbeelden", "tekst": "1. 'Geef het antwoord in een tabel met de kolommen \"Symptoom\", \"Mogelijke Oorzaak\" en \"Eerste Hulp\".'\n2. 'Maak een bullet list van de belangrijkste revalidatie-oefeningen.'" } }
-      ]
-    },
-    {
-      "type": "section-title",
-      "titel": "Voorbeeld: Van een matige naar een sterke prompt"
-    },
-    {
-      "type": "content-text",
-      "tekst": "<strong>Laten we het in de praktijk brengen!</strong> Hieronder zie je prompts voor hetzelfde scenario - leren over enkelletselbehandeling - van vaag tot zeer gericht.<br><br><strong>Belangrijk:</strong> 'Beter' hangt af van je doel. Een simpele vraag volstaat voor een snelle definitie, een complexe prompt traint je klinisch redeneren.<br><br><strong>Pro tip:</strong> Ga niet op zoek naar de perfecte prompt! Begin gewoon simpel en bouw stap voor stap op. Vraag om aanpassingen, stel vervolgvragen, of probeer een andere invalshoek. Deze interactieve aanpak werkt vaak beter dan proberen om direct de perfecte vraag te stellen.<br><br><strong>Ervaar het verschil!</strong> Kopieer een prompt naar je favoriete AI-tool (ChatGPT, Gemini, Claude) en probeer verschillende versies uit. Let op: elke AI geeft andere antwoorden, zelfs met dezelfde prompt. Experimenteer dus vooral!"
-    },
-    {
-      "type": "table-container-group",
-      "tables": [
-        { "headers": ["Prompt", "Analyse"], "rows": [
-            ["<a href=\"https://chat.openai.com/?q=leg+me+uit+hoe+ik+een+enkelletsel+moet+behandelen\" target=\"_blank\">leg me uit hoe ik een enkelletsel moet behandelen</a>", "Deze prompt is te algemeen. De AI weet niet voor wie de uitleg is, welk type letsel wordt bedoeld of welk detailniveau nodig is. Hoewel dit soms een bruikbaar antwoord kan opleveren, is het resultaat vaak te algemeen, past het niet goed bij wat je echt nodig hebt, of is de output soms zelfs onbruikbaar."],
-            ["<a href=\"https://chat.openai.com/?q=Rol%3A%20Je%20bent%20een%20ervaren%20docent%20fysiotherapie.%0A%0AContext%3A%20Ik%20ben%20een%20eerstejaars%20student%20fysiotherapie.%20Ik%20wil%20de%20basisprincipes%20leren%20voor%20de%20behandeling%20van%20een%20acuut%20enkelinversietrauma%2C%20specifiek%20gericht%20op%20de%20eerste%2048%20uur%20na%20het%20incident.%0A%0AKernvraag%3A%20Wat%20zijn%20de%20stappen%20die%20ik%20moet%20volgen%20in%20de%20behandeling%20gedurende%20de%20eerste%2048%20uur%3F\" target=\"_blank\" style=\"text-align: left; display: inline-block;\"><strong>Rol:</strong> Je bent een ervaren docent fysiotherapie.<br><strong>Context:</strong> Ik ben een eerstejaars student fysiotherapie. Ik wil de basisprincipes leren voor de behandeling van een acuut enkelinversietrauma, specifiek gericht op de eerste 48 uur na het incident.<br><strong>Kernvraag:</strong> Wat zijn de stappen die ik moet volgen in de behandeling gedurende de eerste 48 uur?</a>", "Deze prompt is al veel beter. Het definieert een duidelijke <strong>Rol</strong>, <strong>Context</strong> en <strong>Kernvraag</strong>. De prompt kan echter nog verder worden verbeterd door ook de gewenste <strong>Output</strong> te specificeren (bijvoorbeeld een tabel of bullet list). Nu laat je de AI vrij in de opmaak, wat niet altijd het beste resultaat geeft."],
-            ["<a href=\"https://chat.openai.com/?q=Rol%3A%20Je%20bent%20een%20docent%20fysiotherapie%20en%20je%20gaat%20mij%20overhoren.%0A%0AContext%3A%20Ik%20heb%20de%20stof%20over%20de%20behandeling%20van%20enkelinversietrauma's%20bestudeerd%20en%20wil%20nu%20mijn%20kennis%20toetsen.%0A%0ATaak%3A%20Overhoor%20mij%20over%20dit%20onderwerp.%20Gebruik%20een%20mix%20van%20open%20vragen%20en%20meerkeuzevragen.%20Wacht%20na%20elke%20vraag%20op%20mijn%20antwoord.%0A%0AOutput%3A%20Geef%20na%20elk%20antwoord%20van%20mij%20directe%20feedback%3A%20of%20het%20goed%20of%20fout%20is%2C%20en%20waarom.%20Geef%20een%20korte%2C%20duidelijke%20uitleg.%20Vraag%20daarna%20of%20ik%20door%20wil%20naar%20de%20volgende%20vraag.\" target=\"_blank\" style=\"text-align: left; display: inline-block;\"><strong>Rol:</strong> Je bent een docent fysiotherapie en je gaat mij overhoren.<br><strong>Context:</strong> Ik heb de stof over de behandeling van enkelinversietrauma's bestudeerd en wil nu mijn kennis toetsen.<br><strong>Taak:</strong> Overhoor mij over dit onderwerp met een mix van open en meerkeuzevragen.<br><strong>Output:</strong> Na elk antwoord geef je direct feedback (goed/fout en waarom) en vraag je of ik door wil naar de volgende vraag.</a>", "Deze prompt is ideaal voor een specifieke taak zoals actieve herhaling en het toetsen van kennis. Door de mix van vraagtypen en de directe, constructieve feedback kun jij snel controleren waar de hiaten in jouw kennis zitten en deze direct opvullen."],
-            ["<a href=\"https://chat.openai.com/?q=Rol%3A%20Je%20bent%20een%20deskundige%20docent%20fysiotherapie%20met%20een%20socratische%20onderwijsstijl.%0A%0AInstructie%3A%20Start%20een%20dialoog%20met%20mij%20om%20mijn%20klinisch%20redeneren%20over%20de%20behandeling%20van%20een%20enkelinversietrauma%20aan%20te%20scherpen.%0A%0AStappen%3A%0A1.%20Begin%20met%20een%20openingsvraag.%0A2.%20Stel%20op%20basis%20van%20mijn%20antwoorden%20verdiepende%20vragen%20die%20mij%20aan%20het%20denken%20zetten%20over%20de%20'waarom'%20achter%20de%20behandelstappen.%0A3.%20Geef%20geen%20directe%20antwoorden%2C%20maar%20begeleid%20me%20naar%20de%20juiste%20conclusies.%0A%0AOutput%3A%20Een%20interactieve%2C%20vragende%20dialoog.%0A%0ANabewerking%2FContext%3A%20De%20context%20is%20dat%20ik%20een%20student%20fysiotherapie%20ben%20die%20de%20basis%20al%20bestudeerd%20heeft.\" target=\"_blank\" style=\"text-align: left; display: inline-block;\"><strong>Rol:</strong> Je bent een deskundige docent fysiotherapie met een socratische onderwijsstijl.<br><strong>Instructie:</strong> Start een dialoog met mij om mijn klinisch redeneren over de behandeling van een enkelinversietrauma aan te scherpen.<br><strong>Stappen:</strong><br>1. Begin met een openingsvraag.<br>2. Stel op basis van mijn antwoorden verdiepende vragen die mij aan het denken zetten over de 'waarom'.<br>3. Geef geen directe antwoorden, maar begeleid me naar de juiste conclusies.<br><strong>Output:</strong> Een interactieve, vragende dialoog.<br><strong>Nabewerking/Context:</strong> De context is dat ik een student fysiotherapie ben die de basis al bestudeerd heeft.</a>", "Deze prompt is een uitstekend voorbeeld van de R.I.S.O.N.-structuur. Door de AI een duidelijke rol, instructie, stappen, output en context te geven, creëer je een zeer geavanceerde en effectieve interactie. Dit stimuleert diepgaand leren en is ideaal om je klinisch redeneren te ontwikkelen."]
-        ]}
-      ]
-    },
-    {
-      "type": "info-card",
-      "titel": "Ezelsbruggetjes voor meer structuur en betere output van AI",
-      "tekst": "Er zijn online en in de literatuur talloze ezelsbruggetjes en structuren te vinden om je te helpen bij het formuleren van de perfecte prompt. Onthoud dat dit hulpmiddelen zijn; een goede prompt kan ook zonder een specifiek acroniem worden geschreven. Het belangrijkste is dat je duidelijk bent over de rol, context, taak en gewenste output. Voor wie een vaste structuur toch prettig vindt, staan hieronder een paar populaire voorbeelden.",
-      "content": [
+      "type": "benefits-grid",
+      "items": [
         {
-            "type": "accordion",
-            "titel": "Ezelsbruggetje 1: R.O.C.K.",
-            "introductie": "Een eenvoudig en krachtig model, dat we in het voorbeeld hierboven ook hebben toegepast.",
-            "content": [
-                { "titel": "R - Rol", "beschrijving": "Wijs de AI een specifieke rol of persona toe (bv. \"ervaren fysiotherapeut,\" \"onderzoeker,\" \"docent anatomie\")." },
-                { "titel": "O - Output", "beschrijving": "Specificeer het gewenste eindproduct (bv. \"een lijst,\" \"een samenvatting in tabelvorm,\" \"een stappenplan\")." },
-                { "titel": "C - Context", "beschrijving": "Geef relevante achtergrondinformatie en definieer de situatie (bv. \"voor een presentatie,\" \"voor een patiënt met lage rugpijn,\" \"voor mijn tentamen\")." },
-                { "titel": "K - Kernvraag", "beschrijving": "Formuleer de vraag of taak helder, specifiek en ondubbelzinnig." }
-            ]
+          "titel": "Betere Retentie",
+          "icoon": "check-circle",
+          "tekst": "Informatie wordt sterker verankerd in je langetermijngeheugen."
         },
         {
-            "type": "accordion",
-            "titel": "Ezelsbruggetje 2: The P.E.R.F.E.C.T. Prompt",
-            "introductie": "Dit model is uitgebreider en helpt je om alle aspecten van je verzoek te overwegen.<br><br><img src=\"images/perfect_prompt.png\" alt=\"Het PERFECT prompt ezelsbruggetje\" style=\"max-width:100%; height:auto;\"><br><small>Bron: <a href=\"https://aipersoneelstraining.nl/zo-schrijf-je-de-perfecte-prompt-voor-chatgpt/\" target=\"_blank\">aipersoneelstraining.nl</a></small>"
+          "titel": "Dieper Begrip",
+          "icoon": "brain",
+          "tekst": "Je dwingt jezelf om na te denken over de relaties tussen concepten."
         },
         {
-            "type": "accordion",
-            "titel": "Ezelsbruggetje 3: P.R.E.P.A.R.E.",
-            "introductie": "Dit model benadrukt het belang van een goede voorbereiding van je prompt.<br><br><img src=\"images/prepare_edit_prompt.png\" alt=\"Het PREPARE prompt ezelsbruggetje\" style=\"max-width:100%; height:auto;\"><br><small>Bron: <a href=\"https://blogs.loucoll.ac.uk/learningtechnology/2023/11/29/ai-prompt-engineering-framework-update/\" target=\"_blank\">Digital Learning</a></small>",
-            "content": [
-                { "titel": "P - Prompt", "beschrijving": "Formuleer je kernvraag of hoofdtaak. Wat wil je dat de AI doet?" },
-                { "titel": "R - Role", "beschrijving": "Definieer de rol of het perspectief dat de AI moet aannemen (bijv. 'Gedraag je als een expert in biomechanica')." },
-                { "titel": "E - Exemplars", "beschrijving": "Geef voorbeelden van de output die je verwacht. Dit helpt de AI de gewenste stijl en structuur te begrijpen." },
-                { "titel": "P - Parameters", "beschrijving": "Stel de randvoorwaarden en beperkingen in, zoals het aantal woorden, de tone-of-voice of specifieke onderwerpen die vermeden moeten worden." },
-                { "titel": "A - Action", "beschrijving": "Specificeer de concrete actie die de AI moet uitvoeren (bijv. 'genereer', 'vat samen', 'analyseer', 'bekritiseer')." },
-                { "titel": "R - Refinements", "beschrijving": "Voeg extra instructies toe om het resultaat te verfijnen, zoals het vragen om een stapsgewijze uitleg of het toevoegen van bronvermelding." },
-                { "titel": "E - Evaluation", "beschrijving": "Beschrijf hoe de output beoordeeld zal worden, zodat de AI weet aan welke criteria het moet voldoen (bijv. 'de uitleg moet begrijpelijk zijn voor een leek')." }
-            ]
+          "titel": "Diagnostisch",
+          "icoon": "eye",
+          "tekst": "Je ontdekt direct wat je wel en niet beheerst, zodat je gericht kunt bijsturen."
         },
         {
-            "type": "accordion",
-            "titel": "Ezelsbruggetje 4: R.I.S.O.N.",
-            "introductie": "Een praktisch model dat je helpt je prompt stap voor stap op te bouwen voor een helder resultaat.",
-            "content": [
-                { "titel": "R - Rol", "beschrijving": "Wijs de AI een specifieke rol of persona toe (bv. 'je bent een expert in wetenschappelijk onderzoek')." },
-                { "titel": "I - Instructie", "beschrijving": "Formuleer de hoofdtaak die de AI moet uitvoeren." },
-                { "titel": "S - Stappen", "beschrijving": "Breek de instructie op in concrete, genummerde stappen die de AI moet volgen." },
-                { "titel": "O - Output", "beschrijving": "Definieer hoe het eindresultaat eruit moet zien (bv. 'geef de output in een markdown tabel', 'schrijf een samenvatting van maximaal 200 woorden')." },
-                { "titel": "N - Nabewerking/Context", "beschrijving": "Geef extra context of vraag om een specifieke verfijning, zoals het aanpassen van de toon of het toevoegen van bronnen." }
-            ]
+          "titel": "Toepasbaarheid",
+          "icoon": "check-circle-outline",
+          "tekst": "Verbetert je vermogen om kennis in de praktijk te gebruiken."
         }
       ]
     },
     {
-      "type": "section-title",
-      "titel": "Een stap verder: slimme technieken"
+      "type": "divider"
     },
     {
-      "type": "content-text",
-      "tekst": "Als je de basis onder de knie hebt, kun je experimenteren met geavanceerdere technieken."
+      "type": "image-block",
+      "src": "https://placehold.co/800x450/e9d5ff/9333ea?text=Grafiek+Actief+Ophalen+vs+Passief+Lezen",
+      "alt": "Grafiek die de effectiviteit van actief ophalen versus passief lezen visualiseert",
+      "onderschrift": "Onderzoek toont consistent aan dat actief ophalen superieur is aan passief herlezen voor langetermijnretentie."
     },
     {
-      "type": "card-grid",
-      "items": [
-        { "titel": "Vraag de AI om \"Stap-voor-Stap te Denken\"", "beschrijving": "Bij complexe vraagstukken, zoals klinisch redeneren, kun je de AI vragen om zijn redenering stap voor stap uit te leggen. Dit heet Chain-of-Thought prompting.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "Een patiënt heeft schouderpijn bij het heffen van de arm. Denk stap-voor-stap na over mogelijke differentiaaldiagnoses en beschrijf welke tests je zou overwegen." } },
-        { "titel": "Geef de AI Voorbeelden", "beschrijving": "Leid de AI door een of twee voorbeelden te geven van wat je wilt. Dit heet Few-Shot Prompting.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "Vertaal de volgende fysiotherapeutische termen naar patiëntvriendelijke taal. Voorbeeld 1: Input: 'Epicondylitis lateralis', Output: 'Een tenniselleboog'. Nu, vertaal: 'Subacromiaal pijnsyndroom'." } },
-        { "titel": "Definieer een Duidelijke Workflow", "beschrijving": "Voor complexe, meervoudige taken kun je de AI instrueren om een specifieke workflow te volgen. Dit geeft je maximale controle over het proces en het eindresultaat.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "Ik moet een presentatie voorbereiden over de revalidatie van een voorste-kruisbandreconstructie. Help me met de voorbereiding door deze workflow te volgen: 1. Maak eerst een lijst van de belangrijkste onderwerpen die ik moet behandelen. 2. Structureer deze onderwerpen in een logische volgorde voor een presentatie van 15 minuten. 3. Schrijf per onderwerp de kernpunten uit in bullet points. 4. Formuleer tot slot een pakkende inleiding en een sterke samenvatting." } },
-        { "titel": "Laat de AI Vragen Stellen", "beschrijving": "Als je taak complex is of je niet zeker weet welke informatie de AI nodig heeft, vraag hem dan om eerst vragen te stellen. Zo dwing je de AI om alle benodigde context te verzamelen voordat hij een antwoord genereert, wat de kans op een relevante en complete output aanzienlijk vergroot.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "Ik wil een trainingsschema voor een patiënt na een heupoperatie. Voordat je het schema maakt, stel me eerst alle vragen die je nodig hebt over de patiënt, de fase van revalidatie, de beschikbare middelen en alles wat je nog meer nodig hebt om tot het voor de patiënt perfecte trainingsschema te komen. Wacht op mijn antwoorden." } }
+      "type": "content-subtitle",
+      "titel": "Technieken voor Actief Ophalen"
+    },
+    {
+      "type": "info-card",
+      "titel": "Jouw Toolkit voor Retrieval Practice",
+  "items": [
+        { "titel": "Oefentoetsen maken:", "tekst": "Dit kan een formele oefentoets zijn of gewoon zelfbedachte quizvragen." },
+        { "titel": "Overhoor jezelf of elkaar (flashcards):", "tekst": "Gebruik flashcards (kaartjes met een vraag aan de ene kant en het antwoord aan de andere)." },
+        { "titel": "De 'Brain Dump':", "tekst": "Sluit je boek en schrijf of teken alles wat je weet over een onderwerp op een leeg vel papier. Vergelijk dit daarna met je bronnen om te zien wat je miste." },
+        { "titel": "Leg het uit aan een ander (Feynman-techniek):", "tekst": "Probeer de stof hardop uit te leggen aan een medestudent, vriend, of zelfs aan jezelf. Pas als je iets aan een ander kunt uitleggen, weet je of je het echt begrepen hebt." }
       ]
     },
     {
       "type": "info-card",
       "classes": "warning-card",
-      "titel": "De belangrijkste valkuil: Privacy en Patiëntgegevens",
+      "titel": "Leren is geen passief proces!",
+      "tekst": "Leren doe je niet als iets via een ander in je hoofd gaat, maar juist als je het eruit haalt. Een docent die jou alles uitlegt voelt fijn, maar je leert relatief weinig van alleen luisteren. Als je daarentegen zelf ophaalt wat je weet en daarna aanvullingen krijgt, leer je veel meer. Dit is de kern van actief ophalen!"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Gespreid Leren (Spaced Repetition): De Vergeetcurve te slim af zijn"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Zoals je in Hoofdstuk 3 hebt gezien, vergeet je informatie snel als je er niets mee doet. Gespreid leren, of 'Spaced Repetition', is de strategie om je leermomenten over een langere periode te verspreiden, in plaats van alles in één lange sessie te 'blokken'. Door de stof met toenemende tussenpozen te herhalen, dwing je je brein om de informatie telkens opnieuw op te roepen, wat de verbindingen in je langetermijngeheugen versterkt. Vier keer een half uur leren is effectiever dan twee uur achter elkaar studeren."
+    },
+    {
+      "type": "split-screen-image-text",
+      "afbeelding": {
+        "src": "https://placehold.co/600x400/9333ea/ffffff?text=Vergeetcurve+met+Spreiding",
+        "alt": "Grafiek van de Ebbinghaus vergeetcurve met illustratie van gespreide herhaling"
+      },
+      "tekst_content": [
+        "<strong>De Vergeetcurve Resetten</strong>",
+        "Deze illustratie toont hoe gespreide herhaling de vergeetcurve 'reset'. Elke keer dat je de informatie activeert, wordt de curve minder steil en onthoud je de stof langer. Dit is een 'wenselijke moeilijkheid' die je helpt om kennis duurzaam te verankeren."
+      ]
+    },
+    {
+      "type": "info-card",
+      "titel": "Praktische Tips voor Gespreid Leren",
       "items": [
-        { "titel": "ABSOLUTE NO-GO", "tekst": "Gebruik NOOIT persoonlijk identificeerbare patiëntinformatie in een publieke AI-tool zoals ChatGPT. Dit omvat namen, geboortedata, adressen, of specifieke details die naar een individu kunnen leiden." },
-        { "titel": "Waarom?", "tekst": "Het is een ernstige schending van de privacywetgeving (AVG) en je beroepsethiek." },
-        { "titel": "Wat dan wel?", "tekst": "Gebruik altijd geanonimiseerde of volledig fictieve casussen voor je prompts." },
-        { "titel": "Onthoud", "tekst": "De AI is een hulpmiddel, geen collega. Behandel het als een openbaar forum en ga altijd uit van het principe: \"Wat ik hierin typ, kan de hele wereld lezen.\"" }
-      ],
-      "andere_valkuilen": {
-        "titel": "Andere belangrijke valkuilen zijn:",
+        { "titel": "Plan je herhalingen:", "tekst": "Gebruik een agenda of app om herhaalmomenten in te plannen (bijv. 1 dag, 3 dagen, 1 week, 2 weken, 1 maand na de eerste keer)." },
+        { "titel": "Combineer met actief ophalen:", "tekst": "Tijdens deze gespreide sessies is het belangrijk om actief met de stof bezig te zijn, bijvoorbeeld door zelftoetsen of het uitleggen van de stof." },
+        { "titel": "Gebruik tools:", "tekst": "Apps zoals Anki (voor flashcards met ingebouwde spreiding) kunnen je helpen dit proces te automatiseren." }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Elaboratie: Maak het je Eigen"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Elaboratie betekent dat je dieper nadenkt over de stof en actief verbindingen legt met wat je al weet, met praktijkvoorbeelden of met andere concepten. Het gaat verder dan alleen onthouden; je probeert het 'waarom' en 'hoe' te begrijpen en de informatie in je eigen woorden te formuleren. Dit is een intensieve taak voor 'De Verwerker', maar het leidt tot een veel robuuster begrip."
+    },
+    {
+      "type": "accordion",
+      "titel": "Manieren om te Elaboreren",
+      "content": [
+        {
+          "titel": "Vraag jezelf 'waarom' en 'hoe':",
+          "beschrijving": "Vraag jezelf af: 'Waarom is dit waar?', 'Hoe verhoudt dit zich tot wat ik al weet?', 'Wat zijn de implicaties hiervan in de fysiotherapiepraktijk?'"
+        },
+        {
+          "titel": "Vergelijk en contrasteer:",
+          "beschrijving": "Leg uit hoe nieuwe concepten lijken op of verschillen van reeds bekende concepten."
+        },
+        {
+          "titel": "Parafraseer:",
+          "beschrijving": "Lees een alinea en schrijf vervolgens in je eigen woorden op wat je hebt gelezen, en hoe het verband houdt met eerdere informatie."
+        },
+        {
+          "titel": "Bedenk concrete voorbeelden:",
+          "beschrijving": "Verzin specifieke, concrete voorbeelden om abstracte ideeën te begrijpen. Koppel ze aan het dagelijks leven of de fysiotherapiepraktijk."
+        }
+      ]
+    },
+    {
+      "type": "image-block",
+      "src": "https://placehold.co/800x450/9333ea/ffffff?text=Concept+Map+Anatomie",
+      "alt": "Voorbeeld van een concept map over anatomie of fysiologie",
+      "onderschrift": "Een concept map helpt je om visueel verbanden te leggen tussen verschillende concepten en je begrip te verdiepen."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Afwisselend Leren (Interleaving): Wissel Af voor Dieper Begrip"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Afwisselend leren, of 'Interleaving', betekent dat je verschillende onderwerpen of soorten problemen door elkaar studeert, in plaats van één onderwerp volledig af te ronden voordat je aan het volgende begint. Dit dwingt je brein om onderscheid te maken tussen concepten en flexibeler te worden in het toepassen van kennis. Het is een 'wenselijke moeilijkheid' die je helpt om niet alleen te herkennen, maar ook te discrimineren."
+    },
+    {
+      "type": "dual-content-block",
+      "content_left": {
+        "type": "content-text",
+        "tekst": "<strong>Casus: Het Studieplan van Lisa</strong><br>Lisa, een fysiotherapiestudent, merkte dat ze moeite had met het onderscheiden van verschillende spiergroepen en hun functies. Ze besloot haar studieplan aan te passen. In plaats van eerst alle beenspieren te bestuderen, daarna alle armspieren, enzovoort, wisselde ze af. Ze bestudeerde een deel van de beenspieren, dan een deel van de armspieren, en vervolgens weer een ander deel van de beenspieren. Dit voelde in het begin chaotisch, maar ze merkte al snel dat ze de verschillen en overeenkomsten veel beter begon te zien."
+      },
+      "content_right": {
+        "type": "benefits-grid",
         "items": [
-          { "titel": "Verificatie", "tekst": "AI kan fouten maken of informatie verzinnen (\"hallucineren\"). Controleer cruciale feiten altijd met betrouwbare bronnen zoals je studieboeken of wetenschappelijke databases." },
-          { "titel": "Kritische blik", "tekst": "Vertrouw niet blindelings op de output. Gebruik de informatie als startpunt en pas altijd je eigen klinische redeneervaardigheden toe." }
-        ],
-        "afsluitende_tekst": "<br><strong>Belangrijk:</strong> In hoofdstuk 6 gaan we dieper in op de risico's en professionele verantwoordelijkheden, zoals het omgaan met privacy en het herkennen van 'hallucinaties'."
+          {
+            "titel": "Verbeterde Discriminatie",
+            "tekst": "Je leert de subtiele verschillen tussen vergelijkbare concepten herkennen."
+          },
+          {
+            "titel": "Verhoogde Flexibiliteit",
+            "tekst": "Je brein wordt beter in het toepassen van de juiste strategie op het juiste moment."
+          },
+          {
+            "titel": "Dieper Begrip",
+            "tekst": "Niet alleen 'wat', maar ook 'wanneer' en 'waarom' je een concept gebruikt."
+          }
+        ]
       }
+    },
+    {
+      "type": "info-card",
+      "titel": "Interleaving in de Fysiotherapie Studie",
+      "items": [
+        { "titel": "Wissel onderwerpen af:", "tekst": "Studeer niet alleen anatomie, maar combineer het met fysiologie, pathologie of biomechanica in één studiesessie." },
+        { "titel": "Mix probleemtypen:", "tekst": "Als je oefenvragen maakt, wissel dan verschillende soorten problemen door elkaar in plaats van alleen maar één type te herhalen." },
+        { "titel": "Combineer vaardigheden:", "tekst": "Oefen verschillende fysiotherapeutische technieken door elkaar, in plaats van je te focussen op één techniek per keer." }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Actief Lezen, Notities Maken & Dubbele Codering"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Lezen en notities maken zijn fundamentele onderdelen van studeren, maar ze kunnen ineffectief zijn als ze passief worden uitgevoerd. De 'illusie van vloeiendheid' ligt hier op de loer: je leest de tekst, het voelt bekend, maar je hebt de informatie niet actief verwerkt. 'De Verwerker' transformeert passief lezen in een actieve, productieve bezigheid."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Actieve Leesstrategieën en Notities Maken"
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
+        {
+          "titel": "Stel vragen tijdens het lezen:",
+          "tekst": "Stop regelmatig en vraag jezelf af: 'Wat is de kernboodschap hier?', 'Hoe verhoudt dit zich tot wat ik al weet?', 'Welke vragen roept dit op?'"
+        },
+        {
+          "titel": "Vat samen in eigen woorden:",
+          "tekst": "Probeer na elke alinea of sectie de inhoud in je eigen woorden samen te vatten, zonder naar de tekst te kijken."
+        },
+        {
+          "titel": "Maak actieve notities:",
+          "tekst": "Gebruik methoden zoals Cornell Notes, waarbij je de pagina verdeelt in een notitiegedeelte, een cue-gedeelte (voor trefwoorden en vragen) en een samenvattingsgedeelte."
+        },
+        {
+          "titel": "Mindmapping:",
+          "tekst": "Teken visuele mindmaps terwijl je leest om de hoofdconcepten en hun onderlinge relaties vast te leggen."
+        },
+        {
+          "titel": "De SQ3R-methode:",
+          "tekst": "Survey (overzicht), Question (vragen), Read (lezen), Recite (opzeggen), Review (herhalen)."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Dubbele Codering: Tekst en Beeld Combineren"
+    },
+    {
+      "type": "info-card",
+      "titel": "De Kracht van Dubbele Codering",
+      "items": [
+        { "titel": "Visualiseer:", "tekst": "Probeer de leerstof te visualiseren of te tekenen in een schema, tijdlijn of infographic." },
+        { "titel": "Combineer tekst en beeld:", "tekst": "Zorg ervoor dat de uitleg van een afbeelding is geïntegreerd in de afbeelding zelf, in plaats van apart ernaast." },
+        { "titel": "Gebruik icoontjes en kleuren:", "tekst": "Maak kleine icoontjes bij moeilijke begrippen en gebruik kleuren om dingen te groeperen. Dit maakt de informatie dubbel toegankelijk voor je brein." }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "image-grid",
+      "kolommen": 2,
+        "items": [
+        {
+          "src": "https://placehold.co/600x400/e9d5ff/9333ea?text=Cornell+Notes",
+          "alt": "Voorbeeld van Cornell Notes",
+          "onderschrift": "Cornell Notes: een gestructureerde methode voor effectief notities maken."
+        },
+        {
+          "src": "https://placehold.co/600x400/e9d5ff/9333ea?text=Sketchnotes+Fysiotherapie",
+          "alt": "Voorbeeld van sketchnotes over fysiotherapie",
+          "onderschrift": "Sketchnotes: combineer tekst met tekeningen voor een visuele samenvatting."
+        }
+      ]
     }
   ],
   "interacties": [
@@ -220,6 +403,14 @@
       "correctAnswer": 1,
       "feedbackCorrect": "Correct! 'Garbage in, Garbage out' betekent dat een vage, onduidelijke of irrelevante prompt (input) onvermijdelijk leidt tot een onbruikbaar of irrelevant antwoord (output).",
       "feedbackIncorrect": "Niet helemaal. Hoewel de andere punten ook belangrijk zijn (zoals privacy en hallucinaties), verwijst 'Garbage in, Garbage out' specifiek naar de relatie tussen de kwaliteit van je input (prompt) en de kwaliteit van de output (het antwoord)."
+    },
+    {
+      "id": "h4_braindump_1",
+      "type": "braindump",
+      "vraag": "Braindump: Wat weet je nog van 'De Verwerker' strategieën?",
+      "instructie": "Schrijf uit je hoofd op wat je nog weet over de leerstrategieën die je in dit hoofdstuk hebt geleerd. Denk aan: voorkennis activeren, modelleren, actief ophalen, gespreid leren, elaboratie, afwisselend leren en actief lezen. Kijk niet terug naar de tekst!",
+      "controle_instructie": "Scroll nu terug door het hoofdstuk en vergelijk je braindump met de inhoud. Let speciaal op de verschillen tussen wat je opschreef en wat er werkelijk staat. Deze vergelijking zorgt voor elaboratie en dieper leren - je verbindt je eigen gedachten met de geleerde stof.",
+      "chatgpt_prompt": "Geef feedback op deze braindump over leerstrategieën uit hoofdstuk 4 'De Verwerker'. De student heeft geleerd over voorkennis activeren, modelleren, actief ophalen, gespreid leren, elaboratie, afwisselend leren en actief lezen. Wees constructief en specifiek in je feedback."
     },
     {
       "id": "h4_reflection_1",

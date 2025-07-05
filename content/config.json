@@ -9,13 +9,13 @@
     "Basisprincipes van vibe-coding toepassen om een kleine AI-tool te maken."
   ],
   "hoofdstukken": [
-    { "file": "hoofdstuk1.json", "titel": "Introductie" },
-    { "file": "hoofdstuk2.json", "titel": "Wat is AI eigenlijk?" },
-    { "file": "hoofdstuk3.json", "titel": "AI Tools: Wat kies ik?" },
-    { "file": "hoofdstuk4.json", "titel": "Prompten kun je leren" },
-    { "file": "hoofdstuk5.json", "titel": "Creatief & bouwen met AI" },
-    { "file": "hoofdstuk6.json", "titel": "Kansen & risico's" },
-    { "file": "hoofdstuk7.json", "titel": "AI in de toekomst" },
+    { "file": "hoofdstuk1.json", "titel": "Inleiding" },
+    { "file": "hoofdstuk2.json", "titel": "Zelfsturend Leren" },
+    { "file": "hoofdstuk3.json", "titel": "Hoe je Brein Leert" },
+    { "file": "hoofdstuk4.json", "titel": "De Verwerker: Effectieve Strategieën" },
+    { "file": "hoofdstuk5.json", "titel": "Verder Verwerken & Valkuilen" },
+    { "file": "hoofdstuk6.json", "titel": "De Manager: Leren Over Leren" },
+    { "file": "hoofdstuk7.json", "titel": "De Motivator: Motivatie & Welzijn" },
     { "file": "hoofdstuk_afsluiting.json", "titel": "Afsluiting" }
   ],
   "organisatie": "iXperium Health",

@@ -19,11 +19,9 @@
                 "Parijs",
                 "Rome"
             ],
-            "correct_answer": 2,
-            "feedback": {
-                "correct": "Goed zo! Parijs is inderdaad de hoofdstad van Frankrijk.",
-                "incorrect": "Helaas, dat is niet het juiste antwoord. Het correcte antwoord is Parijs."
-            }
+            "correctAnswer": 2,
+            "feedbackCorrect": "Goed zo! Parijs is inderdaad de hoofdstad van Frankrijk.",
+            "feedbackIncorrect": "Helaas, dat is niet het juiste antwoord. Het correcte antwoord is Parijs."
         },
         {
             "id": "voorbeeld_reflection_1",
@@ -46,22 +44,24 @@
                 { "id": "cat1", "label": "Conversational AI" },
                 { "id": "cat2", "label": "Beeldherkenning" }
             ],
-            "correctCombinations": {
-                "item1": "cat1",
-                "item2": "cat1",
-                "item3": "cat1"
-            },
-            "feedback": {
-                "correct": "Uitstekend! Je hebt alle tools correct gecategoriseerd.",
-                "incorrect": "Bijna goed. Probeer het nog eens om de juiste combinaties te vinden."
-            }
+            "correctCombinations": [
+                {"itemId": "item1", "targetId": "cat1"},
+                {"itemId": "item2", "targetId": "cat1"},
+                {"itemId": "item3", "targetId": "cat1"}
+            ],
+            "feedbackCorrect": "Uitstekend! Je hebt alle tools correct gecategoriseerd.",
+            "feedbackIncorrect": "Bijna goed. Probeer het nog eens om de juiste combinaties te vinden."
         },
         {
             "id": "voorbeeld_selfassessment_1",
             "type": "selfassessment",
             "vraag": "Dit is een voorbeeld van een self-assessment. Hoe zeker voelt u zich over het toepassen van deze kennis?",
-            "competences": [
-                "Veranderen", "Vinden", "Vertrouwen", "Vaardig gebruiken", "Vertellen"
+            "criteria": [
+                { "item": "Veranderen", "schaal": "1 = Beginnend, 2 = In ontwikkeling, 3 = Bekwaam" },
+                { "item": "Vinden", "schaal": "1 = Beginnend, 2 = In ontwikkeling, 3 = Bekwaam" },
+                { "item": "Vertrouwen", "schaal": "1 = Beginnend, 2 = In ontwikkeling, 3 = Bekwaam" },
+                { "item": "Vaardig gebruiken", "schaal": "1 = Beginnend, 2 = In ontwikkeling, 3 = Bekwaam" },
+                { "item": "Vertellen", "schaal": "1 = Beginnend, 2 = In ontwikkeling, 3 = Bekwaam" }
             ]
         },
         {
@@ -79,6 +79,14 @@
                 { "id": "ca_q2", "vraag": "Wat zijn de belangrijkste ethische risico's en vooroordelen (bias)?" },
                 { "id": "ca_q3", "vraag": "Welke stappen moet de zorginstelling nemen voordat ze dit systeem implementeren?" }
             ]
+        },
+        {
+            "id": "voorbeeld_braindump_1",
+            "type": "braindump",
+            "vraag": "Braindump: Wat weet je over AI in de gezondheidszorg?",
+            "instructie": "Schrijf uit je hoofd op wat je weet over het gebruik van kunstmatige intelligentie in de gezondheidszorg. Denk aan voordelen, risico's, voorbeelden van toepassingen en ethische overwegingen. Kijk niet naar andere bronnen!",
+            "controle_instructie": "Vergelijk nu je braindump met betrouwbare bronnen over AI in de gezondheidszorg. Deze vergelijking zorgt voor elaboratie en dieper leren - je verbindt je eigen gedachten met de geleerde stof.",
+            "chatgpt_prompt": "Geef constructieve feedback op deze braindump over AI in de gezondheidszorg. Focus op de volledigheid, accuratesse en diepte van het antwoord. Wees specifiek en educatief."
         }
     ]
 } 

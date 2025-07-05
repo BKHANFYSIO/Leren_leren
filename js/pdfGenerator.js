@@ -1,3 +1,7 @@
+// pdfGenerator.js - PDF Certificate generator functionality
+
+console.log('pdfGenerator.js loaded - PDF functionality would be implemented here');
+
 async function generatePDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'pt', format: 'a4' });
@@ -472,6 +476,93 @@ async function generatePDF() {
                         doc.setFont('helvetica', 'normal');
                         doc.text(splitA, sideMargin+10, yH+8);
                         yH += splitA.length * 18 + 24;
+                    }
+                    continue;
+                } else if(interactie.type === 'braindump') {
+                    const attemptsData = localStorage.getItem(`braindump_${h}_${interactie.id}_attempts`);
+                    const evaluationsData = localStorage.getItem(`braindump_${h}_${interactie.id}_evaluations`);
+                    const isCompleted = localStorage.getItem(`braindump_${h}_${interactie.id}_completed`) === 'true';
+                    
+                    if (attemptsData && evaluationsData && isCompleted) {
+                        try {
+                            const attempts = JSON.parse(attemptsData);
+                            const evaluations = JSON.parse(evaluationsData);
+                            
+                            kleurBlok = '#fff3e0'; // Oranje achtergrond voor braindump
+                            textKleurBlok = '#e65100'; // Donkeroranje tekst
+                            
+                            // Toon laatste poging en evaluatie
+                            const lastAttempt = attempts[attempts.length - 1] || '[Geen tekst]';
+                            const lastEvaluation = evaluations[evaluations.length - 1];
+                            
+                            const evaluationLabels = {
+                                'good': 'Goed - Ik wist het meeste nog',
+                                'fair': 'Matig - Ik wist de helft nog',
+                                'poor': 'Slecht - Ik wist weinig nog'
+                            };
+                            
+                            const evalText = evaluationLabels[lastEvaluation?.evaluation] || lastEvaluation?.evaluation || 'Geen evaluatie';
+                            
+                            // Bereken benodigde hoogte
+                            const braindumpLabel = 'Je braindump: ';
+                            const evaluatieLabel = `Je evaluatie: `;
+                            const pogingLabel = `Poging ${attempts.length} van ${attempts.length}: `;
+                            
+                            const splitBraindump = doc.splitTextToSize(lastAttempt, pageWidth-2*sideMargin-20);
+                            const splitEvaluatie = doc.splitTextToSize(evalText, pageWidth-2*sideMargin-20);
+                            const splitPoging = doc.splitTextToSize(pogingLabel, pageWidth-2*sideMargin-20);
+                            
+                            const totalHeight = (splitBraindump.length + splitEvaluatie.length + splitPoging.length + 3) * 18 + 40;
+                            
+                            // Teken kader
+                            doc.setFillColor(kleurBlok);
+                            doc.setDrawColor('#fff');
+                            doc.rect(sideMargin, yH-8, pageWidth-2*sideMargin, totalHeight, 'F');
+                            doc.setTextColor(textKleurBlok);
+                            
+                            // Poging info
+                            doc.setFont('helvetica', 'bold');
+                            doc.text(pogingLabel, sideMargin+10, yH+8);
+                            yH += splitPoging.length * 18 + 10;
+                            
+                            // Braindump tekst
+                            doc.setFont('helvetica', 'bold');
+                            doc.text(braindumpLabel, sideMargin+10, yH+8);
+                            doc.setFont('helvetica', 'normal');
+                            doc.text(splitBraindump, sideMargin+10, yH+8+18);
+                            yH += splitBraindump.length * 18 + 25;
+                            
+                            // Evaluatie
+                            doc.setFont('helvetica', 'bold');
+                            doc.text(evaluatieLabel, sideMargin+10, yH+8);
+                            doc.setFont('helvetica', 'normal');
+                            doc.text(splitEvaluatie, sideMargin+10, yH+8+18);
+                            yH += splitEvaluatie.length * 18 + 25;
+                            
+                        } catch (e) {
+                            console.error('Error parsing braindump data:', e);
+                            const errorText = 'Error bij het laden van braindump data';
+                            const splitError = doc.splitTextToSize(errorText, pageWidth-2*sideMargin-20);
+                            doc.setFillColor('#ffebee');
+                            doc.setDrawColor('#fff');
+                            doc.rect(sideMargin, yH-8, pageWidth-2*sideMargin, splitError.length*18+12, 'F');
+                            doc.setTextColor('#c62828');
+                            doc.setFont('helvetica', 'normal');
+                            doc.text(splitError, sideMargin+10, yH+8);
+                            yH += splitError.length * 18 + 18;
+                        }
+                    } else {
+                        const noDataText = '[Braindump niet voltooid]';
+                        kleurBlok = '#fffde7';
+                        textKleurBlok = '#f9a825';
+                        const splitError = doc.splitTextToSize(noDataText, pageWidth-2*sideMargin-20);
+                        doc.setFillColor(kleurBlok);
+                        doc.setDrawColor('#fff');
+                        doc.rect(sideMargin, yH-8, pageWidth-2*sideMargin, splitError.length*18+12, 'F');
+                        doc.setTextColor(textKleurBlok);
+                        doc.setFont('helvetica', 'normal');
+                        doc.text(splitError, sideMargin+10, yH+8);
+                        yH += splitError.length * 18 + 24;
                     }
                     continue;
                 } else if(interactie.type === 'critical_analysis') {

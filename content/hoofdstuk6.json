@@ -1,366 +1,252 @@
 {
+  "hoofdstuk_titel": "Hoofdstuk 6: De Manager: Leren Over Leren",
   "content": [
     {
       "type": "info-card",
-      "classes": "welcome-card",
-      "titel": "AI: Grijp de Kansen, Beheers de Risico's",
-      "tekst": "AI is een krachtig hulpmiddel, maar geen wondermiddel. Het kan je studie versnellen en je werk als fysiotherapeut verbeteren, maar alleen als je het slim en veilig gebruikt. In dit hoofdstuk leer je de kansen te benutten en, nog belangrijker, de risico's te beheersen. Want professioneel omgaan met AI is geen optie, maar een vereiste."
+      "classes": "purple-kader",
+      "titel": "De Manager: Leren Over Leren",
+      "tekst": "Welkom bij Hoofdstuk 6! Je hebt de gereedschapskist van 'De Verwerker' (cognitieve strategieën) al goed leren kennen. Nu is het tijd om de rol van 'De Manager' op je te nemen: de architect van je eigen leerproces. Dit hoofdstuk duikt in **Zelfregulering van Leren (ZRL)**, het proces waarbij je zelf gegenereerde gedachten, gevoelens en acties plant en cyclisch aanpast om persoonlijke doelen te bereiken. Het omvat metacognitieve, motivationele en gedragsmatige betrokkenheid bij je leerproces. Hier leer je hoe je effectief plant, je begrip monitort, je strategieën aanpast en kritisch reflecteert om het maximale uit je studie te halen. Onthoud: ZRL ontwikkelt zich niet spontaan; het moet aangeleerd worden!"
+    },
+    {
+      "type": "section-title",
+      "titel": "De Metacognitieve Cyclus: Jouw Gids voor Zelfsturing"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Zelfregulering van Leren (ZRL) is een dynamisch, cyclisch proces. Het is cruciaal voor jou als student in het hoger onderwijs, want het leidt tot betere prestaties, is essentieel voor een leven lang leren, en geeft je hogere motivatie en meer controle. De overstap naar het HBO brengt ook uitdagingen met zich mee, waarbij hogere denkniveaus zoals toepassen, analyseren en evalueren van je worden verwacht."
+    },
+    {
+      "type": "process-flow",
+      "titel": "De ZRL-cyclus",
+      "items": [
+        {
+          "stap": "1",
+          "titel": "Oriënteren & Plannen",
+          "beschrijving": "Wat wil ik leren en hoe ga ik dat aanpakken?"
+        },
+        {
+          "stap": "2",
+          "titel": "Monitoren & Bijsturen",
+          "beschrijving": "Begrijp ik het echt? En pas ik mijn aanpak aan waar nodig?"
+        },
+        {
+          "stap": "3",
+          "titel": "Evalueren & Reflecteren",
+          "beschrijving": "Wat ging goed, wat kan beter, en hoe pas ik dit de volgende keer toe?"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Plannen en Doelen Stellen: Jouw Kompas voor Succes"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Planning en realistische doelen zijn de start van een effectief leerproces. Effectieve studeerders zien leren als een proactief proces dat start vóór het daadwerkelijke studeren."
+    },
+    {
+      "type": "info-card",
+      "titel": "SMART-doelen",
+      "items": [
+        { "titel": "Specifiek:", "tekst": "Formuleer concreet wat je wilt bereiken." },
+        { "titel": "Meetbaar:", "tekst": "Hoe weet je of je je doel hebt behaald?" },
+        { "titel": "Acceptabel:", "tekst": "Is het doel relevant en belangrijk voor jou?" },
+        { "titel": "Realistisch:", "tekst": "Is het doel haalbaar gegeven je middelen en tijd?" },
+        { "titel": "Tijdgebonden:", "tekst": "Wanneer wil je je doel bereikt hebben?" }
+      ]
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
+        {
+          "titel": "Minder stress",
+          "icoon": "cloud-slash-fill",
+          "tekst": "Een goede planning geeft rust en overzicht."
+        },
+        {
+          "titel": "Gerichter leren",
+          "icoon": "target-fill",
+          "tekst": "Je weet precies waar je aan werkt en waarom."
+        },
+        {
+          "titel": "Hogere motivatie",
+          "icoon": "sparkles-fill",
+          "tekst": "Het behalen van kleine doelen stimuleert je voortgang."
+        },
+        {
+          "titel": "High Intensity Study Sessions (HISS)",
+          "icoon": "hourglass-fill",
+          "tekst": "Plan je studietijd in korte, intensieve blokken (20-90 minuten) met korte pauzes tussendoor voor maximale focus."
+        }
+      ]
+    },
+    {
+      "type": "accent-blok",
+      "variant": "warning",
+      "tekst": "Overschat jezelf niet: Voeg ongeveer 30 minuten extra toe aan de tijd die je denkt nodig te hebben voor een taak, want je overschat jezelf vaak."
+    },
+    {
+      "type": "image-block",
+      "src": "https://placehold.co/800x450/e9d5ff/9333ea?text=Studierooster+voorbeeld",
+      "alt": "Voorbeeld van een effectief studierooster of planningsoverzicht",
+      "onderschrift": "Een schematische weergave van een SMART-doel of een voorbeeld van een overzichtelijk studierooster."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Tip: Het opschrijven van doelen en plannen helpt je brein te focussen op wat belangrijk is. Hang je studieplanning of doelen op een zichtbare plek als geheugensteun tijdens het studeren."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Monitoren van Begrip: Weet Wat Je Weet (en Wat Niet!)"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Effectieve managers monitoren hun voortgang continu. Dit geldt ook voor je leerproces: check of je de stof echt begrijpt, niet alleen herkent. Actief ophalen (uit Hoofdstuk 4) is hierbij een cruciaal monitoringsinstrument."
+    },
+    {
+      "type": "info-card",
+      "titel": "Check-in: Hoe goed monitor jij je leerproces?",
+      "items": [
+        { "titel": "Begrijp ik wat ik nu lees of hoor?", "tekst": "Controleer actief je begrip terwijl je bezig bent." },
+        { "titel": "Ben ik op de goede weg om mijn doel te bereiken?", "tekst": "Vergelijk je voortgang met je planning en doelen." },
+        { "titel": "Waar ging ik de mist in bij deze oefenopdracht?", "tekst": "Analyseer fouten om te leren en bij te sturen." },
+        { "titel": "Werk ik nog volgens mijn plan, of dwaal ik af?", "tekst": "Blijf gefocust en vermijd afleidingen." }
+      ]
     },
     {
       "type": "accordion",
-      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "titel": "Strategieën om begrip te monitoren",
       "content": [
         {
-          "type": "content-text",
-          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+          "titel": "Jezelf actief vragen stellen:",
+          "beschrijving": "Stel jezelf voortdurend vragen over de stof: 'Wat is de kernboodschap?', 'Hoe verhoudt dit zich tot...?', 'Waarom is dit zo?'"
         },
         {
-          "type": "audio-grid",
-          "kolommen": 1,
-          "items": [
-            {
-              "id": "h6_audio_1",
-              "titel": "Podcast: Kansen en Risico's van AI",
-              "beschrijving": "Verken de potentie en de valkuilen van AI in de zorg.",
-              "bron": "audio/H6-Kanen-en-Risicos-Podcast.wav",
-              "meta": ""
-            }
-          ]
+          "titel": "Samenvatten zonder bron:",
+          "beschrijving": "Probeer na een sectie de inhoud in je eigen woorden samen te vatten, zonder naar je boek te kijken. Dit dwingt je tot actieve verwerking."
+        },
+        {
+          "titel": "Hardop denken:",
+          "beschrijving": "Verwoord je gedachten tijdens het leren. Bijvoorbeeld: 'Oké, dit stukje gaat over de anatomie van de knie. Begrijp ik hoe dit zich verhoudt tot het vorige stukje? Misschien moet ik het even visualiseren...'. Het voelt misschien gek om tegen jezelf te praten, maar het kan echt helpen om je gedachten te ordenen en alert te blijven op je eigen begrip."
+        },
+        {
+          "titel": "Foutenanalyse:",
+          "beschrijving": "Analyseer je gemaakte fouten. Waarom was het fout? Wat kun je ervan leren voor de volgende keer?"
         }
       ]
-    },
-    {
-      "type": "section-title",
-      "titel": "Kansen die je nu al kunt benutten"
     },
     {
       "type": "content-text",
-      "tekst": "Hier vind je alle kansen van AI op een rij: wat kun je nu al gebruiken om slimmer te studeren en je voor te bereiden op de toekomst van de fysiotherapie? Deze overzichtelijke lijst helpt je direct aan de slag te gaan."
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "Kansen tijdens je studie"
-    },
-    {
-      "type": "info-card",
-      "classes": "welcome-card",
-      "content": [
-        {
-          "type": "accordion",
-          "titel": "1. Versneld en Diepgaand Leren",
-          "content": [
-            { "naam": "Persoonlijke Studiecoach", "beschrijving": "AI als 24/7 sparringpartner voor uitleg, brainstormen en effectief leren." },
-            { "naam": "Interactief Leren met Lesstof", "beschrijving": "Chat met je eigen documenten via tools als NotebookLM voor sneller begrip." },
-            { "naam": "Klinisch Redeneren Oefenen", "beschrijving": "Oefen redeneervaardigheden door dialoog met AI over fictieve casussen." },
-            { "naam": "Veilig Simuleren", "beschrijving": "Oefen patiëntgesprekken en diagnostiek zonder risico's." },
-            { "naam": "Kennis Toetsen op Maat", "beschrijving": "Onbeperkt oefenvragen laten maken voor moeilijke onderwerpen." }
-          ]
-        },
-        {
-          "type": "accordion",
-          "titel": "2. Efficiënter Studeren en Creëren",
-          "content": [
-            { "naam": "Automatisering van Routinetaken", "beschrijving": "Teksten samenvatten, herschrijven naar andere stijl of vertalen." },
-            { "naam": "Versneld Literatuuronderzoek", "beschrijving": "Sneller relevante artikelen vinden en analyseren voor behandelplannen, EBP-verslagen en scriptie." },
-            { "naam": "Transcriptie", "beschrijving": "Gesprekken en colleges automatisch omzetten naar tekst." },
-            { "naam": "Professionele Content", "beschrijving": "Snel afbeeldingen, video's en presentaties maken voor opdrachten." }
-          ]
-        },
-        {
-          "type": "accordion",
-          "titel": "3. Ontwikkelen van Zelfsturing en Reflectie",
-          "content": [
-            { "naam": "Studie- en Projectplanning", "beschrijving": "Realistische planningen maken rekening houdend met al je verplichtingen." },
-            { "naam": "Analyse van Eigen Functioneren", "beschrijving": "Gesprekstranscripties analyseren op spreektijd en communicatiepatronen." },
-            { "naam": "Diepgaande Reflectie-Partner", "beschrijving": "AI als kritische vriend voor reflectie en het ontdekken van blinde vlekken." },
-            { "naam": "Persoonlijke Ontwikkeling Plannen", "beschrijving": "Gestructureerde POP/PAP plannen opstellen voor je doelen." }
-          ]
-        },
-        {
-          "type": "accordion",
-          "titel": "4. Ontwikkelen van Toekomstgerichte Vaardigheden",
-          "content": [
-            { "naam": "Bouwen Zonder Code", "beschrijving": "Simpele apps en tools maken zonder programmeerkennis." },
-            { "naam": "Eigen AI-Assistenten", "beschrijving": "Gepersonaliseerde AI (Custom GPT) voor terugkerende taken." },
-            { "naam": "Data-analyse", "beschrijving": "Geanonimiseerde data analyseren voor onderzoek en kwaliteitsverbetering." }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "Kansen in het fysiotherapeutische werkveld"
-    },
-    {
-      "type": "info-card",
-      "classes": "welcome-card",
-      "content": [
-        {
-          "type": "accordion",
-          "titel": "1. Efficiënter Praktijkvoering",
-          "content": [
-            { "naam": "Verlichten van Administratie", "beschrijving": "Intakegesprekken automatisch omzetten naar gestructureerde verslagen." },
-            { "naam": "Up-to-date Blijven met Vakliteratuur", "beschrijving": "Snel inzichten uit nieuwe wetenschappelijke publicaties extraheren." },
-            { "naam": "Intelligente Triage", "beschrijving": "Chatbots voor eerste inschatting van klachten op praktijkwebsite." },
-            { "naam": "Interprofessioneel Samenwerken", "beschrijving": "Professionele overdrachten formuleren voor huisarts of andere zorgverleners." }
-          ]
-        },
-        {
-          "type": "accordion",
-          "titel": "2. Verrijkte Diagnostiek & Behandeling",
-          "content": [
-            { "naam": "AI als Klinische Sparringpartner", "beschrijving": "Hulp bij differentiële diagnoses en behandelopties overwegen." },
-            { "naam": "Creatieve Probleemoplossing", "beschrijving": "Brainstormen over alternatieve behandelmethoden voor complexe problematiek." },
-            { "naam": "Voorbereiden van Behandelsessies", "beschrijving": "Consulten structureren door belangrijkste vragen en tests voor te bereiden." },
-            { "naam": "Assistentie bij Oefenprogramma's", "beschrijving": "Snel basisoefenprogramma's opstellen met variaties voor specifieke doelen." },
-            { "naam": "Opkomende Bewegingsanalyse", "beschrijving": "Apps gebruiken voor objectievere bewegingsanalyse dan met het blote oog." }
-          ]
-        },
-        {
-          "type": "accordion",
-          "titel": "3. Verhoogde Patiëntbetrokkenheid",
-          "content": [
-            { "naam": "Patiëntgerichte Communicatie en Educatie", "beschrijving": "Medische informatie vertalen naar begrijpelijke taal en op maat gemaakte folders maken." },
-            { "naam": "Motiverende Coaches", "beschrijving": "AI-chatbots als motiverende coach voor ondersteuning en oefenherinneringen." },
-            { "naam": "Gepersonaliseerde Content", "beschrijving": "Op maat gemaakte apps en informatie afgestemd op aandoening en patiëntniveau." }
-          ]
-        }
-      ]
+      "tekst": "Voorbeeld: Stel dat je een tekst aan het lezen bent en je beseft halverwege dat je de laatste alinea niet echt hebt begrepen. Monitoren is dat besef, en bijsturen is dat je besluit die alinea te herlezen of extra aantekeningen te maken."
     },
     {
       "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "Bewust Bekwaam: Omgaan met de Risico's van AI"
+      "titel": "Reguleren van het Leerproces: Stuur Bij waar Nodig"
     },
     {
       "type": "content-text",
-      "tekst": "AI biedt veel kansen, maar kent ook risico's. Bewust omgaan met deze risico's is een cruciale professionele vaardigheid."
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "1. Risico's voor Informatiekwaliteit en Objectiviteit"
+      "tekst": "'De Manager' plant en monitort, maar heeft ook de flexibiliteit om bij te sturen wanneer dingen niet gaan zoals verwacht. Dit omvat het aanpassen van strategieën, hulp zoeken en effectief omgaan met afleidingen. Flexibiliteit in je leerstrategie is een metacognitieve kracht. Succesvolle leerlingen weten hun plan bij te stellen als de situatie daarom vraagt."
     },
     {
       "type": "info-card",
-      "classes": "warning-card",
+      "titel": "Tips voor het reguleren van je leerproces",
       "items": [
-        { 
-          "titel": "Hallucinaties", 
-          "tekst": "AI kan overtuigend onjuiste feiten of bronnen 'verzinnen'. Controleer belangrijke informatie altijd met betrouwbare bronnen." 
-        },
-        { 
-          "titel": "Verborgen Vooroordelen (Bias)", 
-          "tekst": "AI-modellen bevatten vooroordelen uit hun trainingsdata. Dit kan leiden tot adviezen die minder passend zijn voor bepaalde groepen." 
-        },
-        {
-          "titel": "Geopolitieke en Commerciële Filters",
-          "tekst": "AI-output wordt beïnvloed door het bedrijf of land dat het model ontwikkelde. Dit kan de objectiviteit kleuren."
-        },
-        {
-          "titel": "Verouderde Kennis",
-          "tekst": "AI-modellen hebben een afkapdatum voor hun kennis. Ze zijn niet altijd op de hoogte van nieuwste inzichten."
-        },
-        {
-          "titel": "Historische Bias",
-          "tekst": "AI kan verouderde consensus als waarheid presenteren. Voorbeeld: koelen na trauma werd lang aanbevolen, terwijl dit inzicht inmiddels achterhaald is."
-        }
+        { "titel": "Strategieën aanpassen:", "tekst": "Niet klakkeloos blijven doorgaan met een strategie die niet effectief is. Probeer een probleem eerst zelf op te lossen: bijvoorbeeld door het op een andere manier uit te leggen, extra achtergrondinformatie op te zoeken of een moeilijk begrip in stukjes op te delen." },
+        { "titel": "Hulp zoeken bij docenten/medestudenten:", "tekst": "Als zelf bijsturen niet lukt, is dat een signaal om je aanpak te wijzigen: raadpleeg een andere bron, vraag hulp aan een medestudent of docent, of neem even afstand en kom er later op terug. ZRL is geen puur individuele activiteit; effectieve ZRL omvat juist het zoeken van hulp bij medestudenten en docenten (co-regulatie) en deelnemen aan samenwerkend leren." },
+        { "titel": "Effectief omgaan met afleiding en onderbrekingen:", "tekst": "Creëer een productieve leeromgeving en minimaliseer afleidingen. Leer omgaan met onderbrekingen en keer efficiënt terug naar je taak." }
       ]
     },
     {
-      "type": "content-subtitle",
-      "titel": "2. Risico's voor Dataveiligheid en Privacy"
-    },
-    {
-      "type": "info-card",
-      "classes": "warning-card",
-      "items": [
-        { 
-          "titel": "Data als Trainingsmateriaal", 
-          "tekst": "Publieke AI-tools kunnen jouw informatie opslaan en gebruiken om hun model te trainen. Voer nooit herleidbare patiëntinformatie in." 
-        },
-        {
-          "titel": "AVG/GDPR-wetgeving", 
-          "tekst": "Patiëntgegevens invoeren in publieke AI-tools is meestal in strijd met privacywetgeving. Gebruik alleen volledig geanonimiseerde data." 
-        },
-        {
-          "titel": "Eigen Persoonsgegevens",
-          "tekst": "Gegevens die je over jezelf invoert kunnen worden opgeslagen. Wees voorzichtig met persoonlijke of gevoelige informatie."
-        },
-        {
-          "titel": "Schending van Auteursrecht",
-          "tekst": "Uploaden van auteursrechtelijk materiaal (studieboeken, artikelen) kan copyright schenden omdat je data deelt met AI-leveranciers."
-        }
-      ]
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "3. Risico's voor Professionele Vaardigheden en Autonomie"
-    },
-    {
-      "type": "info-card",
-      "classes": "warning-card",
-      "items": [
-        { 
-          "titel": "'Deskilling' (Vaardigheidsverlies) door 'Cognitive Offloading'", 
-          "tekst": "Door te veel denkwerk uit te besteden aan AI bestaat het risico dat je eigen vaardigheden zoals klinisch redeneren afnemen." 
-        },
-        { 
-          "titel": "Automatisering Bias", 
-          "tekst": "De neiging om blind te vertrouwen op AI-output zonder kritische evaluatie. Dit kan leiden tot het overnemen van foute adviezen." 
-        },
-        {
-          "titel": "Plagiaat en Contract Cheating",
-          "tekst": "AI-werk presenteren als jouw eigen werk zonder te vermelden dat je AI gebruikte = plagiaat. AI-werk inleveren (ook al vermeld je AI-gebruik) terwijl jouw vaardigheden getoetst worden = contract cheating. Beide zijn academische oneerlijkheid."
-        },
-        {
-          "titel": "Aansprakelijkheid",
-          "tekst": "Als therapeut blijf je eindverantwoordelijk voor je zorg en keuzes, ook bij AI-gebruik."
-        }
-      ]
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section-title",
-      "titel": "Wetgeving en Belangrijke Kaders"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Om AI-risico's te beheersen bestaan er wetten en kaders. De belangrijkste voor jou zijn de EU AI Act en de AVG (GDPR). Ken hun bestaan en hoofdlijnen."
-    },
-    {
-      "type": "concept-cards",
-      "items": [
-        {
-          "titel": "EU AI Act",
-          "nederlands": "Europese AI-Verordening",
-          "uitleg": "Eerste wereldwijde AI-wet die regels vastlegt per risiconiveau. Verbiedt onaanvaardbare systemen (social scoring), stelt eisen aan hoog-risico systemen (zorg, HR) en transparantieregels voor beperkt risico (chatbots)."
-        },
-        {
-          "titel": "AVG / GDPR",
-          "nederlands": "Algemene Verordening Gegevensbescherming",
-          "uitleg": "Europese wet die de verwerking en bescherming van persoonsgegevens regelt om privacy te waarborgen."
-        }
-      ]
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section-title",
-      "titel": "Jij aan het Stuur: Jouw Professionele Verantwoordelijkheid"
-    },
-    {
-      "type": "content-text",
-      "tekst": "AI-kansen kun je pas goed benutten als je de risico's beheerst. Wetgeving biedt een kader, maar de meest effectieve controle ligt bij jou. 'Human in the Loop' en 'Human in the Lead' zijn concrete handvatten voor verantwoord AI-gebruik."
-    },
-    {
-      "type": "icon-card-grid",
-      "themes": [
-        {
-          "icoon": "images/Human_in_the_loop.png",
-          "titel": "Human in the Loop: De Kritische Gebruiker",
-          "beschrijving": "De basis van professioneel AI-gebruik. Vertrouw AI nooit blindelings en wees bewust van risico's zoals hallucinaties en bias. Controleer output, stel kritische vragen en corrigeer waar nodig.",
-          "samenvatting": "De mens controleert en valideert de output van de AI.",
-          "dynamische_velden": [
-            {"veldnaam": "beschrijving", "label": ""},
-            {"veldnaam": "samenvatting", "label": "Kortom"}
-          ]
-        },
-        {
-          "icoon": "images/Human_in_the_lead.png",
-          "titel": "Human in the Lead: De Eindverantwoordelijke Professional",
-          "beschrijving": "De kern van jouw professionele rol. Jij neemt de uiteindelijke beslissing en draagt eindverantwoordelijkheid. Zet AI strategisch in om vaardigheden te versterken, maar blijf zelf redeneren en bepalen wat past bij jouw patiënt.",
-          "samenvatting": "De mens heeft de eindregie en neemt de uiteindelijke beslissing.",
-          "dynamische_velden": [
-            {"veldnaam": "beschrijving", "label": ""},
-            {"veldnaam": "samenvatting", "label": "Kortom"}
-          ]
-        }
-      ]
-    },
-    {
-      "type": "info-card",
-      "classes": "warning-card",
-      "titel": "Onze Verwachting naar Jou als Student",
-      "tekst": "We moedigen AI-gebruik aan als krachtig hulpmiddel, maar stellen ook eisen. Absolute ondergrens: altijd 'Human in the Loop' toepassen - ken de risico's en ga er verantwoord mee om. Wees transparant over AI-gebruik en onthoud: jij draagt de eindverantwoordelijkheid, niet de AI."
-    },
-    {
-      "type": "split-screen-image-text",
-      "classes": "img-split-screen",
-      "image": {
-        "src": "images/Beslisboom-chattenmetnapoleon.jpeg",
-        "alt": "Beslisboom voor het chatten met AI: toont de stappen om te bepalen of je voldoende eigen kennis hebt voordat je AI gebruikt",
-        "caption": "Last, B., & Sprakel, T. (2024). <em>Chatten met Napoleon: Werken met generatieve AI in het onderwijs</em> (2e editie). Boom.",
-        "clickable": true
+      "type": "dual-content-block",
+      "content_left": {
+        "type": "content-text",
+        "tekst": "<strong>Casus: De Flexibele Fysiotherapiestudent</strong><br>Sarah merkt tijdens het studeren van complexe fysiologische processen dat haar gebruikelijke methode van flashcards niet volstaat. Ze probeert eerst de stof hardop aan zichzelf uit te leggen. Wanneer dit nog steeds niet het gewenste begrip oplevert, besluit ze een medestudent te bellen om samen de stof te bespreken en elkaar vragen te stellen. Deze flexibiliteit in het bijsturen van haar leerstrategie helpt haar om uiteindelijk wel tot een diepgaand begrip te komen."
       },
-      "content": [
-        {
-          "type": "content-text",
-          "tekst": "Deze beslisboom toont hoe belangrijk eigen kennis is voor verantwoord AI-gebruik. Cruciale vraag: <strong>maakt het uit of de output waar is?</strong> Dit hangt af van de context."
-        },
-        {
-          "type": "content-text",
-          "tekst": "Voor <strong>persoonlijke studie</strong> mag je AI gebruiken als leerhulpmiddel, ook bij kennisopbouw. Wees je bewust dat AI foutieve informatie kan geven - vergelijk daarom altijd met andere bronnen en ontwikkel vaardigheden om AI-output kritisch te beoordelen. Bij <strong>ingeleverde producten</strong> is transparantie cruciaal: vermeld AI-gebruik en toon je eigen begrip. In <strong>patiëntenzorg</strong> is hoogste voorzichtigheid vereist."
-        }
-      ]
-    },
-    {
-      "type": "content-text",
-      "tekst": "Als opleiding bieden wij ook gecontroleerde AI-tools aan waarbij docenten de Human in the Loop rol vervullen. Statische content zoals deze e-learning is bijvoorbeeld zorgvuldig gecontroleerd. Docenten maken ook AI-tools zoals GPT's waarmee de risico's op foutieve informatie flink verminderd worden, maar nog steeds niet volledig uit te sluiten zijn. Het gaat er dus om dat je leert inschatten welke mate van controle en expertise nodig is in verschillende situaties.\n\nDe beslisboom helpt je bij deze afweging: heb je voldoende kennis om fouten te herkennen? Past het gebruik bij je leerdoel? En vooral: wat zijn de consequenties als de AI-output onjuist zou zijn? Deze vragen stellen je in staat om bewuste keuzes te maken over wanneer en hoe je AI inzet."
-    },
-    {
-      "type": "info-card",
-      "classes": "warning-card",
-      "titel": "Bronvermelding bij AI-gebruik",
-      "tekst": "Bij AI-gebruik voor opdrachten: vermeld dit transparant. Voor portfolio-producten altijd aangeven hoe AI is gebruikt. Voor scriptie/thesis gelden strengere eisen.\n\n<strong>Voorbeeld:</strong><br>\"Voor dit product heb ik [tool naam, bijv. ChatGPT] gebruikt voor [specifiek doel]. De inhoud is door mij kritisch beoordeeld, aangepast en aangevuld met eigen inzichten.\"\n\n<strong>Uitgebreide APA-richtlijnen:</strong><br><a href=\"https://auteursrechten.nl/wp-content/uploads/2024/05/De-APA-richtlijnen-uitgelegd-Generatieve-AI-Versie-1.0.pdf\" target=\"_blank\">De APA-richtlijnen uitgelegd: Generatieve AI (Versie 1.0)</a>."
+      "content_right": {
+        "type": "benefits-grid",
+        "items": [
+          {
+            "titel": "Efficiënter leren",
+            "tekst": "Je verspilt minder tijd aan ineffectieve methoden."
+          },
+          {
+            "titel": "Minder frustratie",
+            "tekst": "Je hebt meer grip op je leerproces en loopt minder snel vast."
+          },
+          {
+            "titel": "Betere resultaten",
+            "tekst": "Door bij te sturen, optimaliseer je je leeruitkomsten."
+          }
+        ]
+      }
     },
     {
       "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "Aan de Slag: Jouw Professionele Oordeel in de Praktijk"
+      "titel": "Reflectie en Evaluatie: Leer van je Ervaringen"
     },
     {
       "type": "content-text",
-      "tekst": "Tijd om je kennis toe te passen! Kies één of meer scenario's en denk kritisch na: wat zou jij doen? Hoe pas je 'Human in the Loop' en 'Human in the Lead' toe? Uitstekende oefening voor je praktijk en portfolio."
+      "tekst": "Na afloop van een leeractiviteit is het belangrijk om stil te staan bij hoe het leren is verlopen. Deze stap wordt door leerlingen vaak overgeslagen, maar is cruciaal voor verdere groei. Het gaat erom te leren van wat wel en niet werkte, en dit toe te passen in de toekomst. Onthoud dat reflectie niet alleen betekent 'nadenken over de stof', maar vooral nadenken over jouw proces."
     },
     {
-      "type": "ethical-reflection-grid",
-      "kaarten": [
+      "type": "process-flow",
+      "titel": "De Reflectiecyclus",
+      "items": [
         {
-          "titel": "Scenario: De Verleidelijke Diagnose-App",
-          "beschrijving": "Een app claimt 95% zekerheid bij schouderdiagnoses. Een collega neemt diagnoses direct over in het EPD om tijd te besparen. Welke risico's zie je (deskilling, automatisering bias, aansprakelijkheid)? Hoe zou jij handelen?"
+          "stap": "1",
+          "titel": "Actie",
+          "beschrijving": "Het uitvoeren van de leertaak."
         },
         {
-          "titel": "Scenario: De Slimme Oefen-App met Privacy-risico",
-          "beschrijving": "Je wilt een gratis revalidatie-app aanbevelen, maar de voorwaarden vermelden dat data (inclusief video's) wordt gebruikt voor productverbetering. Hoe weeg je voordelen af tegen AVG-risico's? Wat communiceer je met je patiënt?"
+          "stap": "2",
+          "titel": "Observatie",
+          "beschrijving": "Wat gebeurde er tijdens het leren?"
         },
         {
-          "titel": "Scenario: De Verouderde Aanbeveling",
-          "beschrijving": "AI genereert een professionele folder over enkeltrauma, maar adviseert het verouderde RICE-protocol. Welk risico herken je (Historische Bias)? Welke stappen onderneem je voordat je de folder gebruikt?"
+          "stap": "3",
+          "titel": "Reflectie",
+          "beschrijving": "Waarom ging het zo? Wat ging goed/fout?"
         },
         {
-          "titel": "Scenario: Het Gekopieerde Studieboek",
-          "beschrijving": "Je overweegt een gescand hoofdstuk uit een auteursrechtelijk beschermd studieboek te uploaden voor een AI-samenvatting. Welke risico's zie je (dataveiligheid, copyright)? Wat is een veiligere aanpak?"
-        },
-        {
-          "titel": "Scenario: De 'Slimme' Fraude van een Klasgenoot",
-          "beschrijving": "Een klasgenoot liet zijn complete reflectieverslag door AI schrijven en kreeg een topcijfer. Welke risico's zie je voor academische integriteit en professionele ontwikkeling? Wat zou jij doen?"
+          "stap": "4",
+          "titel": "Nieuwe Actie",
+          "beschrijving": "Hoe pas ik dit toe in de volgende leertaak?"
         }
       ]
     },
     {
-      "type": "section-title",
-      "titel": "De Enorme Kansen: AI als Hefboom voor Betere Zorg"
+      "type": "info-card",
+      "titel": "Concrete Reflectievragen",
+      "items": [
+        { "titel": "Heb ik mijn doel behaald? Waardoor kwam dat?", "tekst": "Kijk kritisch naar je prestaties en de oorzaken daarvan." },
+        { "titel": "Wat ging goed aan mijn voorbereiding en wat kan beter?", "tekst": "Identificeer effectieve en minder effectieve strategieën." },
+        { "titel": "Welke studie-aanpak ga ik de volgende keer herhalen en wat ga ik anders doen?", "tekst": "Gebruik je inzichten om je plan van aanpak te verbeteren." }
+      ]
+    },
+    {
+      "type": "accent-blok",
+      "variant": "warning",
+      "tekst": "Wees je bewust van het Dunning-Kruger effect: de neiging om je eigen kennis en vaardigheden te overschatten, vooral als je weinig ervaring hebt. Dit kan leiden tot onwil om adviezen op te volgen en frustratie."
     },
     {
       "type": "content-text",
-      "tekst": "Je hebt nu een solide AI-basis: wat het is, welke tools er zijn en hoe je ze inzet. Als toekomstig fysiotherapeut moet je niet alleen vaardig zijn met AI, maar ook wijs. Zo benut je de enorme potentie en vermijd je de valkuilen!"
+      "tekst": "Denk aan Leren, Niet Alleen aan Studeren: Streef ernaar om de stof zo goed te begrijpen dat je het aan een ander kunt uitleggen. Wees je bewust van het denkniveau dat van je wordt verwacht (op het HBO/WO gaat het verder dan alleen onthouden en begrijpen)."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Wees geduldig en mild voor jezelf. Metacognitieve vaardigheden ontwikkel je niet van de ene op de andere dag. Het vergt oefening en soms wat hulp. Maar de beloning is groot: je transformeert jezelf van iemand die zomaar dingen instudeert tot iemand die doelgericht en zelfverzekerd leert. Je wordt de baas over je eigen leerproces en daarmee leg je een basis voor succes in je huidige studie én je toekomstige carrière als professional die blijft leren. Veel succes!"
     }
   ],
   "interacties": [

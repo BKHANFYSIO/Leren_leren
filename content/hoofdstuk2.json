@@ -2,152 +2,168 @@
   "content": [
     {
       "type": "info-card",
-      "titel": "AI onder de motorkap: Wat is het écht?",
-      "tekst": "In hoofdstuk 1 heb je gezien wat AI kan betekenen. Maar om als professional echt de regie te houden, is het niet genoeg om AI alleen te kunnen <strong>toepassen</strong>. <strong>Je moet ook snappen <strong>hoe het werkt</strong>, waarom het bepaalde keuzes maakt en waar de grenzen liggen.</strong> Deze kennis is essentieel om een kritische denker te worden in plaats van een passieve gebruiker. In dit hoofdstuk leggen we daarom de basis: wat is die mysterieuze 'AI' nu eigenlijk precies?"
+      "classes": "welcome-card",
+      "titel": "Neem de regie over je eigen leerproces",
+      "tekst": "Welkom bij het tweede hoofdstuk! In de inleiding heb je ontdekt waarom je oude studiemethodes misschien niet meer volstaan. Dit hoofdstuk geeft je de blauwdruk om een effectievere, zelfsturende student te worden. Laten we beginnen!"
     },
     {
-      "type": "accordion",
-      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
-      "content": [
+      "type": "section-title",
+      "titel": "De Architect van je Eigen Kennis"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De overgang naar het hoger onderwijs is een spannende tijd. Je zult merken dat je veel meer zelfstandigheid wordt gevraagd, vooral als het gaat om je leerproces. Veel studenten gebruiken strategieën zoals herlezen of markeren, maar dit geeft vaak een vals gevoel van zekerheid: de <strong>'illusion of fluency' (illusie van vloeiendheid)</strong>. Het leren voelt vloeiend en snel, maar in werkelijkheid gaat het traag. Je herkent de stof, maar dat is niet hetzelfde als het echt begrijpen. Laten we die illusie doorbreken."
+    },
+    {
+      "type": "split-screen-image-text",
+      "afbeelding": {
+        "src": "https://placehold.co/600x400/9333ea/ffffff?text=Advanced+Organizer",
+        "alt": "Visualisatie van de Manager, Verwerker en Motivator"
+      },
+      "tekst_content": [
+        "<strong>Jouw 'rugzak' vol gereedschap</strong>",
+        "Zie zelfsturend leren als een rugzak vol gereedschap. Om elke leeruitdaging aan te kunnen, heb je drie soorten gereedschap nodig:",
+        "<ul><li><strong>De Verwerker:</strong> Helpt je de stof diepgaand te verwerken.</li><li><strong>De Manager:</strong> Helpt je het leerproces te plannen en overzien.</li><li><strong>De Motivator:</strong> Helpt je gemotiveerd te blijven, ook als het moeilijk wordt.</li></ul>",
+        "In deze e-learning leer je hoe je elk stuk gereedschap effectief gebruikt."
+      ]
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
         {
-          "type": "content-text",
-          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+          "titel": "Dieper Begrip, Minder Stress",
+          "tekst": "Door actief te leren, begrijp je de stof beter en onthoud je het langer."
         },
         {
-          "type": "audio-grid",
-          "kolommen": 1,
-          "items": [
-            {
-              "id": "h2_audio_1",
-              "titel": "Podcast: Wat is AI nu eigenlijk?",
-              "beschrijving": "Ontdek de verschillende definities en vormen van AI.",
-              "bron": "audio/H2-Wat-is-AI-eigenlijk-podcast.wav",
-              "meta": ""
-            }
-          ]
+          "titel": "Betere Leerprestaties",
+          "tekst": "Effectieve strategieën leiden bewezen tot hogere cijfers en betere resultaten."
+        },
+        {
+          "titel": "Essentiële Skill voor je Toekomst",
+          "tekst": "Als professional moet je een leven lang leren. Deze skill is onmisbaar."
+        },
+        {
+          "titel": "Hogere Motivatie",
+          "tekst": "Succeservaringen en grip op je studieproces werken enorm motiverend."
         }
       ]
     },
     {
-        "type": "section-title",
-        "titel": "Wat is AI? (Definitie)"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Laten we beginnen met een eenvoudige en praktische definitie die je kunt onthouden.\n\n<strong>Werkdefinitie:</strong> Kunstmatige intelligentie (AI) is technologie waarmee computers menselijk leren, redeneren en beslissen kunnen nabootsen.\n\nSimpel gezegd proberen we met AI machines 'slim' te maken, zodat ze ons kunnen helpen met complexe taken. In plaats van dat een programmeur elke regel of handeling vooraf programmeert, kan een AI-systeem zelf leren van grote hoeveelheden data (gegevens) en op basis daarvan patronen herkennen of beslissingen nemen."
+      "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "AI-geschiedenis"
+      "titel": "Een Continu Proces, Geen Eenmalige Actie"
     },
     {
       "type": "content-text",
-      "tekst": "Voor een goed begrip van AI is het nuttig om te weten waar het vandaan komt. Je hoeft dit niet uit je hoofd te leren, maar de belangrijkste mijlpalen geven je context over de snelle ontwikkelingen van nu."
+      "tekst": "Zelfsturend leren is geen eenmalige checklist, maar een dynamische cyclus. Het is een continu proces van plannen, doen, controleren en bijsturen. Dit is het domein van 'De Manager' uit je rugzak: de rol die het overzicht bewaart."
     },
     {
       "type": "process-flow",
-      "titel": "Een sneltrein door de AI-geschiedenis",
+      "titel": "De Leercyclus van Zelfsturend Leren",
       "items": [
-        { "stap": "1950", "titel": "De Turingtest", "beschrijving": "Alan Turing ontwikkelde de eerste test om te meten of een machine intelligent gedrag kan vertonen dat niet van een mens te onderscheiden is." },
-        { "stap": "1956", "titel": "De Dartmouth Conferentie", "beschrijving": "De term \"Artificial Intelligence\" werd officieel geboren en AI werd een academisch vakgebied." },
-        { "stap": "1980-1990", "titel": "De AI-winter", "beschrijving": "Periode van teleurstelling na hooggespannen verwachtingen. Financiering en vertrouwen namen af omdat de technologie nog niet krachtig genoeg was." },
-        { "stap": "2012", "titel": "Doorbraak van Deep Learning", "beschrijving": "AI-systemen konden dankzij krachtigere computers en grote datasets ineens beelden beter herkennen dan mensen. Begin van de huidige AI-revolutie." },
-        { "stap": "2022", "titel": "Doorbraak van Grote Taalmodellen (LLM's)", "beschrijving": "ChatGPT maakte AI die mensachtige tekst genereert toegankelijk voor iedereen." },
-        { "stap": "2024", "titel": "Opkomst van Multimodale AI & Agents", "beschrijving": "AI-systemen combineren meerdere inputs (tekst, beeld, geluid) en handelen autonoom om doelen te bereiken." }
+        {
+          "stap": "1",
+          "titel": "Plannen",
+          "beschrijving": "Wat ga ik leren en hoe pak ik dat aan?"
+        },
+        {
+          "stap": "2",
+          "titel": "Uitvoeren",
+          "beschrijving": "Actief aan de slag met de leerstof en de gekozen strategieën."
+        },
+        {
+          "stap": "3",
+          "titel": "Monitoren",
+          "beschrijving": "Check ik voor mezelf of ik de stof echt begrijp?"
+        },
+        {
+          "stap": "4",
+          "titel": "Evalueren",
+          "beschrijving": "Wat was het resultaat van mijn aanpak en inzet?"
+        },
+        {
+          "stap": "5",
+          "titel": "Reflecteren",
+          "beschrijving": "Wat ging goed en wat kan de volgende keer beter?"
+        }
       ]
+    },
+    {
+      "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "Hoe leert AI?"
+      "titel": "Van Passieve Consument naar Actieve Manager"
     },
     {
       "type": "content-text",
-      "tekst": "AI's vermogen om te leren is fascinerend. We richten ons op <strong>Machine Learning</strong> en <strong>Deep Learning</strong> – onderstaande fysiotherapie-analogieën helpen je de kernbegrippen te begrijpen. Daarnaast bestaan er andere krachtige leermethoden zoals reinforcement learning, meta-learning en neuro-symbolische AI."
+      "tekst": "Op de middelbare school was leren vaak het reproduceren van feiten. In het hoger onderwijs wordt er meer van je verwacht: je moet kennis kunnen toepassen, analyseren en creëren. Dit vraagt om een actieve rol. Je bent niet langer een passieve ontvanger van informatie, maar de actieve manager van je eigen leerproces."
     },
     {
-      "type": "card-grid",
-      "items": [
-        { "titel": "Machine Learning (ML)", "beschrijving": "Algoritmes verbeteren zichzelf door te leren van voorbeelden uit data, zonder vooraf geprogrammeerde stappen.", "voorbeeld": { "titel": "Analogie: Spierversterking", "tekst": "Net zoals spieren sterker worden door herhaalde training, wordt een ML-model nauwkeuriger door training met veel data." }},
-        { "titel": "Deep Learning (DL)", "beschrijving": "Geavanceerde vorm van ML met gelaagde <em>neurale netwerken</em>, geïnspireerd op het menselijk brein. Kan zeer complexe patronen herkennen in beeld of geluid.", "voorbeeld": { "titel": "Analogie: Het zenuwstelsel", "tekst": "Simpele reflexen worden laag verwerkt (ruggenmerg), complexe beslissingen hoger (hersenschors). Een neuraal netwerk verwerkt ook in lagen: van simpel naar complex." }}
+      "type": "accordion",
+      "titel": "Casus: Anouk's Leerproces Transformatie",
+      "content": [
+        {
+                     "titel": "De Casus: Anouk, eerstejaars Fysio, loopt vast op Anatomie en trapt in de 'illusion of fluency'.",
+                       "beschrijving": "Anouk besteedt uren aan het herlezen van haar anatomieboek. De plaatjes en termen komen haar bekend voor, dus ze denkt dat ze de stof kent. Het leren voelt vloeiend en snel, ze heeft het gevoel snel te leren maar in werkelijkheid gaat het traag. Tijdens de toets blijkt echter dat ze de structuren niet actief kan benoemen en de verbanden niet kan leggen. Een klassiek geval van de <strong>'illusion of fluency' (illusie van vloeiendheid)</strong>."
+        },
+        {
+          "titel": "Haar Aanpak: Hoe Anouk haar 'Manager' inzet en de leercyclus toepast.",
+          "beschrijving": "Anouk besluit het anders aan te pakken. Ze zet haar 'Manager' aan het werk. <strong>Plannen:</strong> ze deelt de stof op in kleine stukjes. <strong>Uitvoeren:</strong> ze stopt met herlezen en maakt flashcards om zichzelf actief te overhoren. <strong>Monitoren:</strong> na elke sessie probeert ze een diagram uit haar hoofd na te tekenen. <strong>Evalueren & Reflecteren:</strong> ze merkt dat deze actieve methode moeilijker voelt, maar dat ze de stof veel beter onthoudt."
+        },
+        {
+          "titel": "Het Resultaat: Van onvoldoende naar een solide 8.",
+          "beschrijving": "Door de regie te nemen en haar strategie aan te passen, haalt Anouk voor haar hertentamen een 8. Ze heeft niet alleen de stof geleerd, maar ook geleerd <em>hoe</em> ze moet leren."
+        }
       ]
     },
     {
-      "type": "section-title",
-      "titel": "Van Voorspelling naar Antwoord: Hoe een Taalmodel 'Denkt'"
-    },
-    {
-      "type": "video-split-screen",
-      "video": {
-        "link": "https://youtu.be/iOaJZ3oP2T4",
-        "titel": "Hoe werkt ChatGPT (en waarom is het soms onzin)?"
-      },
-      "tekst_content": {
-        "titel": "",
-        "paragrafen": [
-          "Een taalmodel redeneert niet, maar voorspelt woord voor woord wat het meest logische vervolg is op basis van de patronen die het heeft geleerd uit miljarden teksten. Het is in feite geavanceerde, wiskundige kansberekening.",
-          "Om te voorkomen dat elk antwoord hetzelfde is, wordt er een vleugje willekeur ('temperatuur') toegevoegd. Hierdoor kan het model ook creatieve en unieke zinnen vormen.",
-          "Onthoud dus: elk antwoord is een uniek, statistisch gegenereerd product, geen gekopieerd feit."
-        ]
-      }
-    },
-    {
-      "type": "competency-grid",
-      "titel": "Belangrijke termen in AI",
-      "intro": "Hieronder vind je een overzicht van essentiële AI-termen met uitleg en hun praktische betekenis voor jouw studie en werk.",
-      "termen": [
-        { "term": "Token", "uitleg": "Een token is een basiseenheid van tekst die AI gebruikt – dit kan een woorddeel, leesteken of kort woord zijn. AI rekent en verwerkt tekst in deze kleine stukjes.", "praktisch": "Tokens bepalen hoeveel tekst een AI-model tegelijk kan verwerken of genereren. Ze zijn direct verbonden met de contextlimiet én kosten (je betaalt meestal per aantal tokens). Wees dus bewust van lengte en formulering van je prompt of output." },
-        { "term": "Context window", "uitleg": "Het context window is de maximale hoeveelheid tokens (invoer + uitvoer) die een AI-model tegelijk kan verwerken.", "praktisch": "Als je gesprek te lang wordt, vergeet de AI het begin. Dit kan leiden tot minder consistente of relevante antwoorden. Start bij lange dialogen of taken opnieuw om 'vergeten' informatie te voorkomen." },
-        { "term": "Prompt", "uitleg": "Een prompt is de instructie of opdracht die je aan AI geeft, bijvoorbeeld een vraag, verzoek of instructie.", "praktisch": "Een goede prompt is duidelijk, specifiek en doelgericht." },
-        { "term": "Iterate", "uitleg": "Itereren betekent dat je de output van de AI beoordeelt en vervolgens een aanvullende of aangepaste prompt geeft om het resultaat te verbeteren of te verfijnen. Het is een cyclisch proces van proberen, evalueren en bijsturen.", "praktisch": "Itereren helpt je om stapsgewijs samen met de AI tot een beter eindresultaat te komen. Je werkt niet steeds met dezelfde prompt, maar stuurt bij op basis van de gegenereerde output – net zoals je behandelplannen bijstelt op basis van voortgang en observaties." },
-        { "term": "LLM (Large Language Model)", "uitleg": "Een LLM is een AI-model dat getraind is op enorme tekstverzamelingen om patronen te herkennen en tekst te genereren op basis van waarschijnlijkheid.", "praktisch": "Een LLM 'begrijpt' tekst niet zoals mensen dat doen. Het baseert zijn antwoorden op statistiek, niet op waarheid. Blijf dus kritisch en controleer altijd belangrijke inhoud." },
-        { "term": "Agent", "uitleg": "Een agent is een AI-systeem dat zelfstandig stappen kan plannen en uitvoeren richting een doel, vaak met meerdere beslismomenten.", "praktisch": "Een AI-agent kan zelfstandig taken uitvoeren, zoals het opstellen van behandelvoorstellen of het genereren van patiëntverslagen. Nuttig, maar altijd onder supervisie van een professional." },
-        { "term": "Reasoning layers", "uitleg": "Dit zijn lagen binnen een AI-agent die zorgen voor redeneren, beslissen en plannen, op basis van informatieverwerking.", "praktisch": "Deze lagen bootsen cognitieve processen na, maar werken op kansberekening. Ze maken complexe interactie mogelijk, maar kunnen nog steeds fouten maken. Gebruik AI daarom altijd als ondersteunend hulpmiddel." },
-        { "term": "AGI (Artificial General Intelligence)", "uitleg": "Hypothetisch AI-systeem dat elk cognitief vermogen van mensen kan evenaren." }
-      ]
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "Verder kijken (optionele bronnen)"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Voor een nog beter begrip, bekijk één of meerdere van deze video's."
-    },
-    {
-      "type": "video-grid",
-      "kolommen": 3,
+      "type": "info-card",
+      "titel": "Check-in: Hoe goed monitor jij je leerproces?",
       "items": [
-        { "titel": "Het Klokhuis - Wat is artificiële intelligentie?", "beschrijving": "Wat is artificiële intelligentie? Klokhuis legt het uit met herkenbare voorbeelden uit het dagelijks leven. Toegankelijke video voor jong en oud.", "bron": "NTR", "duur": "15 min", "link": "https://youtu.be/xHcv99wuUwA?si=wXamfNMi0tvf7fvV" },
-        { "titel": "What is Artificial Intelligence? (Simplilearn)", "beschrijving": "Deze korte video geeft een heldere introductie in de basis van kunstmatige intelligentie en de belangrijkste concepten. In 5 minuten begrijp je de essentie van AI en hoe het ons dagelijks leven beïnvloedt.", "bron": "Simplilearn", "duur": "4:40 min", "link": "https://youtu.be/uMzUB89uSxU?si=AaLFg4OjL-rR35Zt" },
-        { "titel": "Wat is AI? Clipphanger", "beschrijving": "Een ultrakorte animatie die in eenvoudige taal uitlegt wat AI is en hoe je het dagelijks tegenkomt.", "bron": "NTR/Schooltv", "duur": "1,5 min", "link": "https://youtu.be/LjgtORzV4js?si=OZxprFbdsAj49-uL" }
+        { "titel": "Voorkennis", "tekst": "Wat wist ik hiervoor al over dit onderwerp?" },
+        { "titel": "Nieuwe inzichten", "tekst": "Wat heb ik zojuist geleerd?" },
+        { "titel": "Moeilijkheden", "tekst": "Wat vind ik het moeilijkste onderdeel en waarom?" },
+        { "titel": "Hiaten", "tekst": "Wat heb ik nog niet volledig onder de knie?" },
+        { "titel": "Controle", "tekst": "Hoe kan ik controleren of ik dit echt begrijp?" }
       ]
     }
   ],
   "interacties": [
     {
-      "id": "h2_flashcard_1",
-      "type": "flashcard",
-      "titel": "Flashcards: Belangrijke AI-termen",
-      "vraag": "Oefen met de belangrijkste begrippen uit dit hoofdstuk. Klik op de kaart om het antwoord te zien.",
-      "cards": [
-        { "term": "Kunstmatige Intelligentie (AI)", "uitleg": "Technologie waarmee computers menselijk leren, redeneren en beslissen kunnen nabootsen." },
-        { "term": "Machine Learning (ML)", "uitleg": "Techniek waarbij algoritmes zichzelf verbeteren door te leren van voorbeelden uit data, zonder dat elke stap expliciet is geprogrammeerd." },
-        { "term": "Deep Learning (DL)", "uitleg": "Geavanceerde vorm van ML die gebruikmaakt van gelaagde neurale netwerken, geïnspireerd op het menselijk brein." },
-        { "term": "Token", "uitleg": "Basiseenheid van tekst die AI gebruikt – kan een woorddeel, leesteken of kort woord zijn." },
-        { "term": "Context window", "uitleg": "Maximale hoeveelheid tokens (invoer + uitvoer) die een AI-model tegelijk kan verwerken." },
-        { "term": "Prompt", "uitleg": "De instructie of opdracht die je aan AI geeft, bijvoorbeeld een vraag, verzoek of instructie." },
-        { "term": "Iterate", "uitleg": "Het cyclisch proces van proberen, evalueren en bijsturen van prompts om betere output te krijgen." },
-        { "term": "LLM (Large Language Model)", "uitleg": "AI-model getraind op enorme tekstverzamelingen om patronen te herkennen en tekst te genereren." },
-        { "term": "Agent", "uitleg": "AI-systeem dat zelfstandig stappen kan plannen en uitvoeren richting een doel." },
-        { "term": "Reasoning layers", "uitleg": "Lagen binnen een AI-agent die zorgen voor redeneren, beslissen en plannen." },
-        { "term": "AGI (Artificial General Intelligence)", "uitleg": "Hypothetisch AI-systeem dat elk cognitief vermogen van mensen kan evenaren." }
+      "id": "h2_mc_1",
+      "type": "mc",
+      "vraag": "Wat is de 'illusion of fluency' (illusie van vloeiendheid) in leren?",
+      "options": [
+        "Het leren voelt vloeiend en snel, maar in werkelijkheid gaat het traag",
+        "Wanneer je zo snel leest dat je de stof niet opneemt",
+        "Het gevoel dat leren gemakkelijk moet zijn",
+        "Wanneer je te veel verschillende leermethoden tegelijk gebruikt"
+      ],
+      "correctAnswer": 0,
+      "feedbackCorrect": "Correct! De 'illusion of fluency' ontstaat wanneer het leren vloeiend en snel voelt, je denkt snel te leren maar in werkelijkheid gaat het traag. Je herkent de stof maar dat is geen echt leren - je kunt de kennis niet actief toepassen.",
+      "feedbackIncorrect": "Niet helemaal. De 'illusion of fluency' ontstaat wanneer het leren vloeiend en snel voelt, maar in werkelijkheid gaat het traag. Je herkent de stof maar dat is geen echt leren - je kunt de kennis niet actief toepassen."
+    },
+    {
+      "id": "h2_selfassessment_1",
+      "type": "selfassessment",
+      "titel": "Hoe zelfsturend ben jij als leerder?",
+      "vraag": "Beoordeel jezelf op de vijf stappen van de leercyclus. Geef per stap aan hoe goed je dit momenteel doet.",
+      "criteria": [
+        { "item": "Plannen: Ik maak bewust een plan voordat ik ga leren", "schaal": "1 = Nooit, 2 = Zelden, 3 = Soms, 4 = Vaak, 5 = Altijd" },
+        { "item": "Uitvoeren: Ik gebruik actieve leerstrategieën (geen passief herlezen)", "schaal": "1 = Nooit, 2 = Zelden, 3 = Soms, 4 = Vaak, 5 = Altijd" },
+        { "item": "Monitoren: Ik check tijdens het leren of ik het echt begrijp", "schaal": "1 = Nooit, 2 = Zelden, 3 = Soms, 4 = Vaak, 5 = Altijd" },
+        { "item": "Evalueren: Ik beoordeel achteraf het resultaat van mijn leeraanpak", "schaal": "1 = Nooit, 2 = Zelden, 3 = Soms, 4 = Vaak, 5 = Altijd" },
+        { "item": "Reflecteren: Ik denk na over wat wel/niet werkte en waarom", "schaal": "1 = Nooit, 2 = Zelden, 3 = Soms, 4 = Vaak, 5 = Altijd" }
       ]
     },
     {
       "id": "h2_reflection_1",
       "type": "reflection",
-      "vraag": "Je hebt gelezen dat een taalmodel (zoals ChatGPT) antwoorden baseert op statistische waarschijnlijkheid en niet op 'begrip' of 'waarheid'. Wat betekent dit besef voor de manier waarop jij de output van zo'n tool gaat gebruiken en controleren in je studie of toekomstige werk? Beschrijf een concreet voorbeeld waarin dit inzicht cruciaal is.",
-      "placeholder": "Beschrijf hoe dit inzicht je gebruik van AI-tools zal beïnvloeden en geef een praktijkvoorbeeld..."
+             "vraag": "Denk aan een recent leermoment waarin je het gevoel had de stof goed te kennen, maar tijdens een toets of tentamen bleek dat dit niet het geval was. Herken je nu de 'illusion of fluency' (illusie van vloeiendheid)? Beschrijf wat er gebeurde en hoe je dit in de toekomst anders zou aanpakken met behulp van de leercyclus.",
+      "placeholder": "Beschrijf je ervaring en je nieuwe aanpak..."
     }
   ]
 } 

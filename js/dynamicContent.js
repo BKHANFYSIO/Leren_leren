@@ -1,11 +1,13 @@
 const baseContentPath = 'content/';
 
-async function fetchChapterData(chapterNumber) {
+// Make fetchChapterData globally available for use in other scripts
+window.fetchChapterData = async function fetchChapterData(chapterNumber) {
     // Zoek het juiste hoofdstuk in de globale 'chapters' array
     const chapterInfo = chapters.find(c => c.section === chapterNumber);
 
     if (!chapterInfo) {
         console.error(`Informatie voor hoofdstuk ${chapterNumber} niet gevonden in de globale configuratie.`);
+        console.error(`Available chapters:`, chapters.map(c => ({section: c.section, file: c.file})));
         return null;
     }
 
@@ -13,10 +15,13 @@ async function fetchChapterData(chapterNumber) {
 
     try {
         const response = await fetch(filePath);
+        
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status} for ${filePath}`);
         }
-        return await response.json();
+        
+        const data = await response.json();
+        return data;
     } catch (error) {
         console.error('Error fetching chapter data:', error);
         const errorContainer = document.getElementById(`hoofdstuk${chapterNumber}-error`);
@@ -125,7 +130,8 @@ function initializeAccordions(chapterNumber) {
 }
 
 // renderInteraction now accepts chapterNumber and the direct container element
-function renderInteraction(interactionData, chapterNumber, container) {
+// Make renderInteraction globally available for use in other scripts
+window.renderInteraction = function renderInteraction(interactionData, chapterNumber, container) {
     container.innerHTML = ''; // Clear existing content
     let interactionHTML = '';
     switch (interactionData.type) {
@@ -146,6 +152,9 @@ function renderInteraction(interactionData, chapterNumber, container) {
             break;
         case 'flashcard':
             interactionHTML = renderFlashcardContent(interactionData, chapterNumber);
+            break;
+        case 'braindump':
+            interactionHTML = renderBraindumpInteraction(interactionData, chapterNumber);
             break;
         default:
             interactionHTML = `<p>Onbekend interactie type: ${interactionData.type}</p>`;
@@ -169,6 +178,15 @@ function renderInteraction(interactionData, chapterNumber, container) {
         }
     } else if (interactionData.type === 'flashcard') {
         initializeFlashcardInteraction(interactionData, chapterNumber);
+    } else if (interactionData.type === 'braindump') {
+        if (typeof initializeBraindumpInteraction === 'function') {
+            // Call async function without await to not block rendering
+            initializeBraindumpInteraction(container.id, interactionData, chapterNumber).catch(error => {
+                console.error('Error initializing braindump interaction:', error);
+            });
+        } else {
+            console.error('initializeBraindumpInteraction function not found in js/script.js');
+        }
     } else if (interactionData.type === 'reflection') {
         if (typeof initializeReflectionInteraction === 'function') {
             initializeReflectionInteraction(container.id, interactionData);
@@ -381,30 +399,84 @@ function renderDragDropInteraction(interactionData, chapterNumber) {
 // Pass chapterNumber to renderSelfAssessmentInteraction
 function renderSelfAssessmentInteraction(interactionData, chapterNumber) {
     const selfAssessmentId = interactionData.id;
-    const competences = ['Veranderen', 'Vinden', 'Vertrouwen', 'Vaardig gebruiken', 'Vertellen'];
-    let competencesHtml = '';
     const storageKey = `selfassessment_${chapterNumber}_${selfAssessmentId}_done`;
     const isSaved = !!localStorage.getItem(storageKey);
     let savedData = {};
     if (isSaved) {
         try { savedData = JSON.parse(localStorage.getItem(storageKey)); } catch {}
     }
-    competences.forEach(comp => {
-        const selectId = `${comp.toLowerCase().replace(' ', '')}-${chapterNumber}-${selfAssessmentId}`;
+
+    // Gebruik criteria uit JSON data, of fallback naar oude hardcoded waarden
+    const criteria = interactionData.criteria || [
+        { item: 'Veranderen', schaal: '1 = Beginnend, 3 = Bekwaam' },
+        { item: 'Vinden', schaal: '1 = Beginnend, 3 = Bekwaam' },
+        { item: 'Vertrouwen', schaal: '1 = Beginnend, 3 = Bekwaam' },
+        { item: 'Vaardig gebruiken', schaal: '1 = Beginnend, 3 = Bekwaam' },
+        { item: 'Vertellen', schaal: '1 = Beginnend, 3 = Bekwaam' }
+    ];
+
+    // Bepaal schaal op basis van eerste criterium (alle criteria gebruiken dezelfde schaal)
+    const schaalTekst = criteria.length > 0 ? criteria[0].schaal : '1 = Beginnend, 3 = Bekwaam';
+    
+    // Parse schaal om aantal opties en labels te bepalen
+    const schaalParts = schaalTekst.split(',').map(part => part.trim());
+    const schaalOptions = [];
+    const schaalLabels = [];
+    
+    // Parse alle opties met labels
+    const optieMatches = [];
+    schaalParts.forEach(part => {
+        const match = part.match(/^(\d+)\s*=\s*(.+)$/);
+        if (match) {
+            optieMatches.push({ nummer: parseInt(match[1]), label: match[2] });
+        }
+    });
+
+    if (optieMatches.length >= 2) {
+        // Sorteer opties op nummer om juiste volgorde te garanderen
+        optieMatches.sort((a, b) => a.nummer - b.nummer);
+        
+        // Gebruik alle gevonden opties met hun labels
+        optieMatches.forEach(match => {
+            schaalOptions.push(match.nummer.toString());
+            schaalLabels.push(`${match.nummer} = ${match.label}`);
+        });
+    } else {
+        // Fallback als parsing mislukt
+        schaalOptions.push('1', '2', '3');
+        schaalLabels.push('1 = Beginnend', '2 = In ontwikkeling', '3 = Bekwaam');
+    }
+
+    let competencesHtml = '';
+    criteria.forEach(criterium => {
+        const item = criterium.item;
+        const cleanItemId = item.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const selectId = `${cleanItemId}-${chapterNumber}-${selfAssessmentId}`;
+        
+        // Genereer opties dynamisch
+        const optionsHtml = schaalOptions.map(value => {
+            const isSelected = isSaved && savedData[cleanItemId] === value;
+            const optionText = schaalLabels.find(label => label.startsWith(value)) || `${value}`;
+            return `<option value="${value}"${isSelected ? ' selected' : ''}>${optionText}</option>`;
+        }).join('');
+        
         competencesHtml += `
         <div class="assessment-item">
-          <label for="${selectId}">${comp}:</label>
+          <label for="${selectId}">${item}:</label>
           <select id="${selectId}" class="assessment-select"${isSaved ? ' disabled' : ''}>
             <option value="">Kies een niveau</option>
-            <option value="1"${isSaved && savedData[comp.toLowerCase().replace(' ', '')]==='1' ? ' selected' : ''}>1 - Beginnend</option>
-            <option value="2"${isSaved && savedData[comp.toLowerCase().replace(' ', '')]==='2' ? ' selected' : ''}>2 - In ontwikkeling</option>
-            <option value="3"${isSaved && savedData[comp.toLowerCase().replace(' ', '')]==='3' ? ' selected' : ''}>3 - Bekwaam</option>
+            ${optionsHtml}
           </select>
         </div>`;
     });
+
+    // Genereer dynamische assessment-scale
+    const assessmentScaleHtml = schaalLabels.map(label => `<span>${label}</span>`).join('');
+
     const iconSvg = '<svg viewBox="0 0 24 24" class="icon"><path d="M12 4a4 4 0 100 8 4 4 0 000-8zM8 8a4 4 0 118 0 4 4 0 01-8 0zm0 8c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm10-5h-4v2h4v-2zm0-4h-4v2h4V7zm0-4h-4v2h4V3z"></path></svg>';
-    const blockTitle = "Zelfevaluatie";
+    const blockTitle = interactionData.titel || "Zelfevaluatie";
     const specificQuestionTitle = interactionData.vraag ? `<h5 class="interaction-title">${interactionData.vraag}</h5>` : '<h5 class="interaction-title">Zelfevaluatie Digitale Competenties</h5>';
+    
     return `
         <div class="interactive-block">
             <div class="interactive-block-header">
@@ -415,9 +487,7 @@ function renderSelfAssessmentInteraction(interactionData, chapterNumber) {
                 <div class="competency-assessment selfassessment-interaction">
                     ${specificQuestionTitle}
                     <div class="assessment-scale">
-                        <span>1 = Beginnend</span>
-                        <span>2 = In ontwikkeling</span>
-                        <span>3 = Bekwaam</span>
+                        ${assessmentScaleHtml}
                     </div>
                     <div class="assessment-grid">
                         ${competencesHtml}
@@ -437,8 +507,6 @@ function renderCriticalAnalysisInteraction(interactionData, chapterNumber) {
     if (isSaved) {
         try { 
             savedData = JSON.parse(localStorage.getItem(storageKey)); 
-            console.log('Loading critical analysis data:', savedData);
-            console.log('Storage key:', storageKey);
         } catch (e) {
             console.error('Error parsing saved critical analysis data:', e);
         }
@@ -493,7 +561,6 @@ function renderCriticalAnalysisInteraction(interactionData, chapterNumber) {
 // Global function to load content for the currently active section
 // This function will be called by your existing navigation logic (nextSection, prevSection, sidebar click)
 async function loadContentForSection(sectionNumber) {
-    console.log(`Attempting to load content for section: ${sectionNumber}`);
     // Check if section number is valid (between 1 and totalSections)
     if (sectionNumber >= 1 && sectionNumber <= totalSections) {
         const data = await fetchChapterData(sectionNumber);
@@ -502,7 +569,6 @@ async function loadContentForSection(sectionNumber) {
             // If your existing script.js has a function to initialize interactions after content load, call it here.
             // e.g., if (typeof initializeSectionInteractions === 'function') { initializeSectionInteractions(sectionNumber); }
         } else {
-            console.log(`Failed to load data for section ${sectionNumber}`);
             const mainContentContainer = document.getElementById(`section${sectionNumber}-content-container`);
             if (mainContentContainer) {
                  mainContentContainer.innerHTML = `<p class="error-message">Inhoud voor dit hoofdstuk kon niet geladen worden.</p>`;
@@ -652,17 +718,49 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                  break;
             case 'dual-content-block':
                 html += `<div class="dual-content-container">`;
-                block.blokken.forEach(b => {
-                    html += `
-                        <div class="content-block info-card ${b.type}-block">
-                            ${b.titel ? `<h4 class="section-subtitle block-title">${b.titel}</h4>` : ''}
-                            ${b.tekst_voor_statistiek ? `<p>${b.tekst_voor_statistiek}</p>` : ''}
-                            ${b.focus_tekst ? `<p class="focus-text"><strong>${b.focus_tekst}</strong></p>` : ''}
-                            ${b.tekst_na_statistiek ? `<p>${b.tekst_na_statistiek}</p>` : ''}
-                            ${b.tekst && b.type === 'fun_fact' ? `<p>${b.tekst.replace(/\n/g, '<br>')}</p>`: ''}
-                        </div>
-                    `;
-                });
+                
+                // Nieuwe flexibele structuur: content_left en content_right
+                if (block.content_left || block.content_right) {
+                    if (block.content_left) {
+                        html += `<div class="content-block left-content">`;
+                        if (Array.isArray(block.content_left)) {
+                            html += renderGenericChapterContent(block.content_left, chapterNumber, `${currentBlockId}-left-`);
+                        } else if (block.content_left.type) {
+                            html += renderGenericChapterContent([block.content_left], chapterNumber, `${currentBlockId}-left-`);
+                        } else if (block.content_left.tekst) {
+                            // Legacy support voor oude tekststructuur
+                            html += `<p>${block.content_left.tekst.replace(/\n/g, '<br>')}</p>`;
+                        }
+                        html += `</div>`;
+                    }
+                    
+                    if (block.content_right) {
+                        html += `<div class="content-block right-content">`;
+                        if (Array.isArray(block.content_right)) {
+                            html += renderGenericChapterContent(block.content_right, chapterNumber, `${currentBlockId}-right-`);
+                        } else if (block.content_right.type) {
+                            html += renderGenericChapterContent([block.content_right], chapterNumber, `${currentBlockId}-right-`);
+                        } else if (block.content_right.tekst) {
+                            // Legacy support voor oude tekststructuur
+                            html += `<p>${block.content_right.tekst.replace(/\n/g, '<br>')}</p>`;
+                        }
+                        html += `</div>`;
+                    }
+                } else if (block.blokken) {
+                    // Legacy support: oude structuur met blokken array
+                    block.blokken.forEach(b => {
+                        html += `
+                            <div class="content-block info-card ${b.type}-block">
+                                ${b.titel ? `<h4 class="section-subtitle block-title">${b.titel}</h4>` : ''}
+                                ${b.tekst_voor_statistiek ? `<p>${b.tekst_voor_statistiek}</p>` : ''}
+                                ${b.focus_tekst ? `<p class="focus-text"><strong>${b.focus_tekst}</strong></p>` : ''}
+                                ${b.tekst_na_statistiek ? `<p>${b.tekst_na_statistiek}</p>` : ''}
+                                ${b.tekst && b.type === 'fun_fact' ? `<p>${b.tekst.replace(/\n/g, '<br>')}</p>`: ''}
+                            </div>
+                        `;
+                    });
+                }
+                
                 html += `</div>`;
                 break;
             case 'accent-blok':
@@ -948,7 +1046,11 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                  break;
             case 'image-grid':
                 html += `<div class="image-grid-container columns-${block.kolommen || 3}">`;
-                block.afbeeldingen.forEach(img => {
+                
+                // Support beide 'items' en 'afbeeldingen' voor backward compatibility
+                const images = block.items || block.afbeeldingen || [];
+                
+                images.forEach(img => {
                     let captionHtml = '';
                     if (img.onderschrift || img.bron) {
                         captionHtml += '<figcaption class="image-caption">';
@@ -1760,7 +1862,8 @@ function initializeFlashcardInteraction(interactie, chapterNumber) {
  * @param {object} chapterData - De JSON data van het hoofdstuk.
  * @param {HTMLElement} targetContainer - De container waarin de content gerenderd moet worden.
  */
-function renderStandaloneChapter(chapterData, targetContainer) {
+// Make renderStandaloneChapter globally available for use in other scripts
+window.renderStandaloneChapter = function renderStandaloneChapter(chapterData, targetContainer) {
     if (!chapterData || !targetContainer) {
         console.error('Ontbrekende data of container voor renderStandaloneChapter');
         return;
@@ -1790,4 +1893,155 @@ function renderStandaloneChapter(chapterData, targetContainer) {
             renderInteraction(interaction, 'dev', interactionContainer);
         });
     }
+}
+
+// Pass chapterNumber to renderBraindumpInteraction
+function renderBraindumpInteraction(interactionData, chapterNumber) {
+    const braindumpId = interactionData.id;
+    const storageKeyAttempts = `braindump_${chapterNumber}_${braindumpId}_attempts`;
+    const storageKeyEvaluations = `braindump_${chapterNumber}_${braindumpId}_evaluations`;
+    const storageKeyCompleted = `braindump_${chapterNumber}_${braindumpId}_completed`;
+    
+    // Haal opgeslagen data op
+    const attempts = JSON.parse(localStorage.getItem(storageKeyAttempts) || '[]');
+    const evaluations = JSON.parse(localStorage.getItem(storageKeyEvaluations) || '[]');
+    const isCompleted = localStorage.getItem(storageKeyCompleted) === 'true';
+    
+    // Aantal pogingen
+    const attemptCount = attempts.length;
+    // Als not completed, toon lege textarea voor nieuwe poging
+    const currentAttempt = isCompleted && attemptCount > 0 ? attempts[attemptCount - 1] : '';
+    
+    // Controleer of er al een evaluatie is voor de huidige poging
+    const hasEvaluation = evaluations.length > 0 && isCompleted;
+    const lastEvaluation = hasEvaluation ? evaluations[evaluations.length - 1] : null;
+    
+    // ChatGPT prompt URL - we'll build this dynamically in the initialization function
+    const chatGptPrompt = interactionData.chatgpt_prompt || 'Geef feedback op deze braindump over leerstrategieën. Wees constructief en specifiek.';
+    const chatGptUrl = `#`; // Placeholder, will be updated dynamically
+    
+    const iconSvg = '<svg viewBox="0 0 24 24" class="icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>';
+    const blockTitle = interactionData.titel || "Braindump";
+    const specificQuestionTitle = interactionData.vraag ? `<h5 class="interaction-title">${interactionData.vraag}</h5>` : '';
+    
+    // Evaluatie opties
+    const evaluationOptions = ['good', 'fair', 'poor'];
+    const evaluationLabels = {
+        'good': 'Goed - Ik wist het meeste nog',
+        'fair': 'Matig - Ik wist de helft nog',
+        'poor': 'Slecht - Ik wist weinig nog'
+    };
+    
+    const evaluationHTML = evaluationOptions.map(option => {
+        // Als not completed, geen radio button checked
+        const checked = isCompleted && lastEvaluation && lastEvaluation.evaluation === option ? 'checked' : '';
+        const disabled = isCompleted ? 'disabled' : '';
+        return `
+            <div class="braindump-evaluation-option ${option}">
+                <input type="radio" 
+                       id="${braindumpId}-eval-${option}" 
+                       name="${braindumpId}-evaluation" 
+                       value="${option}" 
+                       ${checked} 
+                       ${disabled}>
+                <label for="${braindumpId}-eval-${option}">${evaluationLabels[option]}</label>
+            </div>
+        `;
+    }).join('');
+    
+    // Feedback na evaluatie - alleen tonen als completed en heeft evaluatie
+    let feedbackHTML = '';
+    if (isCompleted && hasEvaluation) {
+        const evalText = evaluationLabels[lastEvaluation.evaluation] || lastEvaluation.evaluation;
+        feedbackHTML = `
+            <div class="feedback-message" style="display: block; margin-top: 1rem; padding: 1rem; background-color: var(--info-background); border-radius: 4px;">
+                <strong>Je evaluatie:</strong> ${evalText}<br>
+                <em>Poging ${attemptCount} opgeslagen.</em>
+            </div>
+        `;
+    }
+    
+    return `
+        <div class="interactive-block">
+            <div class="interactive-block-header">
+                ${iconSvg}
+                <h4>${blockTitle}</h4>
+            </div>
+            <div class="interactive-block-content">
+                <div class="braindump-container${isCompleted ? ' braindump-completed' : ''}">
+                    ${specificQuestionTitle}
+                    
+                    <div class="braindump-instruction">
+                        ${interactionData.instructie || 'Schrijf uit je hoofd op wat je nog weet over dit onderwerp. Kijk niet terug naar de tekst.'}
+                    </div>
+                    
+                    ${!isCompleted ? `
+                    <div class="braindump-section-selector">
+                        <h6 class="braindump-selector-title">📝 Selecteer secties:</h6>
+                        <div class="braindump-section-options">
+                            <label class="braindump-section-option all-option">
+                                <input type="checkbox" class="braindump-section-checkbox" value="all" checked>
+                                <span class="braindump-section-label">📚 Hele hoofdstuk</span>
+                            </label>
+                            <div class="braindump-section-list" id="${braindumpId}-section-list">
+                                <!-- Secties worden hier dynamisch geladen -->
+                            </div>
+                        </div>
+                    </div>
+                    ` : ''}
+                    
+                    <textarea 
+                        id="${braindumpId}-textarea" 
+                        class="braindump-textarea" 
+                        placeholder="Typ hier je braindump..."
+                        ${isCompleted ? 'readonly' : ''}
+                    >${currentAttempt}</textarea>
+                    
+                    <div class="braindump-control-section">
+                        <div class="braindump-control-instruction">
+                            <strong>Controle:</strong> ${interactionData.controle_instructie || 'Scroll nu terug door het hoofdstuk en vergelijk je antwoord met de inhoud. Deze vergelijking zorgt voor elaboratie en dieper leren - je verbindt je eigen gedachten met de geleerde stof.'}
+                        </div>
+                        <div class="braindump-ai-instructie" style="margin-bottom:0.5rem;font-size:0.97em;color:var(--dark-gray);">
+                            Je kunt je braindump ook laten controleren door een AI. Selecteer de gewenste secties, vul je braindump in, klik op <b>Kopieer prompt</b> en plak deze in je favoriete AI-chatbot.
+                        </div>
+                        <div class="braindump-actions">
+                            <button type="button" class="btn btn-copy-prompt" id="${braindumpId}-copy-prompt-btn">📋 Kopieer prompt</button>
+                            <a href="https://chatgpt.com/" target="_blank" class="btn btn-ai-link">🤖 ChatGPT</a>
+                            <a href="https://gemini.google.com/" target="_blank" class="btn btn-ai-link">🌟 Gemini</a>
+                            <a href="https://claude.ai/" target="_blank" class="btn btn-ai-link">🧠 Claude</a>
+                            <span class="copy-prompt-feedback" id="${braindumpId}-copy-feedback" style="display:none;margin-left:1rem;color:var(--success-text);font-weight:500;">Prompt gekopieerd!</span>
+                        </div>
+                        
+                        <div class="braindump-evaluation">
+                            <div class="braindump-evaluation-title">Hoe goed kon je de inhoud reproduceren?</div>
+                            <div class="braindump-evaluation-options">
+                                ${evaluationHTML}
+                            </div>
+                        </div>
+                        
+                        ${feedbackHTML}
+                    </div>
+                    
+                    <div class="braindump-footer">
+                        <div class="braindump-attempts-info">
+                            ${isCompleted && attemptCount > 0 ? `Poging ${attemptCount} opgeslagen` : `Poging ${attemptCount + 1} van onbeperkt`}
+                        </div>
+                        <div class="braindump-footer-buttons">
+                            <button class="btn${isCompleted ? ' btn-opgeslagen' : ''}" 
+                                    id="${braindumpId}-save-btn" 
+                                    ${isCompleted ? 'disabled' : ''}
+                                    onclick="saveBraindump('${chapterNumber}', '${braindumpId}')">
+                                ${isCompleted ? 'Opgeslagen' : 'Evaluatie Opslaan'}
+                            </button>
+                            <button class="btn btn-secondary" 
+                                    id="${braindumpId}-retry-btn" 
+                                    onclick="retryBraindump('${chapterNumber}', '${braindumpId}')">
+                                Opnieuw Proberen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 }

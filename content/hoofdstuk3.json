@@ -2,150 +2,128 @@
   "content": [
     {
       "type": "info-card",
-      "titel": "Jouw AI-gereedschapskist: welke tool voor welke klus?",
-      "tekst": "Je weet nu wat AI is en hoe je ermee praat. Tijd voor de praktijk: welke tools ga je gebruiken? Er is geen 'beste' tool - het gaat om de juiste tool voor <strong>jouw</strong> taak op <strong>dit</strong> moment. Samenvatting nodig? Trainingsschema opstellen? Anatomische afbeelding zoeken? Dit hoofdstuk helpt je de juiste keuze maken uit je digitale gereedschapskist."
+      "classes": "purple-kader",
+      "titel": "Een kijkje onder de motorkap van je brein",
+      "tekst": "Je weet nu <b>wat</b> zelfsturend leren is. In dit hoofdstuk ontdek je <b>waarom</b> bepaalde leerstrategieën werken en andere niet, door te begrijpen hoe je brein informatie verwerkt."
     },
     {
-      "type": "accordion",
-      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
-      "content": [
+      "type": "section-title",
+      "titel": "Je Werkgeheugen vs. je Langetermijngeheugen"
+    },
+    {
+      "type": "content-text",
+      "tekst": "In de kern is leren een stabiele en permanente verandering in je langetermijngeheugen. Het draait om het aanleggen van nieuwe verbindingen in je hersenen. Als je die verbindingen vaker gebruikt, worden ze sterker. Gebruik je ze niet, dan verzwakken ze weer – dat is vergeten. Twee geheugensystemen spelen hierin de hoofdrol."
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
         {
-          "type": "content-text",
-          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+          "titel": "Het Kladblok (Werkgeheugen)",
+          "icoon": "brain-fill",
+          "tekst": "Je bewuste denken op dit moment. Zeer beperkte capaciteit (4-7 losse elementen). Informatie blijft kort aanwezig (2-30 sec). Als het overbelast raakt, stopt het leren."
         },
         {
-          "type": "audio-grid",
-          "kolommen": 1,
-          "items": [
-            {
-              "id": "h3_audio_1",
-              "titel": "Podcast: AI Tools, wat kies ik?",
-              "beschrijving": "Krijg een overzicht van de belangrijkste AI-tools en leer welke je wanneer kunt inzetten.",
-              "bron": "audio/H3-AI-Tools-wat-kies-ik.wav",
-              "meta": ""
-            }
-          ]
+          "titel": "De Bibliotheek (Langetermijngeheugen)",
+          "icoon": "collection-fill",
+          "tekst": "Je onbeperkte, onbewuste opslag. Kennis wordt opgeslagen in 'chunks' of schema's. Hoe meer schema's, hoe makkelijker je leert. Leren is informatie hiernaartoe verplaatsen."
         }
       ]
     },
     {
       "type": "info-card",
-      "classes": "warning-card",
-      "titel": "Belangrijke opmerking",
-      "tekst": "Het gebruik van externe tools zoals Google Gemini, Bolt of ChatGPT is volledig op eigen initiatief en niet verplicht. De HAN heeft geen overeenkomsten met deze partijen. Wees je altijd bewust van hoe je deze tools gebruikt. Denk aan je privacy en de betrouwbaarheid van de informatie, zoals besproken in het hoofdstuk 'Kansen & risico's'."
-    },
-    {
-      "type": "section-title",
-      "titel": "Veelgebruikte Chatbots"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Chatbots zijn ontworpen om menselijke conversatie na te bootsen. Je kunt ze vragen stellen, opdrachten geven, teksten laten schrijven, ideeën genereren en nog veel meer. Ze beschikken over brede algemene kennis.\n\nSommige chatbots zijn speciaal ontwikkeld om te werken met jouw eigen materiaal - zoals NotebookLM, waarmee je vragen kunt stellen over je eigen documenten of video's. Hieronder vind je de meest populaire chatbots."
-    },
-    {
-      "type": "resource-grid-container",
+      "titel": "De Superkracht van Voorkennis",
       "items": [
-        { "titel": "ChatGPT (van OpenAI)", "beschrijving": "De bekendste chatbot. Veelzijdig en uitstekend voor creatieve taken, teksten schrijven, samenvatten en leren programmeren.", "link": "https://chatgpt.com" },
-        { "titel": "Gemini (van Google)", "beschrijving": "Sterk geïntegreerd met internet, dus actuele antwoorden. Goed in logisch redeneren en verschillende bestandsformaten verwerken.", "link": "https://gemini.google.com" },
-        { "titel": "NotebookLM (van Google)", "beschrijving": "Stel vragen over je eigen documenten, webpagina's of video's. Perfect om complexe leerstof snel te doorgronden.", "link": "https://notebooklm.google.com" },
-        { "titel": "Claude (van Anthropic)", "beschrijving": "Kan grote hoeveelheden tekst (hele boeken, onderzoeksrapporten) in één keer analyseren. Sterk in genuanceerd redeneren.", "link": "https://claude.ai" },
-        { "titel": "Mistral (van Mistral AI)", "beschrijving": "Europese chatbot met focus op efficiëntie en privacy. Sterk alternatief voor de Amerikaanse opties.", "link": "https://chat.mistral.ai" }
+        { "titel": "Fundament", "tekst": "Wat je al weet, is de belangrijkste factor voor wat je zult leren." },
+        { "titel": "Kapstok", "tekst": "Voorkennis werkt als een 'kapstok' waar je nieuwe informatie aan kunt ophangen." },
+        { "titel": "Zonder kapstok", "tekst": "Valt nieuwe informatie op de grond en wordt het niet opgeslagen." }
       ]
+    },
+    {
+      "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "Wat kunnen chatbots eigenlijk?"
+      "titel": "De Kracht van Wenselijke Moeilijkheden"
     },
     {
       "type": "content-text",
-      "tekst": "Onderstaande overzicht toont wat chatbots kunnen. Let op: functies verschillen per tool en komen er regelmatig nieuwe bij."
+      "tekst": "Effectief leren voelt vaak ongemakkelijk. Dit concept heet 'Desirable Difficulties' (wenselijke moeilijkheden). Het is het teken dat je brein hard aan het werk is om sterke, duurzame verbindingen aan te leggen. Passief herlezen voelt makkelijk, maar leidt tot de 'illusie van vloeiendheid'. Echte inspanning leidt tot echt leren."
     },
     {
-        "type": "content-subtitle",
-        "titel": "📄 Tekst en spraak"
-    },
-    {
-      "type": "table-container-group",
-      "tables": [
-        { "headers": ["Functie", "Wat doet het?"], "rows": [["Tekst genereren / samenvatten", "Teksten schrijven, samenvatten, vertalen en herschrijven. Perfect voor verslagen, samenvattingen van studiemateriaal of vertaling van onderzoeken."], ["Web search", "Actuele informatie ophalen van internet (als de functie actief is) voor recente ontwikkelingen of nieuwste onderzoeken."], ["Deep research", "Grote hoeveelheden tekst analyseren en structureren. Handig voor literatuuronderzoek of het doorlezen van behandelrichtlijnen."], ["Canvas / Artefact", "Samen met AI werken in een interactieve werkruimte. Ideaal voor het stap-voor-stap bouwen van opdrachten of verslagen."], ["Multimodale input", "Ook afbeeldingen, video's of spraak als input gebruiken. Upload bijvoorbeeld een foto van een houding voor analyse."], ["Spraakoutput / Gesprekken voeren", "Gesproken antwoorden krijgen. Handig voor het oefenen van anamnese-gesprekken of mondeling iets uitleggen."]] }
+      "type": "split-screen-image-text",
+      "afbeelding": {
+        "src": "https://placehold.co/600x400/e9d5ff/9333ea?text=Vergeetcurve",
+        "alt": "Grafiek van de Ebbinghaus vergeetcurve"
+      },
+      "tekst_content": [
+        "<strong>De Vergeetcurve</strong>",
+        "Deze grafiek toont hoe snel we informatie vergeten als we er niets actiefs mee doen. Soms ben je al na een dag het grootste deel kwijt. De strategieën die je later leert, zoals actieve herinnering en gespreid leren, zijn ontworpen om deze curve te 'resetten' en kennis vast te zetten in je langetermijngeheugen."
       ]
     },
     {
-        "type": "divider"
-    },
-    {
-        "type": "content-subtitle",
-        "titel": "🖼️ Visueel en multimediaal"
-    },
-    {
-      "type": "table-container-group",
-        "tables": [
-        { "headers": ["Functie", "Wat doet het?"], "rows": [["Afbeeldingen genereren", "Afbeeldingen maken op basis van jouw beschrijving. Handig voor anatomische schema's, illustraties voor presentaties of grafieken voor rapporten."], ["Video's genereren", "Video's maken op basis van tekst of afbeeldingen. Bijvoorbeeld een animatie die een bewegingspatroon of anatomisch proces uitlegt."]] }
-      ]
-    },
-    {
-        "type": "divider"
-    },
-    {
-        "type": "content-subtitle",
-        "titel": "🛠️ Technisch / bouwend"
-    },
-    {
-      "type": "table-container-group",
-      "tables": [
-        { "headers": ["Functie", "Wat doet het?"], "rows": [["Code genereren", "Code schrijven, fouten oplossen of programmeercode uitleggen. Hiermee kun je zelfs zonder ervaring eenvoudige apps of tools maken. Meer hierover in een volgend hoofdstuk."]] }
-      ]
+      "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "Andere AI-tools"
+      "titel": "Cognitieve Belasting: Je Brein als een Spier"
     },
     {
       "type": "content-text",
-      "tekst": "Naast chatbots bestaan er gespecialiseerde AI-tools voor specifieke taken: spraak naar tekst, presentaties maken, afbeeldingen genereren. Hieronder enkele handige voorbeelden."
+      "tekst": "Cognitieve belasting gaat over de mentale inspanning die je nodig hebt om een taak uit te voeren. De theorie, ontwikkeld door John Sweller, stelt dat ons werkgeheugen zeer beperkt is. Als je dit werkgeheugen overbelast, blokkeert het leerproces. Het doel is dus niet om alle belasting te vermijden, maar om de <b>juiste balans</b> te vinden: minimaliseer de onnodige belasting en maximaliseer de relevante leerinspanning."
     },
     {
-      "type": "info-card",
-      "content": [
-        { 
-          "type": "benefit-card",
-          "titel": "Transcribeertool: TurboScribe",
-          "beschrijving": "Zet audio en video razendsnel om naar tekst. Gratis account: 30 min per dag. Super handig voor oefengesprekken of colleges. Transcribeer het bestand, plak de tekst in een chatbot en vraag om feedback of een samenvatting.\n\n<strong>Let op:</strong> Geen echte patiëntgegevens gebruiken en altijd toestemming vragen voor opnames!"
+      "type": "benefits-grid",
+      "items": [
+        {
+          "titel": "Intrinsieke Belasting",
+          "icoon": "puzzle-fill",
+          "tekst": "De inherente moeilijkheid van de stof. Hoe meer nieuwe, samenhangende elementen, hoe hoger de belasting. Jouw voorkennis kan dit verlagen door 'klontjes' (chunks) informatie te vormen."
         },
-        { 
-          "type": "benefit-card",
-          "titel": "Aangepaste AI-assistenten (GPT's)",
-          "beschrijving": "In ChatGPT kun je speciale versies gebruiken die gemaakt zijn voor specifieke taken, zoals 'Academische Schrijfassistent' of 'Presentatie Maker'. Je kunt ze zelf maken of gebruiken wat anderen hebben gedeeld. Andere platforms hebben soortgelijke functies."
+        {
+          "titel": "Extrinsieke Belasting",
+          "icoon": "x-circle-fill",
+          "tekst": "De onnodige belasting door hoe de informatie wordt aangeboden. Denk aan een docent die een volle PowerPoint-dia voorleest. Dit leidt af en wil je minimaliseren."
         },
-        { 
-          "type": "benefit-card",
-          "titel": "Nog veel meer tools",
-          "beschrijving": "Er bestaan duizenden andere AI-tools voor allerlei taken: invuloefeningen maken, presentaties ontwerpen, websites bouwen, muziek componeren en nog veel meer."
+        {
+          "titel": "Relevante Belasting",
+          "icoon": "gear-fill",
+          "tekst": "De nuttige, wenselijke belasting die je helpt nieuwe kennis te verwerken en op te slaan in je langetermijngeheugen. Deze inspanning wil je juist maximaliseren."
         }
       ]
     },
     {
+      "type": "image-block",
+      "src": "https://placehold.co/800x450/e9d5ff/9333ea?text=Grafiek+Belasting+vs+Belastbaarheid",
+      "alt": "Grafiek die de relatie tussen cognitieve belasting en belastbaarheid toont",
+      "onderschrift": "De balans tussen onderbelasting, optimale groei en cognitieve overload."
+    },
+    {
+      "type": "accent-blok",
+      "variant": "statistiek",
+      "tekst": "Cognitieve Overload blokkeert leren volledig. Vergelijk het met een spier die je overtraind hebt: er vindt geen groei meer plaats, alleen maar schade."
+    },
+    {
+      "type": "divider"
+    },
+    {
       "type": "section-title",
-      "titel": "Hoe vind je de juiste AI-tool voor je studie?"
+      "titel": "Verder Kijken: Aanvullende Video's"
     },
     {
-      "type": "content-text",
-      "tekst": "Het enorme aanbod kan overweldigend zijn. Gelukkig zijn er platformen die je helpen de juiste tool voor jouw taak te vinden."
-    },
-    {
-      "type": "resource-grid-container",
+      "type": "video-grid",
+      "kolommen": 2,
       "items": [
-        { "titel": "FysioAI LeerToolbox", "beschrijving": "De FysioAI LeerToolbox is een verzameling AI-tools speciaal ontwikkeld en geselecteerd voor fysiotherapiestudenten van de HAN. De tools helpen je effectiever te leren: je leert met behulp van AI, of gebruikt leermiddelen die door AI zijn ondersteund. Gebruik de filters om snel die tools te vinden die passen bij jouw leerdoelen en leerbehoeften.", "link": "https://ai-tools-phi-one.vercel.app" },
-        { "titel": "There's An AI For That", "beschrijving": "Een zeer uitgebreide database met AI-tools voor vrijwel elke denkbare taak. Het is een uitstekende bron om nieuwe en gespecialiseerde AI-toepassingen te ontdekken.", "link": "https://theresanaiforthat.com" }
+        {
+          "titel": "Hoe kan jij het best leren?",
+          "beschrijving": "Prof. Paul Kirschner (Universiteit van Nederland) legt uit hoe de Cognitieve Belasting Theorie werkt in de praktijk.",
+          "link": "https://www.youtube.com/watch?v=L6-WVhYCFC0"
+        },
+        {
+          "titel": "How Does the Brain Learn?",
+          "beschrijving": "Een visuele uitleg van Brainfacts.org over hoe hersencellen verbindingen maken en versterken tijdens het leren.",
+          "link": "https://www.youtube.com/watch?v=kWomJWfNWPM"
+        }
       ]
-    },
-    {
-      "type": "section-title",
-      "titel": "Betaalde versus gratis accounts"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Voor studie zijn gratis accounts meestal genoeg. De gratis versies van grote aanbieders geven je toegang tot krachtige modellen waarmee je het meeste werk kunt doen.\n\nMet een betaald account krijg je wel de nieuwste modellen, meer functies (afbeeldingen genereren, data-analyse), hogere limieten en snellere reacties. Maar: functies die eerst alleen betaald waren, komen vaak later gratis beschikbaar. Ons advies: start gratis en overweeg pas betalen als je tegen limieten aanloopt of een specifieke functie nodig hebt."
     }
   ],
   "interacties": [

@@ -1,283 +1,142 @@
 {
+  "hoofdstuk_titel": "Hoofdstuk 5: Verder verwerken & valkuilen",
   "content": [
     {
       "type": "info-card",
-      "classes": "chapter-intro-card",
-      "titel": "Klaar om te creëren? Jouw idee, AI's kracht.",
-      "tekst": "Tijd voor de praktijk! In dit hoofdstuk leer je hoe je AI inzet om visuele content te maken, kleine apps en tools te bouwen met 'vibe-coding', en gepersonaliseerde chatbots te creëren die uitblinken in specifieke taken. Van afbeelding tot werkende app - ontdek AI's creatieve kracht!"
-    },
-    {
-      "type": "accordion",
-      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
-      "content": [
-        {
-          "type": "content-text",
-          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
-        },
-        {
-          "type": "audio-grid",
-          "kolommen": 1,
-          "items": [
-            {
-              "id": "h5_audio_1",
-              "titel": "Podcast: Creatief zijn en bouwen met AI",
-              "beschrijving": "Ontdek hoe je AI kunt gebruiken als creatieve partner en bouwer.",
-              "bron": "audio/H5-Creatief-en-bouwen-met-AI-Podcast.wav",
-              "meta": ""
-            }
-          ]
-        }
-      ]
+      "classes": "purple-kader",
+      "titel": "Verder verwerken & valkuilen: Optimaliseer je Leerproces",
+      "tekst": "Welkom bij Hoofdstuk 5! Nu je de krachtige leerstrategieën van 'De Verwerker' kent, is het tijd om nog dieper te duiken in hoe je informatie duurzaam verankert en welke veelvoorkomende valkuilen je moet vermijden. Dit hoofdstuk helpt je om je leerproces te perfectioneren en je bewust te worden van de 'onzichtbare' obstakels die effectief leren in de weg kunnen staan."
     },
     {
       "type": "section-title",
-      "titel": "Media-AI (afbeeldingen/&shy;video/&shy;audio)"
+      "titel": "Aanvullende Effectieve Strategieën: Je Toolkit Uitbreiden"
     },
     {
       "type": "content-text",
-      "tekst": "AI maakt het mogelijk om in seconden afbeeldingen, video's en audio te genereren. Een anatomisch schema voor je presentatie, een oefenvideo voor een patiënt, of een podcast over behandelmethoden: met Media-AI kun je creatief aan de slag zonder expert te zijn. Ontdek hieronder hoe je deze tools inzet!"
+      "tekst": "Naast de kernstrategieën zijn er aanvullende methoden die je kunnen helpen bij de diepgaande verwerking en organisatie van informatie. Een krachtige techniek is de Cornell Methode voor aantekeningen."
     },
     {
       "type": "content-subtitle",
-      "titel": "Afbeeldingen genereren"
+      "titel": "Effectief Aantekeningen Maken (Cornell Methode)"
     },
     {
-      "type": "content-text",
-      "tekst": "Met AI kun je afbeeldingen maken voor je studie, presentaties of patiëntuitleg. Beschrijf wat je wilt zien en de AI doet de rest. Bekijk hieronder voorbeelden in de afbeeldingen."
-    },
-    {
-      "type": "accordion",
-      "titel": "Tips voor effectieve prompts",
-      "content": [
-        {
-          "naam": "Wees specifiek",
-          "beschrijving": "Beschrijf het onderwerp, de stijl, kleuren, sfeer en compositie."
-        },
-        {
-          "naam": "Gebruik trefwoorden",
-          "beschrijving": "Denk aan kunststijlen, namen van kunstenaars, of cameraperspectieven."
-        },
-        {
-          "naam": "Gebruik negatieve prompts",
-          "beschrijving": "Geef aan wat je juist niet wilt zien (bijv. 'geen wazige achtergrond')."
-        },
-        {
-          "naam": "Gebruik een Voorbeeld",
-          "beschrijving": "Upload een afbeelding als voorbeeld voor een vergelijkbare stijl, sfeer of compositie."
-        },
-        {
-          "naam": "Herhaal en Verfijn",
-          "beschrijving": "Genereer, evalueer en pas je prompt aan. Herhaling is vaak de sleutel tot een perfect resultaat."
-        },
-        {
-          "naam": "Wees de Regisseur",
-          "beschrijving": "Gebruik fotografie- of filmtermen zoals 'close-up' of 'cinematische belichting' voor meer controle."
-        },
-        {
-          "naam": "Voeg Tekst Toe",
-          "beschrijving": "Om tekst in je afbeelding te krijgen, plaats je de gewenste tekst tussen aanhalingstekens in je prompt."
-        },
-        {
-          "naam": "Bewerk en Verfijn",
-          "beschrijving": "Steeds meer AI-afbeeldingtools hebben bewerkopties. Je kunt chattend delen van afbeeldingen selecteren en aangeven wat je wilt veranderen of verbeteren."
-        },
-        {
-          "naam": "Consistente Stijl",
-          "beschrijving": "Voor meerdere afbeeldingen in dezelfde stijl: upload een voorbeeldafbeelding en vraag de AI om iets vergelijkbaars te maken."
-        }
-      ]
-    },
-    {
-      "type": "image-grid",
-      "kolommen": 3,
-      "afbeeldingen": [
-        { 
-          "src": "images/Human_in_the_loop.png", 
-          "alt": "Een illustratie van mens-AI samenwerking in een loop.", 
-          "onderschrift": "Voorbeeld van een AI-gegenereerde afbeelding voor deze e-learning",
-          "bron": {
-            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"Maak een afbeelding de het concept 'Human in the loop' uitdrukt met de tekst 'Human-in-th-Loop' en maak deze in dezelfde stijl als de afbeelding die ik als bijlage heb toegevoegd\" via OpenAI, ChatGPT (https://chatgpt.com)."
-          }
-        },
-        { 
-          "src": "images/Squat-instructie.png", 
-          "alt": "Een instructie-afbeelding voor een squat-oefening.", 
-          "onderschrift": "Voorbeeld van een afbeelding voor patiëntfolders of apps",
-          "bron": {
-            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"Maak een illustratieve afbeelding die geschikt is voor voorlichtingsmateriaal waar uitgelegd wordt hoe een SQUAT moet worden uitgevoerd. Voeg korte ondersteunende instructie tekst toe\" via OpenAI, ChatGPT (https://chatgpt.com)."
-          }
-        },
-        { 
-          "src": "images/oefenzaal.png", 
-          "alt": "Een realistische afbeelding van een fysiotherapie oefenzaal.", 
-          "onderschrift": "Voorbeeld van een realistische afbeelding voor een praktijkfolder",
-          "bron": {
-            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"maak een realistische afbeelding van een fysiotherapeut die in een praktijk ruimte een patient een squat oefening aanleert\" via Google, Gemini (https://gemini.google.com)."
-          }
-        }
-      ]
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "Video genereren"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Met AI kun je eenvoudig video's maken: uitlegvideo's voor opdrachten, animaties voor presentaties, of instructievideo's voor patiënten. Beschrijf wat je wilt of upload beelden en laat AI de rest doen. Sinds VEO 3 (2025) kunnen video's zelfs met bijpassend geluid worden gemaakt, zoals achtergrondgeluiden en uitgesproken tekst."
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "Voorbeelden van door AI gegenereerde video's"
-    },
-    {
-      "type": "video-grid",
-      "kolommen": 2,
+      "type": "info-card",
+      "titel": "De Cornell Methode",
       "items": [
         {
-          "titel": "VEO 3 Demo: AI-video met geluid (Google, 2025)",
-          "beschrijving": "Officiële demonstratievideo van Google's VEO 3 technologie, waarin AI automatisch zowel video als bijpassend geluid genereert.",
-          "bron": "Google (2025)",
-          "duur": "-",
-          "link": "https://youtu.be/mCFMn0UkRt0?si=Dp2wRH6AVAopYrWi"
+          "titel": "Wat is het?",
+          "tekst": "Een gestructureerde manier van aantekeningen maken. Je verdeelt je papier in drie secties: kernwoorden (links), uitleg (rechts), en een samenvatting (onderaan)."
         },
         {
-          "titel": "Fysiotherapie onderwijsvideo (Koekoek, 2025)",
-          "beschrijving": "AI-gegenereerde video door Koekoek, B. (2025) met de prompt \"Maak een video waarin een docent fysiotherapie op de bank zittend uitleg geeft in de richting van de camera. Op de achtergrond zie je enkele studenten aan het oefenen. Het vind plaats in een praktijklokaal voor fysiotherapie onderwijs waar meerdere behandeltafels staan\" via Google, VEO 2 (https://aistudio.google.com).",
-          "bron": "Koekoek, B. (2025)",
-          "duur": "-",
-          "link": "https://youtu.be/nyMsubctoLc"
-        }
-      ]
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "Audio genereren"
-    },
-    {
-      "type": "content-text",
-      "tekst": "AI maakt het mogelijk om professionele audio te genereren zonder dure apparatuur. Perfect voor studieprojecten! Maak een podcast over een onderwerp, creëer intro-muziek voor presentaties, of kloon zelfs je eigen stem voor consistente audio-content. Tools zoals ElevenLabs, Suno en Udio zijn toonaangevend in AI-audio generatie."
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "Voorbeelden van door AI gegenereerde audio"
-    },
-    {
-      "type": "audio-grid",
-      "kolommen": 1,
-      "items": [
+          "titel": "Waarom werkt het?",
+          "tekst": "Het helpt informatie overzichtelijk te organiseren en dwingt je om actief na te denken en jezelf te testen."
+        },
         {
-          "id": "h5_audio_notebooklm",
-          "titel": "Voorbeeld podcast over recente AI-ontwikkelingen in onderwijs",
-          "beschrijving": "Een korte podcast over recente (juni 2025) ontwikkelingen in leren en onderwijs met AI, gemaakt met NotebookLM.",
-          "bron": "audio/Podcast-NotebookLM-voorbeeld.wav",
-          "meta": "Gegenereerd door Koekoek, B. (2025) via NotebookLM"
+          "titel": "Hoe doe je het?",
+          "tekst": "Pak een A4. Bovenin schrijf je het onderwerp. Links noteer je tijdens de les/video kernwoorden en concepten. Rechts schrijf je in korte zinnen de uitleg. Onderaan, na de les, maak je een samenvatting van het geheel, bij voorkeur eerst zonder te kijken en dan aanvullen. Schrijven werkt vaak beter dan typen."
         }
       ]
+    },
+    {
+      "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "Vibe-coding: Maak je eigen app, tool of website"
+      "titel": "Ineffectieve Leerstrategieën die je moet vermijden"
     },
     {
       "type": "content-text",
-      "tekst": "Heb je een idee voor een app of handige tool, maar weet je niks van programmeren? Met AI kan dat gewoon! Dit heet 'Vibe-coding': je beschrijft in gewone taal wat je wilt – de 'vibe' – en AI bouwt het voor je.<br><br>Deze e-learning is ook zo gemaakt! Een docent zonder programmeerkennis liet AI de tool bouwen en hield zelf de regie.<br><br>Vibe-coding werkt simpel: start met een goed idee en de juiste vraag aan AI. Stel het resultaat bij tot alles werkt zoals je wilt. Je kunt je apps direct delen met medestudenten!<br><br>We focussen op <b>Google Gemini</b> en <b>Bolt.new</b> als startpunt. In de tabel vind je kant-en-klare vragen om direct te proberen!"
-    },
-    {
-      "type": "resource-grid-container",
-      "items": [
-        { 
-          "titel": "Google Gemini", 
-          "beschrijving": "Krachtige chatbot van Google die apps kan bouwen. Vraag om je resultaat op een 'canvas' te tonen voor een werkende tool.<br><br><i>Let op: Gratis mogelijkheden kunnen wijzigen.</i>", 
-          "link": "https://gemini.google.com" 
-        },
-        { 
-          "titel": "Bolt.new", 
-          "beschrijving": "Platform speciaal voor het bouwen van apps met AI. Perfect om je ideeën direct om te zetten in werkende tools. Momenteel krachtiger dan Gemini voor app-building.<br><br><i>Let op: Je krijgt dagelijks gratis credits, maar dit kan wijzigen.</i>", 
-          "link": "https://bolt.new" 
-        }
-      ]
-    },
-    {
-      "type": "content-text",
-      "tekst": "Klik op een van de links hierboven om een tool te openen. Kopieer daarna een prompt uit de onderstaande tabel en plak deze in de tool. Zo kun je zelf ervaren hoe het werkt!"
-    },
-    {
-      "type": "table-container-group",
-      "titel": "Kopieer & Creëer: Jouw Eerste AI-Apps",
-      "tables": [
-        {
-          "headers": ["Applicatie-idee", "Beschrijving & Kopieerbare Prompt"],
-          "rows": [
-            [
-              "<b>Rad van Fortuin App</b>",
-              "Een draaiend rad om beurten aan te wijzen in de klas. Je kunt zelf namen aanpassen.<br><br><b>Tip:</b> Vraag in Gemini om de output op een 'canvas' te tonen.<br><br><b>Prompt:</b><em>Maak een 'Rad van Fortuin' app. Het rad moet minimaal 5 aanpasbare secties hebben waar ik namen kan toevoegen, en een knop om het rad te laten draaien. De winnaar moet duidelijk worden getoond. Zorg voor een moderne, strakke uitstraling.</em>"
-            ],
-            [
-              "<b>Flashcard Tool voor Studie</b>",
-              "Tool om flashcards te oefenen. Ideaal voor begrippen en principes.<br><br><b>Tip:</b> Upload eerst een document en vraag AI om daarop gebaseerde flashcards te maken.<br><br><b>Let op:</b> Controleer de flashcards altijd - AI kan fouten maken.<br><br><b>Prompt:</b><em>Maak een flashcard-app over trainingsleerprincipes voor fysiotherapie: 'Overload', 'Specificiteit', 'Reversibiliteit', 'Individualiteit', en 'Periodisering'. De voorkant toont de term, de achterkant de uitleg. Ik moet door de kaarten kunnen klikken.</em>"
-            ],
-            [
-              "<b>Patiënten-info App: Enkelletsel</b>",
-              "App voor patiënten met enkelletsel. Geeft per herstelfase uitleg en advies.<br><br><b>Prompt:</b><em>Maak een mobiele app over herstelfasen van enkelletsel. Maak een hoofdmenu met drie fasen: 'Fase 1: Acuut (0-3 dagen)', 'Fase 2: Herstel (3 dagen - 6 weken)', 'Fase 3: Functioneel (na 6 weken)'. Elke fase krijgt een eigen pagina met uitleg en goede oefeningen. Zorg voor een rustige, professionele uitstraling. Gebruik alleen recente informatie zoals KNGF-richtlijnen. Gebruik GEEN RICE- of POLICE-principes.</em><br><br><b>Let op:</b> Controleer de informatie altijd - zorg dat alles klopt voordat je het gebruikt."
-            ],
-            [
-                "<b>Klassieke 'Breakout' Game</b>",
-                "Een speelbare Breakout-game. Leuk om te maken en te delen met medestudenten.<br><br><b>Prompt:</b><em>Maak een klassieke Breakout-game. Zorg voor duidelijke graphics (blokken, bal, peddel), vloeiende bewegingen, en geluidseffecten. De game moet een startscherm, score-teller en goede besturing hebben.</em><br><br><b>Tip:</b> Werkt de game niet? Screenshot het probleem en beschrijf wat er misgaat. AI kan je dan helpen het op te lossen."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "content-text",
-      "tekst": "AI-ontwikkelingen gaan razendsnel. Wat vandaag complex lijkt, kan morgen al simpel zijn. De tools worden steeds beter en toegankelijker, dus jouw mogelijkheden groeien alleen maar. Blijf experimenteren – wat je nu leert, wordt de basis voor wat over een jaar heel gewoon is!"
-    },
-    {
-      "type": "section-title",
-      "titel": "Je Eigen AI-Assistent Bouwen"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Ben je het zat om steeds dezelfde, lange prompts te moeten schrijven voor terugkerende taken? Dan is het tijd om je eigen, gepersonaliseerde AI-assistent te bouwen! Diensten zoals ChatGPT (met 'GPTs') en Google Gemini (met de aangekondigde 'Gems') laten je een AI configureren voor een specifieke taak. <br><br>Het grote voordeel: je stelt één keer de perfecte instructie en achtergrondinformatie in. Daarna voert de AI die taak altijd precies zo uit als jij wilt. Je kunt je eigen assistenten zelfs delen met medestudenten."
+      "tekst": "Het is cruciaal om te weten wat niet werkt, zodat je geen tijd verspilt en geen onterecht gevoel van beheersing krijgt. Veel populaire studeerpraktijken zijn ineffectief; het is belangrijk om deze methoden te herkennen en te vermijden."
     },
     {
       "type": "info-card",
       "classes": "warning-card",
-      "titel": "Belangrijk",
-      "tekst": "Op dit moment (juni 2025) heb je vaak een betaald account nodig om zelf assistenten te bouwen. Het gebruiken van assistenten die door anderen zijn gemaakt, kan meestal wel met een gratis account, maar soms met beperkingen. De verwachting is dat dit in de toekomst steeds toegankelijker wordt."
-    },
-    {
-      "type": "benefits-grid",
-      "titel": "Voorbeelden van Eigen AI-Assistenten",
+      "titel": "Pas op voor deze valkuilen!",
       "items": [
-          {
-              "titel": "De Perfecte Samenvatter",
-              "beschrijving": "Maak een assistent die wetenschappelijke artikelen altijd in jouw favoriete format samenvat. Geef hem een paar goede voorbeelden en instructies over de gewenste stijl, lengte en structuur (bijv. 'maak altijd een conclusie van maximaal 50 woorden'). Upload vervolgens een artikel en vraag om een samenvatting."
-          },
-          {
-              "titel": "Fysio-Casus Generator",
-              "beschrijving": "Bouw een assistent die realistische patiëntcasussen genereert om mee te oefenen. Voed hem met KNGF-richtlijnen en voorbeelden van goede casuïstiek. Vervolgens kun je vragen om 'een casus over een 45-jarige man met lage rugpijn na het tillen' en de AI creëert een scenario inclusief rode vlaggen om te beoordelen."
-          },
-          {
-            "titel": "Ontdek Meer in de Toolbox",
-            "beschrijving": "In de <b>FysioAI LeerToolbox</b> vind je al veel door docenten gemaakte AI-assistenten (GPT's) die je kunt gebruiken voor je studie. <b>Tip:</b> Filter op 'GPT's' om ze te vinden en doe inspiratie op voor je eigen creaties!"
+        {
+          "titel": "Herlezen van Teksten:",
+          "tekst": "<strong>Waarom niet?</strong> Het is een passief proces dat je hersenen nauwelijks actief aan het werk zet. Je herkent de tekst misschien, waardoor je denkt dat je het kent, maar dit betekent niet dat je het ook actief kunt terughalen uit je geheugen."
+        },
+        {
+          "titel": "Markeren of Onderstrepen van Teksten:",
+          "tekst": "<strong>Waarom niet?</strong> Dit is ook een passieve activiteit. Het helpt je niet om actief informatie op te roepen en studenten markeren vaak te veel, waardoor het zijn doel mist."
+        },
+        {
+          "titel": "Zomaar Samenvatten (door over te schrijven):",
+          "tekst": "<strong>Waarom niet?</strong> Als je een samenvatting maakt door simpelweg tekst over te schrijven, is het niet effectief. Het is pas effectief als je de samenvatting uit je hoofd probeert te maken en daarna aanvult. Veel studenten kunnen (nog) geen goede samenvatting maken."
+        },
+        {
+          "titel": "Stampen / Blokken (Cramming / Massed Practice):",
+          "tekst": "<strong>Waarom niet?</strong> Hoewel populair, is het ineffectief voor langetermijnleren. Het leidt tot veel stress en minder retentie dan gespreid leren."
+        },
+        {
+          "titel": "Ezelsbruggetjes (voor diep begrip):",
+          "tekst": "<strong>Waarom niet?</strong> Ezelsbruggetjes zijn goed voor het uit het hoofd leren van feiten, maar ze stimuleren geen diepgaand begrip of context. Leren moet betekenisvol zijn."
+        },
+        {
+          "titel": "Ontdekkend Leren (Zonder Voorkennis/Begeleiding):",
+          "tekst": "<strong>Waarom niet?</strong> Voor beginners is dit ongelooflijk belastend voor het werkgeheugen. Je moet dan niet alleen de stof leren, maar ook zelf de weg vinden en verbanden ontdekken, wat tot frustratie en weinig leereffect leidt."
+        },
+        {
+          "titel": "Leerstijlen (Visueel, Auditief, etc.):",
+          "tekst": "<strong>Waarom niet?</strong> Leerstijlen bestaan niet en er is geen wetenschappelijk bewijs dat leren beter werkt als het aansluit bij een 'voorkeursleerstijl'. Iedereen leert op dezelfde manier en heeft baat bij informatie die zowel visueel als verbaal wordt aangeboden."
+        },
+        {
+          "titel": "Multitasking:",
+          "tekst": "<strong>Waarom niet?</strong> Mensen zijn geen goode multitaskers. Als je meerdere taken tegelijk probeert te doen, neemt de moeilijkste taak veel werkgeheugen in beslag, waardoor andere taken slechter gaan. Concentreer je op één taak tegelijk."
+        },
+        {
+          "titel": "Volledige Controle Over Je Leerproces (Zonder Begeleiding):",
+          "tekst": "<strong>Waarom niet?</strong> Hoewel autonomie belangrijk is, overschatten studenten vaak hun eigen prestaties en kiezen ze voor de makkelijke weg, waardoor ze zichzelf niet voldoende uitdagen. Je hebt begeleiding nodig en de ondersteuning moet geleidelijk afgebouwd worden."
         }
       ]
     },
-   
+    {
+      "type": "divider"
+    },
     {
       "type": "section-title",
-      "titel": "Hoe nu verder? Jouw beurt om te experimenteren!"
+      "titel": "Valkuilen en Misconcepties: Wees je Bewust van je Brein"
     },
     {
       "type": "content-text",
-      "tekst": "In dit hoofdstuk heb je gezien hoe je met AI zelf creatieve content en zelfs complete applicaties kunt bouwen. Ook wij als opleiding experimenteren volop met tools die door AI geschreven zijn, waarbij we altijd kiezen voor 'Human in the Lead'. Dat betekent dat wij als docenten de eindcontrole houden en zorgen dat de inhoud en functionaliteit aansluiten bij wat jij voor je studie nodig hebt.<br><br>Nu is het aan jou! We nodigen je van harte uit om zelf te gaan experimenteren. Ontdek bijvoorbeeld de tools in de <b>FysioAI LeerToolbox</b> of probeer de prompts uit de tabel hierboven."
+      "tekst": "Naast ineffectieve strategieën zijn er ook psychologische valkuilen en misconcepties die je leerproces kunnen beïnvloeden. Wees je bewust van hoe je brein werkt om deze obstakels te omzeilen."
     },
     {
       "type": "info-card",
-      "classes": "warning-card",
-      "titel": "Belangrijke opmerking",
-            "tekst": "Het gebruik van externe tools zoals Google Gemini, Bolt of ChatGPT is volledig op eigen initiatief en niet verplicht. De HAN heeft geen overeenkomsten met deze partijen. Wees je altijd bewust van hoe je deze tools gebruikt. Denk aan je privacy en de betrouwbaarheid van de informatie, zoals besproken in het hoofdstuk 'Kansen & risico's'."
+      "classes": "purple-kader",
+      "titel": "De Illusie van Vloeiendheid",
+      "tekst": "De 'illusie van vloeiendheid' (ook wel 'illusie van kennis') ontstaat wanneer je denkt dat je de stof kent omdat het bekend voorkomt, bijvoorbeeld door herlezen. Je herkent de informatie wel, maar kunt deze niet actief terughalen of toepassen. Dit is een gevaarlijke valkuil die leidt tot overschatting van je eigen begrip."
+    },
+    {
+      "type": "accordion",
+      "titel": "Andere Veelvoorkomende Valkuilen",
+      "content": [
+        {
+          "titel": "Overmoed door bekendheid",
+          "beschrijving": "De neiging om te denken dat je iets kent omdat het bekend voorkomt, zonder het echt diepgaand te begrijpen."
+        },
+        {
+          "titel": "Niet weten wat je niet weet (onbewuste incompetentie)",
+          "beschrijving": "Je bent je niet bewust van de hiaten in je kennis, wat voorkomt dat je gericht kunt bijleren."
+        },
+        {
+          "titel": "De neiging tot gemak",
+          "beschrijving": "Het kiezen van de makkelijkste studiemethode, zelfs als deze ineffectief is voor langetermijnleren."
+        },
+        {
+          "titel": "Gebrek aan metacognitie",
+          "beschrijving": "Niet nadenken over je eigen leerproces, of je aanpak effectief is, en hoe je deze kunt verbeteren."
+        },
+        {
+          "titel": "Overschatting van eigen kunnen (Dunning-Kruger Effect)",
+          "beschrijving": "De neiging om je eigen kennis en vaardigheden te overschatten, vooral als je weinig ervaring hebt met een onderwerp. Dit kan leiden tot verkeerde studiekeuzes en onvoldoende inzet."
+        }
+      ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "Wees eerlijk naar jezelf over je begrip en wees niet bang om te ontdekken wat je nog niet weet. Dit is de eerste stap naar echt leren!"
     }
   ],
   "interacties": [

@@ -459,104 +459,134 @@ Geef alleen de Markdown output terug, geen uitleg.</div>
 
                             <div class="prompt-container">
                                 <div class="prompt-header">
-                                    <h3 class="prompt-title">Stap 2: Iteratieve Content Creatie (Schrijf- en Verfijnfase)</h3>
-                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-content-creatie')">Kopieer</button>
+                                    <h3 class="prompt-title">Stap 2A: Hoofdstuk Structuur & Planning</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-structuur-planning')">Kopieer</button>
                                 </div>
-                                <p class="prompt-description">Doel: Samen met de AI visueel aantrekkelijke en educatief sterke content schrijven voor één hoofdstuk. De focus ligt op het creëren van een boeiende leerervaring met de juiste mix van tekst, visuele elementen en interactieve componenten.</p>
+                                <p class="prompt-description">Doel: Een doordachte structuur en visuele planning maken voor één specifiek hoofdstuk. Deze fase focust op het uitdiepen van de globale structuur voordat er content wordt geschreven.</p>
                                 
                                 <div class="documentation-section">
                                     <div class="documentation-header" onclick="toggleDocumentation(this)">
-                                        <h4 class="documentation-title">📋 Benodigde Documentatie</h4>
+                                        <h4 class="documentation-title">📋 Benodigde Documentatie & Context</h4>
                                         <span class="documentation-toggle">▶</span>
                                     </div>
                                     <div class="documentation-content">
-                                        <div class="doc-file" data-file="documentatie/stijlgids_voor_ai.md">
+                                        <div class="doc-file" data-file="documentatie/stijlgids_voor_planning.md">
                                             <div class="doc-file-header">
-                                                <span class="doc-file-name">stijlgids_voor_ai.md</span>
+                                                <span class="doc-file-name">stijlgids_voor_planning.md</span>
                                                 <button class="doc-copy-btn" onclick="copyDocumentation(this, this.closest('.doc-file'))">Kopieer</button>
                                             </div>
                                             <div class="doc-content">Klik op uitklappen om de documentatie te laden...</div>
                                         </div>
                                         <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 4px;">
-                                            <strong>📋 Extra benodigde context:</strong><br>
+                                            <strong>📋 Extra benodigde context (handmatig toevoegen):</strong><br>
                                             • <strong>Resultaat van Stap 1:</strong> Cursusontwerp (globale structuur en hoofdstukbeschrijvingen)<br>
                                             • <strong>Bestaande hoofdstukken:</strong> JSON bestanden van reeds ontwikkelde hoofdstukken<br>
-                                            • <strong>Optioneel:</strong> Screenshots van bestaande hoofdstukken voor visuele balans<br>
+                                            • <strong>Inhoudelijke bronnen:</strong> Artikelen, onderzoeksresultaten, NotebookLM samenvattingen, expert interviews<br>
+                                            • <strong>Screenshots (verplicht):</strong><br>
+                                            &nbsp;&nbsp;- Screenshot van stijlgids.html (voor visuele referentie componenten)<br>
+                                            &nbsp;&nbsp;- Screenshot van hoofdstuk 1 (voor structuur voorbeeld)<br>
+                                            &nbsp;&nbsp;- Screenshot van een willekeurig ander hoofdstuk (voor variatie voorbeeld)<br>
                                             <em style="color: #856404;">💡 Deze kunnen niet automatisch gekopieerd worden - voeg handmatig toe aan je AI conversatie</em>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="prompt-content" id="prompt-content-creatie">**Rol:** Gedraag je als een ervaren E-learning Content Specialist en Visual Designer.
+                                <div class="prompt-content" id="prompt-structuur-planning">**Rol:** Gedraag je als een ervaren E-learning Structure Designer en Content Strategist.
 
-**Taak:** Laten we samen, stap voor stap, visueel aantrekkelijke en educatief sterke content ontwikkelen voor het volgende hoofdstuk. We gaan dit systematisch opbouwen tot een perfect afgewerkt hoofdstuk.
+**FASE 1: STRUCTUUR PLANNING**
 
-* **Hoofdstuk:** "Hoofdstuk [NUMMER]: [TITEL VAN HET HOOFDSTUK]"
-* **Inhoudelijke briefing:** "[KOPIEER HIER DE KORTE BESCHRIJVING VAN DIT HOOFDSTUK UIT STAP 1]"
+**Taak:** Laten we samen een doordachte structuur maken voor het volgende hoofdstuk. We gaan methodisch alle aspecten plannen voordat we content gaan creëren.
 
-**Belangrijke regels voor het ontwerpproces:**
+* **Hoofdstuk:** "Hoofdstuk X: [TITEL VAN HET HOOFDSTUK]"
+* **Inhoudelijke briefing:** Haal de beschrijving van dit hoofdstuk uit het bijgevoegde cursusontwerp uit Stap 1
 
-1. **Schrijfstijl:** Toegankelijk en professioneel, direct en persoonlijk (spreek de lezer aan met 'je'), praktijkgericht en concreet, gestructureerd en duidelijk, activerend en motiverend.
+**Werk met de beschikbare resources:**
+- **Planning-stijlgids:** Gebruik `stijlgids_voor_planning.md` voor component-keuzes en gebruik-cases
+- **Visuele referentie:** Bekijk de screenshot van `stijlgids.html` om te zien hoe componenten eruitzien
+- **Structuur voorbeelden:** Gebruik de screenshots van bestaande hoofdstukken als inspiratie voor balans en variatie
 
-2. **Visuele Aantrekkelijkheid:** 
-   - Maak actief gebruik van diverse visuele componenten uit de stijlgids
-   - Zorg voor een goede balans tussen tekst en visuele elementen
-   - Gebruik componenten zoals grids, kaarten, afbeeldingen, video's, statistieken en infoblokken
-   - Denk aan variatie: vermijd lange lappen tekst, wissel af met visuele componenten
+**Belangrijke regels voor de structuurplanning:**
 
-3. **Multimedia Integratie:**
-   - Stel voor waar afbeeldingen of video's de content kunnen versterken
-   - Geef specifieke suggesties voor het type visueel materiaal
-   - Zoek actief naar passende afbeeldingen en video's online en deel concrete links
-   - Voor video's: bij voorkeur Nederlands, maar Engels is ook acceptabel als de inhoud waardevol is
-   - Als je geen specifieke links vindt, beschrijf precies wat voor visueel materiaal nodig is zodat ik het zelf kan zoeken
-
-4. **Hoofdstukstructuur (Verplicht te volgen):**
+1. **Hoofdstukstructuur (Verplicht te volgen):**
    - Start altijd met een `info-card` als hoofdstuk opening
    - Elke sectie: `section-title` → `content-text` (context) → content componenten
    - Voor subsecties: gebruik `content-subtitle` tussen `section-title` en componenten
-   - Gebruik `content-text` voor introductie en uitleg vóór complexe componenten
-   - Plaats `divider` tussen meerdere componenten binnen een sectie (niet bij enkele component, niet aan sectie-einde)
-   - **Passende omvang:** 2-6 hoofdsecties per hoofdstuk, afgestemd op inhoud (zie stijlgids voor details)
+   - **Passende omvang:** 2-6 hoofdsecties per hoofdstuk, afgestemd op inhoud voor optimale leesbaarheid
 
-5. **Stap-voor-stap Aanpak:**
-   - Vraag mij eerst alle informatie die je nodig hebt voordat je begint
-   - Maak eerst een globale structuur: welke secties moeten er komen met beknopte beschrijving van de inhoud per sectie
-   - Vraag om goedkeuring van deze structuur voordat je verder gaat
-   - Bouw daarna het hoofdstuk sectie voor sectie uit
-   - Vraag na elke sectie om feedback voordat je verder gaat
-   - Stel actief voor welke visuele componenten het beste passen
+2. **Component Keuzes:**
+   - Gebruik de planning-stijlgids om het juiste component-type te kiezen
+   - Bekijk de stijlgids.html screenshot voor visuele referentie
+   - Kies componenten die passen bij je content-type (zie "Wanneer Wat Gebruiken" sectie)
 
-**BELANGRIJK: Begin door mij de volgende vragen te stellen:**
+3. **Visuele Balans:**
+   - Wissel af tussen tekst, kaarten, grids en multimedia
+   - Gebruik de hoofdstuk-screenshots als voorbeeld van goede balans
+   - Plan waar dividers geplaatst worden voor visuele scheiding
 
-**Context & Samenhang:**
-- Heb je de globale structuur en beschrijving van de hele e-learning uit Stap 1? Kun je deze delen?
-- Welke hoofdstukken zijn er al (concept) af, en wat is hun focus? 
-- Waar past dit hoofdstuk in het totaalplaatje? Wat wordt er vóór dit hoofdstuk behandeld?
-- Wat komt er ná dit hoofdstuk? Waarop moet dit hoofdstuk voorbereiden?
-- Zijn er specifieke concepten die al in andere hoofdstukken zijn geïntroduceerd en hier kunnen worden voortgebouwd?
-
-**Content & Materialen:**
-- Heb je al specifieke afbeeldingen, video's of andere visuele materialen die zeker gebruikt moeten worden?
-- Zijn er specifieke voorbeelden, casussen of praktijksituaties die je wilt uitlichten?
-- Welke visuele stijl past bij dit onderwerp (professioneel/speels, modern/klassiek, etc.)?
-- Zijn er specifieke leerdoelen of praktische vaardigheden die extra nadruk moeten krijgen?
-- Heb je een voorkeur voor bepaalde typen visuele componenten uit de stijlgids?
+4. **Multimediale Elementen:**
+   - Identificeer waar afbeeldingen, video's of audio de content kunnen versterken
+   - Geef specifieke suggesties voor het type visueel materiaal
+   - Zoek naar passende online resources
 
 **⚠️ SPECIALE INSTRUCTIE VOOR HOOFDSTUK 1:**
-Als dit het introductie/eerste hoofdstuk betreft, zorg er dan voor dat deze VERPLICHTE componenten behouden blijven:
+Als dit het introductie/eerste hoofdstuk betreft, zorg er dan voor dat deze VERPLICHTE componenten worden opgenomen:
 - **`leerdoelen-dynamic`** component (toont automatisch alle leerdoelen uit config.json)
 - **"Klaar voor de start?" sectie** als afsluiting van het hoofdstuk
 Deze zijn essentieel voor de leerervaring en mogen NOOIT worden weggelaten.
 
-**Zodra ik deze vragen heb beantwoord, ga ik eerst de samenhang met andere hoofdstukken analyseren en vervolgens een globale structuur maken van dit hoofdstuk. Na jouw goedkeuring van deze structuur beginnen we met het sectie-voor-sectie uitwerken, startend met een visueel aantrekkelijke inleiding die goed aansluit bij de voorgaande hoofdstukken.**</div>
+**STAP-VOOR-STAP PLANNING:**
+
+**Stap 1: Context & Samenhang**
+Begin door mij deze vragen te beantwoorden:
+- Heb je de globale structuur en beschrijving van de hele e-learning uit Stap 1? Kun je deze delen?
+- Welke hoofdstukken zijn er al (concept) af, en wat is hun focus?
+- Waar past dit hoofdstuk in het totaalplaatje? Wat wordt er vóór dit hoofdstuk behandeld?
+- Wat komt er ná dit hoofdstuk? Waarop moet dit hoofdstuk voorbereiden?
+- Zijn er specifieke concepten die al in andere hoofdstukken zijn geïntroduceerd?
+
+**Stap 2: Inhoudelijke Verdieping**
+Beantwoord vervolgens:
+- Heb je al specifieke afbeeldingen, video's of andere visuele materialen die gebruikt moeten worden?
+- Zijn er specifieke voorbeelden, casussen of praktijksituaties die uitgelicht moeten worden?
+- Welke visuele stijl past bij dit onderwerp?
+- Welke leerdoelen of praktische vaardigheden verdienen extra nadruk?
+
+**Stap 3: Structuurvoorstel**
+Na het beantwoorden van bovenstaande vragen, maak ik een gedetailleerd structuurvoorstel op basis van de planning-stijlgids en screenshots:
+
+**Structuur voor Hoofdstuk X:**
+1. **Hoofdstuk opening:** {Type info-card en globale insteek}
+2. **Sectie 1:** {Titel} 
+   - Introductie: {Korte beschrijving}
+   - Componenten: {Welke componenten uit stijlgids.html screenshot}
+   - Dividers: {Waar nodig}
+3. **Sectie 2:** {Titel}
+   - {etc.}
+
+**Component-keuzes met motivatie:**
+- {Welke componenten gekozen en waarom, gebaseerd op planning-stijlgids}
+- {Hoe passen ze bij het content-type en doelgroep}
+
+**Multimedia suggesties:**
+- Afbeeldingen: {Specifieke suggesties}
+- Video's: {Concrete links waar mogelijk}
+- Audio: {Indien relevant}
+
+**Visuele balans analyse:**
+- {Hoe de structuur afwisseling creëert tussen verschillende component-types}
+- {Vergelijking met de hoofdstuk-screenshots voor inspiratie}
+- {Suggesties voor optimale leesbaarheid}
+
+**BELANGRIJK:** Ik schrijf in deze fase nog GEEN echte content. Alleen structuur, planning en component-keuzes. De daadwerkelijke content komt in Stap 2B.
+
+**Zodra je akkoord bent met deze structuur, gaan we verder naar Stap 2B waar we de JSON code gaan genereren.**</div>
                             </div>
 
                             <div class="prompt-container">
                                 <div class="prompt-header">
-                                    <h3 class="prompt-title">Stap 3: JSON Generatie (Conversiefase)</h3>
-                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-json-generatie')">Kopieer</button>
+                                    <h3 class="prompt-title">Stap 2B: JSON Content Generatie</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-json-content-generatie')">Kopieer</button>
                                 </div>
-                                <p class="prompt-description">Doel: De definitieve tekst uit Stap 2 omzetten naar een foutloos, compleet JSON-codeblok.</p>
+                                <p class="prompt-description">Doel: De goedgekeurde structuur uit Stap 2A omzetten naar volledige, werkende JSON code. Deze prompt wordt gebruikt in dezelfde chat als 2A.</p>
                                 
                                 <div class="documentation-section">
                                     <div class="documentation-header" onclick="toggleDocumentation(this)">
@@ -573,22 +603,80 @@ Deze zijn essentieel voor de leerervaring en mogen NOOIT worden weggelaten.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="prompt-content" id="prompt-json-generatie">**Rol:** Gedraag je als een foutloze JSON Expert.
+                                <div class="prompt-content" id="prompt-json-content-generatie">**Rol:** Gedraag je als een ervaren E-learning Content Developer en JSON Expert.
 
-**Taak:** Converteer de volgende, definitieve tekst naar een **volledig en valide JSON-object**.
+**FASE 2: JSON CONTENT GENERATIE**
 
-**Context en Strikte Regels:**
-1. Gebruik de exacte "type"-namen en JSON-structuren uit de bijgevoegde technische specificatie `documentatie/stijlgids_voor_ai.md`.
-2. Volg de hoofdstukstructuur: zorg dat er een logische opbouw is met info-card, section-titles, content-text en juiste divider plaatsing.
-3. Verander niets aan de inhoud van de tekst.
-4. Alleen de content array, geen interacties - die worden apart toegevoegd.
-5. Geen hoofdstuk titel bovenaan - code begint direct met `"content": [` (hoofdstuktitels worden automatisch gegenereerd vanuit config.json).
-6. Zorg ervoor dat de output alléén het JSON-codeblok is, zonder extra uitleg.
+**Taak:** Nu we de structuur hebben goedgekeurd, gaan we de volledige JSON code genereren met educatief sterke content.
+
+**Werk op basis van:**
+- De goedgekeurde structuur uit de vorige stap
+- Alle bestaande context over samenhang met andere hoofdstukken
+- De technische specificaties uit de stijlgids
+
+**Schrijfstijl regels:**
+1. **Toegankelijk en professioneel:** Passend voor 18-jarige HBO studenten
+2. **Direct en persoonlijk:** Spreek de lezer aan met 'je'
+3. **Praktijkgericht en concreet:** Gebruik voorbeelden uit de fysiotherapie
+4. **Gestructureerd en duidelijk:** Logische opbouw met koppen en bullets
+5. **Activerend en motiverend:** Zorg dat studenten betrokken blijven
+
+**Technische vereisten:**
+- **Exacte JSON syntax:** Gebruik de juiste "type"-namen uit de stijlgids
+- **Correcte structuur:** Volg het patroon info-card → section-title → content-text → componenten
+- **Juiste HTML formatting:** Gebruik `<strong>` voor vetgedrukte tekst en `<ul><li>` voor lijsten
+- **Divider plaatsing:** Tussen meerdere componenten binnen een sectie (niet bij enkele component, niet aan sectie-einde)
+
+**Multimedia integratie:**
+- Implementeer de afbeelding/video suggesties uit Stap 2A
+- Zoek actief naar concrete links voor video's (Nederlands bij voorkeur, Engels acceptabel)
+- Beschrijf precies wat voor visueel materiaal nodig is als je geen specifieke links vindt
+
+**⚠️ SPECIALE REGELS:**
+- **Hoofdstuk 1:** Behoud ALTIJD de `leerdoelen-dynamic` component en "Klaar voor de start?" sectie
+- **Geen interacties:** Alleen de content array, interacties worden apart toegevoegd
+- **Geen hoofdstuk titel:** Code begint direct met `"content": [`
+- **Volledig werkende JSON:** Zonder syntax fouten, klaar voor implementatie
+
+**Output formaat:**
+Geef alleen het JSON-codeblok, zonder extra uitleg. Begin direct met:
+```json
+"content": [
+  {
+    "type": "info-card",
+    // ... volledige hoofdstuk content
+  }
+]
+```
+
+**Ga nu aan de slag met het genereren van de volledige JSON code op basis van onze goedgekeurde structuur!**</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Stap 3: JSON Implementatie in Cursor</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-json-implementatie-cursor')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: Het JSON-resultaat uit Stap 2B implementeren in het juiste hoofdstukbestand binnen Cursor.</p>
+                                <div class="prompt-content" id="prompt-json-implementatie-cursor">Implementeer het volgende JSON-object in `content/hoofdstuk[NUMMER].json`. Vervang de volledige `content` array met onderstaande code:
 
 ---
-[HIER PLAATS JE DE DEFINITIEVE, GEFINALISEERDE TEKST UIT STAP 2]
----</div>
+[HIER PLAK JE HET COMPLETE JSON-OBJECT UIT STAP 2B]
+---
+
+**Zorg ervoor dat:**
+- De bestaande interacties array behouden blijft
+- Alleen de content wordt vervangen
+- De JSON syntax correct blijft
+- Het bestand geldig JSON blijft na de wijziging
+
+**Controleer na implementatie:**
+1. Of het JSON bestand nog steeds valide is
+2. Of er geen syntax fouten zijn geïntroduceerd
+3. Of de interacties array niet is aangepast</div>
                             </div>
+
+
                         </div>
                     </section>
 

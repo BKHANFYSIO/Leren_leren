@@ -1,3 +1,7 @@
+// quiz.js - Quiz functionaliteit voor afsluitquiz
+
+console.log('quiz.js loaded - quiz functionality would be implemented here');
+
 // Globale variabelen specifiek voor de afsluitende quiz
 let currentQuizQuestionIndex = 0;
 let quizQuestionsData = []; // Zal vragen van afsluitquiz.json bevatten
