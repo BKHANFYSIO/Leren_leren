@@ -363,9 +363,96 @@
           "onderschrift": "Sketchnotes: combineer tekst met tekeningen voor een visuele samenvatting."
         }
       ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Test de Interacties uit dit Hoofdstuk"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De interactieve opdrachten hieronder zijn direct gebaseerd op de effectieve leerstrategieën die je in dit hoofdstuk hebt bestudeerd. Elke interactie is ontworpen om een specifieke strategie te oefenen. In de accordeon hieronder vind je een korte toelichting per interactietype."
+    },
+    {
+      "type": "accordion",
+      "titel": "Uitleg van de Interactieve Elementen",
+      "content": [
+        {
+          "titel": "Multiple Choice (MC)",
+          "beschrijving": "Een klassieke meerkeuzevraag om je kennis direct te toetsen. Dit is een vorm van actief ophalen (retrieval practice)."
+        },
+        {
+          "titel": "Kritische Analyse (Critical Analysis)",
+          "beschrijving": "Hier word je uitgedaagd om een casus te analyseren. Dit stimuleert dieper nadenken en is een vorm van elaboratie."
+        },
+        {
+          "titel": "Braindump",
+          "beschrijving": "Een effectieve oefening voor actief ophalen (retrieval practice). Je schrijft alles op wat je weet over een onderwerp, zonder terug te kijken."
+        },
+        {
+          "titel": "Drag & Drop",
+          "beschrijving": "Een sorteeropdracht die je dwingt actief kennis op te halen (retrieval practice) en verbanden te leggen tussen concepten."
+        },
+        {
+          "titel": "Zelf-inschatting (Self-assessment)",
+          "beschrijving": "Een reflectieve tool waarbij je je eigen vaardigheid inschat. Dit helpt je bewust te worden van je leerproces (metacognitie)."
+        },
+        {
+          "titel": "Reflectie (Reflection)",
+          "beschrijving": "Een open vraag die je aanzet tot nadenken over je eigen leerproces, een vorm van elaboratie."
+        }
+      ]
     }
   ],
   "interacties": [
+    {
+      "id": "h4_dragdrop_1",
+      "type": "dragdrop",
+      "vraag": "Koppel de leerstrategie aan de juiste beschrijving. Sleep de strategieën naar het juiste vak.",
+      "kolommen": [
+        {
+          "titel": "Strategie",
+          "items": [
+            { "id": "dd_1", "tekst": "Actief Ophalen" },
+            { "id": "dd_2", "tekst": "Gespreid Leren" },
+            { "id": "dd_3", "tekst": "Elaboratie" },
+            { "id": "dd_4", "tekst": "Afwisselend Leren" }
+          ]
+        },
+        {
+          "titel": "Beschrijving",
+          "items": [
+            { "id": "dd_5", "tekst": "Informatie uit je geheugen proberen op te roepen." },
+            { "id": "dd_6", "tekst": "Leermomenten over een langere periode verspreiden." },
+            { "id": "dd_7", "tekst": "Verbindingen leggen met wat je al weet." },
+            { "id": "dd_8", "tekst": "Verschillende onderwerpen door elkaar studeren." }
+          ]
+        }
+      ],
+      "antwoorden": {
+        "dd_1": "dd_5",
+        "dd_2": "dd_6",
+        "dd_3": "dd_7",
+        "dd_4": "dd_8"
+      },
+      "feedbackCorrect": "Uitstekend! Je hebt de strategieën correct gekoppeld. Dit laat zien dat je de kern van elke strategie begrijpt.",
+      "feedbackIncorrect": "Niet helemaal juist. Probeer het nog eens. Denk goed na over de definitie van elke leerstrategie."
+    },
+    {
+      "id": "h4_selfassessment_1",
+      "type": "selfassessment",
+      "vraag": "Hoe goed beheers je de 'Verwerker' strategieën na het bestuderen van dit hoofdstuk? Geef jezelf een score op een schaal van 1 (nog veel te leren) tot 5 (ik kan dit toepassen).",
+      "schalen": [
+        { "id": "sa_1", "label": "Actief Ophalen" },
+        { "id": "sa_2", "label": "Gespreid Leren" },
+        { "id": "sa_3", "label": "Elaboratie" },
+        { "id": "sa_4", "label": "Afwisselend Leren" },
+        { "id": "sa_5", "label": "Actief Lezen & Notities maken" }
+      ],
+      "opslaanLabel": "Beoordeling Opslaan"
+    },
     {
       "id": "h4_critical_analysis_1",
       "type": "critical_analysis",

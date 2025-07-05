@@ -12,6 +12,11 @@
  * - Utility classes die niet in aparte componenten horen
  */
 
+@import url("components/images.css");
+@import url("components/interactive.css");
+@import url("components/layout.css");
+@import url("components/leerdoelen.css");
+
 /* Forced Colors Mode support */
 @media (forced-colors: active) {
   :root {

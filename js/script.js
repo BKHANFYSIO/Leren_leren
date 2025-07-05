@@ -1107,26 +1107,45 @@ function initializeReflectionInteraction(containerId, interactionData) {
 
 // Braindump Interaction Functions
 async function saveBraindump(chapterNumber, braindumpId) {
-    const textareaId = `${braindumpId}-textarea`;
-    const textarea = document.getElementById(textareaId);
-    
+    const containerId = chapterNumber === 'dev' 
+        ? `dev-${braindumpId}` 
+        : `hoofdstuk${chapterNumber}-${braindumpId}`;
+    const container = document.getElementById(containerId);
+
+    if (!container) {
+        console.error(`Braindump container met ID ${containerId} niet gevonden.`);
+        return;
+    }
+
+    const textarea = container.querySelector(`#${braindumpId}-textarea`);
     if (!textarea) {
-        console.error(`Braindump textarea with ID ${textareaId} not found.`);
+        console.error(`Braindump textarea met ID ${braindumpId}-textarea niet gevonden in container.`);
         return;
     }
     
     const braindumpText = textarea.value.trim();
-    
-    // Minimale validatie
-    if (braindumpText.length < 20) {
-        alert('Je braindump moet minimaal 20 tekens bevatten.');
-        return;
+    const errorMessages = [];
+
+    // 1. Controleer sectie-selectie
+    const sectionCheckboxes = container.querySelectorAll('.braindump-section-checkbox:checked');
+    if (sectionCheckboxes.length === 0) {
+        errorMessages.push('Selecteer waarover je braindump gaat.');
     }
-    
-    // Controleer of er een evaluatie is geselecteerd
-    const evaluationRadios = document.querySelectorAll(`input[name="${braindumpId}-evaluation"]:checked`);
+
+    // 2. Controleer tekstlengte
+    if (braindumpText.length < 20) {
+        errorMessages.push('Je braindump moet minimaal 20 tekens bevatten.');
+    }
+
+    // 3. Controleer evaluatie-selectie
+    const evaluationRadios = container.querySelectorAll(`input[name="${braindumpId}-evaluation"]:checked`);
     if (evaluationRadios.length === 0) {
-        alert('Selecteer eerst hoe goed je de inhoud kon reproduceren.');
+        errorMessages.push('Selecteer hoe goed je de inhoud kon reproduceren.');
+    }
+
+    // Toon alle foutmeldingen in één keer als er fouten zijn
+    if (errorMessages.length > 0) {
+        alert('Vul de volgende onderdelen nog in:\n\n- ' + errorMessages.join('\n- '));
         return;
     }
     
@@ -1155,13 +1174,19 @@ async function saveBraindump(chapterNumber, braindumpId) {
     
     // Update UI direct zonder re-render
     const saveBtn = document.getElementById(`${braindumpId}-save-btn`);
-    const textareaElement = document.getElementById(textareaId);
+    const textareaElement = document.getElementById(`${braindumpId}-textarea`);
     const evaluationOptions = document.querySelectorAll(`input[name="${braindumpId}-evaluation"]`);
     
     if (saveBtn) {
-        saveBtn.textContent = 'Opgeslagen';
-        saveBtn.classList.add('btn-opgeslagen');
-        saveBtn.disabled = true;
+        if (localStorage.getItem(storageKeyCompleted) === 'true') {
+            saveBtn.textContent = 'Opgeslagen';
+            saveBtn.classList.add('btn-opgeslagen');
+            saveBtn.disabled = true;
+        } else {
+            saveBtn.textContent = 'Braindump Opslaan';
+            saveBtn.classList.remove('btn-opgeslagen');
+            saveBtn.disabled = false; // Altijd klikbaar, validatie gebeurt bij klik
+        }
     }
     
     if (textareaElement) {
@@ -1174,37 +1199,23 @@ async function saveBraindump(chapterNumber, braindumpId) {
     });
     
     // Add feedback message
-    const containerId = chapterNumber === 'dev' 
-        ? `dev-${braindumpId}` 
-        : `hoofdstuk${chapterNumber}-${braindumpId}`;
-    const container = document.getElementById(containerId);
+    const feedbackDiv = document.createElement('div');
+    feedbackDiv.className = 'feedback-message';
+    feedbackDiv.style.cssText = 'display: block; margin-top: 1rem; padding: 1rem; background-color: var(--info-background); border-radius: 4px;';
     
-    if (container) {
-        // Remove existing feedback if any
-        const existingFeedback = container.querySelector('.feedback-message');
-        if (existingFeedback) {
-            existingFeedback.remove();
-        }
-        
-        // Add new feedback
-        const feedbackDiv = document.createElement('div');
-        feedbackDiv.className = 'feedback-message';
-        feedbackDiv.style.cssText = 'display: block; margin-top: 1rem; padding: 1rem; background-color: var(--info-background); border-radius: 4px;';
-        
-        const evaluationLabels = {
-            'good': 'Goed - Ik wist het meeste nog',
-            'fair': 'Matig - Ik wist de helft nog',
-            'poor': 'Slecht - Ik wist weinig nog'
-        };
-        
-        const evalText = evaluationLabels[selectedEvaluation] || selectedEvaluation;
-        feedbackDiv.innerHTML = `<strong>Je evaluatie:</strong> ${evalText}<br><em>Poging ${attempts.length} opgeslagen.</em>`;
-        
-        // Insert feedback after evaluation section
-        const evaluationSection = container.querySelector('.braindump-evaluation');
-        if (evaluationSection) {
-            evaluationSection.parentNode.insertBefore(feedbackDiv, evaluationSection.nextSibling);
-        }
+    const evaluationLabels = {
+        'good': 'Goed - Ik wist het meeste nog',
+        'fair': 'Matig - Ik wist de helft nog',
+        'poor': 'Slecht - Ik wist weinig nog'
+    };
+    
+    const evalText = evaluationLabels[selectedEvaluation] || selectedEvaluation;
+    feedbackDiv.innerHTML = `<strong>Je evaluatie:</strong> ${evalText}<br><em>Poging ${attempts.length} opgeslagen.</em>`;
+    
+    // Insert feedback after evaluation section
+    const evaluationSection = container.querySelector('.braindump-evaluation');
+    if (evaluationSection) {
+        evaluationSection.parentNode.insertBefore(feedbackDiv, evaluationSection.nextSibling);
     }
     
     if (chapterNumber !== 'dev') {
@@ -1223,7 +1234,7 @@ function retryBraindump(chapterNumber, braindumpId) {
     const evaluationOptions = document.querySelectorAll(`input[name="${braindumpId}-evaluation"]`);
     
     if (saveBtn) {
-        saveBtn.textContent = 'Evaluatie Opslaan';
+        saveBtn.textContent = 'Braindump Opslaan';
         saveBtn.classList.remove('btn-opgeslagen');
         saveBtn.disabled = false;
     }
@@ -1389,40 +1400,6 @@ async function initializeBraindumpInteraction(containerId, interactionData, chap
         }
     }
     
-    // Initialize save button state
-    const saveBtn = container.querySelector(`#${braindumpId}-save-btn`);
-    if (saveBtn) {
-        if (isCompleted) {
-            saveBtn.textContent = 'Opgeslagen';
-            saveBtn.classList.add('btn-opgeslagen');
-            saveBtn.disabled = true;
-        } else {
-            saveBtn.textContent = 'Evaluatie Opslaan';
-            saveBtn.classList.remove('btn-opgeslagen');
-            saveBtn.disabled = true; // Start disabled until text and evaluation are provided
-        }
-    }
-    
-    // Combined event listener for both textarea and evaluation radio buttons
-    const updateSaveButtonState = () => {
-        const saveBtn = container.querySelector(`#${braindumpId}-save-btn`);
-        const textareaElement = container.querySelector(`#${braindumpId}-textarea`);
-        const evaluationSelected = container.querySelector(`input[name="${braindumpId}-evaluation"]:checked`);
-        
-        if (saveBtn && textareaElement && evaluationSelected) {
-            const hasEnoughText = textareaElement.value.trim().length >= 20;
-            if (hasEnoughText) {
-                saveBtn.disabled = false;
-                saveBtn.textContent = 'Evaluatie Opslaan';
-                saveBtn.classList.remove('btn-opgeslagen');
-            } else {
-                saveBtn.disabled = true;
-            }
-        } else if (saveBtn) {
-            saveBtn.disabled = true;
-        }
-    };
-    
     // Character counter functionality
     const updateCharacterCounter = () => {
         const textareaElement = container.querySelector(`#${braindumpId}-textarea`);
@@ -1451,30 +1428,37 @@ async function initializeBraindumpInteraction(containerId, interactionData, chap
     
     // Add event listeners
     if (textarea && !isCompleted) {
-        textarea.addEventListener('input', updateSaveButtonState);
         textarea.addEventListener('input', updateCharacterCounter);
         // Initialize counter on load
         updateCharacterCounter();
     }
-    
-    const evaluationRadios = container.querySelectorAll(`input[name="${braindumpId}-evaluation"]`);
-    evaluationRadios.forEach(radio => {
-        radio.addEventListener('change', updateSaveButtonState);
-    });
     
     // Eventlistener voor kopieerknop prompt
     const copyBtn = container.querySelector(`#${braindumpId}-copy-prompt-btn`);
     const feedbackSpan = container.querySelector(`#${braindumpId}-copy-feedback`);
     if (copyBtn) {
         copyBtn.addEventListener('click', () => {
+            // Controleer of er een sectie is geselecteerd
+            const sectionCheckboxes = container.querySelectorAll('.braindump-section-checkbox:checked');
+            if (sectionCheckboxes.length === 0) {
+                alert('Selecteer eerst waarover je braindump gaat voordat je de prompt kopieert.');
+                return;
+            }
+            
+            // Controleer of er tekst is ingevoerd
+            const currentText = textarea.value.trim();
+            if (currentText.length < 20) {
+                alert('Vul eerst minimaal 20 tekens in voordat je de prompt kopieert.');
+                return;
+            }
+            
             // Gebruik altijd de actuele prompt
             let selectedContent = chapterContent;
-            const sectionCheckboxes = container.querySelectorAll('.braindump-section-checkbox:checked');
             if (sectionCheckboxes.length > 0 && chapterData) {
                 const selectedIndexes = Array.from(sectionCheckboxes).map(cb => cb.value);
                 selectedContent = getSelectedSectionContent(chapterData, selectedIndexes);
             }
-            const fullPrompt = buildBraindumpPrompt(interactionData, selectedContent, textarea.value.trim());
+            const fullPrompt = buildBraindumpPrompt(interactionData, selectedContent, currentText);
             navigator.clipboard.writeText(fullPrompt).then(() => {
                 if (feedbackSpan) {
                     feedbackSpan.style.display = 'inline';
@@ -1665,36 +1649,47 @@ function buildBraindumpPrompt(interactionData, chapterContent, studentText) {
     // Korte inleiding uit de bestaande prompt (indien aanwezig)
     const basePrompt = interactionData.chatgpt_prompt || '';
     
-    // Uitgebreide instructie
+    // Uitgebreide instructie met socratische benadering
     const instructie = `
 
 **Context:**  
-De onderstaande tekst is afkomstig uit een e-learning over effectief leren. De student heeft een braindump gemaakt op basis van de geselecteerde secties.
-
-**Doel van de braindump:**  
-De student probeert de inhoud van het hoofdstuk zo goed mogelijk uit het eigen geheugen op te halen, zonder terug te kijken in de tekst. Dit is een bewezen effectieve leerstrategie om kennis beter te onthouden en te verdiepen.
-
-**Jouw rol als AI:**  
-Jij bent een leercoach. Geef constructieve, motiverende en concrete feedback op de braindump van de student.
-- Benoem wat de student al goed heeft opgehaald uit het geheugen.
-- Wijs op eventuele hiaten of onduidelijkheden in het antwoord.
-- Geef praktische tips om het leren en onthouden verder te verbeteren.
-
-**Focus op inhoud:**  
-De feedback moet uitsluitend gericht zijn op de inhoud van de informatie uit het hoofdstuk. Aspecten als vormgeving, structuur, spelling of grammatica zijn van secundair belang en dienen niet of slechts zeer beknopt behandeld te worden. Houd er rekening mee dat de input ook gesproken kan zijn.
-
-**Gewenste outputstructuur:**  
-Geef een gestructureerde analyse met:
-1. Sterke punten
-2. Verbeterpunten
-3. Suggesties voor verdieping
-4. Eindbeoordeling (expert/gevorderd/beginner)
-
-**Hoofdstuk inhoud om mee te vergelijken:**
-${chapterContent}
+Ik ben een student fysiotherapie die een braindump heeft gemaakt over leerstrategieën. Ik heb geprobeerd de inhoud uit mijn geheugen op te halen zonder terug te kijken in de tekst.
 
 **Mijn braindump:**
 ${studentText}
+
+**Model antwoord (e-learning inhoud):**
+${chapterContent}
+
+**Jouw rol als AI:**  
+Jij bent mijn leercoach. Geef objectieve, realistische en opbouwende feedback op mijn braindump door deze te vergelijken met de e-learning inhoud.
+- Benoem wat ik al goed heb opgehaald uit mijn geheugen.
+- Wijs op eventuele hiaten of onduidelijkheden in mijn antwoord.
+- Geef praktische tips om mijn leren en onthouden verder te verbeteren.
+
+**Feedback stijl:**  
+Wees objectief en realistisch in je beoordeling. Het doel is niet om me te pleasen, maar om me te helpen groeien. Geef constructieve feedback die me uitdaagt om beter te worden. Wees eerlijk over wat ik wel en niet goed heb onthouden.
+
+**Focus op inhoud:**  
+De feedback moet uitsluitend gericht zijn op de inhoud van de informatie uit het hoofdstuk. Aspecten als vormgeving, structuur, spelling of grammatica zijn van secundair belang en dienen niet of slechts zeer beknopt behandeld te worden. Houd er rekening mee dat mijn input ook gesproken kan zijn.
+
+**Socratische benadering - Uitdaging tot verdieping:**
+Na je feedback, daag je me uit om verder na te denken en te verdiepen door:
+- Een prikkelende vraag te stellen die me aan het denken zet
+- Een praktische toepassing te suggereren die ik kan uitproberen
+- Een verdiepende vraag over hoe ik dit in mijn studie kan gebruiken
+- Een reflectievraag over wat ik nog meer zou willen leren
+
+**Gewenste outputstructuur:**  
+Geef een gestructureerde analyse met:
+1. Sterke punten - wat heb ik goed onthouden?
+2. Verbeterpunten - wat heb ik gemist of onduidelijk opgeschreven?
+3. Suggesties voor verdieping - hoe kan ik dit verder uitdiepen?
+4. Reproductie beoordeling:
+   - "Je kunt de stof nog niet zo goed reproduceren" (veel hiaten)
+   - "Je kunt de stof redelijk reproduceren" (gemengd resultaat)
+   - "Je kunt de stof zeer goed reproduceren" (goed onthouden)
+5. Uitdaging - een socratische vraag om me verder te laten nadenken
 `;
     
     return `${basePrompt}\n${instructie}`;

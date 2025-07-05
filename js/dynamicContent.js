@@ -91,6 +91,14 @@ function renderChapter(chapterNumber, data) {
     const interactionsContainer = document.getElementById(`section${chapterNumber}-interactions-container`) || mainContentContainer; // Use a dedicated container or fallback to main
 
     if (data.interacties && Array.isArray(data.interacties)) {
+        // Toon de interactie-titel altijd, tenzij het het laatste hoofdstuk is.
+        if (chapterNumber !== totalSections && data.interacties && data.interacties.length > 0) {
+            const titelElement = document.createElement('h3');
+            titelElement.className = 'interactive-header';
+            titelElement.textContent = 'Interactieve opdrachten';
+            interactionsContainer.appendChild(titelElement);
+        }
+
         data.interacties.forEach(interaction => {
             // Create a unique container for each interaction if it doesn't exist
             let interactionElement = document.getElementById(`hoofdstuk${chapterNumber}-${interaction.id}`);
@@ -1989,7 +1997,7 @@ function renderBraindumpInteraction(interactionData, chapterNumber) {
                         </div>
                         <div class="braindump-section-options" id="${braindumpId}-section-options">
                             <label class="braindump-section-option all-option">
-                                <input type="checkbox" class="braindump-section-checkbox" value="all" checked>
+                                <input type="checkbox" class="braindump-section-checkbox" value="all">
                                 <span class="braindump-section-label">📚 Hele hoofdstuk</span>
                             </label>
                             <div class="braindump-section-list" id="${braindumpId}-section-list">
@@ -2053,7 +2061,7 @@ function renderBraindumpInteraction(interactionData, chapterNumber) {
                                     id="${braindumpId}-save-btn" 
                                     ${isCompleted ? 'disabled' : ''}
                                     onclick="saveBraindump('${chapterNumber}', '${braindumpId}')">
-                                ${isCompleted ? 'Opgeslagen' : 'Evaluatie Opslaan'}
+                                ${isCompleted ? 'Opgeslagen' : 'Braindump Opslaan'}
                             </button>
                             <button class="btn btn-secondary" 
                                     id="${braindumpId}-retry-btn" 
