@@ -1365,6 +1365,27 @@ async function initializeBraindumpInteraction(containerId, interactionData, chap
                     cb.disabled = true;
                 });
             }
+            
+            // Collapse sectie-selector op mobiel
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile) {
+                const optionsElement = container.querySelector(`#${braindumpId}-section-options`);
+                const toggleButton = container.querySelector(`#${braindumpId}-section-toggle`);
+                if (optionsElement && toggleButton) {
+                    optionsElement.classList.add('collapsed');
+                    toggleButton.classList.add('collapsed');
+                    toggleButton.textContent = '▶';
+                }
+            } else {
+                // Desktop: standaard uitgeklapt
+                const optionsElement = container.querySelector(`#${braindumpId}-section-options`);
+                const toggleButton = container.querySelector(`#${braindumpId}-section-toggle`);
+                if (optionsElement && toggleButton) {
+                    optionsElement.classList.remove('collapsed');
+                    toggleButton.classList.remove('collapsed');
+                    toggleButton.textContent = '▼';
+                }
+            }
         }
     }
     
@@ -1402,16 +1423,45 @@ async function initializeBraindumpInteraction(containerId, interactionData, chap
         }
     };
     
+    // Character counter functionality
+    const updateCharacterCounter = () => {
+        const textareaElement = container.querySelector(`#${braindumpId}-textarea`);
+        const counterElement = container.querySelector(`#${braindumpId}-counter`);
+        
+        if (textareaElement && counterElement) {
+            const currentLength = textareaElement.value.length;
+            const maxLength = 5000;
+            const remaining = maxLength - currentLength;
+            
+            if (currentLength < 20) {
+                counterElement.textContent = `Nog ${20 - currentLength} tekens nodig (minimaal 20)`;
+                counterElement.className = 'char-counter low';
+            } else {
+                counterElement.textContent = `${remaining} tekens over`;
+                if (remaining < 0) {
+                    counterElement.className = 'char-counter error';
+                } else if (remaining <= 100) {
+                    counterElement.className = 'char-counter warning';
+                } else {
+                    counterElement.className = 'char-counter';
+                }
+            }
+        }
+    };
+    
     // Add event listeners
     if (textarea && !isCompleted) {
         textarea.addEventListener('input', updateSaveButtonState);
+        textarea.addEventListener('input', updateCharacterCounter);
+        // Initialize counter on load
+        updateCharacterCounter();
     }
     
     const evaluationRadios = container.querySelectorAll(`input[name="${braindumpId}-evaluation"]`);
     evaluationRadios.forEach(radio => {
         radio.addEventListener('change', updateSaveButtonState);
     });
-
+    
     // Eventlistener voor kopieerknop prompt
     const copyBtn = container.querySelector(`#${braindumpId}-copy-prompt-btn`);
     const feedbackSpan = container.querySelector(`#${braindumpId}-copy-feedback`);
@@ -1648,6 +1698,58 @@ ${studentText}
 `;
     
     return `${basePrompt}\n${instructie}`;
+}
+
+// Braindump Instruction Toggle Function
+function toggleBraindumpInstruction(braindumpId) {
+    const detailsElement = document.getElementById(`${braindumpId}-instruction-details`);
+    const toggleButton = document.querySelector(`#${braindumpId}-instruction-details`).previousElementSibling.querySelector('.braindump-instruction-toggle');
+    
+    if (detailsElement) {
+        const isVisible = detailsElement.style.display !== 'none';
+        detailsElement.style.display = isVisible ? 'none' : 'block';
+        
+        if (toggleButton) {
+            toggleButton.textContent = isVisible ? 'i' : '−';
+            toggleButton.title = isVisible ? 'Meer informatie' : 'Minder informatie';
+        }
+    }
+}
+
+// Braindump Section Toggle Function
+function toggleBraindumpSections(braindumpId) {
+    const optionsElement = document.getElementById(`${braindumpId}-section-options`);
+    const toggleButton = document.getElementById(`${braindumpId}-section-toggle`);
+    
+    if (optionsElement && toggleButton) {
+        const isCollapsed = optionsElement.classList.contains('collapsed');
+        
+        if (isCollapsed) {
+            optionsElement.classList.remove('collapsed');
+            toggleButton.classList.remove('collapsed');
+            toggleButton.textContent = '▼';
+        } else {
+            optionsElement.classList.add('collapsed');
+            toggleButton.classList.add('collapsed');
+            toggleButton.textContent = '▶';
+        }
+    }
+}
+
+// Braindump AI Toggle Function
+function toggleBraindumpAI(braindumpId) {
+    const detailsElement = document.getElementById(`${braindumpId}-ai-details`);
+    const toggleButton = document.querySelector(`#${braindumpId}-ai-details`).previousElementSibling.querySelector('.braindump-ai-toggle');
+    
+    if (detailsElement) {
+        const isVisible = detailsElement.style.display !== 'none';
+        detailsElement.style.display = isVisible ? 'none' : 'block';
+        
+        if (toggleButton) {
+            toggleButton.textContent = isVisible ? 'i' : '−';
+            toggleButton.title = isVisible ? 'Meer informatie' : 'Minder informatie';
+        }
+    }
 }
 
 

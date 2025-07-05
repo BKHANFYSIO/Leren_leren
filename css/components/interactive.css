@@ -328,6 +328,37 @@
     display: none; /* Initially hidden */
 }
 
+/* Responsive adjustments for reflection */
+@media (max-width: 768px) {
+    .reflection-container {
+        padding: 0.75rem;
+    }
+    
+    .reflection-input {
+        min-height: 100px;
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .reflection-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+    }
+    
+    .char-counter {
+        text-align: center;
+        order: -1;
+        margin-bottom: 0.5rem;
+    }
+    
+    .btn-save-reflection {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+}
+
 /* General Form Styling (used in Critical Analysis etc.) */
 .analysis-form, .form-container { /* .form-container as a generic alternative */
     background: var(--white);
@@ -394,8 +425,9 @@ select.form-control {
 .braindump-container {
     background-color: var(--light-gray);
     border-radius: var(--border-radius-large);
-    padding: 2rem;
+    padding: 1rem;
     margin-top: 1.5rem;
+    border: 1px solid #eee;
 }
 
 .braindump-question {
@@ -414,17 +446,82 @@ select.form-control {
     border-radius: 4px;
 }
 
+/* Compacte instructie met i-tje */
+.braindump-instruction-compact {
+    margin-bottom: 1.5rem;
+    background-color: var(--info-background);
+    border-left: 4px solid var(--info-blue);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.braindump-instruction-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background-color: var(--info-background);
+}
+
+.braindump-instruction-text {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.braindump-instruction-toggle {
+    background: var(--info-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.braindump-instruction-toggle:hover {
+    background: var(--info-blue-dark);
+}
+
+.braindump-instruction-details {
+    padding: 0 1rem 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    line-height: 1.4;
+    border-top: 1px solid rgba(52, 152, 219, 0.2);
+}
+
 .braindump-textarea {
     width: 100%;
     min-height: 200px;
-    padding: 1rem;
+    padding: 10px;
     border: 1px solid var(--medium-gray);
     border-radius: var(--border-radius-standard);
     font-family: inherit;
     font-size: 1rem;
     resize: vertical;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     transition: border-color 0.3s ease;
+}
+
+.braindump-textarea-container {
+    margin-bottom: 1.5rem;
+}
+
+.braindump-textarea-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--light-gray);
+    margin-top: 0.5rem;
 }
 
 .braindump-textarea:focus {
@@ -436,7 +533,7 @@ select.form-control {
 .braindump-control-section {
     background-color: var(--white);
     border-radius: var(--border-radius-standard);
-    padding: 1.5rem;
+    padding: 1rem;
     margin-top: 1.5rem;
     border: 1px solid var(--medium-gray);
 }
@@ -460,6 +557,13 @@ select.form-control {
     gap: 1rem;
     margin-bottom: 1.5rem;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.braindump-actions .btn {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
 }
 
 .braindump-chatgpt-link {
@@ -551,9 +655,70 @@ select.form-control {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .braindump-container {
+        padding: 0.75rem;
+        margin-top: 1rem;
+    }
+    
+    .braindump-textarea {
+        min-height: 150px;
+        padding: 0.75rem;
+    }
+    
+    .braindump-textarea-container {
+        margin-bottom: 1rem;
+    }
+    
+    .braindump-textarea-footer {
+        padding: 0.25rem 0;
+    }
+    
+    .braindump-control-section {
+        padding: 0.75rem;
+        margin-top: 1rem;
+    }
+    
+    .braindump-instruction {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .braindump-instruction-compact {
+        margin-bottom: 1rem;
+    }
+    
+    .braindump-instruction-header {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .braindump-instruction-text {
+        font-size: 0.9rem;
+    }
+    
+    .braindump-instruction-toggle {
+        width: 18px;
+        height: 18px;
+        font-size: 11px;
+    }
+    
+    .braindump-instruction-details {
+        padding: 0 0.75rem 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+    
     .braindump-actions {
-        flex-direction: column;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .braindump-actions .btn {
+        width: 100%;
+        min-width: unset;
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
     }
     
     .braindump-evaluation-options {
@@ -565,6 +730,89 @@ select.form-control {
         flex-direction: column;
         gap: 1rem;
         align-items: stretch;
+    }
+    
+    .braindump-footer-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .braindump-footer-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .braindump-section-selector {
+        padding: 0.75rem;
+    }
+    
+    .braindump-selector-header {
+        margin-bottom: 0.5rem;
+    }
+    
+    .braindump-selector-title {
+        font-size: 0.9rem;
+    }
+    
+    .braindump-selector-toggle {
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+    }
+    
+    .braindump-section-option {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .braindump-section-list {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+    
+    .braindump-section-list .braindump-section-option {
+        font-size: 0.8rem;
+    }
+    
+    .braindump-ai-instructie {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .copy-prompt-feedback {
+        margin-left: 0 !important;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+    
+    .braindump-ai-control {
+        margin-bottom: 1rem;
+    }
+    
+    .braindump-ai-header {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .braindump-ai-title {
+        font-size: 0.9rem;
+    }
+    
+    .braindump-ai-toggle {
+        width: 18px;
+        height: 18px;
+        font-size: 11px;
+    }
+    
+    .braindump-ai-details {
+        padding: 0 0.75rem 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .braindump-actions {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -635,6 +883,42 @@ select.form-control {
     border-left: 3px solid var(--primary-purple);
 }
 
+.braindump-selector-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 0.75rem;
+}
+
+.braindump-selector-header:hover .braindump-selector-title {
+    color: var(--primary-purple);
+}
+
+.braindump-selector-toggle {
+    background: none;
+    border: none;
+    color: var(--primary-purple);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.braindump-selector-toggle:hover {
+    color: var(--secondary-purple);
+}
+
+.braindump-selector-toggle.collapsed {
+    transform: rotate(-90deg);
+}
+
 .braindump-selector-title {
     font-weight: 600;
     margin-bottom: 0.75rem;
@@ -646,6 +930,14 @@ select.form-control {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.braindump-section-options.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
 }
 
 .braindump-section-option {
@@ -737,3 +1029,67 @@ select.form-control {
         font-size: 0.8rem;
     }
 }
+
+/* AI Control Sectie */
+.braindump-ai-control {
+    margin-bottom: 1.5rem;
+    background-color: var(--info-background);
+    border-left: 4px solid var(--info-blue);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.braindump-ai-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background-color: var(--info-background);
+}
+
+.braindump-ai-title {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    font-weight: 600;
+    margin: 0;
+}
+
+.braindump-ai-toggle {
+    background: var(--info-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.braindump-ai-toggle:hover {
+    background: var(--info-blue-dark);
+}
+
+.braindump-ai-details {
+    padding: 0 1rem 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    line-height: 1.4;
+    border-top: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.braindump-ai-details p {
+    margin: 0 0 0.75rem 0;
+}
+
+.braindump-ai-details p:last-child {
+    margin-bottom: 0;
+}
+
+

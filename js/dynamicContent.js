@@ -1971,14 +1971,23 @@ function renderBraindumpInteraction(interactionData, chapterNumber) {
                 <div class="braindump-container${isCompleted ? ' braindump-completed' : ''}">
                     ${specificQuestionTitle}
                     
-                    <div class="braindump-instruction">
-                        ${interactionData.instructie || 'Schrijf uit je hoofd op wat je nog weet over dit onderwerp. Kijk niet terug naar de tekst.'}
+                    <div class="braindump-instruction-compact">
+                        <div class="braindump-instruction-header">
+                            <span class="braindump-instruction-text">Schrijf uit je hoofd op wat je nog weet over dit onderwerp.</span>
+                            <button type="button" class="braindump-instruction-toggle" title="Meer informatie" onclick="toggleBraindumpInstruction('${braindumpId}')">i</button>
+                        </div>
+                        <div class="braindump-instruction-details" id="${braindumpId}-instruction-details" style="display: none;">
+                            ${interactionData.instructie || 'Schrijf uit je hoofd op wat je nog weet over dit onderwerp. Kijk niet terug naar de tekst.'}
+                        </div>
                     </div>
                     
                     ${!isCompleted ? `
                     <div class="braindump-section-selector">
-                        <h6 class="braindump-selector-title">📝 Selecteer secties:</h6>
-                        <div class="braindump-section-options">
+                        <div class="braindump-selector-header" onclick="toggleBraindumpSections('${braindumpId}')">
+                            <h6 class="braindump-selector-title">📝 Selecteer secties</h6>
+                            <button type="button" class="braindump-selector-toggle" id="${braindumpId}-section-toggle">▼</button>
+                        </div>
+                        <div class="braindump-section-options" id="${braindumpId}-section-options">
                             <label class="braindump-section-option all-option">
                                 <input type="checkbox" class="braindump-section-checkbox" value="all" checked>
                                 <span class="braindump-section-label">📚 Hele hoofdstuk</span>
@@ -1990,19 +1999,32 @@ function renderBraindumpInteraction(interactionData, chapterNumber) {
                     </div>
                     ` : ''}
                     
-                    <textarea 
-                        id="${braindumpId}-textarea" 
-                        class="braindump-textarea" 
-                        placeholder="Typ hier je braindump..."
-                        ${isCompleted ? 'readonly' : ''}
-                    >${currentAttempt}</textarea>
+                    <div class="braindump-textarea-container">
+                        <textarea 
+                            id="${braindumpId}-textarea" 
+                            class="braindump-textarea" 
+                            placeholder="Typ hier je braindump..."
+                            maxlength="5000"
+                            ${isCompleted ? 'readonly' : ''}
+                        >${currentAttempt}</textarea>
+                        <div class="braindump-textarea-footer">
+                            <span id="${braindumpId}-counter" class="char-counter"></span>
+                        </div>
+                    </div>
                     
                     <div class="braindump-control-section">
                         <div class="braindump-control-instruction">
                             <strong>Controle:</strong> ${interactionData.controle_instructie || 'Scroll nu terug door het hoofdstuk en vergelijk je antwoord met de inhoud. Deze vergelijking zorgt voor elaboratie en dieper leren - je verbindt je eigen gedachten met de geleerde stof.'}
                         </div>
-                        <div class="braindump-ai-instructie" style="margin-bottom:0.5rem;font-size:0.97em;color:var(--dark-gray);">
-                            Je kunt je braindump ook laten controleren door een AI. Selecteer de gewenste secties, vul je braindump in, klik op <b>Kopieer prompt</b> en plak deze in je favoriete AI-chatbot.
+                        <div class="braindump-ai-control">
+                            <div class="braindump-ai-header">
+                                <h6 class="braindump-ai-title">🤖 Controleer je braindump met AI</h6>
+                                <button type="button" class="braindump-ai-toggle" title="Meer informatie" onclick="toggleBraindumpAI('${braindumpId}')">i</button>
+                            </div>
+                            <div class="braindump-ai-details" id="${braindumpId}-ai-details" style="display: none;">
+                                <p>Je kunt je braindump laten controleren door een AI. Selecteer de gewenste secties, vul je braindump in, klik op <b>Kopieer prompt</b> en plak deze in je favoriete AI-chatbot.</p>
+                                <p><strong>Belangrijk:</strong> AI-feedback is alleen nuttig als je zelf goed nadenkt over de feedback. Ga in gesprek met de chatbot over het onderwerp - stel vragen, vraag om verduidelijking, en gebruik het als een leerpartner in plaats van alleen een corrector.</p>
+                            </div>
                         </div>
                         <div class="braindump-actions">
                             <button type="button" class="btn btn-copy-prompt" id="${braindumpId}-copy-prompt-btn">📋 Kopieer prompt</button>
