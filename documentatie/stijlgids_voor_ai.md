@@ -284,7 +284,14 @@ component C (enige component, dus geen divider)
   ```json
   {
     "type": "icon-card-grid",
-    "themes": [{ "icoon": "path/to/icon.svg", "titel": "Kaart Titel", "inhoud": "Beschrijving." }]
+    "themes": [
+      { 
+        "icoon": "path/to/icon.svg", 
+        "titel": "Kaart Titel", 
+        "inhoud": "Beschrijving van de inhoud.",
+        "dynamische_velden": [{ "veldnaam": "inhoud" }]
+      }
+    ]
   }
   ```
 

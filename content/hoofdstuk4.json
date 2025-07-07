@@ -5,7 +5,7 @@
       "type": "info-card",
       "classes": "purple-kader",
       "titel": "De Verwerker: Jouw Gereedschapskist voor Diepgaand Leren",
-      "tekst": "Welkom bij het vierde hoofdstuk! Na het begrijpen van de werking van je brein, is het nu tijd om de gereedschapskist van 'De Verwerker' te openen. Deze gereedschapskist heeft <strong>twee lagen</strong>: eerst de <strong>fundamentele voorwaarden</strong> die alle leren effectiever maken, en daarna de <strong>specifieke strategieën</strong> die je kunt inzetten. Zonder de juiste voorwaarden werken zelfs de beste strategieën minder goed. Bereid je voor om slimmer te leren, niet harder!"
+      "tekst": "Welkom bij het vierde hoofdstuk! Na het begrijpen van de werking van je brein, is het nu tijd om de gereedschapskist van 'De Verwerker' te openen. Deze gereedschapskist bevat krachtige strategieën die je helpen slimmer te leren, niet harder! Een essentieel fundament voor al deze strategieën is het <strong>activeren van voorkennis</strong>. Hoewel je de strategieën hieronder los van elkaar leert, onthoud dat ze elkaar in de praktijk vaak versterken en samenhangen voor het meest effectieve leerproces."
     },
     {
       "type": "section-title",
@@ -13,30 +13,61 @@
     },
     {
       "type": "content-text",
-      "tekst": "Dit is de <strong>eerste fundamentele voorwaarde</strong> voor effectieve verwerking. Voordat je nieuwe informatie opneemt, is het cruciaal om je bestaande kennis te activeren. Nieuwe kennis wordt veel beter opgenomen en verankerd als het kan worden 'opgehangen' aan bestaande kennisschema's of 'mentale kapstokken'. Door bewust stil te staan bij wat je al weet over een onderwerp, creëer je een stevige basis waarop nieuwe informatie kan worden gebouwd. <strong>Belangrijk</strong>: Alle strategieën die je verderop in dit hoofdstuk leert (zoals actief ophalen, gespreid leren, en elaboratie) werken veel beter als je eerst je voorkennis activeert. Het is de motor die alle andere strategieën krachtiger maakt."
+      "tekst": "Herinner je je de 'bibliotheek' (langetermijngeheugen) uit Hoofdstuk 3? Voorkennis activeren is dé truc om die bibliotheek voor je te laten werken. Het betekent simpelweg dat je, <strong>voordat je iets nieuws leert, bewust de 'boeken' die je al hebt over dat onderwerp pakt en klaarleggen op je 'kladblok' (werkgeheugen).</strong><br><br>Waarom is dit zo'n gamechanger? Je werkplek (werkgeheugen) is klein en kan maar <strong>4 tot 7 losse dingen tegelijk</strong> aan. Nieuwe info is als een los blaadje. Als je het juiste 'boek' (je voorkennis) al hebt klaarliggen, stop je dat blaadje direct in het juiste hoofdstuk. Zo hoef je die 4-7 plekken niet te verspillen aan losse feiten.<br><br><strong>De winst:</strong> je brein raakt minder snel overbelast, waardoor je sneller en effectiever leert. Ja, het kost je misschien een paar minuutjes, maar die investering om je voorkennis te activeren verdien je dubbel en dwars terug. Kortom: een kleine moeite voor een maximale leerwinst. Een echte no-brainer dus!"
     },
     {
-      "type": "benefits-grid",
-      "items": [
+      "type": "info-card",
+      "content": [
         {
-          "titel": "Beter Begrip",
-          "icoon": "lightbulb-on",
-          "tekst": "Nieuwe informatie krijgt meer betekenis door koppeling aan bestaande kennis."
+          "type": "icon-card-grid",
+          "themes": [
+            {
+              "icoon": "images/Begrijpen.png",
+              "titel": "Beter Begrip",
+              "inhoud": "Nieuwe informatie krijgt meer betekenis door koppeling aan bestaande kennis.",
+              "dynamische_velden": [{ "veldnaam": "inhoud" }]
+            },
+            {
+              "icoon": "images/sprinten.png",
+              "titel": "Snellere Opname",
+              "inhoud": "Je brein kan nieuwe informatie sneller verwerken als er al een kennisstructuur aanwezig is.",
+              "dynamische_velden": [{ "veldnaam": "inhoud" }]
+            },
+            {
+              "icoon": "images/Verankeren.png",
+              "titel": "Diepere Verankering",
+              "inhoud": "Informatie die gekoppeld wordt aan bestaande kennis wordt beter onthouden.",
+              "dynamische_velden": [{ "veldnaam": "inhoud" }]
+            },
+            {
+              "icoon": "images/kritisch-denken.png",
+              "titel": "Kritisch Denken",
+              "inhoud": "Door voorkennis te activeren kun je nieuwe informatie beter evalueren en beoordelen.",
+              "dynamische_velden": [{ "veldnaam": "inhoud" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "image-grid",
+      "kolommen": 2,
+      "afbeeldingen": [
+        {
+          "src": "images/bibliotheek-lege-tafel.png",
+          "alt": "Een lege werktafel in een bibliotheek, wat een niet-geactiveerd geheugen symboliseert.",
+          "onderschrift": "<strong>Zonder voorkennis activeren:</strong> je moet elk boek nog uit de kast halen. De dichtstbijzijnde pak je snel, maar voor de boeken verderop moet je op een trapje klimmen. Dat kost tijd en moeite. Dit is niet handig als je werkgeheugen vrij wilt hebben om nieuwe informatie in te verwerken.",
+          "bron": {
+            "naam": "Gegenereerd door B. Koekoek met ChatGPT (OpenAI, juli 2025)"
+          }
         },
         {
-          "titel": "Snellere Opname",
-          "icoon": "brain",
-          "tekst": "Je brein kan nieuwe informatie sneller verwerken als er al een kennisstructuur aanwezig is."
-        },
-        {
-          "titel": "Diepere Verankering",
-          "icoon": "check-circle",
-          "tekst": "Informatie die gekoppeld wordt aan bestaande kennis wordt beter onthouden."
-        },
-        {
-          "titel": "Kritisch Denken",
-          "icoon": "eye",
-          "tekst": "Door voorkennis te activeren kun je nieuwe informatie beter evalueren en beoordelen."
+          "src": "images/bibliotheek-boeken-op-tafel.png",
+          "alt": "Een werktafel met een stapel relevante boeken, wat een geactiveerd geheugen symboliseert.",
+          "onderschrift": "<strong>Met voorkennis activeren:</strong> je hebt de juiste boeken al klaarliggen. Nieuwe informatie (de 'kladpapiertjes') koppel je direct aan de juiste kennis, waardoor je sneller en effectiever leert. De notitieblaadjes koppel je snel aan een boek, waardoor je weer ruimte vrijmaakt in je werkgeheugen voor andere nieuwe informatie.",
+          "bron": {
+            "naam": "Gegenereerd door B. Koekoek met ChatGPT (OpenAI, juli 2025)"
+          }
         }
       ]
     },
@@ -52,67 +83,35 @@
       ]
     },
     {
-      "type": "image-block",
-      "src": "https://placehold.co/800x450/e9d5ff/9333ea?text=Mentale+Kapstokken+voor+Nieuwe+Kennis",
-      "alt": "Metaforische afbeelding van mentale kapstokken waaraan nieuwe kennis wordt opgehangen",
-      "onderschrift": "Voorkennis werkt als mentale kapstokken: nieuwe informatie wordt veel beter onthouden als het ergens aan kan worden opgehangen."
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section-title",
-      "titel": "Modelleren: Leer van de Expert"
-    },
-    {
-      "type": "content-text",
-      "tekst": "Dit is de <strong>tweede fundamentele voorwaarde</strong> voor effectieve verwerking. Modelleren is een krachtige didactische aanpak waarbij een expert (docent, mentor, of ervaren professional) denkprocessen en strategieën expliciet voordoet. Net als in de traditionele meester-gezelrelatie leer je niet alleen WAT je moet doen, maar vooral HOE je moet denken. <strong>Cruciaal voor dit hoofdstuk</strong>: Modelleren is de beste manier om de komende leerstrategieën (actief ophalen, gespreid leren, elaboratie) te leren toepassen. Door experts te zien demonstreren hoe zij deze strategieën gebruiken, ontwikkel je zelf sneller de vaardigheden om ze effectief in te zetten."
-    },
-    {
-      "type": "benefits-grid",
-      "items": [
+      "type": "scenario-container-horizontal",
+      "scenarios": [
         {
-          "titel": "Zichtbare Denkstappen",
-          "icoon": "eye",
-          "tekst": "Experts maken hun denkproces expliciet, zodat je leert hoe je moet redeneren."
+          "titel": "Scenario 1: Onvoorbereid het diepe in",
+          "beschrijving": "Je schuift aan bij het college over complexe knieproblematiek. De docent start direct over 'valgusmomenten' en 'Q-hoeken'. Omdat je de basisanatomie van de knie niet even kort hebt herhaald, voelt het alsof je een film halverwege binnenstapt.",
+          "punten": [
+            "Termen vliegen over je hoofd.",
+            "Je kunt de verbanden niet leggen.",
+            "Je raakt gefrustreerd."
+          ],
+          "conclusie": "Resultaat: een verloren uur en een flinke dosis demotivatie."
         },
         {
-          "titel": "Verminderde Cognitieve Belasting",
-          "icoon": "brain",
-          "tekst": "Door voorbeelden te zien hoef je niet alles zelf uit te puzzelen, wat mentale ruimte vrijmaakt."
-        },
-        {
-          "titel": "Praktijkgericht Leren",
-          "icoon": "check-circle",
-          "tekst": "Je ziet hoe theoretische kennis wordt toegepast in echte situaties."
-        },
-        {
-          "titel": "Efficiënt voor Beginners",
-          "icoon": "lightbulb-on",
-          "tekst": "Vooral nuttig als je nog weinig ervaring hebt met complexe vaardigheden."
+          "titel": "Scenario 2: De slimme investering",
+          "beschrijving": "Morgen heb je een oefensessie met een simulatiepatiënt met enkelletsel. Je weet dat de theorie al even geleden is. Je investeert 15 minuten: je scant de samenvatting, laat je overhoren door een AI-tutor en tekent de enkelbanden uit je hoofd.",
+          "punten": [
+            "Je stelt de juiste vragen en je redeneren is scherper.",
+            "Je voelt je zelfverzekerd en hebt controle.",
+            "Het gesprek loopt soepeler en je haalt meer uit de feedback."
+          ],
+          "conclusie": "Resultaat: je leert niet alleen meer, je groeit ook in je vak."
         }
       ]
     },
-    {
-      "type": "info-card",
-      "titel": "Optimaal Profiteren van Modelleren",
-      "items": [
-        { "titel": "Let goed op redeneringen:", "tekst": "Focus niet alleen op wat de expert doet, maar vooral op waarom en hoe beslissingen worden genomen." },
-        { "titel": "Volg stappen bewust:", "tekst": "Probeer de gehele denksequentie te volgen: van probleemanalyse tot oplossing." },
-        { "titel": "Stel verdiepende vragen:", "tekst": "Vraag door op onduidelijkheden: 'Waarom kies je voor deze aanpak?', 'Wat als dit niet werkt?'" },
-        { "titel": "Oefen onder begeleiding:", "tekst": "Pas de gemodelleerde strategie toe terwijl de expert feedback kan geven." },
-        { "titel": "Reflecteer achteraf:", "tekst": "Denk na over wat je hebt geleerd en hoe je dit in de toekomst kunt toepassen." }
-      ]
-    },
+
     {
       "type": "divider"
     },
-    {
-      "type": "info-card",
-      "classes": "purple-kader",
-      "titel": "Van Fundamentele Voorwaarden naar Specifieke Strategieën",
-      "tekst": "Nu je weet hoe je de <strong>fundamentele voorwaarden</strong> creëert (voorkennis activeren en modelleren), kunnen we de <strong>specifieke strategieën</strong> van 'De Verwerker' gaan verkennen. Deze strategieën zijn bewezen effectief, maar onthoud: ze werken nog beter als je ze combineert met de voorwaarden die je zojuist hebt geleerd. Elke strategie die volgt is krachtiger als je eerst je voorkennis activeert en de technieken observeert bij experts."
-    },
+
     {
       "type": "section-title",
       "titel": "Actief Ophalen (Retrieval Practice): Haal het uit je Hoofd!"
@@ -381,7 +380,7 @@
       "content": [
         {
           "titel": "Multiple Choice (MC)",
-          "beschrijving": "Een klassieke meerkeuzevraag om je kennis direct te toetsen. Dit is een vorm van actief ophalen (retrieval practice)."
+          "beschrijving": "Een klassieke meerkeuzevraag om je kennis direct te toetsen. Hoewel dit een vorm van actief ophalen (retrieval practice) is, schuilt er een risico in. Vaak beantwoord je de vraag op basis van herkenning, of door overduidelijk foute antwoorden weg te strepen. Om de leereffectiviteit te verhogen, kun je het beste eerst de vraag lezen, het antwoord in je hoofd formuleren, en pas daarna de opties bekijken om te zien of jouw antwoord erbij staat."
         },
         {
           "titel": "Kritische Analyse (Critical Analysis)",

@@ -15,39 +15,76 @@
       "tekst": "In de kern is leren een stabiele en permanente verandering in je langetermijngeheugen. Het draait om het aanleggen van nieuwe verbindingen in je hersenen. Als je die verbindingen vaker gebruikt, worden ze sterker. Gebruik je ze niet, dan verzwakken ze weer – dat is vergeten. Twee geheugensystemen spelen hierin de hoofdrol."
     },
     {
-      "type": "benefits-grid",
-      "items": [
-        {
-          "titel": "Het Kladblok (Werkgeheugen)",
-          "icoon": "brain-fill",
-          "tekst": "Je bewuste denken op dit moment. Zeer beperkte capaciteit (4-7 losse elementen). Informatie blijft kort aanwezig (2-30 sec). Als het overbelast raakt, stopt het leren."
-        },
-        {
-          "titel": "De Bibliotheek (Langetermijngeheugen)",
-          "icoon": "collection-fill",
-          "tekst": "Je onbeperkte, onbewuste opslag. Kennis wordt opgeslagen in 'chunks' of schema's. Hoe meer schema's, hoe makkelijker je leert. Leren is informatie hiernaartoe verplaatsen."
+      "type": "split-screen-image-text",
+      "afbeelding": {
+        "src": "images/Werktafel-kladblaadjes.png",
+        "alt": "Illustratie van een klein, vol kladblok dat het werkgeheugen symboliseert.",
+        "bron": {
+            "naam": "Gegenereerd door B. Koekoek met ChatGPT (OpenAI, juli 2025)"
         }
-      ]
-    },
-    {
-      "type": "info-card",
-      "titel": "De Superkracht van Voorkennis",
-      "items": [
-        { "titel": "Fundament", "tekst": "Wat je al weet, is de belangrijkste factor voor wat je zult leren." },
-        { "titel": "Kapstok", "tekst": "Voorkennis werkt als een 'kapstok' waar je nieuwe informatie aan kunt ophangen." },
-        { "titel": "Zonder kapstok", "tekst": "Valt nieuwe informatie op de grond en wordt het niet opgeslagen." }
+      },
+      "tekst_content": [
+        "<strong>Het Kladblok (Werkgeheugen)</strong>",
+        "Dit is je bewuste denken, de plek waar je <em>nu</em> mee werkt.",
+        "<strong>Capaciteit:</strong> Zeer beperkt (kan maar 4-7 losse dingen tegelijk aan).",
+        "<strong>Houdbaarheid:</strong> Informatie blijft maar heel kort hangen (ca. 20 seconden).",
+        "<strong>Risico:</strong> Raakt dit kladblok vol? Dan stopt het leren direct."
       ]
     },
     {
       "type": "divider"
     },
     {
-      "type": "section-title",
-      "titel": "De Kracht van Wenselijke Moeilijkheden"
+      "type": "split-screen-image-text",
+      "afbeelding": {
+        "src": "images/bibliotheek-lege-tafel.png",
+        "alt": "Illustratie van een grote, georganiseerde bibliotheek die het langetermijngeheugen symboliseert.",
+        "bron": {
+            "naam": "Gegenereerd door B. Koekoek met ChatGPT (OpenAI, juli 2025)"
+        }
+      },
+      "tekst_content": [
+        "<strong>De Bibliotheek (Langetermijngeheugen)</strong>",
+        "Je onbeperkte, onbewuste opslag voor álle kennis en vaardigheden.",
+        "<strong>Organisatie:</strong> Informatie wordt hier slim opgeslagen in 'chunks' of schema's.",
+        "<strong>Voordeel:</strong> Hoe meer schema's je hebt, hoe makkelijker je leert.",
+        "<strong>Doel:</strong> Effectief leren is informatie succesvol naar deze bibliotheek verplaatsen."
+      ]
     },
     {
-      "type": "content-text",
-      "tekst": "Effectief leren voelt vaak ongemakkelijk. Dit concept heet 'Desirable Difficulties' (wenselijke moeilijkheden). Het is het teken dat je brein hard aan het werk is om sterke, duurzame verbindingen aan te leggen. Passief herlezen voelt makkelijk, maar leidt tot de 'illusie van vloeiendheid'. Echte inspanning leidt tot echt leren."
+      "type": "info-card",
+      "titel": "De Superkracht van Voorkennis: Jouw Mentale Fundament",
+      "items": [
+        {
+          "titel": "De Basis",
+          "tekst": "Wat je al weet, opgeslagen in je <strong>langetermijngeheugen (jouw 'bibliotheek')</strong>, is de belangrijkste factor voor wat je zult leren. Zonder deze basis wordt het lastig nieuwe informatie te plaatsen en te onthouden."
+        },
+        {
+          "titel": "Koppeling & Werkgeheugen",
+          "tekst": "Nieuwe kennis hang je op aan je voorkennis, als aan 'mentale kapstokken'. Je <strong>werkgeheugen (jouw 'kladblok')</strong> heeft een beperkte capaciteit (denk aan 4-7 elementen!). Door nieuwe informatie aan bestaande 'chunks' (kennisklompjes) te koppelen, 'reset' je je werkgeheugen en komt er ruimte vrij om méér te verwerken."
+        },
+        {
+          "titel": "De Gevaren",
+          "tekst": "Zonder deze kapstok blijft nieuwe informatie losse flodders, valt het 'op de grond' en wordt het niet duurzaam opgeslagen. Dit overbelast je werkgeheugen en belemmert echt leren. In Hoofdstuk 4 gaan we dieper in op <strong>hoe je actief voorkennis kunt activeren</strong> om zo nog slimmer te leren!"
+        }
+      ]
+    },
+    {
+      "type": "image-block",
+      "src": "images/Het-SOI-geheugenmodel.webp",
+      "alt": "Het SOI-geheugenmodel dat de drie fasen van leren toont: Selectie, Organisatie en Integratie",
+      "onderschrift": "Het SOI-geheugenmodel toont hoe informatie wordt verwerkt: eerst selecteren we relevante informatie, dan organiseren we deze in coherente structuren, en tenslotte integreren we het met bestaande kennis.",
+      "bron": {
+        "naam": "Proev.be (gebaseerd op Fiorella & Mayer, 2015)",
+        "url": "https://proev.be/de-wetenschap/hoe-leren-leerlingen"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Het brein vergeet snel"
     },
     {
       "type": "split-screen-image-text",
@@ -58,6 +95,32 @@
       "tekst_content": [
         "<strong>De Vergeetcurve</strong>",
         "Deze grafiek toont hoe snel we informatie vergeten als we er niets actiefs mee doen. Soms ben je al na een dag het grootste deel kwijt. De strategieën die je later leert, zoals actieve herinnering en gespreid leren, zijn ontworpen om deze curve te 'resetten' en kennis vast te zetten in je langetermijngeheugen."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Desirable Difficulties en Illusion of Fluency"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Effectief leren voelt vaak ongemakkelijk. Dit concept heet 'Desirable Difficulties' (wenselijke moeilijkheden). Het is het teken dat je brein hard aan het werk is om sterke, duurzame verbindingen aan te leggen. Passief herlezen voelt makkelijk, maar leidt tot de 'illusie van vloeiendheid'. Echte inspanning leidt tot echt leren."
+    },
+    {
+      "type": "icon-card-grid",
+      "themes": [
+        {
+          "icoon": "brain",
+          "titel": "Desirable Difficulties",
+          "inhoud": "Wenselijke moeilijkheden zijn leerstrategieën die in het moment uitdagend voelen, maar leiden tot betere langetermijnretentie. Voorbeelden zijn actief ophalen, gespreid leren en elaboratie."
+        },
+        {
+          "icoon": "eye",
+          "titel": "Illusion of Fluency",
+          "inhoud": "De misleidende overtuiging dat je iets goed kent omdat het bekend aanvoelt. Passief herlezen voelt makkelijk en vloeiend, maar leidt tot slechte retentie en een vals gevoel van beheersing."
+        }
       ]
     },
     {
