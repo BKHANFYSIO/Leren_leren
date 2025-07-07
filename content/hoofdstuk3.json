@@ -7,6 +7,29 @@
       "tekst": "Je weet nu <b>wat</b> zelfsturend leren is. In dit hoofdstuk ontdek je <b>waarom</b> bepaalde leerstrategieën werken en andere niet, door te begrijpen hoe je brein informatie verwerkt."
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h3_audio_1",
+              "titel": "Podcast: Hoe je Brein Leert",
+              "beschrijving": "Een audio-versie van hoofdstuk 3 over hoe je brein informatie verwerkt en waarom bepaalde leerstrategieën werken.",
+              "bron": "audio/H3-AI-Tools-wat-kies-ik.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "Je Werkgeheugen vs. je Langetermijngeheugen"
     },
@@ -87,14 +110,24 @@
       "titel": "Het brein vergeet snel"
     },
     {
+      "type": "content-text",
+      "tekst": "Ooit het gevoel gehad dat je na het studeren alles wist, maar de volgende dag veel kwijt was? Dat is de vergeetcurve, ontdekt in <strong>1885</strong> door psycholoog <strong>Hermann Ebbinghaus</strong>. Hij toonde aan dat je zonder herhaling een groot deel van nieuwe informatie snel vergeet. Dit is een normaal en zelfs nuttig proces van je brein om te filteren wat belangrijk is."
+    },
+    {
       "type": "split-screen-image-text",
       "afbeelding": {
-        "src": "https://placehold.co/600x400/e9d5ff/9333ea?text=Vergeetcurve",
-        "alt": "Grafiek van de Ebbinghaus vergeetcurve"
+        "src": "images/Forgetting_curve_decline.svg.png",
+        "alt": "Grafiek van de Ebbinghaus vergeetcurve die toont hoe snel informatie wordt vergeten zonder herhaling",
+        "bron": {
+          "naam": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Forgetting_curve"
+        }
       },
       "tekst_content": [
-        "<strong>De Vergeetcurve</strong>",
-        "Deze grafiek toont hoe snel we informatie vergeten als we er niets actiefs mee doen. Soms ben je al na een dag het grootste deel kwijt. De strategieën die je later leert, zoals actieve herinnering en gespreid leren, zijn ontworpen om deze curve te 'resetten' en kennis vast te zetten in je langetermijngeheugen."
+        "<strong>De Vergeetcurve van Ebbinghaus</strong>",
+        "De grafiek toont een algemeen patroon: je brein begint direct na het leren met vergeten. Zonder actieve herhaling vervaagt kennis snel. Gelukkig is dit proces te beïnvloeden.",
+        "De snelheid waarmee je na één keer leren vergeet, hangt af van factoren als de <strong>moeilijkheid</strong> van de stof, je <strong>leerconditie</strong> (bv. fit of moe), je <strong>motivatie</strong> en vooral de <strong>manier waarop je leert</strong>.",
+        "Passief herlezen of markeren geeft vaak een onterecht gevoel van beheersing. In het volgende hoofdstuk gaan we dieper in op hoe je effectief leert bij de eerste keer en hoe je met strategieën zoals gespreid leren deze vergeetcurve de baas kunt zijn."
       ]
     },
     {
@@ -106,7 +139,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Effectief leren voelt vaak ongemakkelijk. Dit concept heet 'Desirable Difficulties' (wenselijke moeilijkheden). Het is het teken dat je brein hard aan het werk is om sterke, duurzame verbindingen aan te leggen. Passief herlezen voelt makkelijk, maar leidt tot de 'illusie van vloeiendheid'. Echte inspanning leidt tot echt leren."
+      "tekst": "In je brein gebeurt er iets geks tijdens het leren. Er zijn leerstrategieën die niet zo effectief zijn, maar je brein geeft je de illusie dat ze wél effectief zijn. Deze strategieën voelen ook nog eens vrij makkelijk aan. Daarnaast zijn er leerstrategieën die moeilijk voelen, vertragend voelen, maar juist die strategieën blijken uit onderzoek zeer effectief te zijn. We hebben het hier over de <strong>Desirable Difficulties</strong> en de <strong>Illusion of Fluency</strong>. Hieronder bekijken we deze twee termen en kijk waarin jij jezelf herkent."
     },
     {
       "type": "icon-card-grid",
@@ -114,12 +147,24 @@
         {
           "icoon": "brain",
           "titel": "Desirable Difficulties",
-          "inhoud": "Wenselijke moeilijkheden zijn leerstrategieën die in het moment uitdagend voelen, maar leiden tot betere langetermijnretentie. Voorbeelden zijn actief ophalen, gespreid leren en elaboratie."
+          "dynamische_velden": [
+            {
+              "veldnaam": "inhoud",
+              "label": "Wat zijn het?"
+            }
+          ],
+          "inhoud": "Ze voelen moeilijk, ze voelen vertragend, maar ze zijn bewezen effectief. Deze leerstrategieën dwingen je brein om diep na te denken en sterke verbindingen aan te leggen. Voorbeelden zijn actief ophalen, gespreid leren en elaboratie."
         },
         {
           "icoon": "eye",
           "titel": "Illusion of Fluency",
-          "inhoud": "De misleidende overtuiging dat je iets goed kent omdat het bekend aanvoelt. Passief herlezen voelt makkelijk en vloeiend, maar leidt tot slechte retentie en een vals gevoel van beheersing."
+          "dynamische_velden": [
+            {
+              "veldnaam": "inhoud",
+              "label": "Wat is het?"
+            }
+          ],
+          "inhoud": "Ze voelen makkelijk, ze geven je het gevoel dat je veel leert in weinig tijd, maar in werkelijkheid leer je vrij weinig. Deze strategieën voelen vloeiend aan maar leiden tot slechte retentie en een vals gevoel van beheersing."
         }
       ]
     },

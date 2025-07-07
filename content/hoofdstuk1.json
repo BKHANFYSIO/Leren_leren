@@ -9,7 +9,27 @@
       "tekst": "Als toekomstig fysiotherapeut sta je voor een uitdagende en dynamische studie. Je zult veel nieuwe kennis moeten opdoen, complexe vaardigheden moeten ontwikkelen en kritisch leren nadenken. Maar hoe zorg je ervoor dat je al die informatie niet alleen onthoudt, maar ook écht begrijpt en kunt toepassen in de praktijk? Deze e-learning is jouw gids om het maximale uit je studie te halen. We gaan je helpen om slimmer te leren, niet harder. Ben je er klaar voor om de controle over je leerproces te nemen en je academische prestaties naar een hoger niveau te tillen?"
     },
     {
-      "type": "leerdoelen-dynamic"
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h1_audio_1",
+              "titel": "Podcast: Introductie op AI in de Fysiotherapie",
+              "beschrijving": "Een audio-versie van de introductie op deze e-learning. Ontdek waarom AI nu al onmisbaar is voor de fysiotherapeut van de toekomst.",
+              "bron": "audio/H1-introductie-podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "section-title",
@@ -83,6 +103,13 @@
           "tekst": "De vaardigheden die je leert, zijn direct toepasbaar in je toekomstige rol als zelfstandige en kritische fysiotherapeut."
         }
       ]
+    },
+    {
+      "type": "section-title",
+      "titel": "Wat ga je leren in deze e-learning?"
+    },
+    {
+      "type": "leerdoelen-dynamic"
     },
     {
       "type": "section-title",

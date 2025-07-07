@@ -8,6 +8,29 @@
       "tekst": "Welkom bij Hoofdstuk 6! Je hebt de gereedschapskist van 'De Verwerker' (cognitieve strategieën) al goed leren kennen. Nu is het tijd om de rol van 'De Manager' op je te nemen: de architect van je eigen leerproces. Dit hoofdstuk duikt in **Zelfregulering van Leren (ZRL)**, het proces waarbij je zelf gegenereerde gedachten, gevoelens en acties plant en cyclisch aanpast om persoonlijke doelen te bereiken. Het omvat metacognitieve, motivationele en gedragsmatige betrokkenheid bij je leerproces. Hier leer je hoe je effectief plant, je begrip monitort, je strategieën aanpast en kritisch reflecteert om het maximale uit je studie te halen. Onthoud: ZRL ontwikkelt zich niet spontaan; het moet aangeleerd worden!"
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h6_audio_1",
+              "titel": "Podcast: De Manager - Leren Over Leren",
+              "beschrijving": "Een audio-versie van hoofdstuk 6 over de manager en leren over leren.",
+              "bron": "audio/H6-Kanen-en-Risicos-Podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "De Metacognitieve Cyclus: Jouw Gids voor Zelfsturing"
     },

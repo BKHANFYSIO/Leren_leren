@@ -196,6 +196,13 @@ Dit document is specifiek bedoeld voor het plannen van hoofdstuk-structuren. Het
 - **"Klaar voor de start?" sectie:** Verplichte afsluiting
 - **Nooit weglaten:** Deze componenten zijn essentieel voor de leerervaring
 
+### Podcast Accordion (Verplicht voor alle hoofdstukken behalve afsluiting)
+- **Plaatsing:** Direct na de info-card opening
+- **Doel:** Audio-versie van hoofdstukinhoud aanbieden
+- **Structuur:** Accordion met uitleg + audio-grid
+- **Belangrijk:** Vermeld dat interactieve opdrachten essentieel blijven
+- **Nooit weglaten:** Verplicht onderdeel voor alle hoofdstukken
+
 
 
 ---

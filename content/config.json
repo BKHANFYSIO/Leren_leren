@@ -1,12 +1,12 @@
 {
   "titel": "Leren leren",
   "leerdoelen": [
-    "In je eigen woorden verklaren wat AI is en hoe het leert uit data.",
-    "Kernbegrippen van AI benoemen en toepassen: LLM, context window, token, prompt, AGI, agent, custom instruction, GPT/project/Gem, inferentie, hallucineren, bias.",
-    "Eenvoudige prompts schrijven en verfijnen voor tekst- en beeld-AI.",
-    "Kansen én risico's van AI in (fysio)zorg en maatschappij herkennen.",
-    "Reflecteren op de invloed van AI op jouw studie, beroep en de samenleving.",
-    "Basisprincipes van vibe-coding toepassen om een kleine AI-tool te maken."
+    "De vijf stappen van de leercyclus (plannen, uitvoeren, monitoren, evalueren, reflecteren) herkennen en toepassen in je eigen studie.",
+    "Het verschil tussen effectieve en ineffectieve leerstrategieën uitleggen, inclusief de 'illusion of fluency' en 'desirable difficulties'.",
+    "Actieve leerstrategieën toepassen die passen bij hoe je brein werkt, zoals actieve herinnering en gespreid leren.",
+    "Je eigen leerproces monitoren en bijsturen op basis van wat je merkt over je begrip en retentie.",
+    "Reflecteren op je leerproces en je strategieën aanpassen voor betere resultaten in je fysiotherapiestudie.",
+    "De drie rollen van zelfsturend leren (Verwerker, Manager, Motivator) herkennen en inzetten in je studiepraktijk."
   ],
   "hoofdstukken": [
     { "file": "hoofdstuk1.json", "titel": "Inleiding" },

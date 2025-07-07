@@ -490,19 +490,45 @@ Geef alleen de Markdown output terug, geen uitleg.</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="prompt-content" id="prompt-structuur-planning">**Rol:** Gedraag je als een ervaren E-learning Structure Designer en Content Strategist.
+                                <div class="prompt-content" id="prompt-structuur-planning">**Rol:** E-learning Structure Designer & Content Strategist
+
+**Verantwoordelijkheden:**
+- Structuurplanning (niet content schrijven)
+- Component-keuzes gebaseerd op stijlgids
+- Visuele balans en gebruikerservaring
+- Samenhang met andere hoofdstukken
 
 **FASE 1: STRUCTUUR PLANNING**
+
+**Doel:** Methodische structuurplanning voor één hoofdstuk
+**Input:** Cursusontwerp uit Stap 1 + bestaande hoofdstukken
+**Output:** Gedetailleerd structuurvoorstel met component-keuzes
+
+**WERKWIJZE:**
+1. **Context analyse** (5 min)
+2. **Inhoudelijke verdieping** (5 min) 
+3. **Structuurvoorstel** (10 min)
 
 **Taak:** Laten we samen een doordachte structuur maken voor het volgende hoofdstuk. We gaan methodisch alle aspecten plannen voordat we content gaan creëren.
 
 * **Hoofdstuk:** "Hoofdstuk X: [TITEL VAN HET HOOFDSTUK]"
+* **Doelgroep:** [DOELGROEP ELEARNING]
 * **Inhoudelijke briefing:** Haal de beschrijving van dit hoofdstuk uit het bijgevoegde cursusontwerp uit Stap 1
 
 **Werk met de beschikbare resources:**
 - **Planning-stijlgids:** Gebruik `stijlgids_voor_planning.md` voor component-keuzes en gebruik-cases
 - **Visuele referentie:** Bekijk de screenshot van `stijlgids.html` om te zien hoe componenten eruitzien
 - **Structuur voorbeelden:** Gebruik de screenshots van bestaande hoofdstukken als inspiratie voor balans en variatie
+
+**🚨 VERPLICHTE COMPONENTEN - NOOIT WEGLATEN:**
+
+**Voor alle hoofdstukken:**
+✅ Info-card als opening
+✅ Podcast accordion direct na info-card
+
+**Alleen voor hoofdstuk 1:**
+✅ Leerdoelen-dynamic component
+✅ "Klaar voor de start?" sectie
 
 **Belangrijke regels voor de structuurplanning:**
 
@@ -527,15 +553,17 @@ Geef alleen de Markdown output terug, geen uitleg.</div>
    - Geef specifieke suggesties voor het type visueel materiaal
    - Zoek naar passende online resources
 
-**⚠️ SPECIALE INSTRUCTIE VOOR HOOFDSTUK 1:**
-Als dit het introductie/eerste hoofdstuk betreft, zorg er dan voor dat deze VERPLICHTE componenten worden opgenomen:
-- **`leerdoelen-dynamic`** component (toont automatisch alle leerdoelen uit config.json)
-- **"Klaar voor de start?" sectie** als afsluiting van het hoofdstuk
-Deze zijn essentieel voor de leerervaring en mogen NOOIT worden weggelaten.
+**SAMENHANG MET BESTAANDE HOOFDSTUKKEN:**
+
+Analyseer de bestaande hoofdstukken en zorg voor:
+- **Voortbouwen:** Gebruik concepten uit eerdere hoofdstukken
+- **Voorbereiden:** Introduceer concepten voor latere hoofdstukken  
+- **Consistentie:** Gebruik vergelijkbare componenten waar logisch
+- **Variatie:** Voorkom herhaling van exacte structuren
 
 **STAP-VOOR-STAP PLANNING:**
 
-**Stap 1: Context & Samenhang**
+**Stap 1: Context & Samenhang** (5 min)
 Begin door mij deze vragen te beantwoorden:
 - Heb je de globale structuur en beschrijving van de hele e-learning uit Stap 1? Kun je deze delen?
 - Welke hoofdstukken zijn er al (concept) af, en wat is hun focus?
@@ -543,42 +571,161 @@ Begin door mij deze vragen te beantwoorden:
 - Wat komt er ná dit hoofdstuk? Waarop moet dit hoofdstuk voorbereiden?
 - Zijn er specifieke concepten die al in andere hoofdstukken zijn geïntroduceerd?
 
-**Stap 2: Inhoudelijke Verdieping**
+**Stap 2: Inhoudelijke Verdieping** (5 min)
 Beantwoord vervolgens:
 - Heb je al specifieke afbeeldingen, video's of andere visuele materialen die gebruikt moeten worden?
 - Zijn er specifieke voorbeelden, casussen of praktijksituaties die uitgelicht moeten worden?
 - Welke visuele stijl past bij dit onderwerp?
 - Welke leerdoelen of praktische vaardigheden verdienen extra nadruk?
 
-**Stap 3: Structuurvoorstel**
+**Stap 3: Structuurvoorstel** (10 min)
 Na het beantwoorden van bovenstaande vragen, maak ik een gedetailleerd structuurvoorstel op basis van de planning-stijlgids en screenshots:
 
+**VERWACHTE OUTPUT FORMAAT:**
+
 **Structuur voor Hoofdstuk X:**
-1. **Hoofdstuk opening:** {Type info-card en globale insteek}
-2. **Sectie 1:** {Titel} 
-   - Introductie: {Korte beschrijving}
-   - Componenten: {Welke componenten uit stijlgids.html screenshot}
-   - Dividers: {Waar nodig}
-3. **Sectie 2:** {Titel}
-   - {etc.}
+```
+1. Info-card: (type) - (korte beschrijving)
+2. Podcast accordion: (audio bestand)
+3. Sectie 1: (titel)
+   - Content-text: (lengte)
+   - Componenten: (lijst met types)
+   - Dividers: (ja/nee)
+4. Sectie 2: (titel)
+   ...
+```
 
-**Component-keuzes met motivatie:**
-- {Welke componenten gekozen en waarom, gebaseerd op planning-stijlgids}
-- {Hoe passen ze bij het content-type en doelgroep}
+**Component-keuzes:**
+- (Component type): (motivatie gebaseerd op stijlgids)
+- (Component type): (motivatie gebaseerd op stijlgids)
 
-**Multimedia suggesties:**
-- Afbeeldingen: {Specifieke suggesties}
-- Video's: {Concrete links waar mogelijk}
-- Audio: {Indien relevant}
+**Multimedia plan:**
+- Afbeeldingen: (concrete suggesties)
+- Video's: (links of beschrijvingen)
+- Audio: (indien relevant)
+
+**Volledige content (natuurlijke taal):**
+```
+Info-card opening:
+[Volledige tekst voor de welkomstkaart]
+
+Sectie 1: [Titel]
+Content-text:
+[Volledige introductietekst voor deze sectie]
+
+[Component 1 type]: [Volledige content voor dit component]
+[Component 2 type]: [Volledige content voor dit component]
+
+Sectie 2: [Titel]
+[etc. voor alle secties]
+```
 
 **Visuele balans analyse:**
-- {Hoe de structuur afwisseling creëert tussen verschillende component-types}
-- {Vergelijking met de hoofdstuk-screenshots voor inspiratie}
-- {Suggesties voor optimale leesbaarheid}
+- (Hoe de structuur afwisseling creëert tussen verschillende component-types)
+- (Vergelijking met de hoofdstuk-screenshots voor inspiratie)
+- (Suggesties voor optimale leesbaarheid)
 
-**BELANGRIJK:** Ik schrijf in deze fase nog GEEN echte content. Alleen structuur, planning en component-keuzes. De daadwerkelijke content komt in Stap 2B.
+**✅ KWALITEITSCONTROLE CHECKLIST:**
 
-**Zodra je akkoord bent met deze structuur, gaan we verder naar Stap 2B waar we de JSON code gaan genereren.**</div>
+Voor je het structuurvoorstel presenteert, controleer:
+- ( ) 2-6 hoofdsecties (niet te veel, niet te weinig)
+- ( ) Afwisseling tussen component-types
+- ( ) Verplichte componenten opgenomen
+- ( ) Multimedia suggesties concreet genoeg
+- ( ) Logische flow van simpel naar complex
+- ( ) Passend bij doelgroep (18-jarige HBO studenten)
+
+**BELANGRIJK:** Ik schrijf in deze fase de volledige content, maar nog GEEN JSON code. 
+De content wordt in natuurlijke taal geschreven met duidelijke structuur.
+De JSON conversie gebeurt in Stap 2B.
+
+**Zodra je akkoord bent met deze structuur, gaan we verder naar Stap 2A.5 voor een content review, en daarna naar Stap 2B waar we de JSON code gaan genereren.**</div>
+                            </div>
+
+                            <div class="prompt-container">
+                                <div class="prompt-header">
+                                    <h3 class="prompt-title">Stap 2A.5: Content Review & Optimalisatie</h3>
+                                    <button class="copy-btn" onclick="copyPrompt(this, 'prompt-content-review-2a5')">Kopieer</button>
+                                </div>
+                                <p class="prompt-description">Doel: De content uit Stap 2A reviewen en optimaliseren voordat we naar JSON conversie gaan. Deze stap zorgt voor betere kwaliteit.</p>
+                                <div class="prompt-content" id="prompt-content-review-2a5">**Rol:** Gedraag je als een ervaren E-learning Content Reviewer en Instructional Designer, gespecialiseerd in HBO-onderwijs voor fysiotherapie studenten.
+
+**Taak:** Review en optimaliseer de content die net is geschreven in Stap 2A. Analyseer sectie-voor-sectie en geef concrete verbeterpunten voordat we naar JSON conversie gaan.
+
+**Doelgroep:** 18-jarige eerstejaars HBO studenten Fysiotherapie
+
+**📋 SECTIE-VOOR-SECTIE ANALYSE:**
+
+**Voor elke sectie in de content, controleer:**
+
+1. **Didactische Kwaliteit - Advanced Organizers:**
+   - Wordt, voorafgaand aan nieuwe, complexe informatie, een overkoepelend, abstract concept of raamwerk (een 'kapstok') aangeboden?
+   - Helpt dit raamwerk de student om de nieuwe, gedetailleerde informatie te organiseren en te verbinden met bestaande kennis?
+   - Worden er bijvoorbeeld vergelijkingen gemaakt met bekende concepten (comparative organizer) of wordt er een nieuw overkoepelend model geïntroduceerd (expository organizer)?
+
+2. **Didactische Kwaliteit - Modeling:**
+   - Worden nieuwe, complexe vaardigheden of denkprocessen expliciet voorgedaan (gemodeld)?
+   - Wordt de redenering achter de stappen duidelijk uitgelegd?
+   - Is er sprake van 'thinking aloud' waarbij de expert laat zien hoe hij/zij een probleem aanpakt?
+   - Worden voorbeelden gebruikt om abstracte concepten concreet te maken?
+
+3. **Motiverende Stijl & Doelgroep Aansluiting:**
+   - Is de toon toegankelijk en motiverend (niet schoolmeesterachtig)?
+   - Wordt de lezer consequent aangesproken met 'je'?
+   - Sluiten voorbeelden aan bij de leefwereld van 18-jarige fysio-studenten?
+   - Is de content activerend en uitdagend?
+
+4. **Praktijkrelevantie:**
+   - Wordt de link naar het toekomstige beroep duidelijk gemaakt?
+   - Zijn voorbeelden herkenbaar voor aankomende fysiotherapeuten?
+   - Wordt de theorie-praktijk verbinding gelegd?
+
+5. **Leesbaarheid & Structuur:**
+   - Zijn zinnen niet te lang of complex (ideaal: 15-20 woorden)?
+   - Is er voldoende visuele variatie (koppen, bullets, witruimte)?
+   - Worden complexe concepten stap-voor-stap uitgelegd?
+   - Is de informatie in hapklare brokken gepresenteerd?
+
+6. **Component Suggesties:**
+   - Welke visuele componenten zouden de boodschap kunnen versterken?
+   - Is er voldoende variatie in visuele elementen voorgesteld?
+   - Ondersteunen de voorgestelde componenten het leerproces?
+
+**🎯 SPECIFIEKE CONTROLES:**
+
+**Introductie:**
+- Is de opening motiverend en geeft het een duidelijke preview?
+- Wordt de relevantie voor fysio-studenten duidelijk gemaakt?
+
+**Hoofdsecties:**
+- Zijn de secties helder en activerend geformuleerd?
+- Geven ze een duidelijke structuur aan de content?
+
+**Content:**
+- Is de tekst toegankelijk voor 18-jarigen zonder infantiel te zijn?
+- Worden vakbegrippen adequaat uitgelegd?
+- Is er balans tussen informatie en verwerking?
+
+**🔍 OUTPUT FORMAAT:**
+
+**Per sectie:**
+- **Sectie naam:** {naam van de sectie}
+- **Sterke punten:** {wat goed is}
+- **Verbeterpunten:** {concrete suggesties}
+- **Prioriteit:** {hoog/medium/laag}
+
+**Algemene aanbevelingen:**
+- **Structuur:** {suggesties voor betere opbouw}
+- **Stijl:** {verbeteringen voor toon en aansluiting}
+- **Componenten:** {optimalisaties voor visuele elementen}
+
+**Prioritering:**
+- Welke aanpassingen hebben de grootste impact op leerervaring?
+- Welke zijn het makkelijkst te implementeren?
+
+**Te reviewen content:** {CONTENT UIT STAP 2A}
+
+Analyseer de bovenstaande content sectie-voor-sectie en geef concrete verbeterpunten.</div>
                             </div>
 
                             <div class="prompt-container">
@@ -931,6 +1078,8 @@ Beoordeel de doelgroep aansluiting van de bovenstaande hoofdstukken. Gebruik de 
 
                                 Controleer verwijzingen en samenhang voor het opgegeven bereik. Gebruik de JSON bestanden (inclusief config.json) die je al hebt ontvangen.</div>
                             </div>
+
+
 
                             <div class="prompt-container">
                                 <div class="prompt-header">

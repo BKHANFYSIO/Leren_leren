@@ -8,6 +8,29 @@
       "tekst": "Welkom bij het vierde hoofdstuk! Na het begrijpen van de werking van je brein, is het nu tijd om de gereedschapskist van 'De Verwerker' te openen. Deze gereedschapskist bevat krachtige strategieën die je helpen slimmer te leren, niet harder! Een essentieel fundament voor al deze strategieën is het <strong>activeren van voorkennis</strong>. Hoewel je de strategieën hieronder los van elkaar leert, onthoud dat ze elkaar in de praktijk vaak versterken en samenhangen voor het meest effectieve leerproces."
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h4_audio_1",
+              "titel": "Podcast: Effectieve Leerstrategieën",
+              "beschrijving": "Een audio-versie van hoofdstuk 4 over effectieve leerstrategieën en de verwerker.",
+              "bron": "audio/H4-prompten-kan-je-leren-podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "Voorkennis Activeren: Bouw op wat je al weet"
     },
@@ -188,13 +211,22 @@
     {
       "type": "split-screen-image-text",
       "afbeelding": {
-        "src": "https://placehold.co/600x400/9333ea/ffffff?text=Vergeetcurve+met+Spreiding",
-        "alt": "Grafiek van de Ebbinghaus vergeetcurve met illustratie van gespreide herhaling"
+        "src": "images/Forgetting_curve_tegen_gaan.png",
+        "alt": "Grafiek die toont hoe gespreide herhaling de vergeetcurve reset en de retentie verbetert",
+        "bron": {
+          "naam": "Taalhammer",
+          "url": "https://www.taalhammer.com/the-forgetting-curve-hermann-ebbinghaus/"
+        }
       },
       "tekst_content": [
         "<strong>De Vergeetcurve Resetten</strong>",
         "Deze illustratie toont hoe gespreide herhaling de vergeetcurve 'reset'. Elke keer dat je de informatie activeert, wordt de curve minder steil en onthoud je de stof langer. Dit is een 'wenselijke moeilijkheid' die je helpt om kennis duurzaam te verankeren."
       ]
+    },
+    {
+      "type": "video-full-width",
+      "titel": "Gespreid Leren in de Praktijk",
+      "link": "https://www.youtube.com/watch?v=QErngbmctEI"
     },
     {
       "type": "info-card",

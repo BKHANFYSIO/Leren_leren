@@ -7,6 +7,29 @@
       "tekst": "Welkom bij het tweede hoofdstuk! In de inleiding heb je ontdekt waarom je oude studiemethodes misschien niet meer volstaan. Dit hoofdstuk geeft je de blauwdruk om een effectievere, zelfsturende student te worden. Laten we beginnen!"
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h2_audio_1",
+              "titel": "Podcast: Zelfsturend Leren",
+              "beschrijving": "Een audio-versie van hoofdstuk 2 over zelfsturend leren en de leercyclus.",
+              "bron": "audio/H2-Wat-is-AI-eigenlijk-podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "De Architect van je Eigen Kennis"
     },

@@ -8,6 +8,29 @@
       "tekst": "Welkom bij Hoofdstuk 5! Nu je de krachtige leerstrategieën van 'De Verwerker' kent, is het tijd om nog dieper te duiken in hoe je informatie duurzaam verankert en welke veelvoorkomende valkuilen je moet vermijden. Dit hoofdstuk helpt je om je leerproces te perfectioneren en je bewust te worden van de 'onzichtbare' obstakels die effectief leren in de weg kunnen staan."
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h5_audio_1",
+              "titel": "Podcast: Verder Verwerken & Valkuilen",
+              "beschrijving": "Een audio-versie van hoofdstuk 5 over verder verwerken en valkuilen in het leerproces.",
+              "bron": "audio/H5-Creatief-en-bouwen-met-AI-Podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "Aanvullende Effectieve Strategieën: Je Toolkit Uitbreiden"
     },

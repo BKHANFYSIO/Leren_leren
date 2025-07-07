@@ -10,6 +10,40 @@ Elk hoofdstuk volgt een vaste, gestructureerde opbouw:
 
 ### 1. Hoofdstuk Opening
 - **Verplicht:** Start altijd met een `info-card` (vaak met `classes: "welcome-card"`) als algemene inleiding
+- **Verplicht:** Voeg direct na de info-card een podcast accordion toe voor alle hoofdstukken (behalve het afsluitende hoofdstuk)
+
+### PODCAST ACCORDION (VERPLICHT VOOR ALLE HOOFDSTUKKEN BEHALVE AFSLUITING):
+⚠️ **KRITIEKE COMPONENT - NIET VERWIJDEREN:**
+- **Podcast accordion**: Verplichte component die direct na de info-card wordt geplaatst
+- **Titel**: "Podcast: Beluister de inhoud van dit hoofdstuk"
+- **Inhoud**: Uitleg + audio-grid met bijbehorende podcast
+- **Waarschuwing**: Vermeld dat interactieve opdrachten essentieel blijven voor certificaat
+- **JSON Structuur**:
+```json
+{
+  "type": "accordion",
+  "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+  "content": [
+    {
+      "type": "content-text",
+      "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+    },
+    {
+      "type": "audio-grid",
+      "kolommen": 1,
+      "items": [
+        {
+          "id": "h[X]_audio_1",
+          "titel": "Podcast: [Hoofdstuk Titel]",
+          "beschrijving": "Een audio-versie van hoofdstuk [X] over [onderwerp].",
+          "bron": "audio/H[X]-[bestandsnaam].wav",
+          "meta": ""
+        }
+      ]
+    }
+  ]
+}
+```
 
 ### SPECIAAL VOOR HOOFDSTUK 1 (Introductie hoofdstuk):
 ⚠️ **KRITIEKE COMPONENTEN - NIET VERWIJDEREN:**
@@ -280,6 +314,7 @@ component C (enige component, dus geen divider)
 ### 9. Icon Card Grid
 - **Type:** `icon-card-grid`
 - **Gebruik:** Een grid van kaarten, elk ondersteund door een visueel icoon.
+- **Belangrijk:** Voor de inhoud van kaarten moet je `dynamische_velden` gebruiken, niet alleen de `inhoud` property.
 - **JSON Structuur:**
   ```json
   {
@@ -289,11 +324,17 @@ component C (enige component, dus geen divider)
         "icoon": "path/to/icon.svg", 
         "titel": "Kaart Titel", 
         "inhoud": "Beschrijving van de inhoud.",
-        "dynamische_velden": [{ "veldnaam": "inhoud" }]
+        "dynamische_velden": [
+          {
+            "veldnaam": "inhoud",
+            "label": "Optioneel label voor het veld"
+          }
+        ]
       }
     ]
   }
   ```
+- **Dynamische velden:** Deze zijn verplicht om de inhoud weer te geven. Zonder `dynamische_velden` wordt de `inhoud` niet getoond.
 
 ### 10. Competentie Grid
 - **Type:** `competency-grid`

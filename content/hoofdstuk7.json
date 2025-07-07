@@ -8,6 +8,29 @@
       "tekst": "Welkom bij Hoofdstuk 7, het laatste hoofdstuk van jouw reis naar effectiever leren! Je hebt de tools van 'De Verwerker' (cognitieve strategieën) en de managementvaardigheden van 'De Manager' (metacognitieve strategieën) leren kennen. Nu is het tijd om 'De Motivator' in jezelf te ontdekken. Dit hoofdstuk helpt je te begrijpen hoe motivatie en welzijn jouw leerproces beïnvloeden, en biedt concrete strategieën om gemotiveerd en veerkrachtig te blijven, om te gaan met tegenslag en een gezonde balans te vinden in je studie. Onthoud: **Zelfregulering van Leren (ZRL)** omvat niet alleen cognitieve en metacognitieve strategieën, maar ook cruciale **motivationele en affectieve strategieën** – de focus van dit hoofdstuk!"
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h7_audio_1",
+              "titel": "Podcast: De Motivator - Motivatie & Welzijn",
+              "beschrijving": "Een audio-versie van hoofdstuk 7 over motivatie en welzijn in het leerproces.",
+              "bron": "audio/H7-AI-in-de-toekomst-podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "Vormen van Motivatie: Van 'Moeten' naar 'Willen'"
     },
