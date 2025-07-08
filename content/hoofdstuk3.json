@@ -51,6 +51,7 @@
         "Dit is je bewuste denken, de plek waar je <em>nu</em> mee werkt.",
         "<strong>Capaciteit:</strong> Zeer beperkt (kan maar 4-7 losse dingen tegelijk aan).",
         "<strong>Houdbaarheid:</strong> Informatie blijft maar heel kort hangen (ca. 20 seconden).",
+        "<strong>Chunks (kennisklompjes):</strong> Door losse informatie te verbinden en te koppelen aan wat je al weet, creëer je een 'chunk'. Zo'n chunk telt maar als één element in je werkgeheugen, waardoor je de beperkte capaciteit slim omzeilt.",
         "<strong>Risico:</strong> Raakt dit kladblok vol? Dan stopt het leren direct."
       ]
     },
@@ -69,8 +70,8 @@
       "tekst_content": [
         "<strong>De Bibliotheek (Langetermijngeheugen)</strong>",
         "Je onbeperkte, onbewuste opslag voor álle kennis en vaardigheden.",
-        "<strong>Organisatie:</strong> Informatie wordt hier slim opgeslagen in 'chunks' of schema's.",
-        "<strong>Voordeel:</strong> Hoe meer schema's je hebt, hoe makkelijker je leert.",
+        "<strong>Organisatie:</strong> Informatie wordt hier slim opgeslagen in schema's.",
+        "<strong>Voordeel:</strong> Hoe meer schema's je hebt, hoe makkelijker je leert (denk aan de 'chunks' uit je werkgeheugen die hier een plekje krijgen).",
         "<strong>Doel:</strong> Effectief leren is informatie succesvol naar deze bibliotheek verplaatsen."
       ]
     },
@@ -111,7 +112,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Ooit het gevoel gehad dat je na het studeren alles wist, maar de volgende dag veel kwijt was? Dat is de vergeetcurve, ontdekt in <strong>1885</strong> door psycholoog <strong>Hermann Ebbinghaus</strong>. Hij toonde aan dat je zonder herhaling een groot deel van nieuwe informatie snel vergeet. Dit is een normaal en zelfs nuttig proces van je brein om te filteren wat belangrijk is."
+      "tekst": "Je weet nu dat leren draait om het succesvol opslaan van informatie in je langetermijngeheugen. Maar er is een grote uitdaging: je brein is van nature een expert in vergeten. Dit fenomeen, de 'vergeetcurve', werd al in <strong>1885</strong> ontdekt door psycholoog <strong>Hermann Ebbinghaus</strong>. Hij toonde aan dat je zonder actieve herhaling een groot deel van wat je leert snel weer kwijt bent. Dit is een normaal en zelfs nuttig proces van je brein om te filteren wat belangrijk is."
     },
     {
       "type": "split-screen-image-text",
@@ -126,9 +127,12 @@
       "tekst_content": [
         "<strong>De Vergeetcurve van Ebbinghaus</strong>",
         "De grafiek toont een algemeen patroon: je brein begint direct na het leren met vergeten. Zonder actieve herhaling vervaagt kennis snel. Gelukkig is dit proces te beïnvloeden.",
-        "De snelheid waarmee je na één keer leren vergeet, hangt af van factoren als de <strong>moeilijkheid</strong> van de stof, je <strong>leerconditie</strong> (bv. fit of moe), je <strong>motivatie</strong> en vooral de <strong>manier waarop je leert</strong>.",
-        "Passief herlezen of markeren geeft vaak een onterecht gevoel van beheersing. In het volgende hoofdstuk gaan we dieper in op hoe je effectief leert bij de eerste keer en hoe je met strategieën zoals gespreid leren deze vergeetcurve de baas kunt zijn."
+        "De snelheid waarmee je na één keer leren vergeet, hangt af van factoren als de <strong>moeilijkheid</strong> van de stof, je <strong>leerconditie</strong> (bv. fit of moe), je <strong>motivatie</strong> en vooral de <strong>manier waarop je leert</strong>."
       ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "Gelukkig kun je deze curve beïnvloeden. In de volgende sectie ontdek je het cruciale verschil tussen effectieve en ineffectieve strategieën. Vervolgens leer je in hoofdstuk 4 hoe je met o.a. technieken als <strong>actief ophalen</strong> de informatie direct beter vastlegt, en hoe je met <strong>gespreid leren</strong> de vergeetcurve op de lange termijn de baas blijft."
     },
     {
       "type": "divider"
@@ -139,32 +143,42 @@
     },
     {
       "type": "content-text",
-      "tekst": "In je brein gebeurt er iets geks tijdens het leren. Er zijn leerstrategieën die niet zo effectief zijn, maar je brein geeft je de illusie dat ze wél effectief zijn. Deze strategieën voelen ook nog eens vrij makkelijk aan. Daarnaast zijn er leerstrategieën die moeilijk voelen, vertragend voelen, maar juist die strategieën blijken uit onderzoek zeer effectief te zijn. We hebben het hier over de <strong>Desirable Difficulties</strong> en de <strong>Illusion of Fluency</strong>. Hieronder bekijken we deze twee termen en kijk waarin jij jezelf herkent."
+      "tekst": "Je weet nu dat je de vergeetcurve kunt tegengaan met de juiste leerstrategieën. De sleutel hiertoe is het onderscheid tussen <strong>actief leren</strong> en <strong>passief leren</strong>. Echter, je brein houdt je hierin soms voor de gek. Passieve technieken voelen vaak prettig en efficiënt, maar leiden tot de <em>Illusion of Fluency</em> (een vals gevoel van beheersing). Actieve technieken voelen daarentegen vaak moeilijk en vertragend, maar juist deze <em>Desirable Difficulties</em> (wenselijke moeilijkheden) zorgen ervoor dat je écht leert. Laten we ze eens bekijken."
     },
     {
       "type": "icon-card-grid",
       "themes": [
         {
-          "icoon": "brain",
-          "titel": "Desirable Difficulties",
-          "dynamische_velden": [
-            {
-              "veldnaam": "inhoud",
-              "label": "Wat zijn het?"
-            }
-          ],
-          "inhoud": "Ze voelen moeilijk, ze voelen vertragend, maar ze zijn bewezen effectief. Deze leerstrategieën dwingen je brein om diep na te denken en sterke verbindingen aan te leggen. Voorbeelden zijn actief ophalen, gespreid leren en elaboratie."
-        },
-        {
-          "icoon": "eye",
+          "icoon": "images/illusie-spierbal-als-ballon.png",
           "titel": "Illusion of Fluency",
           "dynamische_velden": [
+            {
+              "veldnaam": "kenmerk",
+              "label": "Kenmerk"
+            },
             {
               "veldnaam": "inhoud",
               "label": "Wat is het?"
             }
           ],
+          "kenmerk": "Passief Leren",
           "inhoud": "Ze voelen makkelijk, ze geven je het gevoel dat je veel leert in weinig tijd, maar in werkelijkheid leer je vrij weinig. Deze strategieën voelen vloeiend aan maar leiden tot slechte retentie en een vals gevoel van beheersing."
+        },
+        {
+          "icoon": "images/Desirable_Difficulties.png",
+          "titel": "Desirable Difficulties",
+          "dynamische_velden": [
+            {
+              "veldnaam": "kenmerk",
+              "label": "Kenmerk"
+            },
+            {
+              "veldnaam": "inhoud",
+              "label": "Wat zijn het?"
+            }
+          ],
+          "kenmerk": "Actief Leren",
+          "inhoud": "Ze voelen moeilijk, ze voelen vertragend, maar ze zijn bewezen effectief. Deze leerstrategieën dwingen je brein om diep na te denken en sterke verbindingen aan te leggen. Voorbeelden zijn actief ophalen, gespreid leren en elaboratie."
         }
       ]
     },
@@ -177,38 +191,30 @@
     },
     {
       "type": "content-text",
-      "tekst": "Cognitieve belasting gaat over de mentale inspanning die je nodig hebt om een taak uit te voeren. De theorie, ontwikkeld door John Sweller, stelt dat ons werkgeheugen zeer beperkt is. Als je dit werkgeheugen overbelast, blokkeert het leerproces. Het doel is dus niet om alle belasting te vermijden, maar om de <b>juiste balans</b> te vinden: minimaliseer de onnodige belasting en maximaliseer de relevante leerinspanning."
+      "tekst": "Zie leren als een training voor je brein, vergelijkbaar met een fysiotherapeutische oefening. Je wilt je brein uitdagen, maar niet overbelasten. Het succes van je 'training' hangt af van de balans tussen de <strong>belasting</strong> (de moeilijkheid van de leerstof) en je <strong>belastbaarheid</strong> (wat je werkgeheugen aankan). De theorie van cognitieve belasting helpt je de juiste balans te vinden door drie soorten belasting te onderscheiden. Het doel is om onnodige 'ruis' te minimaliseren en de 'goede' trainingsprikkel te maximaliseren."
     },
     {
-      "type": "benefits-grid",
+      "type": "concept-cards",
       "items": [
         {
+          "titel": "Relevante Belasting",
+          "nederlands": "De 'Goede' Trainingsprikkel",
+          "uitleg": "Dit is de inspanning die je brein levert om nieuwe kennis te verwerken en te koppelen aan wat je al weet. <strong>Jij maximaliseert deze 'goede' belasting bewust door actieve leerstrategieën te kiezen.</strong> Dit zijn de <strong>Desirable Difficulties</strong> in actie: het voelt misschien zwaar, maar dit is het moment waarop je écht leert en sterke geheugensporen aanlegt.",
+          "voorbeeld": "Een student leert de anatomie van de schouder. In plaats van de spieren alleen te markeren in een boek (passief), probeert de student de spieren en hun aanhechtingen uit het hoofd op een whiteboard te tekenen. Deze actieve inspanning om kennis op te halen, is de relevante belasting die zorgt voor een sterker geheugenspoor."
+        },
+        {
           "titel": "Intrinsieke Belasting",
-          "icoon": "puzzle-fill",
-          "tekst": "De inherente moeilijkheid van de stof. Hoe meer nieuwe, samenhangende elementen, hoe hoger de belasting. Jouw voorkennis kan dit verlagen door 'klontjes' (chunks) informatie te vormen."
+          "nederlands": "De Zwaarte van de Oefening",
+          "uitleg": "Dit is de inherente moeilijkheid van de leerstof zelf. <strong>Hier heb je geen directe invloed op</strong>, maar je kunt het wel beheersbaar maken. <strong>Jouw strategie is om complexe onderwerpen op te delen in kleinere, behapbare stukken.</strong> Door deze 'brokjes' te koppelen aan wat je al weet, creëer je de <strong>chunks</strong> die je werkgeheugen ontlasten.",
+          "voorbeeld": "Het leren van de Latijnse namen van de grote botten in het been (femur, tibia, fibula) heeft een lage intrinsieke belasting. Het begrijpen van de complexe biomechanica van het schoudergewricht, met alle rotaties en stabiliserende spieren, heeft een veel hogere intrinsieke belasting."
         },
         {
           "titel": "Extrinsieke Belasting",
-          "icoon": "x-circle-fill",
-          "tekst": "De onnodige belasting door hoe de informatie wordt aangeboden. Denk aan een docent die een volle PowerPoint-dia voorleest. Dit leidt af en wil je minimaliseren."
-        },
-        {
-          "titel": "Relevante Belasting",
-          "icoon": "gear-fill",
-          "tekst": "De nuttige, wenselijke belasting die je helpt nieuwe kennis te verwerken en op te slaan in je langetermijngeheugen. Deze inspanning wil je juist maximaliseren."
+          "nederlands": "De 'Ruis' of een Slechte Techniek",
+          "uitleg": "Dit is alle verspilde mentale energie die wordt veroorzaakt door afleidingen of ineffectieve leermethoden. Deze belasting leidt tot de <strong>Illusion of Fluency</strong>: het <em>voelt</em> alsof je productief bent, maar je leert weinig. <strong>Jij minimaliseert deze 'ruis' actief door:</strong><ul><li>Een rustige leeromgeving te creëren (telefoon weg, focus op één taak).</li><li>Passieve methoden zoals alleen herlezen of markeren te vermijden.</li><li>Onoverzichtelijk lesmateriaal te structureren, bijvoorbeeld door een samenvatting in je eigen woorden te maken.</li></ul>",
+          "voorbeeld": "Een student probeert de verschillende zenuwbanen te leren uit een onoverzichtelijke PowerPoint-presentatie met te veel tekst, terwijl de televisie aanstaat. De mentale inspanning om de onduidelijke slide te ontcijferen en de afleiding van de TV te negeren, is onnodige 'ruis' die het daadwerkelijke leren in de weg staat."
         }
       ]
-    },
-    {
-      "type": "image-block",
-      "src": "https://placehold.co/800x450/e9d5ff/9333ea?text=Grafiek+Belasting+vs+Belastbaarheid",
-      "alt": "Grafiek die de relatie tussen cognitieve belasting en belastbaarheid toont",
-      "onderschrift": "De balans tussen onderbelasting, optimale groei en cognitieve overload."
-    },
-    {
-      "type": "accent-blok",
-      "variant": "statistiek",
-      "tekst": "Cognitieve Overload blokkeert leren volledig. Vergelijk het met een spier die je overtraind hebt: er vindt geen groei meer plaats, alleen maar schade."
     },
     {
       "type": "divider"

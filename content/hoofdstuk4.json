@@ -137,76 +137,21 @@
 
     {
       "type": "section-title",
-      "titel": "Actief Ophalen (Retrieval Practice): Haal het uit je Hoofd!"
-    },
-    {
-        "type": "content-text",
-      "tekst": "Actief ophalen, ook wel 'retrieval practice' genoemd, is een van de krachtigste leerstrategieën. Het betekent simpelweg dat je actief probeert informatie op te roepen uit je geheugen, in plaats van het alleen passief te herlezen. Dit voelt vaak moeilijker dan passief lezen, maar zoals je in Hoofdstuk 3 leerde, zijn deze 'wenselijke moeilijkheden' juist essentieel voor diepgaand leren en het doorbreken van de 'illusie van vloeiendheid'. Dit is waar 'De Verwerker' aan het werk gaat!"
-    },
-    {
-      "type": "benefits-grid",
-      "items": [
-        {
-          "titel": "Betere Retentie",
-          "icoon": "check-circle",
-          "tekst": "Informatie wordt sterker verankerd in je langetermijngeheugen."
-        },
-        {
-          "titel": "Dieper Begrip",
-          "icoon": "brain",
-          "tekst": "Je dwingt jezelf om na te denken over de relaties tussen concepten."
-        },
-        {
-          "titel": "Diagnostisch",
-          "icoon": "eye",
-          "tekst": "Je ontdekt direct wat je wel en niet beheerst, zodat je gericht kunt bijsturen."
-        },
-        {
-          "titel": "Toepasbaarheid",
-          "icoon": "check-circle-outline",
-          "tekst": "Verbetert je vermogen om kennis in de praktijk te gebruiken."
-        }
-      ]
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "image-block",
-      "src": "https://placehold.co/800x450/e9d5ff/9333ea?text=Grafiek+Actief+Ophalen+vs+Passief+Lezen",
-      "alt": "Grafiek die de effectiviteit van actief ophalen versus passief lezen visualiseert",
-      "onderschrift": "Onderzoek toont consistent aan dat actief ophalen superieur is aan passief herlezen voor langetermijnretentie."
-    },
-    {
-      "type": "content-subtitle",
-      "titel": "Technieken voor Actief Ophalen"
-    },
-    {
-      "type": "info-card",
-      "titel": "Jouw Toolkit voor Retrieval Practice",
-  "items": [
-        { "titel": "Oefentoetsen maken:", "tekst": "Dit kan een formele oefentoets zijn of gewoon zelfbedachte quizvragen." },
-        { "titel": "Overhoor jezelf of elkaar (flashcards):", "tekst": "Gebruik flashcards (kaartjes met een vraag aan de ene kant en het antwoord aan de andere)." },
-        { "titel": "De 'Brain Dump':", "tekst": "Sluit je boek en schrijf of teken alles wat je weet over een onderwerp op een leeg vel papier. Vergelijk dit daarna met je bronnen om te zien wat je miste." },
-        { "titel": "Leg het uit aan een ander (Feynman-techniek):", "tekst": "Probeer de stof hardop uit te leggen aan een medestudent, vriend, of zelfs aan jezelf. Pas als je iets aan een ander kunt uitleggen, weet je of je het echt begrepen hebt." }
-      ]
-    },
-    {
-      "type": "info-card",
-      "classes": "warning-card",
-      "titel": "Leren is geen passief proces!",
-      "tekst": "Leren doe je niet als iets via een ander in je hoofd gaat, maar juist als je het eruit haalt. Een docent die jou alles uitlegt voelt fijn, maar je leert relatief weinig van alleen luisteren. Als je daarentegen zelf ophaalt wat je weet en daarna aanvullingen krijgt, leer je veel meer. Dit is de kern van actief ophalen!"
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section-title",
       "titel": "Gespreid Leren (Spaced Repetition): De Vergeetcurve te slim af zijn"
     },
     {
       "type": "content-text",
       "tekst": "Zoals je in Hoofdstuk 3 hebt gezien, vergeet je informatie snel als je er niets mee doet. Gespreid leren, of 'Spaced Repetition', is de strategie om je leermomenten over een langere periode te verspreiden, in plaats van alles in één lange sessie te 'blokken'. Door de stof met toenemende tussenpozen te herhalen, dwing je je brein om de informatie telkens opnieuw op te roepen, wat de verbindingen in je langetermijngeheugen versterkt. Vier keer een half uur leren is effectiever dan twee uur achter elkaar studeren."
+    },
+    {
+      "type": "video-split-screen",
+      "video": {
+        "link": "https://www.youtube.com/watch?v=QErngbmctEI",
+        "titel": "Gespreid Leren in de Praktijk"
+      },
+      "tekst_content": [
+        "In de onderstaande video legt Tim Surma, een expert op het gebied van leerstrategieën, op een heldere manier uit hoe gespreid leren precies werkt en waarom het zo'n krachtige methode is om de vergeetcurve te verslaan."
+      ]
     },
     {
       "type": "split-screen-image-text",
@@ -224,17 +169,99 @@
       ]
     },
     {
-      "type": "video-full-width",
-      "titel": "Gespreid Leren in de Praktijk",
-      "link": "https://www.youtube.com/watch?v=QErngbmctEI"
-    },
-    {
       "type": "info-card",
       "titel": "Praktische Tips voor Gespreid Leren",
       "items": [
         { "titel": "Plan je herhalingen:", "tekst": "Gebruik een agenda of app om herhaalmomenten in te plannen (bijv. 1 dag, 3 dagen, 1 week, 2 weken, 1 maand na de eerste keer)." },
         { "titel": "Combineer met actief ophalen:", "tekst": "Tijdens deze gespreide sessies is het belangrijk om actief met de stof bezig te zijn, bijvoorbeeld door zelftoetsen of het uitleggen van de stof." },
         { "titel": "Gebruik tools:", "tekst": "Apps zoals Anki (voor flashcards met ingebouwde spreiding) kunnen je helpen dit proces te automatiseren." }
+      ]
+    },
+    {
+      "type": "accordion",
+      "titel": "Voorbeeld: Een Studieschema voor deze E-learning",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Hoe pas je dit nu concreet toe op deze e-learning? Hier is een voorbeeldschema. De exacte dagen zijn een suggestie; het gaat om het principe van herhalen met tussenpozen.<ul><li><strong>Sessie 1 (Start):</strong> Bestudeer de eerste paar hoofdstukken (bijv. H1 t/m H3).</li><li><strong>Sessie 2 (na 2 dagen):</strong> Herhaal de stof van sessie 1. Doe dit actief: maak de interactieve opdrachten of doe een 'brain dump'. Bestudeer daarna het volgende hoofdstuk (H4).</li><li><strong>Sessie 3 (na 2-3 dagen):</strong> Herhaal kort de belangrijkste punten van H1 t/m H4. Bestudeer daarna de volgende hoofdstukken (H5 & H6).</li><li><strong>Sessie 4 (na een paar dagen):</strong> Herhaal H5 & H6 actief en bestudeer het laatste hoofdstuk (H7).</li><li><strong>Sessie 5 (Finale):</strong> Herhaal de moeilijkste onderdelen nog een keer en doe dan de afsluitende quiz om je certificaat te behalen.</li></ul><strong>Tip voor de lange termijn:</strong> Kom na een paar weken nog eens terug. Probeer dan alleen de interactieve opdrachten en de eindquiz te doen. Dit versterkt de kennis enorm en je kunt je certificaat opnieuw genereren."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Actief Ophalen (Retrieval Practice): Haal het uit je Hoofd!"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Actief ophalen is een van de meest effectieve leerstrategieën. Het dwingt je brein om de verbindingen naar opgeslagen kennis te versterken. In de onderstaande video zie je een klassiek experiment dat het krachtige effect van deze techniek demonstreert in vergelijking met passief herlezen."
+    },
+    {
+      "type": "video-split-screen",
+      "video": {
+        "link": "https://youtu.be/ZPz8hpEWEPY",
+        "titel": "Het krachtige effect van Actief Ophalen"
+      },
+      "tekst_content": [
+        "In de video zie je een experiment dat de kracht van actief ophalen (testen) aantoont. De groep die zichzelf testte, onthield na een week significant meer dan de groep die de stof alleen herlas.",
+        "Een belangrijk detail: de testgroep combineerde hier twee krachtige technieken. Ze pasten niet alleen <strong>actief ophalen</strong> toe, maar deden dit ook op een later moment, wat een vorm van <strong>gespreid leren</strong> is. Deze combinatie is de sleutel tot duurzaam en diepgaand leren."
+      ]
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "De Kracht van Actief Ophalen: Waarom het Werkt"
+    },
+    {
+      "type": "benefits-grid",
+      "items": [
+        {
+          "titel": "Beter Onthouden",
+          "icoon": "brain",
+          "tekst": "Informatie blijft veel beter en langer hangen in je langetermijngeheugen."
+        },
+        {
+          "titel": "Inzicht in je Kennis",
+          "icoon": "chart-line",
+          "tekst": "Je ontdekt precies wat je wel en niet weet, zodat je gericht kunt studeren."
+        },
+        {
+          "titel": "Efficiënter Studeren",
+          "icoon": "check-circle",
+          "tekst": "Het kost geen extra tijd, maar maakt je studietijd veel waardevoller. Minder 'blokken', minder stress."
+        },
+        {
+          "titel": "Een 'Goede' Prikkel",
+          "icoon": "lightbulb-on",
+          "tekst": "Het voelt moeilijker, maar deze <strong>Desirable Difficulty</strong> (uit H3!) dwingt je brein tot dieper leren en het aanleggen van sterke verbindingen."
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "titel": "Hoe pas je dit toe in de praktijk?",
+      "content": [
+        {
+          "titel": "Zelftoetsen & Oefenen",
+          "beschrijving": "Maak oefentoetsen of quizzen over de stof. Als je meerkeuzevragen oefent, probeer dan eerst het antwoord zelf te bedenken voordat je naar de opties kijkt. Je kunt ook medestudenten overhoren."
+        },
+        {
+          "titel": "Actief Ophalen zonder Boek",
+          "beschrijving": "Doe je boek dicht en probeer alles wat je nog weet over een onderwerp op een leeg blad papier te schrijven (een 'brain dump'). Gebruik flashcards (kaartjes met een vraag/begrip en de uitleg op de achterkant) om jezelf te overhoren."
+        },
+        {
+          "titel": "Uitleggen & Samenvatten",
+          "beschrijving": "Leg de stof uit aan jezelf, een studiegenoot of zelfs je kat. Als je iets goed kunt uitleggen, beheers je de stof. Maak ook conceptmaps of schema's om de relaties tussen begrippen te visualiseren."
+        },
+        {
+          "titel": "Slimmer Herhalen",
+          "beschrijving": "Combineer actief ophalen met <strong>gespreid leren (Spaced Practice)</strong> door je studeermomenten te verspreiden. Wissel ook verschillende onderwerpen of soorten problemen af (<strong>Interleaving</strong>) om je brein scherp te houden."
+        },
+        {
+          "titel": "Voorbereiding & Aantekeningen",
+          "beschrijving": "Activeer voorkennis voordat je begint door jezelf af te vragen wat je al weet. Gebruik actieve notitiemethoden zoals de Cornell-methode om de stof direct te verwerken."
+        }
       ]
     },
     {
@@ -435,6 +462,32 @@
           "beschrijving": "Een open vraag die je aanzet tot nadenken over je eigen leerproces, een vorm van elaboratie."
         }
       ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Verder Kijken: Aanvullende Video's"
+    },
+    {
+      "type": "video-grid",
+      "kolommen": 2,
+      "items": [
+        {
+          "titel": "9 Wetenschappelijke Studietips",
+          "beschrijving": "Beschrijving video later nog toevoegen",
+          "link": "https://www.youtube.com/watch?v=bQql45UFnp8"
+        },
+        {
+          "titel": "Hoe kan jij het best leren?",
+          "beschrijving": "Beschrijving video later nog toevoegen",
+          "link": "https://www.youtube.com/watch?v=L6-WVhYCFC0"
+        }
+      ]
+    },
+    {
+      "type": "divider"
     }
   ],
   "interacties": [
