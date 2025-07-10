@@ -1119,7 +1119,13 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
 
                 // Process text content
                 let textContentHtml = '';
-                if (Array.isArray(textContent)) {
+                const imageIconSvg = block.tekst_content && block.tekst_content.icon_type === 'image' ? 
+                    `<span class="component-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></span>` : '';
+
+                if (block.tekst_content && typeof block.tekst_content === 'object' && block.tekst_content.paragrafen) {
+                    textContentHtml += block.tekst_content.titel ? `<h3>${imageIconSvg}${block.tekst_content.titel}</h3>` : '';
+                    textContentHtml += block.tekst_content.paragrafen.map(p => `<p>${p}</p>`).join('');
+                } else if (Array.isArray(textContent)) { // Voor oude JSON die nog een array direct bevatte
                     textContent.forEach(item => {
                         if (typeof item === 'string') {
                             textContentHtml += `<p>${item}</p>`;
@@ -1359,13 +1365,16 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                         videoEmbedUrl = `https://www.youtube.com/embed/${match[1]}`;
                     }
                 }
+                const videoIconSvg = block.tekst_content && block.tekst_content.icon_type === 'video' ? 
+                    `<span class="component-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></span>` : '';
+
                 html += `
                     <div class="video-split-screen">
                         <div class="video-content">
                             ${videoEmbedUrl ? `<div class='video-wrapper'><iframe src='${videoEmbedUrl}' title='${block.video.titel || 'Embedded YouTube video'}' allowfullscreen></iframe></div>` : '<p>Video kon niet geladen worden.</p>'}
                         </div>
                         <div class="text-content">
-                            ${block.tekst_content.titel ? `<h3>${block.tekst_content.titel}</h3>` : ''}
+                            ${block.tekst_content.titel ? `<h3>${videoIconSvg}${block.tekst_content.titel}</h3>` : ''}
                             ${block.tekst_content.paragrafen && Array.isArray(block.tekst_content.paragrafen) ? block.tekst_content.paragrafen.map(p => `<p>${p}</p>`).join('') : ''}
                         </div>
                     </div>
@@ -1500,86 +1509,52 @@ function renderAfsluitingContent(content) {
             <div class="info-card purple-kader">
                 <h3 class="info-card-title">${content.overCertificaat.titel}</h3>
                 <div class="info-card-content">
-                    ${content.overCertificaat.intro ? `<p>${content.overCertificaat.intro}</p>` : ''}
-                    ${content.overCertificaat.punten && content.overCertificaat.punten.length > 0 ? `
-                        <ul class="checklist">
-                            ${content.overCertificaat.punten.map(punt => `<li><strong>${punt.kop}:</strong> ${punt.tekst}</li>`).join('')}
-                        </ul>
-                    ` : ''}
+                    <p>${content.overCertificaat.tekst.replace(/\n/g, '<br>')}</p>
                 </div>
             </div>
         `;
     }
 
-    // "Certificaat gebruiken in je eJournal/Portfolio" sectie
-    if (content.portfolioIntegratie) {
-        html += `
-            <div class="info-card purple-kader">
-                <h3 class="info-card-title">${content.portfolioIntegratie.titel}</h3>
-                <div class="info-card-content">
-                    <p>${content.portfolioIntegratie.tip}</p>
-                    <p>${content.portfolioIntegratie.vraakUitleg}</p>
-                    ${content.content && Array.isArray(content.content) ? renderGenericChapterContent(content.content, totalSections) : ''}
-                </div>
-            </div>
-        `;
-    }
+    html += '<div class="certificaat-download-link" style="text-align: center; margin-top: 20px;">';
+    html += '<a href="#" onclick="generatePDF(); return false;" class="button button-primary">Download Certificaat</a>';
+    html += '</div>';
 
-    // "Voorbeelden voor meer authenticiteit" sectie
-    if (content.authenticiteitsvoorbeelden) {
-        html += `
-            <div class="info-card">
-                <h3 class="info-card-title">${content.authenticiteitsvoorbeelden.titel}</h3>
-                <div class="info-card-content">
-                    <p>${content.authenticiteitsvoorbeelden.tekst}</p>
-                    <div class="suggesties-grid">
-                        ${content.authenticiteitsvoorbeelden.voorbeelden.map(v => `
-                            <div class="suggestie-tegel card">
-                                <h4>${v.titel}</h4>
-                                <p>${v.tekst}</p>
-                            </div>
-                        `).join('')}
-                    </div>
+    if (content.portfolioVragen && Array.isArray(content.portfolioVragen) && content.portfolioVragen.length > 0) {
+        html += `<h3 class="section-title" style="margin-top: 40px;">Reflectievragen voor je portfolio</h3>`;
+        html += `<p class="intro-text">${content.portfolioIntro || 'Beantwoord de volgende vragen ter voorbereiding op een portfolio-gesprek:'}</p>`;
+        html += `<div class="portfolio-vragen-container">`;
+        content.portfolioVragen.forEach((vraag, index) => {
+            html += `
+                <div class="portfolio-vraag-item">
+                    <h4>Vraag ${index + 1}: ${vraag.vraag}</h4>
+                    <p>${vraag.uitleg}</p>
                 </div>
-            </div>
-        `;
+            `;
+        });
+        html += `</div>`;
     }
-
-    html += '</div>'; // sluit certificaat-portfolio-wrapper
     
-    // "Certificaat Genereren" sectie
+    html += '</div>'; // Close certificaat-portfolio-wrapper
+
+    // "Bronvermelding" sectie
+    if (content.bronvermelding && Array.isArray(content.bronvermelding)) {
+        html += `<h3 class="section-title" style="margin-top: 40px;">Bronvermelding</h3>`;
+        html += `<ul class="bronvermelding-list">`;
+        content.bronvermelding.forEach(bron => {
+            html += `<li>${bron}</li>`;
+        });
+        html += `</ul>`;
+    }
+
+
+    // Footer for afsluiting chapter
     html += `
-        <div class="certificate-section">
-            <div class="certificate-title-bar">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 12l2 2 4-4"></path>
-                    <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
-                    <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
-                    <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"></path>
-                    <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"></path>
-                </svg>
-                Certificaat Genereren
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; ${new Date().getFullYear()} Hogeschool van Arnhem en Nijmegen (HAN). Alle rechten voorbehouden.</p>
             </div>
-            <div class="certificate-content">
-                <p>Vul hieronder je naam in om een certificaat te genereren met je antwoorden en reflecties.</p>
-                <input type="text" id="student-name" placeholder="Vul hier je volledige naam in" class="input-field">
-                <button class="btn" id="generatePdfBtn" onclick="generatePDF()">Download Certificaat (PDF)</button>
-                ${content.portfolioIntegratie?.tip ? `<p id="afsluiting-portfolio-tip" class="small-text"><strong>Tip:</strong> ${content.portfolioIntegratie.tip}</p>`: ''}
-            </div>
-        </div>
+        </footer>
     `;
-
-    // De container wordt gevuld, en DAARNA voegen we de event listener voor de accordeon toe.
-    // Dit kan niet hier, maar moet in de 'renderChapter' functie gebeuren NADAT de HTML in de DOM is gezet.
-    
-    // Roep loadMCQuiz aan NADAT de quiz-container gegarandeerd in de DOM staat.
-    setTimeout(() => {
-        if (typeof loadMCQuiz === 'function') {
-            loadMCQuiz();
-        } else {
-            console.error("loadMCQuiz function not found. Quiz cannot be loaded.");
-        }
-    }, 0); // setTimeout met 0ms zorgt ervoor dat dit na de huidige render-cyclus wordt uitgevoerd.
 
     return html;
 }

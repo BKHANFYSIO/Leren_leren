@@ -972,3 +972,11 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
 /* ==========================================================================
    Utility Classes
    ========================================================================== */
+
+.component-icon {
+    display: inline-block;
+    width: 1em; /* Zorg voor een consistent formaat */
+    height: 1em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}

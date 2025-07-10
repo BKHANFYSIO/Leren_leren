@@ -36,7 +36,33 @@
     },
     {
       "type": "content-text",
-      "tekst": "Herinner je je de 'bibliotheek' (langetermijngeheugen) uit Hoofdstuk 3? Voorkennis activeren is dé truc om die bibliotheek voor je te laten werken. Het betekent simpelweg dat je, <strong>voordat je iets nieuws leert, bewust de 'boeken' die je al hebt over dat onderwerp pakt en klaarleggen op je 'kladblok' (werkgeheugen).</strong><br><br>Waarom is dit zo'n gamechanger? Je werkplek (werkgeheugen) is klein en kan maar <strong>4 tot 7 losse dingen tegelijk</strong> aan. Nieuwe info is als een los blaadje. Als je het juiste 'boek' (je voorkennis) al hebt klaarliggen, stop je dat blaadje direct in het juiste hoofdstuk. Zo hoef je die 4-7 plekken niet te verspillen aan losse feiten.<br><br><strong>De winst:</strong> je brein raakt minder snel overbelast, waardoor je sneller en effectiever leert. Ja, het kost je misschien een paar minuutjes, maar die investering om je voorkennis te activeren verdien je dubbel en dwars terug. Kortom: een kleine moeite voor een maximale leerwinst. Een echte no-brainer dus!"
+      "tekst": "Herinner je je de 'bibliotheek' (langetermijngeheugen) uit Hoofdstuk 3? Voorkennis activeren is dé truc om die bibliotheek voor je te laten werken. Het betekent simpelweg dat je, <strong>voordat je iets nieuws leert, bewust de 'boeken' die je al hebt over dat onderwerp pakt en klaarleggen op je 'kladblok' (werkgeheugen).</strong><br><br>Waarom is dit zo'n gamechanger? Je werkplek (werkgeheugen) is klein en kan maar <strong>4 tot 7 losse dingen tegelijk</strong> aan. Nieuwe info is als een los blaadje. Als je het juiste 'boek' (je voorkennis) al hebt klaarliggen, stop je dat blaadje direct in het juiste hoofdstuk. Hierdoor maak je direct weer ruimte vrij op je 'kladblok' voor nieuwe 'losse blaadjes', waardoor je veel meer informatie tegelijk kunt verwerken."
+    },
+    {
+      "type": "image-grid",
+      "kolommen": 2,
+      "afbeeldingen": [
+        {
+          "src": "images/bibliotheek-lege-tafel.png",
+          "alt": "Een lege werktafel in een bibliotheek, wat een niet-geactiveerd geheugen symboliseert.",
+          "onderschrift": "<strong>Zonder voorkennis activeren:</strong> je moet elk boek nog uit de kast halen. De dichtstbijzijnde pak je snel, maar voor de boeken verderop moet je op een trapje klimmen. Dat kost tijd en moeite. Dit is niet handig als je werkgeheugen vrij wilt hebben om nieuwe informatie in te verwerken.",
+          "bron": {
+            "naam": "Gegenereerd door B. Koekoek met ChatGPT (OpenAI, juli 2025)"
+          }
+        },
+        {
+          "src": "images/bibliotheek-boeken-op-tafel.png",
+          "alt": "Een werktafel met een stapel relevante boeken, wat een geactiveerd geheugen symboliseert.",
+          "onderschrift": "<strong>Met voorkennis activeren:</strong> je hebt de relevante 'boeken' al klaarliggen. Nieuwe informatie (de 'kladpapiertjes') koppel je direct aan bestaande kennis, wat leidt tot meer ruimte in je werkgeheugen, waardoor je sneller en effectiever leert.",
+          "bron": {
+            "naam": "Gegenereerd door B. Koekoek met ChatGPT (OpenAI, juli 2025)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>De winst:</strong> je brein raakt minder snel overbelast, waardoor je sneller en effectiever leert. Ja, het kost je misschien een paar minuutjes, maar die investering om je voorkennis te activeren verdien je dubbel en dwars terug. Kortom: een kleine moeite voor een maximale leerwinst. Een echte no-brainer dus!"
     },
     {
       "type": "info-card",
@@ -73,37 +99,8 @@
       ]
     },
     {
-      "type": "image-grid",
-      "kolommen": 2,
-      "afbeeldingen": [
-        {
-          "src": "images/bibliotheek-lege-tafel.png",
-          "alt": "Een lege werktafel in een bibliotheek, wat een niet-geactiveerd geheugen symboliseert.",
-          "onderschrift": "<strong>Zonder voorkennis activeren:</strong> je moet elk boek nog uit de kast halen. De dichtstbijzijnde pak je snel, maar voor de boeken verderop moet je op een trapje klimmen. Dat kost tijd en moeite. Dit is niet handig als je werkgeheugen vrij wilt hebben om nieuwe informatie in te verwerken.",
-          "bron": {
-            "naam": "Gegenereerd door B. Koekoek met ChatGPT (OpenAI, juli 2025)"
-          }
-        },
-        {
-          "src": "images/bibliotheek-boeken-op-tafel.png",
-          "alt": "Een werktafel met een stapel relevante boeken, wat een geactiveerd geheugen symboliseert.",
-          "onderschrift": "<strong>Met voorkennis activeren:</strong> je hebt de juiste boeken al klaarliggen. Nieuwe informatie (de 'kladpapiertjes') koppel je direct aan de juiste kennis, waardoor je sneller en effectiever leert. De notitieblaadjes koppel je snel aan een boek, waardoor je weer ruimte vrijmaakt in je werkgeheugen voor andere nieuwe informatie.",
-          "bron": {
-            "naam": "Gegenereerd door B. Koekoek met ChatGPT (OpenAI, juli 2025)"
-          }
-        }
-      ]
-    },
-    {
-      "type": "info-card",
-      "titel": "Praktische Tips voor Voorkennis Activeren",
-      "items": [
-        { "titel": "Brainstorm vooraf:", "tekst": "Schrijf 5 minuten alles op wat je al weet over het onderwerp voordat je begint met lezen of studeren." },
-        { "titel": "Formuleer vragen:", "tekst": "Stel jezelf vragen als: 'Wat weet ik hier al van?', 'Waar ben ik eerder tegengekomen?', 'Hoe verhoudt dit zich tot mijn ervaring?'" },
-        { "titel": "Maak een concept map:", "tekst": "Teken een mindmap van je bestaande kennis over het onderwerp en vul deze aan tijdens het leren." },
-        { "titel": "Koppel aan de praktijk:", "tekst": "Denk na over hoe het nieuwe onderwerp zich verhoudt tot situaties die je al kent uit de fysiotherapiepraktijk." },
-        { "titel": "Bespreek met anderen:", "tekst": "Praat met medestudenten over wat jullie al weten voordat jullie nieuwe stof gaan bestuderen." }
-      ]
+      "type": "content-text",
+      "tekst": "Om het belang van voorkennis activeren te illustreren, kijken we naar twee scenario's die het verschil laten zien tussen voorbereid en onvoorbereid leren."
     },
     {
       "type": "scenario-container-horizontal",
@@ -120,7 +117,7 @@
         },
         {
           "titel": "Scenario 2: De slimme investering",
-          "beschrijving": "Morgen heb je een oefensessie met een simulatiepatiënt met enkelletsel. Je weet dat de theorie al even geleden is. Je investeert 15 minuten: je scant de samenvatting, laat je overhoren door een AI-tutor en tekent de enkelbanden uit je hoofd.",
+          "beschrijving": "Morgen heb je een oefensessie met een simulatiepatiënt met enkelletsel. Je weet dat de theorie al even geleden is. Je investeert 15 minuten: je schrijft alles op wat je nog weet van de KNGF richtlijn enkelletsel, laat je overhoren door een AI-tutor en duikt nog even in de richtlijn voor die stukken die je niet meer goed wist.",
           "punten": [
             "Je stelt de juiste vragen en je redeneren is scherper.",
             "Je voelt je zelfverzekerd en hebt controle.",
@@ -130,11 +127,29 @@
         }
       ]
     },
-
+    {
+      "type": "content-text",
+      "tekst": "Voorkennis activeren is een waardevolle strategie in diverse leersituaties. Denk hierbij aan momenten zoals vlak voordat je een hoorcollege volgt, wanneer je nieuwe stof gaat bestuderen, als je deelneemt aan een workshop, of wanneer je gaat oefenen met medestudenten voor bijvoorbeeld een anamnese. De volgende tips helpen je om je voorkennis effectief te activeren."
+    },
+    {
+      "type": "info-card",
+      "titel": "Praktische Tips voor Voorkennis Activeren",
+      "items": [
+        { "titel": "Brainstorm vooraf", "tekst": "Schrijf 5 minuten alles op wat je al weet over het onderwerp voordat je begint met lezen of studeren." },
+        { "titel": "Formuleer vragen", "tekst": "Stel jezelf vragen als: 'Wat weet ik hier al van?', 'Waar ben ik eerder tegengekomen?', 'Hoe verhoudt dit zich tot mijn ervaring?'" },
+        { "titel": "Maak een concept map", "tekst": "Teken een mindmap van je bestaande kennis over het onderwerp en vul deze aan tijdens het leren." },
+        { "titel": "Koppel aan de praktijk", "tekst": "Denk na over hoe het nieuwe onderwerp zich verhoudt tot situaties die je al kent uit de fysiotherapiepraktijk." },
+        { "titel": "Bespreek met anderen", "tekst": "Praat met medestudenten over wat jullie al weten voordat jullie nieuwe stof gaan bestuderen." },
+        { "titel": "Herhaal en test jezelf slim", "tekst": "Vlak voordat je met nieuwe stof begint, kun je snel je voorkennis activeren door jezelf kort te testen of een samenvatting te herhalen. Bijvoorbeeld: gebruik een flashcard-app voor 5 minuten, of laat een AI-tutor je enkele kernbegrippen vragen. Zo haal je je kennis snel naar boven en zie je direct waar je focus moet liggen." }
+      ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "Als het goed is, herken je in deze tips al de kern van actieve leerstrategieën en het concept van <strong>Desirable Difficulties</strong> uit Hoofdstuk 3. Deze strategieën staan niet los van elkaar, maar versterken elkaar. Je zult veel van deze principes ook terugzien in de volgende leerstrategieën, zoals Gespreid Leren, waar we nu dieper op ingaan."
+    },
     {
       "type": "divider"
     },
-
     {
       "type": "section-title",
       "titel": "Gespreid Leren (Spaced Repetition): De Vergeetcurve te slim af zijn"
@@ -149,9 +164,14 @@
         "link": "https://www.youtube.com/watch?v=QErngbmctEI",
         "titel": "Gespreid Leren in de Praktijk"
       },
-      "tekst_content": [
-        "In de onderstaande video legt Tim Surma, een expert op het gebied van leerstrategieën, op een heldere manier uit hoe gespreid leren precies werkt en waarom het zo'n krachtige methode is om de vergeetcurve te verslaan."
-      ]
+      "tekst_content": {
+        "titel": "Waarom Gespreid Leren Werkt",
+        "paragrafen": [
+          "Heb je je ooit afgevraagd waarom sommige dingen beter blijven hangen dan andere? In deze video zie je een baanbrekend experiment met twee groepen leerlingen die zich voorbereiden op een wiskundetoets. Je ontdekt waarom de groep die de stof gespreid oefende, na vier weken veel beter presteerde dan de groep die alles in één keer deed, ondanks dat ze evenveel tijd investeerden.",
+          "Maak kennis met het 'spacing effect' en zie hoe gespreid leren je helpt om informatie veel langer te onthouden."
+        ],
+        "icon_type": "video"
+      }
     },
     {
       "type": "split-screen-image-text",
@@ -163,10 +183,14 @@
           "url": "https://www.taalhammer.com/the-forgetting-curve-hermann-ebbinghaus/"
         }
       },
-      "tekst_content": [
-        "<strong>De Vergeetcurve Resetten</strong>",
-        "Deze illustratie toont hoe gespreide herhaling de vergeetcurve 'reset'. Elke keer dat je de informatie activeert, wordt de curve minder steil en onthoud je de stof langer. Dit is een 'wenselijke moeilijkheid' die je helpt om kennis duurzaam te verankeren."
-      ]
+      "tekst_content": {
+        "titel": "Van Vergeet- naar Onthoudcurve",
+        "paragrafen": [
+          "Deze illustratie toont hoe gespreide herhaling de vergeetcurve 'reset'. Elke keer dat je de informatie activeert, wordt de curve minder steil en onthoud je de stof langer. Dit is een 'wenselijke moeilijkheid' die je helpt om kennis duurzaam te verankeren.",
+          "Eigenlijk veranderen we de eerste blauwe vergeetcurve (die steil naar beneden loopt) naar een 'onthoudcurve', de gele lijn die steil omhoog loopt."
+        ],
+        "icon_type": "image"
+      }
     },
     {
       "type": "info-card",
@@ -183,9 +207,13 @@
       "content": [
         {
           "type": "content-text",
-          "tekst": "Hoe pas je dit nu concreet toe op deze e-learning? Hier is een voorbeeldschema. De exacte dagen zijn een suggestie; het gaat om het principe van herhalen met tussenpozen.<ul><li><strong>Sessie 1 (Start):</strong> Bestudeer de eerste paar hoofdstukken (bijv. H1 t/m H3).</li><li><strong>Sessie 2 (na 2 dagen):</strong> Herhaal de stof van sessie 1. Doe dit actief: maak de interactieve opdrachten of doe een 'brain dump'. Bestudeer daarna het volgende hoofdstuk (H4).</li><li><strong>Sessie 3 (na 2-3 dagen):</strong> Herhaal kort de belangrijkste punten van H1 t/m H4. Bestudeer daarna de volgende hoofdstukken (H5 & H6).</li><li><strong>Sessie 4 (na een paar dagen):</strong> Herhaal H5 & H6 actief en bestudeer het laatste hoofdstuk (H7).</li><li><strong>Sessie 5 (Finale):</strong> Herhaal de moeilijkste onderdelen nog een keer en doe dan de afsluitende quiz om je certificaat te behalen.</li></ul><strong>Tip voor de lange termijn:</strong> Kom na een paar weken nog eens terug. Probeer dan alleen de interactieve opdrachten en de eindquiz te doen. Dit versterkt de kennis enorm en je kunt je certificaat opnieuw genereren."
+          "tekst": "Hoe pas je dit nu concreet toe op deze e-learning? Hier is een voorbeeldschema. De exacte dagen zijn een suggestie; het gaat om het principe van herhalen met tussenpozen.<ul><li><strong>Sessie 1 (Start):</strong> Bestudeer de eerste paar hoofdstukken (bijv. H1 t/m H3).</li><li><strong>Sessie 2 (na 2 dagen):</strong> Herhaal de stof van sessie 1. Doe dit actief: maak de interactieve opdrachten of doe een 'brain dump'. Bestudeer daarna het volgende hoofdstuk (H4).</li><li><strong>Sessie 3 (na 2-3 dagen):</strong> Herhaal kort de belangrijkste punten van H1 t/m H4. Bestudeer daarna de volgende hoofdstukken (H5 & H6).</li><li><strong>Sessie 4 (na een paar dagen):</strong> Herhaal H5 & H6 actief en bestudeer het laatste hoofdstuk (H7).</li><li><strong>Sessie 5 (Finale):</strong> Herhaal de moeilijkste onderdelen nog een keer en doe dan de afsluitende quiz om je certificaat te behalen.</li></ul><strong>Tip voor de lange termijn:</strong> Kom na een paar weken nog eens terug. Probeer dan alleen de interactieve opdrachten en de eindquiz te doen. Dit versterkt de kennis enorm en je kunt je certificaat opnieuw genereren. In plaats van herhalen via de e-learning zelf, kun je natuurlijk ook herhalen door de geleerde elementen daadwerkelijk toe te passen in de praktijk, een kennisbooster te doen, of samen met een medestudent alles wat jullie weten uit het geheugen op te halen en hierover in discussie te gaan."
         }
       ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "Gespreid leren is krachtig, maar wordt nog effectiever wanneer je het combineert met actief ophalen. Door de stof actief uit je geheugen op te roepen, versterk je de verbindingen nóg verder. De volgende sectie gaat dieper in op deze techniek: Actief Ophalen – een echte desirable difficulty."
     },
     {
       "type": "divider"
@@ -204,10 +232,14 @@
         "link": "https://youtu.be/ZPz8hpEWEPY",
         "titel": "Het krachtige effect van Actief Ophalen"
       },
-      "tekst_content": [
-        "In de video zie je een experiment dat de kracht van actief ophalen (testen) aantoont. De groep die zichzelf testte, onthield na een week significant meer dan de groep die de stof alleen herlas.",
-        "Een belangrijk detail: de testgroep combineerde hier twee krachtige technieken. Ze pasten niet alleen <strong>actief ophalen</strong> toe, maar deden dit ook op een later moment, wat een vorm van <strong>gespreid leren</strong> is. Deze combinatie is de sleutel tot duurzaam en diepgaand leren."
-      ]
+      "tekst_content": {
+        "titel": "Het Experiment: Actief Ophalen in de Praktijk",
+        "paragrafen": [
+          "In de video zie je een experiment dat de kracht van actief ophalen (testen) aantoont. De groep die zichzelf testte (actief ophalen dus), onthield na een week significant meer dan de groep die de stof alleen herlas.",
+          "Een belangrijk detail: de testgroep combineerde hier twee krachtige technieken. Ze pasten niet alleen <strong>actief ophalen</strong> toe, maar deden dit ook op een later moment, wat een vorm van <strong>gespreid leren</strong> is. Deze combinatie is de sleutel tot duurzaam en diepgaand leren."
+        ],
+        "icon_type": "video"
+      }
     },
     {
       "type": "content-subtitle",

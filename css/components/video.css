@@ -119,11 +119,14 @@
     gap: 2rem;
     align-items: center;
     margin: 2rem 0;
-    padding: 2rem;
-    border: 1px solid var(--medium-gray);
+    padding: 1.5rem;
+    background-color: var(--background-light-gray);
     border-radius: var(--border-radius-large);
-    background-color: var(--white);
-    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-purple);
+}
+
+.video-split-screen .text-content {
+    padding-left: 1rem;
 }
 
 .video-split-screen .text-content h3 {

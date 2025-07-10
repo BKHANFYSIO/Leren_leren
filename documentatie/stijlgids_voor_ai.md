@@ -404,10 +404,13 @@ component C (enige component, dus geen divider)
       "link": "https://www.youtube.com/embed/dQw4w9WgXcQ",
       "titel": "Voorbeeldvideo: Wat is AI?"
     },
-    "tekst_content": [
-      "Dit is een voorbeeld van een video naast een tekstblok. Op brede schermen staan ze naast elkaar, op smallere schermen onder elkaar.",
-      "Gebruik dit component als je een uitlegvideo wilt combineren met een toelichtende tekst."
-    ]
+    "tekst_content": {
+      "titel": "Hoe werkt het?",
+      "paragrafen": [
+        "Dit component toont een video aan de ene kant en een begeleidende tekst aan de andere kant.",
+        "De layout schakelt automatisch naar een enkele kolom op smallere schermen om de leesbaarheid en bruikbaarheid te garanderen."
+      ]
+    }
   }
   ```
 
