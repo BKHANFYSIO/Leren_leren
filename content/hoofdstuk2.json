@@ -4,7 +4,7 @@
       "type": "info-card",
       "classes": "welcome-card",
       "titel": "Neem de regie over je eigen leerproces",
-      "tekst": "Welkom bij het tweede hoofdstuk! In de inleiding heb je ontdekt waarom je oude studiemethodes misschien niet meer volstaan. Dit hoofdstuk geeft je de blauwdruk om een effectievere, zelfsturende student te worden. Laten we beginnen!"
+      "tekst": "In hoofdstuk 1 ontdekte je dat je oude studiemethodes niet meer volstaan. Nu krijg je de tools om daar iets aan te doen. Zelfsturend leren is de basis van alles - het is wat succesvolle studenten anders doen. In dit hoofdstuk leer je niet alleen wat het is, maar vooral hoe je het direct kunt toepassen. Van passieve student naar actieve regisseur van je eigen leerproces."
     },
     {
       "type": "accordion",
@@ -31,24 +31,29 @@
     },
     {
       "type": "section-title",
-      "titel": "De Architect van je Eigen Kennis"
+      "titel": "Van Hobbyist naar Vakkundig Architect"
     },
     {
       "type": "content-text",
-      "tekst": "De overgang naar het hoger onderwijs is een spannende tijd. Je zult merken dat je veel meer zelfstandigheid wordt gevraagd, vooral als het gaat om je leerproces. Veel studenten gebruiken strategieën zoals herlezen of markeren, maar dit geeft vaak een vals gevoel van zekerheid: de <strong>'illusion of fluency' (illusie van vloeiendheid)</strong>. Het leren voelt vloeiend en snel, maar in werkelijkheid gaat het traag. Je herkent de stof, maar dat is niet hetzelfde als het echt begrijpen. Laten we die illusie doorbreken."
+      "tekst": "Je staat aan het begin van je carrière, en dat begint met het bouwen van een ijzersterk kennis-fundament. Simpelweg stenen stapelen (zoals herlezen en markeren) is de aanpak van een hobbyist. Het leidt tot de 'illusion of fluency': een wankel bouwwerk dat instort als het erop aankomt. Om een échte architect van je eigen kennis te worden, heb je professioneel gereedschap nodig."
     },
     {
       "type": "split-screen-image-text",
       "afbeelding": {
-        "src": "https://placehold.co/600x400/9333ea/ffffff?text=Advanced+Organizer",
-        "alt": "Visualisatie van de Manager, Verwerker en Motivator"
+        "src": "images/zsl-advanced-organiser.png",
+        "alt": "Visualisatie van de Manager, Verwerker en Motivator",
+        "clickable": true
       },
       "tekst_content": [
-        "<strong>Jouw 'rugzak' vol gereedschap</strong>",
-        "Zie zelfsturend leren als een rugzak vol gereedschap. Om elke leeruitdaging aan te kunnen, heb je drie soorten gereedschap nodig:",
-        "<ul><li><strong>De Verwerker:</strong> Helpt je de stof diepgaand te verwerken.</li><li><strong>De Manager:</strong> Helpt je het leerproces te plannen en overzien.</li><li><strong>De Motivator:</strong> Helpt je gemotiveerd te blijven, ook als het moeilijk wordt.</li></ul>",
-        "In deze e-learning leer je hoe je elk stuk gereedschap effectief gebruikt."
+        "<strong>Jouw Gereedschapskist: Wetenschap en Praktijk</strong>",
+        "Jouw gereedschapskist bevat drie essentials. Elke tool vertegenwoordigt een type leerstrategie die je nodig hebt om te slagen:",
+        "<ul><li><strong>De Verwerker (Het Specialistisch Gereedschap):</strong> Deze tool gaat over het actieve denkwerk om de stof te doorgronden. In de wetenschap noemt men dit <strong>cognitieve strategieën</strong>.</li><li><strong>De Manager (De Strateeg):</strong> Deze tool plant en overziet je leerproces; het is 'denken over je eigen denken'. Die extra laag van sturing heet <strong>metacognitie</strong>.</li><li><strong>De Motivator (De Kampioensbeker):</strong> Deze tool is de brandstof voor je passie en doorzettingsvermogen. Het aansturen van je eigen drive valt onder <strong>motivationele strategieën</strong>.</li></ul>",
+        "In deze e-learning leren we je hoe je elk stuk gereedschap als een professional hanteert."
       ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "Oké, je gereedschapskist is geïntroduceerd. Maar waarom zou je de moeite nemen om deze nieuwe tools te leren gebruiken? Omdat de overstap van passief naar actief, zelfsturend leren een directe impact heeft op je studieresultaten en welzijn. Dit is wat het je oplevert:"
     },
     {
       "type": "benefits-grid",
@@ -72,15 +77,19 @@
       ]
     },
     {
+      "type": "content-text",
+      "tekst": "Deze voordelen zijn het directe gevolg van het inzetten van je innerlijke 'dream team'. Maar wat houden die rollen van Verwerker, Manager en Motivator nu precies in? Laten we ze één voor één kort introduceren. In de volgende hoofdstukken gaan we ze volledig uitdiepen, zodat je elke strategie als een pro leert toe te passen met concrete voorbeelden en tips."
+    },
+    {
       "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "Een Continu Proces, Geen Eenmalige Actie"
+      "titel": "De Manager (Metacognitieve Strategieën)"
     },
     {
       "type": "content-text",
-      "tekst": "Zelfsturend leren is geen eenmalige checklist, maar een dynamische cyclus. Het is een continu proces van plannen, doen, controleren en bijsturen. Dit is het domein van 'De Manager' uit je rugzak: de rol die het overzicht bewaart."
+      "tekst": "De Manager is de strateeg die je leerproces overziet. Dit 'denken over je denken' (metacognitie) is geen eenmalige actie, maar een dynamische cyclus. Het stelt je in staat om je leerproces bewust te plannen, te monitoren en bij te sturen voor maximaal resultaat."
     },
     {
       "type": "process-flow",
@@ -112,6 +121,48 @@
           "beschrijving": "Wat ging goed en wat kan de volgende keer beter?"
         }
       ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "De Verwerker (Cognitieve Strategieën)"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De Verwerker is de harde werker die de lesstof daadwerkelijk 'doet'. Dit zijn je denk- en doe-strategieën (cognitie) om informatie te begrijpen, te verbinden en op te slaan. Zonder een actieve Verwerker blijft kennis oppervlakkig en vergeet je het snel weer. In hoofdstuk 4 en 5 duiken we diep in de meest effectieve verwerkingsstrategieën."
+    },
+    {
+        "type": "info-card",
+        "titel": "Voorbeelden van Verwerker-activiteiten:",
+        "items": [
+          { "tekst": "Samenvattingen maken in je eigen woorden." },
+          { "tekst": "Jezelf vragen stellen over de stof." },
+          { "tekst": "Nieuwe informatie koppelen aan wat je al weet." },
+          { "tekst": "Concepten visualiseren in een schema of mindmap." }
+        ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "De Motivator (Motivationele Strategieën)"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De Motivator is de brandstof voor je leermotor. Deze strategieën gaan over je drive, je mindset en hoe je omgaat met tegenslag. Zonder een sterke Motivator is het moeilijk om op de lange termijn vol te houden, hoe goed je plannen of technieken ook zijn. In hoofdstuk 7 leer je hoe je deze innerlijke drive kunt aanwakkeren en onderhouden."
+    },
+    {
+        "type": "info-card",
+        "titel": "Voorbeelden van Motivator-strategieën:",
+        "items": [
+          { "tekst": "Duidelijke en haalbare doelen stellen." },
+          { "tekst": "Jezelf belonen na een studiesessie." },
+          { "tekst": "Positief tegen jezelf praten (self-talk)." },
+          { "tekst": "Een studieschema maken dat past bij jouw energieniveau." }
+        ]
     },
     {
       "type": "divider"

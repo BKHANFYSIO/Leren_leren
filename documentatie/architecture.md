@@ -62,6 +62,8 @@ Het hart van de e-learning. De `hoofdstukken`-array bepaalt de volgorde en titel
 }
 ```
 
+**⚠️ BELANGRIJK: Dit is slechts een voorbeeld van de JSON structuur. De daadwerkelijke hoofdstukken en titels staan in `content/config.json`. Pas NOOIT de architecture.md aan om nieuwe hoofdstukken toe te voegen - dat moet altijd via `content/config.json` gebeuren!**
+
 ### `hoofdstukX.json` en Interacties
 Elk hoofdstukbestand definieert de content en de interactieve elementen. De structuur scheidt de statische content (tekst, afbeeldingen) van de interacties (vragen, opdrachten).
 
